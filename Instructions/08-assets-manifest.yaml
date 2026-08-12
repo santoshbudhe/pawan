@@ -1,0 +1,46 @@
+asset_strategy:
+  production_assets: individual image files; never screenshot slices
+  specialized_medical_visuals: use supplied approved images
+  interface_icons: Lucide React when visually equivalent
+  format_preference:
+  - avif
+  - webp
+  - png fallback where transparency is required
+  responsive_images: use picture/srcset or the existing project image component
+  alt_text: required for informative images; empty alt for decorative icons
+paths:
+  logo: assets/logos/dr-pawan-logo.*
+  hero_mobile: assets/smf/hero/smf-hero-mobile.*
+  hero_desktop: assets/smf/hero/smf-hero-desktop.*
+  benefit_rehab: assets/smf/media/smf-rehabilitation-child.*
+  assessment_rehab: assets/smf/media/smf-assessment-child.*
+  doctor_pawan: assets/doctors/dr-pawan-portrait.*
+  story_1_before: assets/smf/stories/case-01-before.*
+  story_1_after: assets/smf/stories/case-01-after.*
+  story_2_before: assets/smf/stories/case-02-before.*
+  story_2_after: assets/smf/stories/case-02-after.*
+  comparison_smf: assets/smf/illustrations/comparison-smf.*
+  comparison_sdr: assets/smf/illustrations/comparison-sdr.*
+  comparison_tendon_muscle: assets/smf/illustrations/comparison-tendon-muscle.*
+  comparison_deformity: assets/smf/illustrations/comparison-deformity-correction.*
+hero_rules:
+  desktop:
+    asset: hero_desktop
+    object_fit: contain or cover according to supplied transparent/composite asset
+    object_position: center right
+    do_not_crop:
+    - target nerve detail
+    - magnified fascicle inset
+    - lower limb anatomy
+  mobile:
+    asset: hero_mobile
+    object_fit: contain
+    object_position: top right
+    do_not_crop:
+    - magnified inset
+    - foot/lower limb
+    - caption relationship
+reference_images:
+  purpose: visual and dimensional guidance only
+  do_not_ship_in_production_bundle: true
+  required_count: 10

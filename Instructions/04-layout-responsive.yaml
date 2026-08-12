@@ -1,0 +1,78 @@
+breakpoints:
+  mobile: <768px
+  tablet: 768px-1199px
+  desktop: '>=1200px'
+grids:
+  desktop:
+    viewport_reference: 1440px
+    container: width:100%; max-width:1280px; margin-inline:auto
+    columns: repeat(12,minmax(0,1fr))
+    gutter: 24px
+    outer_padding_at_1440: 80px
+  tablet:
+    columns: repeat(8,minmax(0,1fr))
+    gutter: 24px
+    padding_inline: 24px
+  mobile:
+    viewport_reference: 390px
+    container: width:100%; max-width:none
+    columns: repeat(4,minmax(0,1fr))
+    gutter: 8px
+    padding_inline: 16px
+sections:
+  site-header:
+    desktop: 12-column grid; logo span 4; navigation span 5; CTA span 3
+    mobile: flex row; logo flexible; CTA and hamburger fixed; minimum 64px
+    sticky: inherit existing site behaviour; mock does not require a new sticky rule
+  hero:
+    desktop: two-column composition; content C1-C6, visual C7-C12; min-height about 560px recommended
+    mobile: approved 4-column composition; visual occupies upper-right; actions stack full width
+  what-is-smf:
+    desktop: full 12-column card; four equal principle cards in one row
+    mobile: full-width card; principles form a 2x2 grid
+  benefit-and-not-appropriate:
+    desktop: two adjacent sections, each span 6 columns
+    mobile: stack vertically in approved order
+  problems-carousel:
+    desktop: six cards visible across; controlled carousel may retain arrows and dots
+    mobile: horizontal scroll-snap carousel; about 3 full cards plus a peek depending on exact viewport
+  assessment:
+    desktop: copy/list span 6 and image span 6
+    mobile: list followed by image; approved stack
+  how-smf-works:
+    desktop: four equal process cards with arrows
+    mobile: horizontal scroll-snap carousel
+  goals-and-limitations:
+    desktop: each full width; limitations internally split into two columns
+    mobile: single-column full-width cards
+  treatment-comparison:
+    desktop: four equal-height cards in one row
+    mobile: horizontal scroll-snap carousel with visible card peek
+  journey:
+    desktop: full-width stacked timeline rows
+    mobile: full-width stacked timeline
+  risks:
+    desktop: two equal columns of accordion rows
+    mobile: single-column accordion
+  review-and-team:
+    desktop: two equal cards, each span 6
+    mobile: stack unless the approved mock shows a 2-column compact row at the available width
+  patient-journeys:
+    desktop: two story cards visible
+    mobile: horizontal scroll-snap carousel with card peek
+  faq-and-references:
+    desktop: two equal cards, each span 6
+    mobile: stack vertically
+  closing-cta:
+    desktop: centered full-width panel; two inline buttons
+    mobile: two stacked full-width buttons
+  footer:
+    desktop: full-bleed navy surface; inner 12-column five-group layout
+    mobile: stacked grouped links; preserve existing mobile footer design
+responsive_invariants:
+- Section order never changes.
+- No content is removed at smaller breakpoints.
+- Desktop-only multi-column rows collapse without changing copy or hierarchy.
+- Carousels become touch-scrollable on mobile.
+- Medical/anatomical imagery preserves subject visibility with breakpoint-specific object-position.
+- Navigation is visible on desktop and replaced by the approved hamburger control on mobile.

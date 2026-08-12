@@ -1,0 +1,238 @@
+page:
+  breadcrumb:
+  - Home
+  - Procedures
+  - Selective Motor Fasciculotomy (SMF)
+  hero:
+    eyebrow: SPECIALIZED PROCEDURE
+    title: Selective Motor Fasciculotomy (SMF)
+    body: A targeted nerve procedure for carefully selected focal spasticity.
+    feature_cards:
+    - Targeted Motor-Nerve Procedure
+    - Upper- or Lower-Limb Spasticity
+    visual_caption: Only the abnormal motor fascicles are selectively treated while preserving useful movement.
+    primary_cta: Request Assessment
+    secondary_cta: Talk to Our Team
+sections:
+- id: what-is-smf
+  number: 1
+  title: What is SMF?
+  body: SMF is a microsurgical procedure in which selected motor-nerve fascicles that cause spasticity are treated.
+    By reducing the overactive signals to specific muscles, SMF aims to improve movement and daily function while
+    preserving useful voluntary control.
+  principles:
+  - Motor nerves carry signals to our muscles.
+  - Nerves are made of many tiny fascicles.
+  - Only the abnormal fascicles are treated.
+  - Useful movement is aimed to be preserved.
+  info_note: SMF works at the level of peripheral motor nerves and is different from SDR, which works on sensory
+    nerve rootlets in the lower spine.
+- id: who-may-benefit
+  number: 2
+  title: Who may benefit from SMF?
+  items:
+  - Carefully assessed children or adults with focal spasticity
+  - Spasticity affecting specific muscle groups
+  - Useful underlying voluntary movement
+  - Goals of care or function limited by overactive muscles
+  - Able and motivated to participate in rehabilitation
+- id: when-not-appropriate
+  number: 3
+  title: When SMF may not be appropriate
+  items:
+  - Predominantly fixed contracture or bony deformity
+  - Marked weakness without useful voluntary control
+  - Symptoms mainly due to dystonia rather than spasticity
+  - Unable to participate in rehabilitation
+  - Uncontrolled medical conditions or poor overall health
+  - Final suitability can only be determined after detailed clinical and neurological assessment.
+- id: problems-smf-may-address
+  number: 4
+  title: Problems SMF may address
+  items:
+  - Elbow flexor spasticity
+  - Wrist & finger flexion
+  - Thumb-in-palm posture
+  - Hip adductor spasticity
+  - Knee flexor spasticity
+  - Calf spasticity / toe walking
+- id: assessment-and-patient-selection
+  number: 5
+  title: Assessment & patient selection
+  steps:
+  - title: History & functional goals
+    body: Understand concerns, daily challenges and treatment goals.
+  - title: Clinical examination
+    body: Detailed neurological and physical examination.
+  - title: Strength & voluntary control
+    body: Assess muscle strength and quality of voluntary movement.
+  - title: Gait & movement analysis
+    body: Video analysis to identify abnormal movement patterns.
+  - title: Identify target muscles & nerves
+    body: Pinpoint overactive muscles and related motor nerve branches.
+  - title: Personalized recommendation
+    body: Discuss the most appropriate treatment plan for you.
+- id: how-smf-works
+  number: 6
+  title: How SMF works (overview)
+  steps:
+  - Identify overactive motor nerve branches
+  - Microsurgical fascicle selection
+  - Selective fasciculotomy (abnormal fibers)
+  - Improved movement & function
+- id: potential-treatment-goals
+  number: 1
+  part: 2
+  title: Potential treatment goals
+  items:
+  - Reduce focal spasticity in targeted muscles
+  - Improve ease of movement and positioning
+  - Enhance comfort, daily care and participation
+  - Support better outcomes with rehabilitation
+- id: limitations-and-considerations
+  title: Limitations & important considerations
+  items:
+  - SMF does not strengthen weak muscles.
+  - It does not correct fixed contractures or bony deformities.
+  - Rehabilitation is essential for optimal results.
+  - Additional tendon, muscle or orthopedic procedures may sometimes be needed.
+  - Results vary between individuals; recurrence or incomplete improvement is possible.
+  - Suitability depends on detailed assessment.
+- id: treatment-comparison
+  number: 2
+  part: 2
+  title: SMF compared with other treatment options
+  items:
+  - title: SMF
+    body: Targets selected fascicles within peripheral motor nerves supplying specific muscles.
+    selected: true
+  - title: SDR
+    body: Treats selected sensory nerve rootlets in the lower spine to reduce lower-limb spasticity.
+  - title: Tendon & Muscle Procedures
+    body: Addresses muscle-tendon tightness, imbalance or contractures.
+  - title: Deformity Correction Surgery
+    body: Corrects fixed bony deformities and improves alignment.
+- id: treatment-and-rehabilitation-journey
+  number: 3
+  part: 2
+  title: Treatment & rehabilitation journey
+  steps:
+  - title: Assessment & goal setting
+    body: Understand concerns, evaluate spasticity and define functional goals.
+  - title: Mapping & planning
+    body: Identify target nerves and plan the procedure precisely.
+  - title: Microsurgical procedure
+    body: Selected motor fascicles are cut or treated under microscope.
+  - title: Early mobilisation
+    body: Movement, positioning and care as advised by the clinical team.
+  - title: Physiotherapy & rehabilitation
+    body: Task-specific therapy to retrain movement and improve function.
+  - title: Follow-up & outcome review
+    body: Regular reviews to monitor progress and refine the care plan.
+  note: Recovery timelines vary. Your team will guide you with a personalised rehabilitation plan.
+- id: risks-and-important-information
+  number: 4
+  part: 2
+  title: Risks & important information
+  items:
+  - title: Possible weakness or loss of tone
+    body: Undertreatment or rarely persistent weakness may occur in treated muscles.
+  - title: Sensory or nerve-related symptoms
+    body: Numbness, tingling or altered sensation may occur around the area.
+  - title: Infection, bleeding & wound concerns
+    body: As with all surgeries, there are risks related to healing and infection.
+  - title: Incomplete improvement or recurrence
+    body: Spasticity may not fully improve or may return over time.
+  - title: Pain or scar-related issues
+    body: Need for additional procedures can occur.
+  - title: Need for additional procedures
+    body: Some patients may need further treatment later.
+- id: medically-reviewed-by
+  number: 5
+  part: 2
+  title: Medically reviewed by
+  doctor:
+    name: Dr. Pawan Kumar Sadhvani
+    qualifications:
+    - MBBS
+    - MS (Ortho)
+    - MCh (Ortho)
+    specialty: Cerebral Palsy, Spasticity & Deformity Correction Specialist
+    experience: 20+ years of experience
+    reviewed_on: 18 May 2025
+- id: multidisciplinary-team
+  number: 6
+  part: 2
+  title: Our multidisciplinary team
+  roles:
+  - Neuro-Orthopaedic Surgeon
+  - Neurosurgeon
+  - Physiotherapists & Rehabilitation Experts
+  - Nursing & Care Team
+  note: Working together to provide comprehensive, evidence-based care.
+- id: patient-journeys
+  number: 7
+  part: 2
+  title: Real patient journeys after SMF
+  stories:
+  - case: Case 1
+    title: Better hand opening & daily use
+    body: A 9-year-old child with spastic diplegia who had SMF of the median nerve branches.
+    outcome: Improved hand opening, easier self-care and better participation.
+  - case: Case 2
+    title: Reduced knee flexion spasticity
+    body: A 12-year-old child with spastic diplegia had SMF for hamstring overactivity.
+    outcome: Easier standing and walking with improved balance and comfort.
+  disclaimer: All patients are unique. Results depend on individual condition, treatment and follow-up care.
+- id: faq
+  number: 8
+  part: 2
+  title: Frequently asked questions
+  questions:
+  - What is Selective Motor Fasciculotomy (SMF)?
+  - Is SMF the same as hyperselective neurectomy?
+  - Can SMF treat upper-limb spasticity?
+  - Can SMF treat lower-limb spasticity?
+  - How is SMF different from SDR?
+  answers_status: Supply medically reviewed answers before production; do not invent answers.
+- id: references
+  number: 9
+  part: 2
+  title: References & further reading
+  display_items:
+  - Park TS, et al. Selective dorsal rhizotomy vs selective peripheral neurectomy in spasticity. J Neurosurg, 2012.
+  - Lee KS, et al. Selective motor fasciculotomy for limb spasticity. J Neurosurg Pediatr. 2014.
+  - Sunderland S. Nerves and Nerve Injuries. 2nd ed. Churchill Livingstone; 1978.
+  - UpToDate. Peripheral nerve surgeries for spasticity.
+  - AACPDM Care Pathways on Spasticity Management.
+  verification_required: true
+closing_cta:
+  title: Not sure whether SMF may be appropriate?
+  body: Our team is here to help you take the next step.
+  primary: Request Assessment
+  secondary: Talk to Our Care Team
+footer:
+  about: Specialised care for children and adults with spasticity due to cerebral palsy and neurological conditions.
+  quick_links:
+  - Home
+  - About
+  - Treatments
+  - Results
+  - Resources
+  - Contact
+  patient_resources:
+  - Patient Stories
+  - FAQs
+  - Care Pathways
+  - Guides & Articles
+  - Insurance & Costs
+  contact:
+    location: Hyderabad, India
+    phone: +91 12345 67890
+    email: hello@drpawansadhvani.com
+    hours: 'Mon - Sat: 9:00 AM - 6:00 PM'
+    status: placeholder values from mock; replace from central site configuration
+  legal:
+  - Privacy Policy
+  - Terms of Use
+  - Disclaimer

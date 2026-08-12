@@ -1,0 +1,48 @@
+project:
+  name: Dr. Pawan Kumar Sadhvani — Cerebral Palsy and Spasticity Website
+  feature: Tendon & Muscle Procedures page
+  page_type: procedure detail page
+  implementation_stack:
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Firebase
+  route:
+    recommended: /procedures/tendon-muscle-procedures
+    rule: Reuse the existing procedure routing convention; do not create a duplicate route if an equivalent route already
+      exists.
+  source_of_truth_priority:
+  - Exact approved production hero artwork files
+  - Clean mobile and desktop mocks
+  - Technical grid references
+  - Existing SDR and SMF implementation patterns
+  - These YAML files and master instructions
+approved_files:
+- 1000105001.png
+- 1000105002.png
+- 1000105003.png
+- 1000105004.png
+- 1000105005.png
+- 1000105006.png
+- 1000105007.png
+- 1000105009.png
+- 1000105008.png
+- 1000105000.png
+non_negotiable_rules:
+- Do not redesign approved sections.
+- Do not rename, rewrite, replace, crop from, or silently substitute any approved file.
+- Preserve the exact approved filenames.
+- Treat mobile and desktop compositions as independent responsive references.
+- Use editable React text for headings, paragraphs, labels, tags, buttons, accordions and footer content.
+- Use Lucide icons for standard interface symbols.
+- Do not crop production assets from page screenshots or grid screenshots.
+- Do not fabricate before-and-after outcomes or patient evidence.
+- Patient-story media may be shown only when consent-approved assets already exist in the project.
+- Reuse the existing shared site header, footer, CTA, button, card and carousel primitives whenever suitable.
+- Do not create new Firestore collections for static page copy.
+implementation_mode:
+  mobile_first: true
+  desktop_reference_width: 1440
+  desktop_container_max_width: 1280
+  mobile_reference_width: 390
+  spacing_base_unit: 8

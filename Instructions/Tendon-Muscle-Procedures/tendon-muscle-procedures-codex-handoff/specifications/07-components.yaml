@@ -1,0 +1,86 @@
+reuse_policy: Prefer existing shared components from the SDR and SMF procedure pages.
+components:
+  SectionCard:
+    border: 1px solid token(border_subtle)
+    radius_px: 12
+    padding_px:
+      desktop: 24
+      mobile: 16
+    height: content-driven
+  SectionHeading:
+    elements:
+    - number badge
+    - title
+    - optional action
+    badge_size_px: 24
+    alignment: start
+  PrimaryButton:
+    min_height_px: 48
+    padding_inline_px: 16
+    radius_px: 10
+    icon_size_px: 20
+  SecondaryButton:
+    min_height_px: 48
+    padding_inline_px: 16
+    radius_px: 10
+    icon_size_px: 20
+  InfoCard:
+    radius_px: 12
+    padding_px: 16
+    equal_height_in_row: true
+  ComparisonCarousel:
+    desktop_cards_per_view: 4
+    mobile_cards_per_view: 2
+    controls:
+    - previous
+    - next
+    - pagination
+    keyboard_accessible: true
+    scroll_snap: true
+  ProblemsCarousel:
+    desktop_cards_per_view: 6
+    mobile_cards_per_view: 3 plus peek
+    controls:
+    - previous
+    - next
+    - pagination
+    - view_all
+  PatientStoriesCarousel:
+    desktop_cards_per_view: 2
+    mobile_cards_per_view: 1 plus peek
+    consent_gate: true
+    labels:
+    - Before
+    - After
+  RiskAccordion:
+    single_panel_open: true
+    row_min_height_px: 48
+    keyboard_accessible: true
+    aria_expanded: true
+  TrustStrip:
+    items: 4
+    desktop_layout: equal columns
+    mobile_layout: equal compact columns as approved
+  DoctorReviewCard:
+    portrait_shape: circle
+    portrait_size_px:
+      desktop: 112
+      mobile: 72
+icon_policy:
+  library: lucide-react
+  use_for:
+  - calendar
+  - message-circle
+  - menu
+  - chevron-left
+  - chevron-right
+  - check-circle
+  - alert-triangle
+  - shield-check
+  - hospital
+  - activity
+  - walking
+  - users
+  - star
+  custom_medical_illustrations: Reuse existing approved site SVGs where available. Do not redraw specialised medical diagrams
+    without approval.

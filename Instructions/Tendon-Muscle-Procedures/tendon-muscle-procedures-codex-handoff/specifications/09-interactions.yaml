@@ -1,0 +1,36 @@
+interactions:
+  request_assessment:
+    behavior: Navigate to or open the existing assessment flow.
+    rule: Resolve and reuse the existing route/modal. Do not create a competing assessment flow.
+  talk_to_care_team:
+    behavior: Use the existing contact/WhatsApp/care-team action already established in the project.
+  view_all_problems:
+    desktop: Advance or expand the approved horizontal carousel without route change unless existing site behavior specifies
+      a destination.
+    mobile: Keep as swipeable horizontal carousel.
+  comparison_carousel:
+    desktop: Four visible cards with arrow controls and pagination.
+    mobile: Two visible cards with horizontal swipe, scroll snap and a card edge/arrow affordance.
+    keyboard:
+    - ArrowLeft
+    - ArrowRight
+  risk_accordion:
+    initial_state: all collapsed
+    open_mode: single
+    keyboard:
+    - Enter
+    - Space
+  patient_stories:
+    carousel: true
+    view_all: Use the existing patient-stories destination or inline expansion pattern already established by the website.
+    card_action: Open the existing story detail page/modal only for consent-approved stories.
+  rehabilitation_cta:
+    behavior: Navigate to the existing rehabilitation/care-pathway page if available; otherwise leave route mapping as a clearly
+      marked TODO.
+  mobile_menu:
+    behavior: Use existing shared mobile navigation drawer.
+    close_on_route_change: true
+    escape_to_close: true
+motion:
+  respect_prefers_reduced_motion: true
+  carousel_scroll_behavior: smooth unless reduced motion is requested

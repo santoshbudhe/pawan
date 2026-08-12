@@ -1,0 +1,318 @@
+# ==========================================================
+# 01-project.yaml
+# Project Definition
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+project:
+
+  name: "Dr. Pawan Kumar Sadhvani"
+
+  version: "1.0.0"
+
+  type: "Medical Website"
+
+  status: "Homepage Approved"
+
+  description: >
+    Responsive neuro-orthopedic website focused on Cerebral Palsy,
+    Spasticity, Selective Dorsal Rhizotomy (SDR),
+    Selective Motor Fasciculotomy (SMF),
+    Hyperselective Neurectomy (HSN),
+    deformity correction and rehabilitation.
+
+  objective:
+
+    primary:
+      - Educate patients and families
+      - Generate assessment enquiries
+      - Build trust
+      - Improve SEO
+      - Showcase patient outcomes
+
+    secondary:
+      - Explain procedures
+      - Introduce specialist team
+      - Increase consultation bookings
+      - Provide educational resources
+
+# ==========================================================
+# Technology
+# ==========================================================
+
+technology:
+
+  framework: React
+
+  language: TypeScript
+
+  build: Vite
+
+  styling:
+    framework: TailwindCSS
+
+  icons:
+    library: Lucide React
+
+  animations:
+    library: Framer Motion
+
+  state:
+    local: React Hooks
+
+  backend:
+    platform: Firebase
+
+  database:
+    Firestore
+
+  hosting:
+    Firebase Hosting
+
+# ==========================================================
+# Rendering Strategy
+# ==========================================================
+
+rendering:
+
+  strategy:
+
+    mobileFirst: true
+
+    responsive: true
+
+    desktopIndependentLayout: true
+
+    mobileIndependentLayout: true
+
+  routing:
+
+    homepage: "/"
+
+    routingType: SPA
+
+# ==========================================================
+# Homepage
+# ==========================================================
+
+homepage:
+
+  sections:
+
+    part1:
+
+      - Header
+      - Hero
+      - Trust Strip
+      - Why Families Choose Us
+      - Who We Help
+      - Understanding Spasticity
+
+    part2:
+
+      - Assessment Journey
+      - Procedures
+      - Combined Care
+      - Featured Procedure
+      - Treatment Goals
+      - Patient Stories
+      - Specialist Team
+      - Consultation Locations
+      - CTA Banner
+      - Footer
+
+# ==========================================================
+# Design Sources
+# ==========================================================
+
+design:
+
+  sourceOfTruth:
+
+    mobile:
+
+      - "Mobile Homepage Part 1 (Grid Annotated)"
+      - "Mobile Homepage Part 2 (Grid Annotated)"
+
+    desktop:
+
+      - "Desktop Homepage Part 1 (Grid Annotated)"
+      - "Desktop Homepage Part 2 (Grid Annotated)"
+
+  implementation:
+
+    redesign: false
+
+    preserveSpacing: true
+
+    preserveAlignment: true
+
+    preserveTypography: true
+
+    preserveHierarchy: true
+
+# ==========================================================
+# Asset Strategy
+# ==========================================================
+
+assets:
+
+  location: "/assets"
+
+  folders:
+
+    doctors
+
+    hero
+
+    hospitals
+
+    logos
+
+    procedures
+
+    stories
+
+    trust
+
+    who-we-help
+
+  icons:
+
+    library: Lucide React
+
+    customIcons: false
+
+# ==========================================================
+# Responsive Strategy
+# ==========================================================
+
+responsive:
+
+  desktop:
+
+    minimumWidth: 1025
+
+    grid: 12
+
+  tablet:
+
+    minimumWidth: 768
+
+    maximumWidth: 1024
+
+    grid: 8
+
+  mobile:
+
+    maximumWidth: 767
+
+    grid: 4
+
+# ==========================================================
+# Coding Standards
+# ==========================================================
+
+coding:
+
+  componentArchitecture:
+
+    reusable: true
+
+    typedProps: true
+
+    atomic: false
+
+    sectionBased: true
+
+  styling:
+
+    utilityFirst: true
+
+    inlineStyles: false
+
+    cssModules: false
+
+  images:
+
+    lazyLoad: true
+
+    responsive: true
+
+    objectFit: cover
+
+# ==========================================================
+# Accessibility
+# ==========================================================
+
+accessibility:
+
+  semanticHTML: true
+
+  keyboardNavigation: true
+
+  ariaLabels: true
+
+  focusVisible: true
+
+  altTextRequired: true
+
+# ==========================================================
+# SEO
+# ==========================================================
+
+seo:
+
+  enabled: true
+
+  schema:
+
+    MedicalClinic
+
+  openGraph: true
+
+  twitterCards: true
+
+  sitemap: true
+
+# ==========================================================
+# Performance
+# ==========================================================
+
+performance:
+
+  lazyImages: true
+
+  codeSplitting: true
+
+  prefetchRoutes: true
+
+  optimizeAssets: true
+
+# ==========================================================
+# Implementation Rules
+# ==========================================================
+
+rules:
+
+  - "Annotated grid mock is the source of truth."
+
+  - "Do not redesign the approved UI."
+
+  - "Do not change spacing."
+
+  - "Do not substitute assets."
+
+  - "Use Lucide React for all icons."
+
+  - "Follow mobile and desktop layouts independently."
+
+  - "Maintain equal-height cards where specified."
+
+  - "Follow the approved 8px spacing system."
+
+  - "Desktop and mobile must visually match the approved mocks."
+
+# ==========================================================
+# End of File
+# ==========================================================

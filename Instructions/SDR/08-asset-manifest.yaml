@@ -1,0 +1,1026 @@
+schema_version: "1.0"
+
+file:
+  name: "08-asset-manifest.yaml"
+  purpose: >
+    Defines the complete SDR asset inventory, exact supplied filenames,
+    production-versus-reference usage, responsive hero mapping, reusable
+    website assets, unresolved supporting assets, Lucide icons, custom SVG
+    illustrations, CSS-only decorations, accessibility requirements and
+    asset-validation rules.
+
+page:
+  id: "sdr-procedure-page"
+  procedure: "Selective Dorsal Rhizotomy"
+  abbreviation: "SDR"
+  route: "/procedures/selective-dorsal-rhizotomy"
+
+asset_policy:
+  exact_uploaded_filenames_required: true
+  rename_supplied_files: false
+  change_file_extensions: false
+  extract_assets_from_mock_screenshots: false
+  use_mock_images_as_production_backgrounds: false
+  create_duplicate_assets: false
+
+  rules:
+    - "Use the exact filenames listed in this manifest."
+    - "Do not rename any of the 10 supplied files."
+    - "The files may be placed in the existing project asset directory, but their basenames and extensions must remain unchanged."
+    - "The four clean mocks and four grid boards are implementation references only."
+    - "Only the two standalone SDR hero files are approved production assets from this supplied set."
+    - "Do not crop supporting photos or illustrations from the page mocks."
+    - "Do not recreate supplied hero artwork using CSS, Lucide icons or a different image."
+    - "Do not bake editable headings, paragraphs, tags, buttons or navigation into new raster assets."
+    - "Reuse suitable existing website assets before requesting or generating duplicates."
+    - "Where an asset is unresolved, Codex must flag it rather than silently substituting unrelated stock imagery."
+
+asset_location:
+  preferred_directory: "Use the existing project convention for public or imported raster assets."
+
+  accepted_examples:
+    - "public/assets/procedures/sdr/"
+    - "src/assets/procedures/sdr/"
+    - "Existing Firebase Storage asset path used by the project"
+
+  filename_rule:
+    preserve_basename: true
+    preserve_extension: true
+
+  import_rule:
+    public_assets: "Reference using the existing public URL convention."
+    source_assets: "Import using the existing TypeScript asset-import convention."
+    firebase_assets: "Use the project's existing typed asset URL configuration."
+
+supplied_files:
+  total: 10
+
+  clean_mocks:
+    mobile_part_1:
+      filename: "1000104948.png"
+      media_type: "image/png"
+      dimensions:
+        width: 646
+        height: 1536
+      aspect_ratio: "646 / 1536"
+      role: "Approved SDR Mobile Part 1 visual reference"
+      production_asset: false
+      ship_to_production: false
+
+      controls:
+        - "Mobile Part 1 section order"
+        - "Mobile content composition"
+        - "Mobile card treatment"
+        - "Mobile hero HTML-content placement"
+        - "Assessment and How SDR works design intent"
+
+    mobile_part_2:
+      filename: "1000104953.jpg"
+      media_type: "image/jpeg"
+      dimensions:
+        width: 614
+        height: 1536
+      aspect_ratio: "614 / 1536"
+      role: "Approved SDR Mobile Part 2 visual reference"
+      production_asset: false
+      ship_to_production: false
+
+      controls:
+        - "Mobile Part 2 section order"
+        - "Recovery and risk composition"
+        - "Medical-review card"
+        - "Team section"
+        - "Patient stories"
+        - "FAQs"
+        - "References"
+        - "Closing CTA and footer"
+
+    desktop_part_1:
+      filename: "1000104950.png"
+      media_type: "image/png"
+      dimensions:
+        width: 1229
+        height: 1536
+      aspect_ratio: "1229 / 1536"
+      role: "Approved SDR Desktop Part 1 visual reference"
+      production_asset: false
+      ship_to_production: false
+
+      controls:
+        - "Desktop Part 1 composition"
+        - "Desktop card counts"
+        - "Desktop paired-section layouts"
+        - "Desktop assessment composition"
+        - "Desktop How SDR works layout"
+
+    desktop_part_2:
+      filename: "1000104952.png"
+      media_type: "image/png"
+      dimensions:
+        width: 866
+        height: 1536
+      aspect_ratio: "866 / 1536"
+      role: "Approved SDR Desktop Part 2 visual reference"
+      production_asset: false
+      ship_to_production: false
+
+      controls:
+        - "Desktop Part 2 composition"
+        - "Desktop comparison cards"
+        - "Recovery layout"
+        - "Risks and review layout"
+        - "Patient stories"
+        - "FAQ, references and closing CTA"
+
+  grid_references:
+    mobile_part_1:
+      filename: "1000104951.png"
+      media_type: "image/png"
+      dimensions:
+        width: 720
+        height: 1536
+      role: "SDR Mobile Part 1 grid and measurement reference"
+      production_asset: false
+      ship_to_production: false
+
+      known_limitation:
+        issue: "The complete How SDR works section is not visibly included."
+        resolution:
+          - "Do not omit How SDR works."
+          - "Use 1000104948.png and the desktop references for that section."
+          - "Use 07-responsive-layout.yaml for its mobile implementation."
+
+    mobile_part_2:
+      filename: "1000104956.png"
+      media_type: "image/png"
+      dimensions:
+        width: 1224
+        height: 1536
+      role: "SDR Mobile Part 2 grid and measurement reference"
+      production_asset: false
+      ship_to_production: false
+
+    desktop_part_1:
+      filename: "1000104955.png"
+      media_type: "image/png"
+      dimensions:
+        width: 1229
+        height: 1536
+      role: "SDR Desktop Part 1 grid and measurement reference"
+      production_asset: false
+      ship_to_production: false
+
+    desktop_part_2:
+      filename: "1000104954.png"
+      media_type: "image/png"
+      dimensions:
+        width: 1357
+        height: 1536
+      role: "SDR Desktop Part 2 grid and measurement reference"
+      production_asset: false
+      ship_to_production: false
+
+  production_hero_assets:
+    mobile:
+      filename: "1000104949.png"
+      media_type: "image/png"
+      dimensions:
+        width: 1024
+        height: 1536
+      aspect_ratio: "2 / 3"
+      role: "Final production SDR mobile hero composite"
+      production_asset: true
+      ship_to_production: true
+      breakpoint_usage: "Below 768px and narrow tablet only when composition remains safe"
+
+      contains:
+        - "Anatomical spinal and lower-limb nerve illustration"
+        - "Circular magnification detail"
+        - "Connector lines"
+        - "Baked-in explanatory sentence"
+
+      does_not_contain:
+        - "Breadcrumb"
+        - "Specialized Procedure eyebrow"
+        - "SDR page heading"
+        - "Hero supporting paragraph"
+        - "Procedure tags"
+        - "Request Assessment button"
+        - "Talk to Our Team button"
+
+      positioning:
+        object_fit: "cover"
+        object_position: "center right"
+        preserve:
+          - "Complete magnifier"
+          - "Complete baked-in sentence"
+          - "Highlighted lower-spine nerves"
+          - "Safe space for React content"
+
+      accessibility:
+        visual_alt: ""
+        treatment: "Decorative composite with an equivalent HTML or visually hidden explanation"
+        equivalent_text: >
+          Only the abnormal sensory nerve signals are selectively treated while
+          preserving strength and feeling.
+
+    desktop:
+      filename: "1000104957.png"
+      media_type: "image/png"
+      dimensions:
+        width: 1536
+        height: 614
+      aspect_ratio: "approximately 2.5 / 1"
+      role: "Final production SDR desktop hero composite"
+      production_asset: true
+      ship_to_production: true
+      breakpoint_usage: "1200px and above, and wide tablet only when composition remains safe"
+
+      contains:
+        - "Wide pale medical background"
+        - "Anatomical spinal and lower-limb nerve illustration"
+        - "Circular magnification detail"
+        - "Connector lines"
+        - "Baked-in explanatory sentence"
+        - "Clear empty region for React-rendered content"
+
+      does_not_contain:
+        - "Breadcrumb"
+        - "Specialized Procedure eyebrow"
+        - "SDR page heading"
+        - "Hero supporting paragraph"
+        - "Procedure tags"
+        - "Request Assessment button"
+        - "Talk to Our Team button"
+
+      positioning:
+        object_fit: "cover"
+        object_position: "center right"
+        recommended_render_size:
+          width: "100%"
+          height: "approximately 512px to 576px"
+        preserve:
+          - "Complete anatomical figure"
+          - "Complete magnifier"
+          - "Complete baked-in sentence"
+          - "Left-side React-content safe area"
+
+      accessibility:
+        visual_alt: ""
+        treatment: "Decorative composite with an equivalent HTML or visually hidden explanation"
+        equivalent_text: >
+          Only the abnormal sensory nerve signals are selectively treated while
+          preserving strength and feeling.
+
+hero_asset_selection:
+  preferred_element: "picture"
+
+  implementation_example:
+    structure:
+      - "Use a mobile source for max-width: 767px."
+      - "Use the desktop source for min-width: 1200px."
+      - "Use the safest approved crop for the tablet range."
+      - "Render the React content separately from the image."
+
+  mobile:
+    source: "1000104949.png"
+    media_query: "(max-width: 767px)"
+
+  desktop:
+    source: "1000104957.png"
+    media_query: "(min-width: 1200px)"
+
+  tablet:
+    source_selection: "Responsive art-direction decision"
+    rule:
+      - "Prefer 1000104957.png when the full right-side artwork remains visible."
+      - "Use 1000104949.png on narrow portrait tablets when the desktop sentence or magnifier would be clipped."
+      - "Do not display both assets simultaneously."
+
+  loading:
+    loading: "eager"
+    decoding: "async"
+    fetch_priority: "high"
+
+  layout_shift:
+    reserve_space: true
+    use_intrinsic_dimensions: true
+    use_css_aspect_ratio: true
+
+  prohibited:
+    - "Do not use the clean mock as the hero background."
+    - "Do not add the mobile and desktop hero images into the same visible layer."
+    - "Do not crop away the baked-in sentence."
+    - "Do not duplicate the baked-in sentence as visible copy."
+    - "Do not replace the hero with a generic spine image."
+
+reference_file_handling:
+  clean_mocks_and_grids:
+    production_import: false
+
+    accepted_uses:
+      - "Visual implementation comparison"
+      - "Pixel and spacing reference"
+      - "Manual quality assurance"
+      - "Codex development context"
+
+    prohibited_uses:
+      - "Rendering as a page background"
+      - "Rendering as a full-page image"
+      - "Cropping individual production assets from them"
+      - "Shipping them as visible website content"
+      - "Using their text instead of semantic HTML"
+
+  repository_storage:
+    preferred: "Keep outside the production bundle in a design-reference directory when the project supports it."
+    example: "design-references/sdr/"
+    filename_preservation_required: true
+
+shared_existing_assets_to_reuse:
+  lookup_rule:
+    - "Search the existing website asset inventory before creating a new file."
+    - "Reuse an existing asset only when its subject and crop match the approved SDR mock."
+    - "Do not reuse an asset merely because it is medically themed."
+    - "Do not alter an existing shared asset in a way that changes another page."
+
+  assets:
+    site_logo:
+      asset_id: "site-logo-primary"
+      source: "Existing shared website header"
+      required: true
+      create_new: false
+      expected_usage:
+        - "Desktop header"
+        - "Mobile header"
+
+    footer_logo:
+      asset_id: "site-logo-footer"
+      source: "Existing shared website footer"
+      required: true
+      create_new: false
+
+    doctor_review_portrait:
+      asset_id: "dr-pawan-review-portrait"
+      source: "Existing approved Dr. Pawan portrait"
+      required: true
+      create_new: false
+      usage: "Medically reviewed by card"
+      recommended_crop: "Square or circular portrait"
+      recommended_dimensions: "Minimum 320px by 320px"
+      object_position: "center top"
+      alt: "Dr. Pawan Kumar Sadhvani"
+
+    rehabilitation_photo:
+      asset_id: "shared-child-rehabilitation-photo"
+      source: "Existing approved website rehabilitation imagery"
+      reuse_allowed: true
+      condition: "The subject and direction must match the relevant SDR section."
+
+    hospital_or_clinical_icons:
+      source: "Lucide or existing SVG system"
+      raster_asset_required: false
+
+supporting_raster_assets:
+  status_rule: >
+    These images are visible in the approved mocks but are not separately
+    included among the 10 supplied files. Codex must first locate an approved
+    equivalent in the existing website asset library. If none exists, mark the
+    asset as missing and request it rather than extracting it from a screenshot.
+
+  general_requirements:
+    important_text_baked_in: false
+    buttons_baked_in: false
+    labels_baked_in: false
+    logos_baked_in: false
+    realistic_medical_context: true
+    patient_consent_required_where_applicable: true
+
+  assets:
+    sdr_benefit_rehabilitation_image:
+      asset_id: "sdr-benefit-rehabilitation-image"
+      status: "reuse-existing-or-missing"
+      subject: "Child or young patient undertaking supported lower-limb rehabilitation"
+      section: "Who may benefit from SDR?"
+      desktop_usage: "Supporting media inside or beside the benefit card"
+      mobile_usage: "Full-width image below the benefit list when shown"
+      recommended_dimensions:
+        desktop: "1200px by 800px"
+        mobile: "800px by 600px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP"
+      transparent_background: false
+      subject_position: "Centre or centre-right"
+      text_baked_in: false
+      alt: "Child practising supported movement during rehabilitation"
+
+    sdr_assessment_image:
+      asset_id: "sdr-assessment-image"
+      status: "reuse-existing-or-missing"
+      subject: "Clinician assessing a child's walking, posture or lower-limb movement"
+      section: "Assessment & patient selection"
+      desktop_usage: "Right-side media panel"
+      mobile_usage: "Full-width image below the assessment steps"
+      recommended_dimensions:
+        desktop: "1200px by 900px"
+        mobile: "800px by 600px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP"
+      transparent_background: false
+      subject_position: "Centre"
+      text_baked_in: false
+      alt: "Clinician assessing a child's walking and lower-limb movement"
+
+    sdr_goals_image:
+      asset_id: "sdr-goals-image"
+      status: "reuse-existing-or-missing"
+      subject: "Child making supported walking or mobility progress with a therapist"
+      section: "Potential goals of SDR"
+      recommended_dimensions: "1000px by 750px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP"
+      transparent_background: false
+      text_baked_in: false
+      alt: "Child practising walking with support from a rehabilitation professional"
+
+    sdr_limitations_spine_image:
+      asset_id: "sdr-limitations-spine-image"
+      status: "reuse-existing-or-missing"
+      subject: "Clinical lower-spine and nerve illustration"
+      section: "Limitations & important considerations"
+      recommended_dimensions: "1000px by 750px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP or PNG"
+      transparent_background: false
+      text_baked_in: false
+      alt: "Medical illustration of the lower spine and nerve structures"
+
+    sdr_recovery_image:
+      asset_id: "sdr-recovery-image"
+      status: "reuse-existing-or-missing"
+      subject: "Child participating in structured walking rehabilitation with a physiotherapist"
+      section: "Recovery & rehabilitation journey"
+      desktop_usage: "Large right-side media block"
+      mobile_usage: "Full-width image below the recovery steps"
+      recommended_dimensions:
+        desktop: "1400px by 900px"
+        mobile: "900px by 675px"
+      aspect_ratio:
+        desktop: "approximately 16 / 10"
+        mobile: "4 / 3"
+      preferred_format: "WebP"
+      transparent_background: false
+      text_baked_in: false
+      alt: "Child undertaking walking rehabilitation with a physiotherapist"
+
+patient_story_assets:
+  publication_status: "Must be verified before release"
+
+  requirements:
+    - "Use only assets with final documented patient or guardian consent."
+    - "Do not extract patient images from the supplied mock."
+    - "Do not use generated faces as though they depict real treatment outcomes."
+    - "Do not publish identifiable patient imagery without approved consent."
+    - "Before and After labels must remain HTML overlays or captions."
+
+  story_1:
+    before:
+      asset_id: "sdr-case-1-before"
+      status: "missing-or-existing-approved"
+      recommended_dimensions: "800px by 600px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP or JPG"
+      alt: "Patient before SDR rehabilitation progress"
+
+    after:
+      asset_id: "sdr-case-1-after"
+      status: "missing-or-existing-approved"
+      recommended_dimensions: "800px by 600px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP or JPG"
+      alt: "Patient after SDR rehabilitation progress"
+
+  story_2:
+    before:
+      asset_id: "sdr-case-2-before"
+      status: "missing-or-existing-approved"
+      recommended_dimensions: "800px by 600px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP or JPG"
+      alt: "Patient before improvement in posture and comfort"
+
+    after:
+      asset_id: "sdr-case-2-after"
+      status: "missing-or-existing-approved"
+      recommended_dimensions: "800px by 600px"
+      aspect_ratio: "4 / 3"
+      preferred_format: "WebP or JPG"
+      alt: "Patient after improvement in posture and comfort"
+
+lucide_icons:
+  library: "lucide-react"
+  installation:
+    use_existing_dependency: true
+    add_dependency_only_if_missing: true
+
+  implementation:
+    import_individually: true
+    stroke_width: 2
+    use_current_color: true
+    decorative_icons_aria_hidden: true
+
+  icons:
+    - name: "Menu"
+      usage: "Mobile hamburger menu"
+
+    - name: "CalendarDays"
+      usage:
+        - "Request Assessment buttons"
+        - "Assessment-related actions"
+
+    - name: "MessagesCircle"
+      usage: "Talk to Our Team actions"
+
+    - name: "ChevronRight"
+      usage:
+        - "Breadcrumbs"
+        - "Card actions"
+
+    - name: "ChevronLeft"
+      usage: "Previous carousel controls"
+
+    - name: "ChevronDown"
+      usage:
+        - "Accordion controls"
+        - "Expanded-state controls"
+
+    - name: "ChevronUp"
+      usage: "Expanded accordion state where used"
+
+    - name: "ArrowLeft"
+      usage: "Previous carousel action"
+
+    - name: "ArrowRight"
+      usage: "Next carousel action"
+
+    - name: "Sparkles"
+      usage: "Nerve Procedure hero tag"
+
+    - name: "Footprints"
+      usage: "Lower-Limb Spasticity hero tag"
+
+    - name: "ShieldCheck"
+      usage:
+        - "Goal callout"
+        - "Preserving strength and feeling"
+        - "Medical-review heading"
+
+    - name: "Info"
+      usage:
+        - "Information strips"
+        - "Final suitability note"
+
+    - name: "CheckCircle2"
+      usage:
+        - "Benefit lists"
+        - "Goal lists"
+
+    - name: "TriangleAlert"
+      usage:
+        - "Suitability warning"
+        - "Limitations"
+        - "Risk notices"
+
+    - name: "ClipboardPlus"
+      usage:
+        - "Medical-condition warning"
+        - "Additional-treatment risk"
+
+    - name: "Accessibility"
+      usage:
+        - "Walking difficulty"
+        - "Movement review"
+        - "Rehabilitation"
+
+    - name: "HeartHandshake"
+      usage: "Positioning and daily care"
+
+    - name: "ClipboardList"
+      usage: "History and goals assessment step"
+
+    - name: "Stethoscope"
+      usage: "Clinical examination"
+
+    - name: "ScanLine"
+      usage: "Imaging and records"
+
+    - name: "Target"
+      usage:
+        - "Personalised recommendation"
+        - "Potential goals"
+
+    - name: "Hospital"
+      usage:
+        - "Hospital stay"
+        - "Clinical risk information"
+
+    - name: "Bed"
+      usage: "Pain management and early care"
+
+    - name: "Activity"
+      usage: "Intensive therapy"
+
+    - name: "CalendarCheck"
+      usage: "Follow-up and progress review"
+
+    - name: "ShieldAlert"
+      usage: "Risks and important information"
+
+    - name: "Brain"
+      usage: "Possible neurological changes"
+
+    - name: "Bandage"
+      usage: "Wound healing"
+
+    - name: "Droplets"
+      usage: "CSF leak"
+
+    - name: "Users"
+      usage: "Multidisciplinary team"
+
+    - name: "BookOpen"
+      usage: "References and further reading"
+
+    - name: "Star"
+      usage: "Recovery callout"
+
+    - name: "ExternalLink"
+      usage: "Verified external reference links"
+
+custom_svg_assets:
+  format:
+    preferred: "Inline React SVG component"
+    fallback: "Individual SVG file"
+    rasterise: false
+
+  style:
+    stroke: "Use the approved teal, navy and blue palette"
+    fill: "Minimal flat fills"
+    background: "Transparent"
+    stroke_width: "Consistent with Lucide icons"
+    visual_language: "Simple clinical line illustration"
+    text_inside_svg: false
+
+  accessibility:
+    decorative:
+      aria_hidden: true
+      focusable: false
+
+    meaningful:
+      title_element_required: true
+      accessible_name_required: true
+
+  illustrations:
+    sensory_rootlets:
+      component_name: "SensoryRootletsIllustration"
+      usage: "What is SDR educational card"
+      subject: "Simplified sensory rootlets carrying signals from the lower limbs"
+      recommended_viewbox: "0 0 64 64"
+
+    lower_spine:
+      component_name: "LowerSpineIllustration"
+      usage: "What is SDR educational card"
+      subject: "Simplified lower spinal level"
+      recommended_viewbox: "0 0 64 64"
+
+    sensory_signal:
+      component_name: "SensorySignalIllustration"
+      usage: "What is SDR educational card"
+      subject: "Overactive sensory signal and selectively treated rootlets"
+      recommended_viewbox: "0 0 64 64"
+
+    fixed_deformity:
+      component_name: "FixedDeformityIllustration"
+      usage: "Suitability warning"
+      subject: "Simplified leg or joint contracture indicator"
+      recommended_viewbox: "0 0 48 48"
+
+    realistic_expectations:
+      component_name: "RealisticExpectationsIllustration"
+      usage: "Suitability warning"
+      subject: "Goal and expectation alignment"
+      recommended_viewbox: "0 0 48 48"
+
+    leg_stiffness:
+      component_name: "LegStiffnessIllustration"
+      usage: "Problems SDR may address"
+      subject: "Lower-limb stiffness"
+      recommended_viewbox: "0 0 64 64"
+
+    toe_walking:
+      component_name: "ToeWalkingIllustration"
+      usage: "Problems SDR may address"
+      subject: "Foot raised at the heel in toe walking"
+      recommended_viewbox: "0 0 64 64"
+
+    scissoring_gait:
+      component_name: "ScissoringGaitIllustration"
+      usage: "Problems SDR may address"
+      subject: "Crossing-leg gait pattern"
+      recommended_viewbox: "0 0 64 64"
+
+    identify_sensory_rootlets:
+      component_name: "IdentifySensoryRootletsIllustration"
+      usage: "How SDR works step 1"
+      subject: "Locating sensory rootlets in the spinal canal"
+      recommended_viewbox: "0 0 160 120"
+
+    test_select_rootlets:
+      component_name: "TestSelectRootletsIllustration"
+      usage: "How SDR works step 2"
+      subject: "Testing and selecting overactive rootlets"
+      recommended_viewbox: "0 0 160 120"
+
+    treat_targeted_rootlets:
+      component_name: "TreatTargetedRootletsIllustration"
+      usage: "How SDR works step 3"
+      subject: "Selective treatment of targeted rootlets"
+      recommended_viewbox: "0 0 160 120"
+
+    begin_rehabilitation:
+      component_name: "BeginRehabilitationIllustration"
+      usage: "How SDR works step 4"
+      subject: "Supported rehabilitation and movement training"
+      recommended_viewbox: "0 0 160 120"
+
+    neuro_orthopaedic_surgeon:
+      component_name: "NeuroOrthopaedicSurgeonIllustration"
+      usage: "Multidisciplinary team"
+      recommended_viewbox: "0 0 64 64"
+
+    neuro_surgeon:
+      component_name: "NeuroSurgeonIllustration"
+      usage: "Multidisciplinary team"
+      recommended_viewbox: "0 0 64 64"
+
+    rehabilitation_team:
+      component_name: "RehabilitationTeamIllustration"
+      usage: "Multidisciplinary team"
+      recommended_viewbox: "0 0 64 64"
+
+    nursing_care_team:
+      component_name: "NursingCareTeamIllustration"
+      usage: "Multidisciplinary team"
+      recommended_viewbox: "0 0 64 64"
+
+css_only_decorations:
+  allowed:
+    section_number_badge:
+      implementation: "CSS circle or pill"
+      raster_asset_required: false
+
+    tag_pills:
+      implementation: "CSS background, radius and border"
+      raster_asset_required: false
+
+    information_panel:
+      implementation: "CSS background, border and radius"
+      raster_asset_required: false
+
+    warning_panel:
+      implementation: "CSS amber background, border and icon"
+      raster_asset_required: false
+
+    card_shadows:
+      implementation: "CSS box-shadow"
+      raster_asset_required: false
+
+    carousel_pagination:
+      implementation: "CSS dots and active pill"
+      raster_asset_required: false
+
+    carousel_fade:
+      implementation: "Optional subtle CSS edge fade only when it does not obscure content"
+      raster_asset_required: false
+
+    connecting_lines:
+      implementation: "CSS border or pseudo-element for numbered vertical flows"
+      raster_asset_required: false
+
+    focus_rings:
+      implementation: "CSS outline or box-shadow"
+      raster_asset_required: false
+
+    accordion_dividers:
+      implementation: "CSS border"
+      raster_asset_required: false
+
+  prohibited:
+    - "Do not recreate the hero magnifier with CSS."
+    - "Do not recreate medical anatomy with gradients or pseudo-elements."
+    - "Do not add unapproved decorative waves or patterns."
+    - "Do not obscure text with decorative overlays."
+
+asset_content_rules:
+  text_as_html:
+    required:
+      - "Page headings"
+      - "Body copy"
+      - "Card headings"
+      - "Card descriptions"
+      - "Button labels"
+      - "Breadcrumbs"
+      - "Before and After labels"
+      - "Selected badge"
+      - "Section numbering"
+      - "FAQ questions and answers"
+      - "References"
+      - "Medical-review information"
+
+  approved_baked_text:
+    assets:
+      - filename: "1000104949.png"
+        text: >
+          Only the abnormal sensory nerve signals are selectively treated while
+          preserving strength and feeling.
+
+      - filename: "1000104957.png"
+        text: >
+          Only the abnormal sensory nerve signals are selectively treated while
+          preserving strength and feeling.
+
+  new_baked_text_allowed: false
+
+image_optimisation:
+  supplied_hero_assets:
+    preserve_original_files: true
+    rename_originals: false
+
+    optimisation:
+      allowed:
+        - "Generate framework-managed responsive derivatives while keeping the original filename available."
+        - "Use image-CDN transformation when the existing project already supports it."
+        - "Compress without visibly degrading anatomical details or text."
+
+      prohibited:
+        - "Do not overwrite the original files with lower-quality versions."
+        - "Do not change the file extension in the manifest."
+        - "Do not blur the baked-in explanatory sentence."
+
+  supporting_assets:
+    preferred_format: "WebP"
+    jpg_allowed: true
+    png_allowed:
+      - "Transparent illustrations"
+      - "Medical diagrams requiring lossless detail"
+
+    responsive_sizes:
+      desktop:
+        recommended_widths:
+          - 640
+          - 960
+          - 1280
+          - 1600
+
+      mobile:
+        recommended_widths:
+          - 390
+          - 640
+          - 800
+
+  compression:
+    photographic_webp_quality: "recommended 78 to 85"
+    jpeg_quality: "recommended 80 to 88"
+    png: "lossless optimisation"
+
+  loading:
+    hero: "eager"
+    above_fold_logo: "eager"
+    below_fold: "lazy"
+
+    decoding:
+      hero: "async"
+      below_fold: "async"
+
+  dimensions:
+    width_height_attributes_required: true
+    css_aspect_ratio_required: true
+    avoid_layout_shift: true
+
+asset_fallbacks:
+  hero_load_failure:
+    background: "#EAF6FB"
+    preserve_html_content: true
+    broken_image_icon_visible: false
+
+  missing_supporting_photo:
+    behaviour:
+      - "Preserve the section and its HTML content."
+      - "Omit the media block cleanly or use an existing approved neutral placeholder component."
+      - "Record the asset as unresolved."
+
+    prohibited:
+      - "Do not crop the image from a page mock."
+      - "Do not insert an unrelated stock photograph."
+      - "Do not generate a fabricated patient outcome."
+
+  missing_custom_svg:
+    fallback:
+      - "Use the closest medically appropriate Lucide icon where one exists."
+      - "Maintain the same card spacing and dimensions."
+
+    rule: "Do not delay essential content solely because a decorative SVG is unavailable."
+
+security_and_privacy:
+  patient_media:
+    consent_required: true
+    public_storage_review_required: true
+    remove_sensitive_metadata: true
+    expose_personal_filenames: false
+
+  image_metadata:
+    strip_exif_where_appropriate: true
+    preserve_required_colour_profile: true
+
+  external_assets:
+    hotlinking_prohibited: true
+    local_or_approved_storage_required: true
+
+homepage_asset_integration:
+  source: "Existing homepage SDR procedure card"
+  destination: "/procedures/selective-dorsal-rhizotomy"
+
+  requirements:
+    - "Do not create another SDR image or card when an existing one is present."
+    - "Reuse the existing homepage SDR card asset."
+    - "Make the existing card clickable."
+    - "Do not use the procedure-page hero as the homepage card image unless explicitly approved."
+    - "Do not change the homepage card crop merely to support routing."
+
+asset_resolution_process:
+  step_1:
+    action: "Locate every exact supplied filename in the Codex workspace."
+    failure: "Stop and report the missing filename."
+
+  step_2:
+    action: "Map 1000104949.png and 1000104957.png to the responsive hero."
+
+  step_3:
+    action: "Treat the eight mock and grid files as non-production references."
+
+  step_4:
+    action: "Search the existing website asset inventory for every listed supporting raster asset."
+
+  step_5:
+    action: "Reuse only approved assets that match the required subject and crop."
+
+  step_6:
+    action: "Create the listed custom SVGs using the existing icon style."
+
+  step_7:
+    action: "Report unresolved raster assets before replacing them."
+
+validation:
+  supplied_files:
+    - "All 10 exact filenames exist."
+    - "No supplied filename has been changed."
+    - "No extension has been changed."
+    - "The mobile hero is 1000104949.png."
+    - "The desktop hero is 1000104957.png."
+
+  reference_usage:
+    - "The eight page mocks and grid boards are not rendered in production."
+    - "No individual asset has been cropped from a reference screenshot."
+    - "The clean mocks remain available for QA comparison."
+
+  hero:
+    - "The mobile hero is used below the mobile breakpoint."
+    - "The desktop hero is used at desktop sizes."
+    - "The magnifier remains visible."
+    - "The complete baked-in sentence remains visible."
+    - "The React title, description, tags and buttons remain separate."
+    - "Equivalent accessible text is present."
+    - "Both hero images are not downloaded unnecessarily when responsive source selection can prevent it."
+
+  supporting_assets:
+    - "Every supporting raster image is either matched to an approved existing file or marked unresolved."
+    - "No unrelated stock image has been silently substituted."
+    - "No patient image is published without consent."
+    - "Before and After labels remain HTML."
+
+  icons:
+    - "Lucide icons are imported individually."
+    - "Decorative icons are hidden from assistive technology."
+    - "Icon-only controls have accessible labels."
+    - "Custom SVGs contain no baked-in text."
+
+  performance:
+    - "Hero dimensions are reserved before load."
+    - "Below-fold images use lazy loading."
+    - "Responsive image sizes are supplied where supported."
+    - "No large reference screenshot is shipped in the user-facing bundle."
+
+  regression:
+    - "Existing shared logos and portraits are not duplicated."
+    - "Existing homepage assets remain unchanged."
+    - "Existing SMF assets are not overwritten."
+    - "The homepage SDR link still navigates to /procedures/selective-dorsal-rhizotomy."

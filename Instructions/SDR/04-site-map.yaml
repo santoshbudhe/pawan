@@ -1,0 +1,622 @@
+schema_version: "1.0"
+
+file:
+  name: "04-site-map.yaml"
+  purpose: "Defines the SDR route, homepage entry point, breadcrumb paths, section anchors, internal links and navigation behaviour."
+
+site:
+  name: "Dr. Pawan Kumar Sadhvani"
+  primary_domain: null
+  application_type: "React single-page application"
+  routing:
+    mode: "client-side"
+    router: "Reuse the router already installed in the project"
+    full_page_reload: false
+    preserve_existing_routes: true
+
+route_registry:
+  home:
+    id: "home"
+    path: "/"
+    component: "ExistingHomePage"
+    status: "existing"
+    modify_component_only_as_required: true
+
+  procedures_index:
+    id: "procedures-index"
+    preferred_path: "/procedures"
+    status: "reuse if already available"
+
+    fallback:
+      path: "/#procedures"
+      use_when: "No separate procedures index route exists"
+      create_new_index_page: false
+
+  sdr:
+    id: "sdr-procedure"
+    path: "/procedures/selective-dorsal-rhizotomy"
+    component: "SdrProcedurePage"
+    page_type: "procedure-detail"
+    status: "new"
+    indexable: true
+    canonical: true
+    render_inside_modal: false
+    lazy_load: "recommended when consistent with the existing routing architecture"
+
+  smf:
+    id: "smf-procedure"
+    preferred_path: "/procedures/selective-motor-fasciculotomy"
+    status: "existing or separately implemented"
+    rule: "Do not modify the SMF route except where required for shared components or cross-linking."
+
+route_aliases:
+  sdr:
+    allowed: false
+    canonical_destination: "/procedures/selective-dorsal-rhizotomy"
+
+  rule:
+    - "Use one canonical SDR URL."
+    - "Do not create separate Part 1 and Part 2 URLs."
+    - "Do not create /sdr-part-1 or /sdr-part-2 routes."
+    - "Do not use query parameters to represent the two visual-reference parts."
+
+homepage_integration:
+  required: true
+  source_page: "/"
+  destination: "/procedures/selective-dorsal-rhizotomy"
+
+  target:
+    type: "existing SDR procedure card or procedure data entry"
+    procedure_name: "Selective Dorsal Rhizotomy"
+    abbreviation: "SDR"
+    create_duplicate_card: false
+
+  clickable_regions:
+    entire_card:
+      required: true
+      preferred: true
+
+    title:
+      required: true
+
+    image:
+      required: true
+      rule: "The image may be part of the enclosing card link."
+
+    action:
+      required: true
+      accepted_labels:
+        - "Learn more"
+        - "Explore SDR"
+        - "View procedure"
+        - "Read about SDR"
+
+  implementation:
+    preferred_element: "React Router Link"
+    fallback_element: "Semantic anchor using the project's existing navigation helper"
+    destination_path: "/procedures/selective-dorsal-rhizotomy"
+    replace_history_entry: false
+    open_in_new_tab: false
+    full_page_reload: false
+    open_in_modal: false
+
+  interaction:
+    pointer:
+      clickable: true
+      cursor: "pointer"
+
+    keyboard:
+      accessible: true
+      activation_keys:
+        - "Enter"
+        - "Space when implemented as an accessible card control"
+
+    focus:
+      visible: true
+      style: "Use the shared website focus-ring token"
+
+    mobile:
+      minimum_touch_target: "44px by 44px"
+      entire_card_link_preferred: true
+
+  accessible_name:
+    preferred: "Learn about Selective Dorsal Rhizotomy"
+    abbreviation_only_prohibited: true
+
+  validation:
+    - "Selecting SDR from the desktop homepage opens the SDR page."
+    - "Selecting SDR from the mobile homepage opens the SDR page."
+    - "Browser history records the navigation."
+    - "The browser Back button returns to the homepage correctly."
+    - "No second SDR card is created."
+    - "The route does not open inside a modal."
+    - "The page does not perform a full browser reload."
+
+sdr_page:
+  route: "/procedures/selective-dorsal-rhizotomy"
+  component: "SdrProcedurePage"
+
+  shell:
+    header:
+      component: "SiteHeader"
+      shared: true
+      render_count: 1
+
+    main:
+      component: "main"
+      id: "main-content"
+
+    footer:
+      component: "SiteFooter"
+      shared: true
+      render_count: 1
+
+  reference_split:
+    part_1:
+      purpose: "Approved design reference only"
+      separate_route: false
+
+    part_2:
+      purpose: "Approved design reference only"
+      separate_route: false
+
+    production:
+      join_parts: true
+      visible_part_1_end_marker: false
+      visible_part_2_start_marker: false
+      repeated_header: false
+      repeated_footer: false
+
+breadcrumbs:
+  page: "sdr-procedure"
+
+  aria_label: "Breadcrumb"
+
+  items:
+    - position: 1
+      label: "Home"
+      path: "/"
+      clickable: true
+
+    - position: 2
+      label: "Procedures"
+      preferred_path: "/procedures"
+      fallback_path: "/#procedures"
+      clickable: true
+
+    - position: 3
+      label: "SDR"
+      path: null
+      clickable: false
+      aria_current: "page"
+
+  schema:
+    breadcrumb_list: true
+    use_existing_structured_data_component: true
+
+page_anchors:
+  hero:
+    id: "sdr-hero"
+    label: "Selective Dorsal Rhizotomy"
+
+  what_is_sdr:
+    id: "what-is-sdr"
+    label: "What is SDR?"
+
+  who_may_benefit:
+    id: "who-may-benefit"
+    label: "Who may benefit?"
+
+  suitability_warning:
+    id: "when-sdr-may-not-be-appropriate"
+    label: "When SDR may not be appropriate"
+
+  problems:
+    id: "problems-sdr-may-address"
+    label: "Problems SDR may address"
+
+  assessment:
+    id: "assessment-and-patient-selection"
+    label: "Assessment and patient selection"
+
+  how_sdr_works:
+    id: "how-sdr-works"
+    label: "How SDR works"
+
+  goals:
+    id: "potential-goals-of-sdr"
+    label: "Potential goals of SDR"
+
+  limitations:
+    id: "limitations-and-important-considerations"
+    label: "Limitations and important considerations"
+
+  comparison:
+    id: "sdr-treatment-comparison"
+    label: "SDR compared with other treatment options"
+
+  recovery:
+    id: "recovery-and-rehabilitation"
+    label: "Recovery and rehabilitation journey"
+
+  risks:
+    id: "risks-and-important-information"
+    label: "Risks and important information"
+
+  medical_review:
+    id: "medical-review"
+    label: "Medically reviewed by"
+
+  team:
+    id: "multidisciplinary-team"
+    label: "Our multidisciplinary team"
+
+  patient_stories:
+    id: "patient-journeys"
+    label: "Real patient journeys after SDR"
+
+  faq:
+    id: "frequently-asked-questions"
+    label: "Frequently asked questions"
+
+  references:
+    id: "references-and-further-reading"
+    label: "References and further reading"
+
+  closing_cta:
+    id: "closing-assessment-cta"
+    label: "Request an SDR assessment"
+
+anchor_behaviour:
+  enabled: true
+  smooth_scroll: true
+  sticky_header_offset:
+    desktop: "96px"
+    tablet: "88px"
+    mobile: "80px"
+
+  css_recommendation:
+    property: "scroll-margin-top"
+    apply_to: "All section anchor targets"
+
+  reduced_motion:
+    rule: "Disable smooth scrolling when prefers-reduced-motion is enabled."
+
+  url_hash:
+    preserve_on_direct_visit: true
+    examples:
+      - "/procedures/selective-dorsal-rhizotomy#how-sdr-works"
+      - "/procedures/selective-dorsal-rhizotomy#recovery-and-rehabilitation"
+      - "/procedures/selective-dorsal-rhizotomy#frequently-asked-questions"
+
+internal_navigation:
+  hero_request_assessment:
+    source: "SDR hero"
+    label: "Request Assessment"
+    destination_type: "existing assessment flow"
+    route: null
+    rule: "Use the website's existing Request Assessment behaviour."
+
+  hero_talk_to_team:
+    source: "SDR hero"
+    label: "Talk to Our Team"
+    destination_type: "existing contact or WhatsApp flow"
+    route: null
+    rule: "Do not create a duplicate contact implementation."
+
+  closing_request_assessment:
+    source: "SDR closing CTA"
+    label: "Request Assessment"
+    destination_type: "existing assessment flow"
+    route: null
+
+  closing_talk_to_team:
+    source: "SDR closing CTA"
+    label: "Talk to Our Team"
+    destination_type: "existing contact or WhatsApp flow"
+    route: null
+
+  problems_view_all:
+    source: "#problems-sdr-may-address"
+    label: "View all"
+    destination_type: "inline expansion"
+    route_change: false
+    modal: false
+
+  patient_stories_view_all:
+    source: "#patient-journeys"
+    label: "View all stories"
+    destination_type: "inline carousel expansion"
+    route_change: false
+    modal: false
+
+  faq_view_all:
+    source: "#frequently-asked-questions"
+    label: "View all FAQs"
+    destination_type: "inline accordion expansion"
+    route_change: false
+    modal: false
+
+  references_view_all:
+    source: "#references-and-further-reading"
+    label: "View references"
+    destination_type: "inline references expansion or approved references panel"
+    route_change: false
+
+procedure_cross_links:
+  sdr:
+    current_page: true
+    route: "/procedures/selective-dorsal-rhizotomy"
+    behaviour: "Do not navigate when the currently selected SDR comparison card is activated."
+    aria_current: "page"
+
+  smf:
+    title: "SMF"
+    route: "/procedures/selective-motor-fasciculotomy"
+    behaviour: "Navigate to the existing SMF procedure page."
+    condition: "Enable only when the SMF route exists."
+
+  tendon_and_muscle:
+    title: "Tendon & Muscle Procedures"
+    route: null
+    behaviour:
+      when_route_exists: "Navigate to the approved procedure route."
+      when_route_missing: "Render as non-navigation content or disable the action."
+    prohibited: "Do not invent an unapproved route."
+
+  deformity_correction:
+    title: "Deformity Correction Surgery"
+    route: null
+    behaviour:
+      when_route_exists: "Navigate to the approved procedure route."
+      when_route_missing: "Render as non-navigation content or disable the action."
+    prohibited: "Do not invent an unapproved route."
+
+navigation_menu:
+  source: "Existing SiteHeader navigation"
+  create_new_navigation_system: false
+
+  desktop:
+    visible: true
+    rule: "Reuse the existing desktop menu labels and order."
+
+  mobile:
+    type: "Existing hamburger or mobile drawer"
+    visible: true
+    rule: "Reuse the existing mobile navigation component."
+
+  current_page_state:
+    preferred_parent: "Procedures"
+    highlight_parent_when_supported: true
+    aria_current_on_sdr_link: "page"
+
+page_entry_behaviour:
+  route_change:
+    scroll_to_top: true
+    focus_main_heading: "recommended"
+    announce_page_change: "Use existing router accessibility behaviour"
+
+  direct_url_access:
+    supported: true
+    requirement: "Refreshing the SDR URL must load the SDR page rather than return a server 404."
+
+  hosting_rewrite:
+    firebase_hosting:
+      required_when_using_client_side_routing: true
+      destination: "/index.html"
+      rule: "Use the project's existing SPA rewrite configuration."
+
+  loading:
+    page_component:
+      lazy: "recommended"
+      fallback: "Use existing route-loading UI"
+
+    hero_asset:
+      preload: true
+      fetch_priority: "high"
+
+    below_fold_assets:
+      lazy_load: true
+
+back_navigation:
+  browser_back:
+    required: true
+
+  breadcrumb_home:
+    destination: "/"
+
+  breadcrumb_procedures:
+    preferred_destination: "/procedures"
+    fallback_destination: "/#procedures"
+
+  preserve_homepage_section:
+    recommended: true
+    behaviour: "When returning to the homepage, restore scroll position using the existing router convention when available."
+
+not_found_behaviour:
+  unknown_route:
+    component: "ExistingNotFoundPage"
+    create_new_not_found_page: false
+
+  invalid_sdr_alias:
+    redirect: false
+    rule: "Do not create speculative aliases without approval."
+
+canonical_and_seo:
+  sdr:
+    canonical_path: "/procedures/selective-dorsal-rhizotomy"
+    trailing_slash_policy: "Follow the existing project convention"
+    lowercase_path: true
+    query_parameters_canonicalised: true
+
+  sitemap:
+    include_sdr_route: true
+    priority: "recommended 0.8"
+    change_frequency: "recommended monthly"
+    rule: "Use the project's existing sitemap generation approach."
+
+  robots:
+    index: true
+    follow: true
+
+  structured_data:
+    types:
+      - "MedicalWebPage"
+      - "BreadcrumbList"
+    use_shared_schema_helpers: true
+
+analytics:
+  use_existing_analytics_layer: true
+  add_new_provider: false
+
+  recommended_events:
+    - name: "homepage_sdr_open"
+      trigger: "User activates the SDR entry on the homepage"
+      parameters:
+        destination: "/procedures/selective-dorsal-rhizotomy"
+
+    - name: "sdr_request_assessment"
+      trigger: "User activates Request Assessment from the SDR page"
+      parameters:
+        source_section: "hero or closing-cta"
+
+    - name: "sdr_talk_to_team"
+      trigger: "User activates Talk to Our Team"
+      parameters:
+        source_section: "hero or closing-cta"
+
+    - name: "sdr_view_all_problems"
+      trigger: "User expands all problem cards inline"
+
+    - name: "sdr_view_all_stories"
+      trigger: "User expands patient stories inline"
+
+    - name: "sdr_faq_expand"
+      trigger: "User expands an SDR FAQ item"
+      parameters:
+        question_id: "Use the stable FAQ ID"
+
+    - name: "sdr_risk_expand"
+      trigger: "User expands an SDR risk item"
+      parameters:
+        risk_id: "Use the stable risk ID"
+
+  privacy:
+    include_personal_medical_data: false
+    include_form_field_values: false
+    include_patient_names: false
+
+accessibility:
+  route_navigation:
+    - "Update the document title after navigation."
+    - "Move focus to the main page heading or main landmark after route changes when supported."
+    - "Announce route changes to screen-reader users using the existing application pattern."
+    - "Do not rely only on colour to indicate the active route."
+
+  links:
+    - "Use descriptive accessible names."
+    - "Show visible focus styles."
+    - "Do not place nested interactive controls inside a linked card."
+    - "Avoid empty links."
+    - "Do not use JavaScript-only clickable div elements."
+
+  anchors:
+    - "Anchor destinations must have unique IDs."
+    - "Sticky headers must not cover anchored headings."
+    - "Section links must remain usable with keyboard navigation."
+
+responsive:
+  homepage_sdr_entry:
+    desktop:
+      clickable_area: "Complete card"
+      hover_state: true
+      focus_state: true
+
+    tablet:
+      clickable_area: "Complete card"
+      focus_state: true
+
+    mobile:
+      clickable_area: "Complete card"
+      minimum_target: "44px by 44px"
+      hover_dependency: false
+
+  breadcrumbs:
+    desktop:
+      show_full_path: true
+
+    tablet:
+      show_full_path: true
+
+    mobile:
+      wrapping: true
+      horizontal_scroll: false
+      minimum_font_size: "13px"
+
+  route_content:
+    desktop:
+      container_max_width: "1280px"
+      outer_margin_at_1440: "80px"
+
+    mobile:
+      side_padding: "16px"
+      no_horizontal_page_overflow: true
+
+reference_assets:
+  exact_names_required: true
+  rename_allowed: false
+
+  files:
+    - "1000104948.png"
+    - "1000104953.jpg"
+    - "1000104950.png"
+    - "1000104952.png"
+    - "1000104951.png"
+    - "1000104956.png"
+    - "1000104955.png"
+    - "1000104954.png"
+    - "1000104949.png"
+    - "1000104957.png"
+
+  production_route_assets:
+    mobile_hero: "1000104949.png"
+    desktop_hero: "1000104957.png"
+
+  rule:
+    - "Mock and grid files are implementation references, not production page backgrounds."
+    - "Hero files are production assets."
+    - "Do not rename any supplied file."
+
+implementation_checks:
+  routing:
+    - "The SDR route is registered once."
+    - "The canonical path is exactly /procedures/selective-dorsal-rhizotomy."
+    - "The route works on direct browser refresh."
+    - "Part 1 and Part 2 are not separate routes."
+    - "The page renders only one header and one footer."
+
+  homepage:
+    - "The existing SDR homepage entry is clickable."
+    - "The entire SDR card is the primary click target."
+    - "No duplicate SDR card is added."
+    - "Desktop and mobile homepage entries lead to the same route."
+    - "The homepage entry is keyboard accessible."
+    - "The navigation does not open a modal."
+
+  internal_links:
+    - "The SMF comparison link uses the existing SMF route."
+    - "Unapproved procedure routes are not invented."
+    - "View all actions expand inline."
+    - "Breadcrumb links are functional."
+
+  accessibility:
+    - "All route links use semantic link elements."
+    - "Visible focus states are present."
+    - "Section IDs are unique."
+    - "Anchor headings are not hidden behind the sticky header."
+
+  regression:
+    - "Existing homepage routing remains functional."
+    - "Existing header and footer links remain functional."
+    - "Existing SMF page routing is not broken."
+    - "Browser Back and Forward navigation work correctly."

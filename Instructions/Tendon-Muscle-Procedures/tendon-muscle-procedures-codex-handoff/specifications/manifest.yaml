@@ -1,0 +1,158 @@
+package:
+  name: tendon-muscle-procedures-codex-handoff
+  version: 1.0.0
+  generated_for: Codex implementation handoff
+  page: Tendon & Muscle Procedures
+  approved_file_count: 10
+required_read_order:
+- README.md
+- 15-codex-master-instructions.md
+- specifications/manifest.yaml
+- specifications/01-project.yaml
+- specifications/02-page-shell.yaml
+- specifications/03-design-tokens.yaml
+- specifications/04-responsive-layout.yaml
+- specifications/05-part-1.yaml
+- specifications/06-part-2.yaml
+- specifications/07-components.yaml
+- specifications/08-content.yaml
+- specifications/09-interactions.yaml
+- specifications/10-assets.yaml
+- specifications/11-data-storage.yaml
+- specifications/12-accessibility-seo.yaml
+- 13-consistency-audit.md
+- 14-build-order.md
+- 16-acceptance-checklist.md
+assets:
+- filename: 1000105001.png
+  role: mobile_part_2_mock
+  folder: references/mocks-and-grids
+  usage: mobile
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: true
+  width: 628
+  height: 1536
+  format: jpeg
+  sha256: bc790aa0b758b04720782e0d427575ecb4465a48ce10851bc3e6bfbbeb56fff2
+- filename: 1000105002.png
+  role: desktop_hero_artwork
+  folder: assets/production
+  usage: desktop
+  classification: production
+  alt_text_required: true
+  alt_text: Anatomical lower leg and foot showing tight calf muscles and tendons with a magnified muscle-tendon inset.
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: false
+  width: 1536
+  height: 864
+  format: jpeg
+  sha256: 7de502babc71a01951675493f5a238f47906caf7d06320be95cdce9dcec1e587
+- filename: 1000105003.png
+  role: desktop_part_1_grid
+  folder: references/mocks-and-grids
+  usage: desktop
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: false
+  width: 1229
+  height: 1536
+  format: jpeg
+  sha256: 37f86b061eab6e6f8ecd0ecb7a661c78ec9539294a2bab3f99d125d17cf816c7
+- filename: 1000105004.png
+  role: desktop_part_2_grid
+  folder: references/mocks-and-grids
+  usage: desktop
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: true
+  width: 1229
+  height: 1536
+  format: jpeg
+  sha256: 7d68ed917831623b686f94e634dbbf4a8fb57fef767bc16f74bf2507316ef403
+- filename: 1000105005.png
+  role: mobile_part_2_grid
+  folder: references/mocks-and-grids
+  usage: mobile
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: true
+  width: 1024
+  height: 1536
+  format: jpeg
+  sha256: 8d8a4ad465d97e6441ad32866ffb869d053438f10d84bf62e63f56ae8422825b
+- filename: 1000105006.png
+  role: desktop_part_1_mock
+  folder: references/mocks-and-grids
+  usage: desktop
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: false
+  width: 1229
+  height: 1536
+  format: jpeg
+  sha256: feca11ed589d591447fd3962c4d82fdcc7cc2a94fa00d4b08fdb6ab27cf34f17
+- filename: 1000105007.png
+  role: mobile_hero_artwork
+  folder: assets/production
+  usage: mobile
+  classification: production
+  alt_text_required: true
+  alt_text: Anatomical lower leg and foot showing tight calf muscles and tendons with a magnified muscle-tendon inset.
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: false
+  width: 1024
+  height: 1536
+  format: jpeg
+  sha256: 336e611e3dcb486a20e0821058dcfb9b816056849904946cb76de7a625030d2c
+- filename: 1000105009.png
+  role: desktop_part_2_mock
+  folder: references/mocks-and-grids
+  usage: desktop
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: true
+  width: 853
+  height: 1536
+  format: jpeg
+  sha256: 4954b64270dfcc151587a92cc1587ef29dd249e200b36bc623f2e89f67799b46
+- filename: 1000105008.png
+  role: mobile_part_1_mock
+  folder: references/mocks-and-grids
+  usage: mobile
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: false
+  width: 512
+  height: 1536
+  format: jpeg
+  sha256: 4c5086fff44afcbf5f6a54cbf15a20ab7b326343f6e608364653861b2b8c535d
+- filename: 1000105000.png
+  role: mobile_part_1_grid
+  folder: references/mocks-and-grids
+  usage: mobile
+  classification: reference-only
+  alt_text_required: false
+  contains_baked_wording: true
+  medical_review_required: true
+  patient_consent_required: false
+  width: 987
+  height: 1536
+  format: jpeg
+  sha256: ee00895370e4bbcdd460a2927a162e83510b0fe9cabfef2c00814332d9eb3dbc

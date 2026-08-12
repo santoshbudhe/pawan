@@ -1,0 +1,812 @@
+schema_version: "1.0"
+
+file:
+  name: "06-interactions-state.yaml"
+  purpose: >
+    Defines all interactive behaviour, component state, navigation, inline
+    expansion, carousels, accordions, CTA actions, keyboard behaviour and
+    responsive interaction rules for the SDR procedure page.
+
+page:
+  id: "sdr-procedure-page"
+  route: "/procedures/selective-dorsal-rhizotomy"
+  component: "SdrProcedurePage"
+
+  interaction_principles:
+    - "Preserve the interactions shown in the approved SDR mocks."
+    - "Reuse interaction components and conventions already established for SMF."
+    - "Do not navigate away when a View all action is intended to expand content inline."
+    - "Do not open the complete SDR procedure page inside a modal."
+    - "Use semantic links for navigation and semantic buttons for actions."
+    - "All interactive elements must work with keyboard, mouse and touch."
+    - "Do not create automatic or continuously rotating carousels."
+    - "Respect prefers-reduced-motion."
+    - "Maintain a minimum mobile touch target of 44px by 44px."
+
+reference_files:
+  mobile_part_1_mock: "1000104948.png"
+  mobile_part_2_mock: "1000104953.jpg"
+  desktop_part_1_mock: "1000104950.png"
+  desktop_part_2_mock: "1000104952.png"
+
+  mobile_part_1_grid: "1000104951.png"
+  mobile_part_2_grid: "1000104956.png"
+  desktop_part_1_grid: "1000104955.png"
+  desktop_part_2_grid: "1000104954.png"
+
+  mobile_hero: "1000104949.png"
+  desktop_hero: "1000104957.png"
+
+homepage_sdr_navigation:
+  required: true
+
+  source:
+    page: "Homepage"
+    target: "Existing SDR procedure card or existing SDR procedure data item"
+    duplicate_card_allowed: false
+
+  destination:
+    route: "/procedures/selective-dorsal-rhizotomy"
+    navigation_type: "client-side React navigation"
+    full_page_reload: false
+    open_in_modal: false
+    open_in_new_tab: false
+
+  clickable_area:
+    preferred: "Complete SDR card"
+    includes:
+      - "SDR image"
+      - "SDR title"
+      - "SDR description area"
+      - "Existing Learn more or procedure action"
+
+  semantic_implementation:
+    preferred_component: "React Router Link"
+    fallback: "Existing project link component"
+    accessible_name: "Learn about Selective Dorsal Rhizotomy"
+
+  pointer_behaviour:
+    cursor: "pointer"
+    hover_state: true
+    active_state: true
+
+  keyboard_behaviour:
+    focusable: true
+    activate_with:
+      - "Enter"
+    visible_focus_state: true
+
+  mobile:
+    minimum_touch_target: "44px by 44px"
+    entire_card_link: true
+
+  prohibited:
+    - "Do not add a second SDR card to the homepage."
+    - "Do not use a non-semantic clickable div."
+    - "Do not nest buttons or links inside a complete-card link."
+    - "Do not open the SDR page as a modal."
+    - "Do not use a full-page browser refresh."
+
+route_state:
+  entry:
+    scroll_to_top: true
+    focus_target: "main page heading"
+    update_document_title: true
+
+  direct_access:
+    supported: true
+    route_refresh_must_work: true
+
+  browser_history:
+    push_entry: true
+    back_button_supported: true
+    forward_button_supported: true
+
+  anchor_navigation:
+    enabled: true
+    preserve_hash: true
+    scroll_margin_top:
+      desktop: "96px"
+      tablet: "88px"
+      mobile: "80px"
+
+  reduced_motion:
+    smooth_scroll: false
+
+shared_header:
+  component: "SiteHeader"
+  render_count: 1
+
+  sticky_behaviour:
+    use_existing_site_behaviour: true
+    position: "sticky"
+    top: "0"
+    elevated_after_scroll: true
+
+  desktop:
+    navigation_visible: true
+    hamburger_visible: false
+
+  mobile:
+    navigation_visible: false
+    hamburger_visible: true
+
+  request_assessment:
+    action: "Use the existing website assessment flow."
+    create_new_flow: false
+
+mobile_navigation:
+  source: "Existing website mobile navigation component"
+
+  trigger:
+    semantic_element: "button"
+    accessible_name_closed: "Open navigation menu"
+    accessible_name_open: "Close navigation menu"
+    minimum_target: "44px by 44px"
+    aria_expanded: true
+    aria_controls: true
+
+  drawer:
+    focus_trap: true
+    close_on_escape: true
+    close_on_route_change: true
+    close_on_backdrop_click: true
+    restore_focus_to_trigger: true
+
+  scroll:
+    lock_body_while_open: true
+
+hero_actions:
+  request_assessment:
+    id: "hero-request-assessment"
+    label: "Request Assessment"
+    action: "Use the existing website assessment flow."
+    create_new_modal: false
+
+  talk_to_team:
+    id: "hero-talk-to-team"
+    label: "Talk to Our Team"
+    action: "Use the existing website contact or WhatsApp flow."
+    create_duplicate_contact_flow: false
+
+  desktop:
+    action_layout: "horizontal"
+    button_gap: "16px"
+
+  mobile:
+    action_layout: "stacked"
+    buttons_full_width: true
+    button_gap: "12px"
+    minimum_button_height: "48px"
+
+view_all_interactions:
+  common:
+    route_change: false
+    full_page_reload: false
+    open_in_modal: false
+    maintain_section_position: true
+    button_semantics: true
+
+    accessibility:
+      aria_expanded: true
+      aria_controls: true
+      visible_focus_state: true
+
+  problems:
+    trigger_id: "sdr-problems-view-all"
+    section_id: "problems-sdr-may-address"
+    controlled_region_id: "sdr-problems-carousel"
+    collapsed_label: "View all"
+    expanded_label: "Show fewer"
+
+    collapsed_state:
+      desktop: "Show approved initial card count."
+      mobile: "Show approved swipeable card set."
+
+    expanded_state:
+      behaviour: "Reveal the complete problem-card collection inline."
+      desktop: "Use an expanded equal-height grid or full carousel."
+      mobile: "Use a horizontally swipeable carousel."
+      move_focus: false
+
+  patient_stories:
+    trigger_id: "sdr-stories-view-all"
+    section_id: "patient-journeys"
+    controlled_region_id: "sdr-patient-stories-carousel"
+    collapsed_label: "View all stories"
+    expanded_label: "Show fewer stories"
+
+    expanded_state:
+      behaviour: "Reveal all approved stories inline as a swipeable carousel."
+      route_change: false
+      open_stories_page: false
+
+  frequently_asked_questions:
+    trigger_id: "sdr-faq-view-all"
+    section_id: "frequently-asked-questions"
+    controlled_region_id: "sdr-faq-list"
+    collapsed_label: "View all FAQs"
+    expanded_label: "Show fewer FAQs"
+
+    expanded_state:
+      behaviour: "Reveal all approved FAQ questions inline."
+      automatically_open_answers: false
+
+  references:
+    trigger_id: "sdr-references-view-all"
+    section_id: "references-and-further-reading"
+    controlled_region_id: "sdr-reference-list"
+    collapsed_label: "View references"
+    expanded_label: "Hide references"
+
+    expanded_state:
+      behaviour: "Reveal the complete medically approved reference list inline."
+      external_links_open_new_tab: true
+      external_link_indicator_required: true
+
+carousel_defaults:
+  automatic_rotation: false
+  loop: false
+  touch_swipe: true
+  mouse_drag: true
+  keyboard_navigation: true
+  scroll_snap: true
+  preserve_native_scrolling: true
+  hide_native_scrollbar_visually: true
+  do_not_disable_native_scroll: true
+
+  controls:
+    previous:
+      semantic_element: "button"
+      accessible_name: "Previous items"
+      minimum_target: "44px by 44px"
+
+    next:
+      semantic_element: "button"
+      accessible_name: "Next items"
+      minimum_target: "44px by 44px"
+
+    disabled_state:
+      use_disabled_attribute: true
+      opacity: 0.45
+      remove_from_tab_order: false
+
+  pagination:
+    show_when_multiple_pages: true
+    active_indicator: true
+    clickable_dots: true
+    accessible_labels:
+      pattern: "Go to slide {number}"
+
+  keyboard:
+    ArrowLeft: "Move to the previous item or card group."
+    ArrowRight: "Move to the next item or card group."
+    Home: "Move to the first item."
+    End: "Move to the last item."
+
+  focus:
+    do_not_move_focus_on_scroll: true
+    visible_focus_state: true
+
+  reduced_motion:
+    scroll_behaviour: "auto"
+    transitions: "minimal"
+
+carousels:
+  problems:
+    id: "sdr-problems-carousel"
+    section: "problems-sdr-may-address"
+
+    desktop:
+      initial_visible_cards: 5
+      use_grid_when_all_cards_fit: true
+      controls_visible_only_when_needed: true
+
+    tablet:
+      initial_visible_cards: 2
+      partial_next_card_allowed: true
+
+    mobile:
+      layout: "horizontal swipe carousel"
+      card_width: "recommended 112px to 136px"
+      partial_next_card_peek: true
+      side_scroll_padding: "16px"
+      gap: "16px"
+
+  treatment_comparison:
+    id: "sdr-treatment-comparison-carousel"
+    section: "sdr-treatment-comparison"
+
+    selected_card:
+      id: "sdr"
+      label: "Selected"
+      aria_current: "page"
+      navigation_enabled: false
+
+    cards:
+      sdr:
+        route: "/procedures/selective-dorsal-rhizotomy"
+        clickable: false
+
+      smf:
+        route: "/procedures/selective-motor-fasciculotomy"
+        clickable: true
+        condition: "Enable only when the route exists."
+
+      tendon_and_muscle:
+        route: null
+        clickable: false
+        rule: "Do not invent a route."
+
+      deformity_correction:
+        route: null
+        clickable: false
+        rule: "Do not invent a route."
+
+    desktop:
+      visible_cards: 4
+      equal_height: true
+
+    tablet:
+      visible_cards: 2
+      partial_next_card_peek: true
+
+    mobile:
+      card_width: "min(82vw, 310px)"
+      partial_next_card_peek: true
+      gap: "16px"
+
+  patient_stories:
+    id: "sdr-patient-stories-carousel"
+    section: "patient-journeys"
+
+    desktop:
+      visible_cards: 2
+
+    tablet:
+      visible_cards: 1
+      partial_next_card_peek: true
+
+    mobile:
+      visible_cards: 1
+      card_width: "min(88vw, 342px)"
+      partial_next_card_peek: true
+      gap: "16px"
+
+    story_action:
+      label: "View full story"
+      behaviour: "Use the website's approved story-detail behaviour."
+      rule: "Do not expose unapproved patient information."
+
+accordion_defaults:
+  trigger_element: "button"
+  full_row_clickable: true
+  minimum_row_height: "52px"
+  allow_multiple_open: false
+  animation_duration: "220ms"
+  initial_open_item: null
+
+  accessibility:
+    aria_expanded: true
+    aria_controls: true
+    unique_trigger_id: true
+    unique_panel_id: true
+    focusable_trigger: true
+    panel_role: "region"
+    panel_labelled_by_trigger: true
+
+  keyboard:
+    Enter: "Toggle the focused accordion item."
+    Space: "Toggle the focused accordion item."
+    ArrowDown: "Move focus to the next accordion trigger."
+    ArrowUp: "Move focus to the previous accordion trigger."
+    Home: "Move focus to the first accordion trigger."
+    End: "Move focus to the final accordion trigger."
+
+  reduced_motion:
+    animation_duration: "0ms"
+
+accordions:
+  risks:
+    id: "sdr-risks-accordion"
+    section: "risks-and-important-information"
+
+    state:
+      open_item_id:
+        type: "string | null"
+        default: null
+
+    behaviour:
+      - "Opening one risk item closes the previously open risk item."
+      - "Selecting an open risk item closes it."
+      - "Do not navigate when a risk item opens."
+      - "Do not alter or add medical risk wording."
+
+    items:
+      - "neurological-changes"
+      - "infection-bleeding"
+      - "delayed-healing"
+      - "bladder-bowel"
+      - "csf-leak"
+      - "limited-improvement"
+
+  frequently_asked_questions:
+    id: "sdr-faq-accordion"
+    section: "frequently-asked-questions"
+
+    state:
+      open_item_id:
+        type: "string | null"
+        default: null
+
+      all_questions_visible:
+        type: "boolean"
+        default: false
+
+    behaviour:
+      - "Opening one FAQ closes the previously open FAQ."
+      - "Selecting an open FAQ closes it."
+      - "View all FAQs reveals questions but does not automatically open answers."
+      - "Do not invent answers when approved content is missing."
+
+inline_expansion_state:
+  storage:
+    type: "component-local state"
+    persist_across_page_reload: false
+    persist_in_url: false
+
+  initial_values:
+    problems_expanded: false
+    stories_expanded: false
+    faqs_expanded: false
+    references_expanded: false
+
+  state_shape:
+    problemsExpanded: "boolean"
+    storiesExpanded: "boolean"
+    faqsExpanded: "boolean"
+    referencesExpanded: "boolean"
+    openRiskId: "string | null"
+    openFaqId: "string | null"
+    activeProblemsIndex: "number"
+    activeComparisonIndex: "number"
+    activeStoryIndex: "number"
+
+  prohibited:
+    - "Do not use global state when local state is sufficient."
+    - "Do not store medical or patient information in browser storage."
+    - "Do not place expansion state in Firestore."
+
+assessment_flow:
+  source: "Existing website Request Assessment implementation"
+  create_new_flow: false
+
+  triggers:
+    - "Shared header Request Assessment"
+    - "Hero Request Assessment"
+    - "Closing CTA Request Assessment"
+
+  consistent_destination_required: true
+
+  behaviour:
+    preferred: "Use the established assessment modal, page or guided intake."
+    preserve_existing_max_modal_depth: true
+    route_or_modal: "Follow the existing website implementation."
+
+  accessibility:
+    focus_management: true
+    close_on_escape_when_modal: true
+    return_focus_to_trigger_when_modal_closes: true
+    form_errors_announced: true
+
+contact_flow:
+  source: "Existing website Talk to Our Team or WhatsApp implementation"
+  create_new_flow: false
+
+  triggers:
+    - "Hero Talk to Our Team"
+    - "Closing CTA Talk to Our Team"
+
+  behaviour:
+    consistent_destination_required: true
+    preserve_existing_contact_method: true
+
+  analytics:
+    event: "sdr_talk_to_team"
+    include_personal_data: false
+
+patient_story_interaction:
+  content_requirements:
+    final_consent_required: true
+    approved_assets_required: true
+    approved_copy_required: true
+
+  before_after_labels:
+    visible: true
+    labels:
+      before: "Before"
+      after: "After"
+
+  full_story:
+    action: "Use the approved existing story-detail behaviour."
+    route_or_modal: "Follow the website convention."
+    maximum_modal_depth: 2
+
+  unavailable_story:
+    behaviour: "Hide or disable the action."
+    prohibited: "Do not create placeholder patient details that appear factual."
+
+loading_states:
+  route:
+    component: "Existing page loading state"
+    minimum_display_time: "none"
+    avoid_artificial_delay: true
+
+  hero:
+    loading: "eager"
+    fetch_priority: "high"
+    placeholder: "Use a stable background colour matching the hero."
+
+  below_fold_images:
+    loading: "lazy"
+    decoding: "async"
+    placeholder: "Maintain the final image aspect ratio."
+
+  carousels:
+    skeleton_count:
+      desktop: 4
+      mobile: 1
+
+  prohibit:
+    - "Do not display indefinite loading states."
+    - "Do not shift the layout when content loads."
+
+empty_states:
+  patient_stories:
+    behaviour: "Hide the stories section until approved stories exist."
+    alternative: "Show doctor-approved neutral copy without fabricated outcomes."
+
+  faq_answers:
+    behaviour: "Do not make an FAQ trigger interactive until its approved answer exists."
+    alternative: "Hide unanswered FAQ items."
+
+  external_references:
+    behaviour: "Hide unverified links."
+    preserve_section: "Only when approved reference titles are available."
+
+  related_procedure_routes:
+    behaviour: "Disable Learn more when no approved route exists."
+
+error_states:
+  route_load_failure:
+    component: "Existing project error boundary"
+    retry_action: true
+
+  asset_failure:
+    hero:
+      fallback: "Use the approved pale blue hero background and preserve all HTML content."
+      do_not_show_broken_image_icon: true
+
+    below_fold:
+      fallback: "Hide the failed image while preserving the text content and card structure."
+
+  contact_failure:
+    behaviour: "Use the existing contact-flow error handling."
+
+  assessment_failure:
+    behaviour: "Use the existing assessment-flow error handling."
+
+focus_management:
+  page_navigation:
+    target: "sdr-page-title"
+    use_tabindex_minus_one: true
+    prevent_visible_focus_when_pointer_navigation: "Follow existing project convention"
+
+  inline_expansion:
+    move_focus_to_new_content: false
+    keep_focus_on_trigger: true
+    announce_state_change: true
+
+  accordion:
+    keep_focus_on_trigger: true
+
+  modal:
+    trap_focus: true
+    restore_focus: true
+
+responsive_interactions:
+  desktop:
+    breakpoint: "1200px and above"
+
+    hover:
+      allowed: true
+      supplementary_only: true
+
+    carousel:
+      arrows: true
+      touch_swipe: true
+      mouse_drag: true
+
+    card_actions:
+      visible: true
+
+  tablet:
+    breakpoint: "768px to 1199px"
+
+    hover:
+      not_required: true
+
+    carousel:
+      touch_swipe: true
+      arrows: true
+      partial_next_card_peek: true
+
+  mobile:
+    breakpoint: "below 768px"
+
+    hover:
+      dependency_prohibited: true
+
+    carousel:
+      touch_swipe: true
+      partial_next_card_peek: true
+      arrows: "Show only where displayed in the approved mock."
+      pagination: true
+
+    buttons:
+      minimum_height: "48px"
+      primary_full_width: true
+      secondary_full_width: true
+
+    accordions:
+      full_row_clickable: true
+      minimum_row_height: "52px"
+
+    major_sections:
+      side_by_side_prohibited: true
+
+motion:
+  defaults:
+    duration: "220ms"
+    easing: "cubic-bezier(0.2, 0, 0, 1)"
+
+  allowed:
+    - "Button state transitions"
+    - "Accordion height and opacity transitions"
+    - "Short carousel scroll transitions"
+    - "Subtle card hover elevation on pointer devices"
+
+  prohibited:
+    - "Automatic carousel movement"
+    - "Parallax that affects readability"
+    - "Large entrance animations"
+    - "Flashing or pulsing medical illustrations"
+    - "Animations required to understand content"
+
+  reduced_motion:
+    query: "prefers-reduced-motion: reduce"
+    accordion_duration: "0ms"
+    carousel_scroll_behaviour: "auto"
+    hover_transform: "none"
+    smooth_anchor_scroll: false
+
+analytics:
+  use_existing_analytics_provider: true
+  add_new_provider: false
+
+  events:
+    homepage_sdr_open:
+      trigger: "Existing homepage SDR entry activated"
+      parameters:
+        destination: "/procedures/selective-dorsal-rhizotomy"
+
+    sdr_request_assessment:
+      trigger: "Request Assessment activated"
+      parameters:
+        source:
+          - "header"
+          - "hero"
+          - "closing-cta"
+
+    sdr_talk_to_team:
+      trigger: "Talk to Our Team activated"
+      parameters:
+        source:
+          - "hero"
+          - "closing-cta"
+
+    sdr_problem_view_all:
+      trigger: "Problem cards expanded inline"
+
+    sdr_story_view_all:
+      trigger: "Patient stories expanded inline"
+
+    sdr_faq_view_all:
+      trigger: "All FAQs revealed inline"
+
+    sdr_faq_toggle:
+      trigger: "FAQ answer opened or closed"
+      parameters:
+        faq_id: "stable FAQ ID"
+        state: "opened or closed"
+
+    sdr_risk_toggle:
+      trigger: "Risk item opened or closed"
+      parameters:
+        risk_id: "stable risk ID"
+        state: "opened or closed"
+
+    sdr_comparison_open:
+      trigger: "Related procedure card activated"
+      parameters:
+        procedure_id: "Stable procedure ID"
+
+  privacy:
+    prohibit:
+      - "Patient names"
+      - "Assessment form answers"
+      - "Phone numbers"
+      - "Email addresses"
+      - "Medical history"
+      - "Free-text form values"
+
+accessibility_validation:
+  keyboard:
+    - "Every interactive element is reachable with Tab."
+    - "All links activate with Enter."
+    - "All buttons activate with Enter and Space."
+    - "Accordion navigation follows the specified keyboard behaviour."
+    - "Carousel controls do not trap focus."
+    - "The mobile navigation closes with Escape."
+
+  screen_reader:
+    - "Route changes are announced."
+    - "Accordion expanded and collapsed states are announced."
+    - "View all expanded and collapsed states are announced."
+    - "Current SDR comparison card uses aria-current=page."
+    - "Carousel controls have descriptive labels."
+    - "Information baked into the hero has an accessible text equivalent."
+
+  touch:
+    - "All controls meet the 44px minimum target."
+    - "Carousels support horizontal touch movement."
+    - "Vertical page scrolling remains available when touching a carousel."
+    - "No action depends on hover."
+
+implementation_validation:
+  homepage:
+    - "The existing SDR card is clickable on mobile and desktop."
+    - "The SDR card navigates to /procedures/selective-dorsal-rhizotomy."
+    - "The complete route opens as a page, not a modal."
+    - "No duplicate SDR entry is created."
+
+  page:
+    - "Only one SiteHeader renders."
+    - "Only one SiteFooter renders."
+    - "Part 1 and Part 2 form one continuous page."
+    - "Mock-only continuation labels are absent."
+    - "The How SDR works section is present."
+
+  interactions:
+    - "Problems View all expands inline."
+    - "Patient Stories View all expands inline."
+    - "View all FAQs reveals questions inline."
+    - "Risk and FAQ accordions use semantic buttons."
+    - "Only one risk item opens at a time."
+    - "Only one FAQ answer opens at a time."
+    - "Carousels do not rotate automatically."
+    - "Related procedures without approved routes do not navigate."
+
+  responsive:
+    - "No interaction requires hover on mobile."
+    - "Mobile buttons are at least 48px high."
+    - "Mobile accordion rows are at least 52px high."
+    - "Horizontal carousels do not cause full-page overflow."
+    - "Major sections remain vertically stacked on mobile."
+
+  regression:
+    - "Existing assessment behaviour remains functional."
+    - "Existing contact or WhatsApp behaviour remains functional."
+    - "Existing homepage links remain functional."
+    - "Existing SMF route and interactions remain functional."
+    - "Browser Back and Forward navigation remain functional."

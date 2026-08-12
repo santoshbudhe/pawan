@@ -1,0 +1,737 @@
+schema_version: "1.0"
+
+file:
+  name: "11-firestore-schema.yaml"
+  purpose: >
+    Defines Firebase and Firestore usage for the SDR procedure page, including
+    which content remains in frontend TypeScript, how the existing homepage SDR
+    entry receives its route, how assessment and contact submissions reuse
+    existing collections, and what Codex must not create.
+
+page:
+  id: "sdr-procedure-page"
+  procedure_name: "Selective Dorsal Rhizotomy"
+  abbreviation: "SDR"
+  route: "/procedures/selective-dorsal-rhizotomy"
+
+firebase:
+  use_existing_project: true
+  create_new_firebase_project: false
+  use_existing_configuration: true
+
+  services:
+    hosting:
+      required: true
+
+    storage:
+      required: "Use the existing website asset strategy."
+
+    firestore:
+      required_for_sdr_editorial_content: false
+      use_existing_collections_only: true
+
+    authentication:
+      required_for_public_sdr_page: false
+
+implementation_decision:
+  SDR_page_copy:
+    storage: "Typed frontend TypeScript content"
+    preferred_file: "src/pages/procedures/sdr/sdrContent.ts"
+    firestore_collection: null
+
+  SDR_layout_configuration:
+    storage: "React components, CSS and YAML implementation references"
+    firestore_collection: null
+
+  SDR_route:
+    storage: "Existing React router configuration"
+    firestore_collection: null
+
+  homepage_SDR_link:
+    preferred_storage: "Existing homepage procedure data or React component"
+    destination: "/procedures/selective-dorsal-rhizotomy"
+    firestore_required: false
+
+  hero_assets:
+    storage: "Existing public asset directory, source asset directory or Firebase Storage"
+    filenames:
+      mobile: "1000104949.png"
+      desktop: "1000104957.png"
+
+  reference_images:
+    production_storage_required: false
+
+core_rules:
+  - "Do not create Firestore collections merely to store static SDR page copy."
+  - "Do not duplicate the complete SDR YAML content inside Firestore."
+  - "Do not store mock screenshots as page content."
+  - "Do not create separate Part 1 and Part 2 Firestore documents."
+  - "Do not create a second homepage SDR procedure record."
+  - "Update the existing SDR homepage item with the route when such an item exists."
+  - "Reuse existing assessment, inquiry and contact collections."
+  - "Do not create new patient or medical-record collections for this public page."
+  - "Do not store sensitive medical information unless the existing assessment flow already does so securely."
+  - "Do not rename any supplied asset file."
+
+reference_files:
+  exact_filenames_required: true
+  rename_allowed: false
+
+  clean_mocks:
+    - "1000104948.png"
+    - "1000104953.jpg"
+    - "1000104950.png"
+    - "1000104952.png"
+
+  grid_references:
+    - "1000104951.png"
+    - "1000104956.png"
+    - "1000104955.png"
+    - "1000104954.png"
+
+  production_assets:
+    - "1000104949.png"
+    - "1000104957.png"
+
+content_architecture:
+  frontend_content:
+    required: true
+
+    recommended_files:
+      - path: "src/pages/procedures/sdr/sdrContent.ts"
+        purpose: "Approved SDR text, labels, cards, FAQ placeholders and references"
+
+      - path: "src/pages/procedures/sdr/sdrTypes.ts"
+        purpose: "Strict TypeScript content interfaces"
+
+      - path: "src/pages/procedures/sdr/SdrProcedurePage.tsx"
+        purpose: "Page composition"
+
+    benefits:
+      - "Content is version-controlled."
+      - "Medical copy changes can be reviewed in code."
+      - "No unnecessary Firestore read is required to render the page."
+      - "The page remains indexable and stable."
+      - "The public page does not depend on a Firestore connection."
+
+  firestore_content:
+    use_for_static_SDR_copy: false
+
+    permitted_only_when_existing_project_requires:
+      - "An existing CMS collection already controls all procedure pages."
+      - "The homepage procedures list already comes from Firestore."
+      - "Existing assessment submissions already use Firestore."
+      - "Existing patient-story publication data already comes from a secured collection."
+
+    condition:
+      rule: >
+        If the current project already stores equivalent shared content in
+        Firestore, extend the existing schema minimally. Do not create a
+        parallel SDR-only content system.
+
+homepage_integration:
+  required: true
+  destination_route: "/procedures/selective-dorsal-rhizotomy"
+
+  preferred_implementation:
+    source: "Existing frontend homepage procedure configuration"
+    operation:
+      - "Find the existing item whose procedure ID or abbreviation is SDR."
+      - "Add route: /procedures/selective-dorsal-rhizotomy."
+      - "Make the complete existing card clickable."
+      - "Use client-side navigation."
+      - "Apply the link on desktop and mobile."
+      - "Do not create a duplicate entry."
+
+  conditional_firestore_implementation:
+    use_only_when: "The homepage procedure list is already loaded from Firestore"
+
+    collection:
+      name: "Use the existing homepage procedures collection name"
+      create_new_collection: false
+
+    document_lookup:
+      preferred_stable_id: "sdr"
+      fallback_match_fields:
+        - field: "abbreviation"
+          value: "SDR"
+
+        - field: "title"
+          value: "Selective Dorsal Rhizotomy"
+
+    allowed_update:
+      route: "/procedures/selective-dorsal-rhizotomy"
+      slug: "selective-dorsal-rhizotomy"
+      isClickable: true
+      openInModal: false
+      isPublished: true
+
+    prohibited_update:
+      - "Do not replace the existing card image."
+      - "Do not alter the existing homepage card wording unless required by approved content."
+      - "Do not create another document when the existing SDR document is found."
+      - "Do not change the item order."
+      - "Do not set an external URL."
+      - "Do not make the route open in a new browser tab."
+
+  validation:
+    - "Exactly one homepage SDR entry exists."
+    - "The entry points to /procedures/selective-dorsal-rhizotomy."
+    - "The complete card is clickable."
+    - "The link works in mobile and desktop layouts."
+    - "The page opens as a route, not a modal."
+    - "The homepage does not perform a full reload."
+
+existing_collection_reuse:
+  assessment_submissions:
+    required: "Only if the existing Request Assessment flow stores submissions in Firestore."
+
+    collection_name:
+      value: null
+      rule: "Discover and reuse the existing collection name."
+
+    create_new_collection: false
+
+    SDR_context_fields:
+      add_only_if_compatible:
+        procedureId: "sdr"
+        procedureName: "Selective Dorsal Rhizotomy"
+        sourcePage: "/procedures/selective-dorsal-rhizotomy"
+        sourceSection: "header | hero | closing-cta"
+
+    prohibited_fields:
+      - "Do not duplicate existing contact fields under new names."
+      - "Do not collect additional medical information solely because the user came from the SDR page."
+      - "Do not store analytics data within the assessment document."
+      - "Do not store unsupported diagnosis conclusions."
+      - "Do not store the complete page content."
+
+  contact_or_inquiry_submissions:
+    required: "Only if the existing Talk to Our Team flow uses Firestore."
+
+    collection_name:
+      value: null
+      rule: "Discover and reuse the existing collection name."
+
+    create_new_collection: false
+
+    SDR_context_fields:
+      add_only_if_compatible:
+        procedureId: "sdr"
+        sourcePage: "/procedures/selective-dorsal-rhizotomy"
+        sourceSection: "hero | closing-cta"
+
+  patient_stories:
+    required_for_initial_build: false
+    public_placeholder_documents_allowed: false
+
+    rule:
+      - "Reuse an existing patient-story collection only when one already exists."
+      - "Do not create patient-story documents from the mock content."
+      - "Do not publish a story until consent and medical approval exist."
+      - "Do not store unnecessary identifying medical information."
+
+    recommended_existing_fields_if_already_supported:
+      id: "string"
+      procedureId: "sdr"
+      title: "string"
+      summary: "string"
+      outcome: "string"
+      beforeAssetUrl: "string"
+      afterAssetUrl: "string"
+      consentStatus: "approved"
+      medicallyVerified: true
+      published: true
+      displayOrder: "number"
+
+  references:
+    required_for_initial_build: false
+
+    rule:
+      - "Keep the initial approved reference list in frontend content."
+      - "Use an existing CMS collection only when the website already manages references centrally."
+      - "Do not create unverified external URLs."
+
+prohibited_new_collections:
+  collections:
+    - "sdr"
+    - "sdrPage"
+    - "sdrContent"
+    - "sdrPart1"
+    - "sdrPart2"
+    - "sdrCards"
+    - "sdrFaq"
+    - "sdrRisks"
+    - "sdrReferences"
+    - "sdrAssets"
+    - "medicalRecords"
+    - "patientMedicalRecords"
+    - "sdrPatients"
+    - "sdrAssessments"
+    - "sdrInquiries"
+
+  exception: >
+    A collection may be used only when an equivalent existing project
+    collection already exists and the SDR context is added to that existing
+    shared collection.
+
+data_minimisation:
+  principles:
+    - "Collect only information required by the existing assessment or contact flow."
+    - "Do not collect medical details through the procedure page itself."
+    - "Do not write carousel, accordion or View all state to Firestore."
+    - "Do not write browsing history to Firestore."
+    - "Do not store route-navigation events as individual Firestore documents."
+    - "Do not store IP addresses through custom Firestore fields."
+    - "Do not store the user's page scroll position in Firestore."
+
+  local_UI_state:
+    storage: "React local state"
+    includes:
+      - "Open risk accordion item"
+      - "Open FAQ item"
+      - "Carousel active index"
+      - "Problems View all state"
+      - "Patient stories View all state"
+      - "References expanded state"
+
+    firestore: false
+    local_storage: false
+    session_storage: false
+
+privacy:
+  public_page:
+    authentication_required: false
+    personalised_data_required: false
+
+  assessment_data:
+    classification: "Potentially sensitive personal and health-related information"
+    use_existing_security_controls: true
+
+    requirements:
+      - "Use the existing privacy notice and consent behaviour."
+      - "Use the existing server timestamp convention."
+      - "Restrict staff access through existing role-based rules."
+      - "Do not expose assessment documents to public reads."
+      - "Do not include assessment answers in analytics."
+      - "Do not log complete assessment payloads in the browser console."
+
+  patient_stories:
+    requirements:
+      - "Final consent must exist."
+      - "Only approved fields may be public."
+      - "Raw consent documents must not be publicly readable."
+      - "Patient contact information must not be stored in a public story document."
+      - "Do not use generated imagery as a real patient result."
+
+timestamps:
+  use_server_timestamp: true
+  applies_when_existing_collection_supports:
+    - "createdAt"
+    - "updatedAt"
+    - "submittedAt"
+    - "publishedAt"
+    - "reviewedAt"
+
+  prohibited:
+    - "Do not trust browser-generated timestamps for submission audit fields."
+    - "Do not change existing timestamp field names."
+
+document_identifiers:
+  preferred:
+    homepage_procedure: "Existing stable document ID"
+    assessment_submission: "Firestore auto ID or existing convention"
+    contact_submission: "Firestore auto ID or existing convention"
+    patient_story: "Existing stable slug or ID"
+
+  prohibited:
+    - "Do not use a patient's name as a document ID."
+    - "Do not use an email address as a document ID."
+    - "Do not use a phone number as a document ID."
+
+security_rules:
+  principle: "Reuse and extend existing Firestore rules minimally."
+
+  public_content:
+    SDR_frontend_content:
+      firestore_read_required: false
+
+    homepage_procedure_when_firestore_backed:
+      public_read: "Follow the existing published homepage-content rule."
+      public_write: false
+
+    patient_stories_when_firestore_backed:
+      public_read_condition:
+        - "published == true"
+        - "consentStatus == 'approved'"
+        - "medicallyVerified == true"
+
+      public_write: false
+
+  submissions:
+    public_create:
+      allowed: "Only through the existing validated assessment or inquiry workflow."
+
+    public_read: false
+    public_update: false
+    public_delete: false
+
+    staff_access:
+      rule: "Use the existing authenticated role or custom-claim model."
+
+  admin_content:
+    public_write: false
+    authenticated_staff_only: true
+
+  prohibited:
+    - "Do not make assessment or inquiry collections publicly readable."
+    - "Do not use allow read, write: if true."
+    - "Do not weaken existing security rules to make the SDR page work."
+    - "Do not expose consent documents publicly."
+    - "Do not permit clients to set privileged approval fields."
+
+client_writes:
+  homepage_procedure:
+    permitted: false
+    rule: "The homepage route is configured at build time or by an authorised content-management process."
+
+  medical_review:
+    permitted: false
+
+  patient_story_publish_status:
+    permitted: false
+
+  consent_status:
+    permitted: false
+
+  assessment_submission:
+    permitted: "Use the existing validated flow."
+
+  contact_submission:
+    permitted: "Use the existing validated flow."
+
+field_validation:
+  procedure_context:
+    procedureId:
+      type: "string"
+      allowed_values:
+        - "sdr"
+
+    procedureName:
+      type: "string"
+      allowed_value: "Selective Dorsal Rhizotomy"
+
+    sourcePage:
+      type: "string"
+      allowed_value: "/procedures/selective-dorsal-rhizotomy"
+
+    sourceSection:
+      type: "string"
+      allowed_values:
+        - "header"
+        - "hero"
+        - "closing-cta"
+
+  route:
+    type: "string"
+    allowed_value: "/procedures/selective-dorsal-rhizotomy"
+
+  openInModal:
+    type: "boolean"
+    allowed_value: false
+
+asset_storage:
+  strategy:
+    use_existing_pipeline: true
+
+  supplied_hero_assets:
+    - filename: "1000104949.png"
+      role: "Mobile production hero"
+      rename: false
+
+    - filename: "1000104957.png"
+      role: "Desktop production hero"
+      rename: false
+
+  reference_images:
+    upload_to_public_production_storage: false
+
+    files:
+      - "1000104948.png"
+      - "1000104953.jpg"
+      - "1000104950.png"
+      - "1000104952.png"
+      - "1000104951.png"
+      - "1000104956.png"
+      - "1000104955.png"
+      - "1000104954.png"
+
+  Firebase_Storage:
+    conditional: true
+
+    use_when:
+      - "The project already stores public website assets in Firebase Storage."
+      - "The project has a stable URL-generation convention."
+
+    folder:
+      preferred: "Use the existing procedure-asset folder convention."
+      do_not_force_new_structure: true
+
+    metadata:
+      mobile_hero:
+        contentType: "image/png"
+        cacheControl: "public,max-age=31536000,immutable"
+
+      desktop_hero:
+        contentType: "image/png"
+        cacheControl: "public,max-age=31536000,immutable"
+
+    rule:
+      - "Preserve exact filenames."
+      - "Do not make reference mocks visible as production page content."
+      - "Do not overwrite an existing unrelated file."
+      - "Use the existing Firebase Storage bucket configuration."
+
+hosting:
+  provider: "Firebase Hosting"
+  use_existing_configuration: true
+
+  SPA_rewrite:
+    required: true
+    source: "**"
+    destination: "/index.html"
+
+  route:
+    path: "/procedures/selective-dorsal-rhizotomy"
+    direct_refresh_supported: true
+
+  caching:
+    index_html:
+      recommended: "no-cache"
+
+    hashed_application_assets:
+      recommended: "public,max-age=31536000,immutable"
+
+    supplied_unhashed_hero_assets:
+      rule: >
+        Use the project's existing cache-busting or deployment convention.
+        Do not change filenames solely to add hashes.
+
+analytics:
+  storage: "Use the existing analytics provider"
+  firestore_event_collection: false
+
+  events:
+    - "homepage_sdr_open"
+    - "sdr_request_assessment"
+    - "sdr_talk_to_team"
+    - "sdr_problem_view_all"
+    - "sdr_story_view_all"
+    - "sdr_faq_toggle"
+    - "sdr_risk_toggle"
+
+  prohibited:
+    - "Do not write analytics events as Firestore documents."
+    - "Do not include assessment answers."
+    - "Do not include contact details."
+    - "Do not include patient names."
+    - "Do not include medical histories."
+
+offline_behaviour:
+  public_page:
+    Firestore_offline_persistence_required: false
+
+  assessment_flow:
+    rule: "Follow the existing project behaviour."
+    do_not_queue_sensitive_submissions_without_existing_policy: true
+
+  content:
+    rule: "The SDR page must render from the application bundle without requiring a Firestore content fetch."
+
+migration:
+  required: false
+
+  conditional_homepage_update:
+    required_when: "Homepage procedure content is Firestore-backed."
+
+    operation:
+      type: "Update existing document"
+
+      match:
+        preferred_document_id: "sdr"
+        alternatives:
+          abbreviation: "SDR"
+          title: "Selective Dorsal Rhizotomy"
+
+      update_fields:
+        route: "/procedures/selective-dorsal-rhizotomy"
+        slug: "selective-dorsal-rhizotomy"
+        isClickable: true
+        openInModal: false
+
+      create_when_not_found:
+        default: false
+        instruction: >
+          Report that no existing SDR homepage record was found. Do not create
+          a duplicate until the existing homepage content architecture has
+          been reviewed.
+
+      idempotent: true
+
+  prohibited:
+    - "Do not delete existing homepage procedure documents."
+    - "Do not reorder procedures."
+    - "Do not overwrite homepage copy."
+    - "Do not replace the homepage SDR image."
+    - "Do not modify SMF records."
+
+seed_data:
+  required_for_SDR_page: false
+
+  reason:
+    - "SDR page copy is maintained in frontend TypeScript."
+    - "The two production hero assets are supplied directly."
+    - "Assessment and contact flows already exist."
+    - "Creating duplicate Firestore content would add unnecessary complexity."
+
+  conditional:
+    use_only_when: "The existing website already seeds homepage procedures through Firestore."
+
+    permitted_seed_update:
+      target: "Existing SDR homepage item"
+      fields:
+        route: "/procedures/selective-dorsal-rhizotomy"
+        slug: "selective-dorsal-rhizotomy"
+        isClickable: true
+        openInModal: false
+
+    duplicate_insert: false
+
+development_emulator:
+  use_existing_emulator_configuration: true
+  new_emulator_configuration_required: false
+
+  test_data:
+    sensitive_data_allowed: false
+    use_fake_contact_data: true
+    use_real_patient_data: false
+
+error_handling:
+  Firestore_unavailable:
+    public_SDR_page:
+      behaviour: "Page must still render."
+      reason: "Static SDR content does not depend on Firestore."
+
+    homepage_when_firestore_backed:
+      behaviour: "Use the existing homepage loading and error fallback."
+
+    assessment:
+      behaviour: "Use the existing submission error handling."
+
+    contact:
+      behaviour: "Use the existing submission error handling."
+
+  missing_homepage_SDR_record:
+    behaviour:
+      - "Report the missing existing record."
+      - "Inspect the frontend homepage content source."
+      - "Do not create a duplicate automatically."
+
+testing:
+  static_page:
+    - "The SDR page renders with Firestore disabled."
+    - "The complete page content appears without a Firestore read."
+    - "The mobile and desktop hero assets load through the existing asset pipeline."
+
+  homepage:
+    - "The existing SDR entry has the correct route."
+    - "There is exactly one SDR entry."
+    - "The card opens the page through client-side routing."
+    - "The card does not open a modal."
+    - "The route works on desktop and mobile."
+
+  assessment:
+    - "Existing assessment submissions continue to work."
+    - "SDR context is added only when supported."
+    - "No field names are duplicated."
+    - "Sensitive data is not publicly readable."
+
+  contact:
+    - "Existing Talk to Our Team submissions continue to work."
+    - "No duplicate inquiry collection is created."
+
+  security:
+    - "Public users cannot read assessment submissions."
+    - "Public users cannot read contact submissions."
+    - "Public users cannot set approval fields."
+    - "No allow read, write: if true rule exists."
+    - "Patient consent documents are not public."
+
+  hosting:
+    - "Direct refresh of the SDR route works."
+    - "Firebase Hosting serves index.html for the route."
+    - "Browser Back and Forward navigation work."
+
+implementation_steps:
+  - step: 1
+    action: "Inspect the existing React router and register the SDR route."
+
+  - step: 2
+    action: "Inspect the existing homepage procedure data source."
+
+  - step: 3
+    action: >
+      Update the existing SDR homepage item with
+      /procedures/selective-dorsal-rhizotomy.
+
+  - step: 4
+    action: "Confirm that no duplicate SDR homepage item exists."
+
+  - step: 5
+    action: "Implement the page content in typed frontend files."
+
+  - step: 6
+    action: "Place or upload the two exact hero files using the existing asset pipeline."
+
+  - step: 7
+    action: "Connect Request Assessment to the existing assessment flow."
+
+  - step: 8
+    action: "Connect Talk to Our Team to the existing contact flow."
+
+  - step: 9
+    action: "Do not create new Firestore collections unless an equivalent shared collection already exists."
+
+  - step: 10
+    action: "Run route, security, responsive and regression tests."
+
+acceptance_criteria:
+  Firestore:
+    - "Static SDR page content does not require Firestore."
+    - "No unnecessary SDR-only collections are created."
+    - "Existing assessment and contact collections are reused."
+    - "No security rules are weakened."
+    - "No medical or patient data becomes publicly readable."
+
+  homepage:
+    - "The existing SDR procedure entry is clickable."
+    - "The destination is /procedures/selective-dorsal-rhizotomy."
+    - "The route works on mobile and desktop."
+    - "The page does not open in a modal."
+    - "No duplicate SDR entry is created."
+
+  content:
+    - "SDR copy is stored in typed frontend content."
+    - "Part 1 and Part 2 are not separate Firestore documents."
+    - "Accordion and carousel state remains local."
+    - "Medical copy is not silently generated from Firestore placeholders."
+
+  assets:
+    - "1000104949.png remains the mobile hero."
+    - "1000104957.png remains the desktop hero."
+    - "All supplied filenames remain unchanged."
+    - "Reference mocks are not exposed as production webpage content."
+
+  hosting:
+    - "The canonical SDR URL works after direct refresh."
+    - "The existing Firebase Hosting SPA rewrite remains intact."

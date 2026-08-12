@@ -1,0 +1,1026 @@
+schema_version: "1.0"
+
+file:
+  name: "03-design-tokens.yaml"
+  purpose: "Defines the visual design tokens, typography, spacing, grids, component sizing and responsive rules for the SDR procedure page."
+
+design_system:
+  name: "Dr. Pawan Kumar Sadhvani Website Design System"
+  page_scope: "Selective Dorsal Rhizotomy procedure page"
+  reference_page: "Approved SMF procedure page"
+  reuse_existing_shared_tokens: true
+
+  precedence:
+    - "Existing production website design tokens"
+    - "Approved SDR clean mocks"
+    - "Approved SDR grid references"
+    - "Recommended values in this file"
+
+  rule:
+    - "Do not create a conflicting SDR-only visual theme."
+    - "Reuse the same shared header, footer, buttons, typography and card language used by the SMF page."
+    - "Values labelled recommended may be adjusted only when an existing shared token already provides the equivalent value."
+    - "Do not change mobile tokens to accommodate desktop implementation."
+    - "Do not change desktop tokens to accommodate mobile implementation."
+
+reference_files:
+  clean_mocks:
+    mobile_part_1: "1000104948.png"
+    mobile_part_2: "1000104953.jpg"
+    desktop_part_1: "1000104950.png"
+    desktop_part_2: "1000104952.png"
+
+  grid_mocks:
+    mobile_part_1: "1000104951.png"
+    mobile_part_2: "1000104956.png"
+    desktop_part_1: "1000104955.png"
+    desktop_part_2: "1000104954.png"
+
+  hero_assets:
+    mobile: "1000104949.png"
+    desktop: "1000104957.png"
+
+units:
+  base_spacing_unit: "8px"
+  css_root_font_size: "16px"
+  preferred_css_units:
+    typography: "rem"
+    fixed_controls: "px or rem"
+    layout_widths: "px, %, min(), max(), clamp()"
+    vertical_spacing: "rem"
+  rule: "Prefer CSS variables for all repeated visual values."
+
+css_variable_namespace:
+  prefix: "--sdr-"
+  shared_prefix_allowed: "--site-"
+  recommendation:
+    - "Use existing --site-* variables where equivalent tokens already exist."
+    - "Create --sdr-* variables only for page-specific values not represented by the shared design system."
+
+colours:
+  source_status: "Recommended visual matches derived from the approved mocks. Prefer existing shared project values when already defined."
+
+  brand:
+    navy:
+      value: "#143B63"
+      usage:
+        - "Primary headings"
+        - "Dark text"
+        - "Secondary button borders"
+        - "Navigation text"
+
+    navy_deep:
+      value: "#0D2F50"
+      usage:
+        - "High-emphasis headings"
+        - "Footer background where consistent with the shared footer"
+
+    teal:
+      value: "#0D9B8E"
+      usage:
+        - "Primary buttons"
+        - "Section numbering"
+        - "Icons"
+        - "Selected states"
+        - "Links"
+        - "Carousel indicators"
+
+    teal_dark:
+      value: "#087A70"
+      usage:
+        - "Primary-button hover"
+        - "Active controls"
+        - "Accessible teal text on light backgrounds"
+
+    teal_light:
+      value: "#DDF5F1"
+      usage:
+        - "Tag backgrounds"
+        - "Subtle selected-card background"
+        - "Information accents"
+
+    blue:
+      value: "#2878B8"
+      usage:
+        - "Medical information accents"
+        - "Secondary icons"
+        - "Illustration accents"
+
+    blue_light:
+      value: "#EAF6FB"
+      usage:
+        - "Hero background"
+        - "Information panels"
+        - "Alternating section backgrounds"
+
+  neutral:
+    white:
+      value: "#FFFFFF"
+
+    page_background:
+      value: "#FFFFFF"
+
+    surface:
+      value: "#FFFFFF"
+
+    surface_subtle:
+      value: "#F7FAFC"
+
+    border:
+      value: "#D8E4EC"
+
+    border_strong:
+      value: "#BACBD7"
+
+    text_primary:
+      value: "#163A59"
+
+    text_secondary:
+      value: "#4E667B"
+
+    text_muted:
+      value: "#6D8293"
+
+    icon_muted:
+      value: "#7890A3"
+
+    overlay:
+      value: "rgba(13, 47, 80, 0.52)"
+
+  warning:
+    amber:
+      value: "#E99A18"
+
+    amber_dark:
+      value: "#A86509"
+
+    amber_background:
+      value: "#FFF7E8"
+
+    amber_border:
+      value: "#F2CD8E"
+
+  success:
+    green:
+      value: "#198754"
+
+    green_background:
+      value: "#EAF7F0"
+
+  danger:
+    red:
+      value: "#C44747"
+
+    red_background:
+      value: "#FCEEEE"
+
+  focus:
+    ring:
+      value: "#1D72D8"
+
+    ring_offset:
+      value: "#FFFFFF"
+
+contrast_rules:
+  required_standard: "WCAG 2.1 AA"
+  body_text_minimum_ratio: "4.5:1"
+  large_text_minimum_ratio: "3:1"
+  controls_minimum_ratio: "3:1"
+  requirements:
+    - "Do not use light teal text on white for body copy."
+    - "Do not use amber as the only warning indicator."
+    - "Pair warning colour with an icon, title or border."
+    - "Ensure text over the hero asset remains readable at every breakpoint."
+
+typography:
+  font_family:
+    primary:
+      value: "inherit from existing website"
+      fallback: "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+
+    rule:
+      - "Do not introduce a new SDR-specific typeface."
+      - "Use the same font stack as the existing homepage and SMF page."
+
+  font_weights:
+    regular: 400
+    medium: 500
+    semibold: 600
+    bold: 700
+    extra_bold: 800
+
+  desktop:
+    hero_eyebrow:
+      font_size: "14px"
+      line_height: "20px"
+      font_weight: 700
+      letter_spacing: "0.06em"
+      text_transform: "none"
+
+    hero_title:
+      font_size: "clamp(48px, 4.2vw, 64px)"
+      line_height: "1.05"
+      font_weight: 800
+      letter_spacing: "-0.035em"
+      max_width: "600px"
+
+    hero_body:
+      font_size: "18px"
+      line_height: "30px"
+      font_weight: 400
+      max_width: "540px"
+
+    section_number:
+      font_size: "16px"
+      line_height: "24px"
+      font_weight: 700
+
+    section_title:
+      font_size: "clamp(34px, 3vw, 44px)"
+      line_height: "1.15"
+      font_weight: 750
+      letter_spacing: "-0.025em"
+      max_width: "760px"
+
+    subsection_title:
+      font_size: "26px"
+      line_height: "34px"
+      font_weight: 700
+
+    card_title:
+      font_size: "18px"
+      line_height: "26px"
+      font_weight: 700
+
+    card_body:
+      font_size: "16px"
+      line_height: "26px"
+      font_weight: 400
+
+    body:
+      font_size: "17px"
+      line_height: "28px"
+      font_weight: 400
+
+    supporting:
+      font_size: "15px"
+      line_height: "23px"
+      font_weight: 400
+
+    button:
+      font_size: "16px"
+      line_height: "24px"
+      font_weight: 700
+
+    navigation:
+      font_size: "15px"
+      line_height: "24px"
+      font_weight: 600
+
+    breadcrumb:
+      font_size: "14px"
+      line_height: "20px"
+      font_weight: 500
+
+    footer:
+      font_size: "15px"
+      line_height: "24px"
+      font_weight: 400
+
+  mobile:
+    hero_eyebrow:
+      font_size: "13px"
+      line_height: "18px"
+      font_weight: 700
+      letter_spacing: "0.04em"
+
+    hero_title:
+      font_size: "clamp(32px, 9vw, 40px)"
+      line_height: "1.08"
+      font_weight: 800
+      letter_spacing: "-0.03em"
+      max_width: "100%"
+
+    hero_body:
+      font_size: "16px"
+      line_height: "25px"
+      font_weight: 400
+      max_width: "100%"
+
+    section_number:
+      font_size: "14px"
+      line_height: "20px"
+      font_weight: 700
+
+    section_title:
+      font_size: "clamp(26px, 7vw, 32px)"
+      line_height: "1.18"
+      font_weight: 750
+      letter_spacing: "-0.02em"
+
+    subsection_title:
+      font_size: "22px"
+      line_height: "29px"
+      font_weight: 700
+
+    card_title:
+      font_size: "17px"
+      line_height: "24px"
+      font_weight: 700
+
+    card_body:
+      font_size: "16px"
+      line_height: "25px"
+      font_weight: 400
+
+    body:
+      font_size: "16px"
+      line_height: "26px"
+      font_weight: 400
+
+    supporting:
+      font_size: "14px"
+      line_height: "21px"
+      font_weight: 400
+
+    button:
+      font_size: "16px"
+      line_height: "24px"
+      font_weight: 700
+
+    navigation:
+      font_size: "16px"
+      line_height: "24px"
+      font_weight: 600
+
+    breadcrumb:
+      font_size: "13px"
+      line_height: "20px"
+      font_weight: 500
+
+    footer:
+      font_size: "14px"
+      line_height: "22px"
+      font_weight: 400
+
+  content_widths:
+    paragraph_standard:
+      desktop: "680px"
+      mobile: "100%"
+
+    paragraph_narrow:
+      desktop: "560px"
+      mobile: "100%"
+
+    section_heading:
+      desktop: "760px"
+      mobile: "100%"
+
+    hero_text:
+      desktop: "560px"
+      mobile: "100%"
+
+spacing:
+  scale:
+    "0": "0"
+    "1": "4px"
+    "2": "8px"
+    "3": "12px"
+    "4": "16px"
+    "5": "20px"
+    "6": "24px"
+    "8": "32px"
+    "10": "40px"
+    "12": "48px"
+    "14": "56px"
+    "16": "64px"
+    "18": "72px"
+    "20": "80px"
+    "24": "96px"
+    "28": "112px"
+    "32": "128px"
+
+  page:
+    desktop_section_gap: "80px"
+    desktop_section_gap_range: "72px to 96px"
+    mobile_section_gap: "56px"
+    mobile_section_gap_range: "48px to 72px"
+
+  section_padding:
+    desktop:
+      standard: "80px 0"
+      compact: "64px 0"
+      spacious: "96px 0"
+
+    mobile:
+      standard: "56px 0"
+      compact: "40px 0"
+      spacious: "64px 0"
+
+  component:
+    card_padding_desktop: "24px"
+    card_padding_mobile: "20px"
+    compact_card_padding: "16px"
+    large_card_padding_desktop: "32px"
+    large_card_padding_mobile: "24px"
+    button_inline_padding: "24px"
+    button_gap: "12px"
+    icon_text_gap: "12px"
+    list_item_gap: "12px"
+    card_grid_gap_desktop: "24px"
+    card_grid_gap_mobile: "16px"
+    carousel_gap_desktop: "24px"
+    carousel_gap_mobile: "16px"
+
+layout:
+  desktop:
+    reference_canvas_width: "1440px"
+    content_max_width: "1280px"
+    outer_margin_at_reference: "80px"
+    page_padding_inline: "clamp(24px, 5.56vw, 80px)"
+    columns: 12
+    gutter: "24px"
+
+    implementation:
+      width: "100%"
+      max_width: "1280px"
+      margin_inline: "auto"
+      padding_inline: "0 within the 1280px container"
+      outer_wrapper_padding: "80px at 1440px viewport"
+
+    calculated_column_width:
+      formula: "(1280px - 11 × 24px) / 12"
+      value: "84.6667px"
+
+  tablet:
+    breakpoint_range: "768px to 1199px"
+    columns: 8
+    gutter: "20px"
+    page_padding_inline: "24px to 48px"
+    content_max_width: "100%"
+
+  mobile:
+    reference_canvas_width: "390px"
+    page_padding_inline: "16px"
+    content_width: "358px"
+    columns: 4
+    gutter: "8px"
+
+    calculated_column_width:
+      formula: "(358px - 3 × 8px) / 4"
+      value: "83.5px"
+
+    implementation:
+      width: "100%"
+      max_width: "none"
+      margin_inline: "auto"
+      padding_inline: "16px"
+
+  breakpoints:
+    mobile_max: "767px"
+    tablet_min: "768px"
+    tablet_max: "1199px"
+    desktop_min: "1200px"
+    wide_desktop_min: "1440px"
+
+radii:
+  none: "0"
+  small: "8px"
+  medium: "12px"
+  standard: "16px"
+  large: "20px"
+  extra_large: "24px"
+  pill: "9999px"
+
+  usage:
+    tags: "9999px"
+    buttons: "12px"
+    compact_cards: "12px"
+    standard_cards: "16px"
+    large_feature_cards: "20px"
+    hero_media: "0px or match approved mock"
+    image_cards: "16px"
+    accordions: "12px"
+
+borders:
+  standard:
+    width: "1px"
+    style: "solid"
+    colour: "#D8E4EC"
+
+  strong:
+    width: "1px"
+    style: "solid"
+    colour: "#BACBD7"
+
+  selected:
+    width: "2px"
+    style: "solid"
+    colour: "#0D9B8E"
+
+  warning:
+    width: "1px"
+    style: "solid"
+    colour: "#F2CD8E"
+
+  focus:
+    width: "3px"
+    style: "solid"
+    colour: "#1D72D8"
+    offset: "3px"
+
+shadows:
+  card:
+    value: "0 8px 24px rgba(13, 47, 80, 0.08)"
+
+  card_hover:
+    value: "0 12px 32px rgba(13, 47, 80, 0.13)"
+
+  elevated:
+    value: "0 18px 48px rgba(13, 47, 80, 0.16)"
+
+  header:
+    value: "0 4px 16px rgba(13, 47, 80, 0.08)"
+
+  subtle:
+    value: "0 2px 8px rgba(13, 47, 80, 0.06)"
+
+  rule:
+    - "Avoid heavy or dark shadows."
+    - "Use shadows consistently with the SMF page."
+    - "Do not use shadows as the only component boundary."
+
+icons:
+  library: "Lucide React"
+  default_stroke_width: 2
+
+  sizes:
+    inline_small: "16px"
+    inline_standard: "20px"
+    button: "20px"
+    card: "24px"
+    feature_card: "32px"
+    section_heading: "28px"
+    large_illustrative: "40px to 56px"
+
+  rules:
+    - "Use currentColor when possible."
+    - "Use aria-hidden=true for decorative icons."
+    - "Provide an accessible name when an icon is the only content of a button."
+    - "Do not use emoji in production components."
+
+buttons:
+  shared_component_required: true
+
+  dimensions:
+    desktop_height: "52px"
+    mobile_height: "48px"
+    minimum_touch_target: "44px by 44px"
+    padding_inline: "24px"
+    gap: "10px"
+    border_radius: "12px"
+
+  primary:
+    background: "#0D9B8E"
+    text: "#FFFFFF"
+    border: "1px solid #0D9B8E"
+    hover_background: "#087A70"
+    active_background: "#06675F"
+    disabled_opacity: 0.5
+
+  secondary:
+    background: "#FFFFFF"
+    text: "#143B63"
+    border: "1px solid #143B63"
+    hover_background: "#EAF6FB"
+    active_background: "#DCEEF6"
+    disabled_opacity: 0.5
+
+  tertiary:
+    background: "transparent"
+    text: "#0D9B8E"
+    border: "none"
+    hover_background: "#DDF5F1"
+
+  focus:
+    outline: "3px solid #1D72D8"
+    outline_offset: "3px"
+
+  mobile:
+    full_width_primary_cta: true
+    full_width_secondary_cta: true
+    stacked_gap: "12px"
+
+  desktop:
+    auto_width: true
+    minimum_width: "168px"
+    horizontal_group_gap: "16px"
+
+cards:
+  standard:
+    background: "#FFFFFF"
+    border: "1px solid #D8E4EC"
+    border_radius: "16px"
+    padding_desktop: "24px"
+    padding_mobile: "20px"
+    shadow: "0 8px 24px rgba(13, 47, 80, 0.08)"
+
+  compact:
+    background: "#FFFFFF"
+    border: "1px solid #D8E4EC"
+    border_radius: "12px"
+    padding: "16px"
+
+  selected:
+    background: "#F4FCFA"
+    border: "2px solid #0D9B8E"
+    badge_background: "#0D9B8E"
+    badge_text: "#FFFFFF"
+
+  warning:
+    background: "#FFF7E8"
+    border: "1px solid #F2CD8E"
+    border_radius: "16px"
+
+  information:
+    background: "#EAF6FB"
+    border: "1px solid #CFE7F3"
+    border_radius: "16px"
+
+  equal_height_rule:
+    desktop: true
+    mobile: false
+    instruction: "Allow mobile cards to grow naturally according to wrapped content."
+
+tags:
+  height: "32px"
+  padding_inline: "12px"
+  gap: "6px"
+  border_radius: "9999px"
+  background: "#DDF5F1"
+  text: "#087A70"
+  font_size: "14px"
+  font_weight: 600
+  icon_size: "16px"
+
+header:
+  shared_component: "SiteHeader"
+
+  desktop:
+    height: "80px"
+    padding_inline: "80px at 1440px viewport"
+    layout: "logo left, navigation centre/right, CTA right"
+    logo_max_width: "280px"
+    navigation_gap: "28px"
+    cta_height: "48px"
+
+  tablet:
+    height: "76px"
+    padding_inline: "24px to 48px"
+    navigation: "Use existing project breakpoint behaviour."
+
+  mobile:
+    height: "72px"
+    padding_inline: "16px"
+    logo_max_width: "220px"
+    layout: "logo left, assessment CTA and hamburger right"
+    hamburger_target: "44px by 44px"
+    assessment_cta_min_height: "44px"
+
+  sticky:
+    enabled: "Use existing website behaviour"
+    top: "0"
+    z_index: 100
+    background: "rgba(255, 255, 255, 0.96)"
+    backdrop_filter: "blur(12px)"
+    shadow_on_scroll: "0 4px 16px rgba(13, 47, 80, 0.08)"
+
+hero:
+  assets:
+    mobile: "1000104949.png"
+    desktop: "1000104957.png"
+
+  desktop:
+    minimum_height: "512px"
+    recommended_height: "520px to 576px"
+    content_grid_span: "columns 1 to 6"
+    visual_grid_span: "columns 6 to 13"
+    content_alignment: "center"
+    background: "#EAF6FB"
+    image_fit: "cover"
+    image_position: "center right"
+    content_gap: "24px"
+    button_group_gap: "16px"
+
+  mobile:
+    minimum_height: "recommended 640px"
+    layout: "stacked content within the approved image-safe composition"
+    background: "#EAF6FB"
+    image_fit: "cover"
+    image_position: "center right"
+    content_padding_inline: "16px"
+    content_padding_block: "24px 40px"
+    content_gap: "16px"
+    buttons_stacked: true
+
+  image_rules:
+    - "Do not crop the magnifier."
+    - "Do not crop the baked-in explanatory sentence."
+    - "Do not add duplicate visible explanatory text."
+    - "Do not use the desktop asset on mobile."
+    - "Do not use the mobile asset on desktop."
+    - "Preserve sufficient space for React-rendered heading, tags and buttons."
+
+section_number_badge:
+  size: "32px"
+  border_radius: "9999px"
+  background: "#0D9B8E"
+  text: "#FFFFFF"
+  font_size: "14px"
+  font_weight: 700
+  alignment: "center"
+
+lists:
+  bullet:
+    icon: "CheckCircle2"
+    icon_size: "20px"
+    icon_colour: "#0D9B8E"
+    gap: "12px"
+    item_spacing: "12px"
+
+  warning:
+    icon: "TriangleAlert"
+    icon_size: "20px"
+    icon_colour: "#E99A18"
+    gap: "12px"
+    item_spacing: "12px"
+
+carousels:
+  common:
+    display: "flex"
+    overflow_x: "auto"
+    scroll_snap_type: "x mandatory"
+    scrollbar_width: "none"
+    overscroll_behaviour_inline: "contain"
+    gap_desktop: "24px"
+    gap_mobile: "16px"
+    arrow_target_size: "44px"
+    pagination_dot_size: "8px"
+    active_dot_width: "24px"
+
+  desktop:
+    problems_cards_per_view: 5
+    comparison_cards_per_view: 4
+    patient_stories_per_view: 2
+    show_arrows: true
+    show_pagination: true
+
+  mobile:
+    problems_card_width: "recommended 112px to 136px"
+    comparison_card_width: "min(82vw, 310px)"
+    patient_story_width: "min(88vw, 342px)"
+    next_card_peek: "16px to 32px"
+    show_arrows: "Only where shown in the approved mock"
+    show_pagination: true
+    touch_swipe: true
+
+  accessibility:
+    previous_label: "Previous items"
+    next_label: "Next items"
+    region_role: "region"
+    live_region: "polite only when needed"
+    keyboard_navigation: true
+
+accordions:
+  row_min_height: "52px"
+  mobile_row_min_height: "52px"
+  padding_inline: "16px"
+  padding_block: "14px"
+  border_radius: "12px"
+  border: "1px solid #D8E4EC"
+  background: "#FFFFFF"
+  expanded_background: "#F7FAFC"
+  title_font_size: "16px"
+  title_font_weight: 600
+  body_font_size: "16px"
+  body_line_height: "25px"
+  icon_size: "20px"
+  row_gap: "12px"
+  full_row_clickable: true
+
+images:
+  standard:
+    display: "block"
+    width: "100%"
+    height: "auto"
+    object_fit: "cover"
+    border_radius: "16px"
+
+  card_media:
+    aspect_ratio_desktop: "16 / 9"
+    aspect_ratio_mobile: "4 / 3"
+    object_fit: "cover"
+    object_position: "center"
+
+  portrait:
+    aspect_ratio: "1 / 1"
+    object_fit: "cover"
+    object_position: "center top"
+    border_radius: "9999px"
+
+  patient_story:
+    before_after_aspect_ratio: "4 / 3"
+    object_fit: "cover"
+
+  loading:
+    hero: "eager"
+    hero_fetch_priority: "high"
+    below_fold: "lazy"
+    decoding: "async"
+
+  layout_shift:
+    require_width_and_height_attributes: true
+    require_aspect_ratio_css: true
+
+forms:
+  shared_form_controls: true
+
+  fields:
+    minimum_height: "48px"
+    border_radius: "12px"
+    border: "1px solid #BACBD7"
+    padding_inline: "16px"
+    background: "#FFFFFF"
+    font_size: "16px"
+
+  labels:
+    font_size: "15px"
+    line_height: "22px"
+    font_weight: 600
+    colour: "#163A59"
+
+  helper_text:
+    font_size: "14px"
+    line_height: "21px"
+    colour: "#6D8293"
+
+  error:
+    colour: "#C44747"
+    border_colour: "#C44747"
+    message_font_size: "14px"
+
+  focus:
+    border_colour: "#1D72D8"
+    outline: "3px solid rgba(29, 114, 216, 0.22)"
+
+footer:
+  component: "SiteFooter"
+  source: "Existing shared website footer"
+  render_once: true
+
+  desktop:
+    layout: "structured multi-column grid"
+    columns: "Use existing shared footer"
+    padding_block: "64px"
+    gap: "32px"
+
+  mobile:
+    layout: "stacked"
+    padding_inline: "16px"
+    padding_block: "48px"
+    section_gap: "24px"
+
+  typography:
+    heading_size: "16px"
+    heading_weight: 700
+    body_size: "14px to 15px"
+    line_height: "22px to 24px"
+
+motion:
+  duration:
+    fast: "150ms"
+    standard: "220ms"
+    slow: "320ms"
+
+  easing:
+    standard: "cubic-bezier(0.2, 0, 0, 1)"
+    entrance: "cubic-bezier(0.16, 1, 0.3, 1)"
+
+  hover:
+    card_translate_y: "-2px"
+    button_translate_y: "-1px"
+
+  reduced_motion:
+    media_query: "prefers-reduced-motion: reduce"
+    rules:
+      - "Disable smooth scrolling."
+      - "Disable non-essential card transforms."
+      - "Use immediate accordion transitions."
+      - "Avoid automatic carousel movement."
+
+z_index:
+  base: 0
+  content: 1
+  sticky_header: 100
+  carousel_controls: 10
+  dropdown: 200
+  modal_backdrop: 900
+  modal: 1000
+  toast: 1100
+
+responsive_behaviour:
+  desktop:
+    layout:
+      - "Use the 12-column centred grid."
+      - "Allow approved two-column and multi-column compositions."
+      - "Use 3–5 repeated cards per row according to the section specification."
+      - "Keep paragraphs at comfortable reading widths."
+      - "Do not stretch cards merely to fill the screen."
+
+  tablet:
+    layout:
+      - "Use an 8-column grid."
+      - "Collapse four-card rows to two cards per row where necessary."
+      - "Convert wide comparison rows to a controlled carousel."
+      - "Preserve section order."
+      - "Do not invent new visual compositions."
+
+  mobile:
+    layout:
+      - "Use the 4-column grid with 16px side padding."
+      - "Stack major content sections vertically."
+      - "Do not place major information sections side by side."
+      - "Use horizontal carousels for repeated compact cards."
+      - "Keep full-width important cards."
+      - "Maintain 16px minimum body text."
+      - "Maintain 44px minimum interactive targets."
+      - "Allow text and cards to increase in height naturally."
+
+component_consistency:
+  required_matches:
+    - "SMF shared header"
+    - "SMF shared footer"
+    - "SMF section-number badges"
+    - "SMF button shapes"
+    - "SMF card borders and radii"
+    - "SMF carousel controls"
+    - "SMF accordion treatment"
+    - "Homepage procedure-card styling"
+
+  prohibited:
+    - "New visual theme for SDR"
+    - "Different header height from the shared website"
+    - "Different button colours from the shared website"
+    - "Tiny mobile text"
+    - "Compressed side-by-side mobile sections"
+    - "Unapproved gradients"
+    - "Heavy drop shadows"
+    - "Text baked into newly generated image assets"
+
+recommended_css_variables:
+  root:
+    "--sdr-colour-navy": "#143B63"
+    "--sdr-colour-navy-deep": "#0D2F50"
+    "--sdr-colour-teal": "#0D9B8E"
+    "--sdr-colour-teal-dark": "#087A70"
+    "--sdr-colour-teal-light": "#DDF5F1"
+    "--sdr-colour-blue-light": "#EAF6FB"
+    "--sdr-colour-text": "#163A59"
+    "--sdr-colour-text-muted": "#6D8293"
+    "--sdr-colour-border": "#D8E4EC"
+    "--sdr-colour-warning": "#E99A18"
+    "--sdr-colour-warning-bg": "#FFF7E8"
+    "--sdr-space-unit": "8px"
+    "--sdr-container-max": "1280px"
+    "--sdr-desktop-gutter": "24px"
+    "--sdr-mobile-gutter": "8px"
+    "--sdr-mobile-padding": "16px"
+    "--sdr-card-radius": "16px"
+    "--sdr-control-radius": "12px"
+    "--sdr-button-height-desktop": "52px"
+    "--sdr-button-height-mobile": "48px"
+    "--sdr-shadow-card": "0 8px 24px rgba(13, 47, 80, 0.08)"
+    "--sdr-focus-ring": "0 0 0 3px rgba(29, 114, 216, 0.28)"
+
+validation:
+  visual:
+    - "Desktop viewport uses a centred 1280px maximum-width content container."
+    - "The 1440px reference viewport has approximately 80px outer margins."
+    - "Mobile viewport uses 16px side padding."
+    - "Mobile body text is never below 16px except approved metadata."
+    - "Buttons are at least 48px high on mobile."
+    - "Cards use consistent padding and radii."
+    - "Hero explanatory artwork remains fully visible."
+    - "Desktop and mobile hero assets are not interchanged."
+
+  accessibility:
+    - "All focusable controls display a visible focus ring."
+    - "Text and controls meet WCAG AA contrast."
+    - "Interactive rows meet minimum touch-target size."
+    - "Animations respect reduced-motion preferences."
+
+  implementation:
+    - "Use shared tokens wherever they already exist."
+    - "Do not hard-code repeated colours or dimensions throughout components."
+    - "Do not use the reference mock images as production backgrounds."
+    - "Do not rename the supplied hero asset files."

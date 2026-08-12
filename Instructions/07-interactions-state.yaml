@@ -1,0 +1,54 @@
+header:
+  desktop_navigation: visible
+  mobile_navigation: hamburger opens accessible navigation drawer
+  request_assessment: open existing assessment route or modal
+section_actions:
+  view_all_problems: expand the current section inline; no route change
+  view_all_treatments: expand the current section inline; no route change
+  view_all_stories: expand the current section inline; no route change
+  individual_treatment: may open an existing procedure route or detail modal
+  individual_story: may open a full story page or detail modal
+carousels:
+  sections:
+  - problems-smf-may-address
+  - treatment-comparison
+  - patient-journeys
+  - how-smf-works-mobile
+  desktop:
+    controls:
+    - previous
+    - next
+    - pagination dots
+    keyboard: true
+    mouse_drag: false
+  mobile:
+    overflow_x: auto
+    scroll_snap: x mandatory
+    touch_swipe: true
+    visible_peek: true
+  accessibility:
+    region_label_required: true
+    buttons_have_aria_labels: true
+    disabled_state_at_boundaries: true
+    respect_reduced_motion: true
+accordions:
+  sections:
+  - risks-and-important-information
+  - faq
+  button_element: button
+  aria_expanded: true
+  aria_controls: true
+  keyboard:
+  - Enter
+  - Space
+  default_state: collapsed unless the approved mock visibly shows an item open
+cta:
+  primary: Request Assessment
+  secondary: Talk to Our Team / Talk to Our Care Team
+  minimum_height: 44px
+  loading_state: true
+  focus_visible: true
+part_seam:
+  part_1_marker_visible: false
+  part_2_marker_visible: false
+  duplicate_header_visible: false

@@ -1,0 +1,100 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public website content is limited to these two read-only collections.
+    // Asset and homepage writes are performed by trusted Admin SDK tooling,
+    // which bypasses client Security Rules.
+    match /homepage/{documentId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /assets/{documentId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    function validOptionalString(data, field, maxLength) {
+      return !(field in data) ||
+        (data[field] is string && data[field].size() <= maxLength);
+    }
+
+    function validEmail(value) {
+      return value is string &&
+        value.size() <= 120 &&
+        (value.size() == 0 || value.matches('^[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}$'));
+    }
+
+    function validCreatedAt(value) {
+      return value is timestamp &&
+        value <= request.time &&
+        value >= request.time - duration.value(5, 'm');
+    }
+
+    function validLead(data, leadId) {
+      return data.keys().hasOnly([
+          "leadId",
+          "fullName",
+          "phoneNumber",
+          "email",
+          "preferredTime",
+          "goal",
+          "experienceLevel",
+          "referralSource",
+          "message",
+          "source",
+          "selectedPlan",
+          "planType",
+          "facilityId",
+          "transformationId",
+          "intent",
+          "status",
+          "createdAt"
+        ]) &&
+        data.keys().hasAll([
+          "leadId",
+          "fullName",
+          "phoneNumber",
+          "email",
+          "message",
+          "status",
+          "createdAt"
+        ]) &&
+        data.leadId is string &&
+        data.leadId == leadId &&
+        data.leadId.size() >= 1 &&
+        data.leadId.size() <= 128 &&
+        data.fullName is string &&
+        data.fullName.size() >= 2 &&
+        data.fullName.size() <= 80 &&
+        data.phoneNumber is string &&
+        data.phoneNumber.size() >= 8 &&
+        data.phoneNumber.size() <= 20 &&
+        validEmail(data.email) &&
+        data.message is string &&
+        data.message.size() <= 1000 &&
+        data.status == "new" &&
+        validCreatedAt(data.createdAt) &&
+        validOptionalString(data, "preferredTime", 80) &&
+        validOptionalString(data, "goal", 500) &&
+        validOptionalString(data, "experienceLevel", 80) &&
+        validOptionalString(data, "referralSource", 120) &&
+        validOptionalString(data, "source", 120) &&
+        validOptionalString(data, "selectedPlan", 120) &&
+        validOptionalString(data, "planType", 80) &&
+        validOptionalString(data, "facilityId", 160) &&
+        validOptionalString(data, "transformationId", 160) &&
+        validOptionalString(data, "intent", 120);
+    }
+
+    match /leads/{leadId} {
+      allow create: if validLead(request.resource.data, leadId);
+      allow read, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

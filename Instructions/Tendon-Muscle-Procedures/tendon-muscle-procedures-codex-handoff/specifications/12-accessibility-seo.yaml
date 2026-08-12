@@ -1,0 +1,47 @@
+accessibility:
+  landmarks:
+  - header
+  - nav
+  - main
+  - section
+  - footer
+  heading_order: One H1. Major sections use H2. Card headings use H3.
+  minimum_touch_target_px: 44
+  focus_visible: true
+  contrast: Meet WCAG 2.2 AA for text, buttons, focus states and warning content.
+  carousels:
+    aria_roledescription: carousel
+    label_each_control: true
+    announce_active_slide: true
+    keyboard_navigation: true
+    do_not_trap_focus: true
+  accordions:
+    button_elements: true
+    aria_expanded: true
+    aria_controls: true
+  images:
+    hero_alt: Anatomical lower leg and foot showing tight calf muscles and tendons with a magnified muscle-tendon inset.
+    decorative_icons: aria-hidden=true
+    patient_media: Use factual, consent-approved alt text; do not claim results beyond approved story copy.
+  reduced_motion: true
+seo:
+  title: Tendon & Muscle Procedures for Spasticity and Contractures | Dr. Pawan Kumar Sadhvani
+  description: Learn how tendon and muscle procedures may address tightness, contractures, alignment and movement in children
+    and adults with spasticity, including assessment, rehabilitation, risks and recovery.
+  canonical_route_recommended: /procedures/tendon-muscle-procedures
+  primary_keywords:
+  - tendon surgery for cerebral palsy
+  - muscle lengthening surgery
+  - contracture surgery
+  - spasticity treatment Hyderabad
+  - tendon and muscle procedures India
+  structured_data:
+  - MedicalWebPage
+  - MedicalProcedure
+  - Physician
+  - BreadcrumbList
+  - FAQPage only if an actual FAQ section is rendered
+  medical_copy_rules:
+  - Use may/can language rather than guarantees.
+  - Do not imply suitability without clinical assessment.
+  - Do not present generated images as clinical evidence.

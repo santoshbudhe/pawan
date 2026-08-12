@@ -1,0 +1,129 @@
+@media (max-width: 767px) {
+  .procedure-hero {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .procedure-hero__visual {
+    position: absolute;
+    inset: 0 0 0 auto;
+    z-index: 1;
+    width: 47%;
+    height: 100%;
+    min-width: 0;
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .procedure-hero__visual-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 152.4%;
+    max-width: none;
+    height: 120%;
+    margin: 0;
+    display: block;
+    object-fit: contain;
+    object-position: right bottom;
+    transform-origin: right bottom;
+  }
+
+  .procedure-hero__inner {
+    position: relative;
+    z-index: 2;
+    display: block;
+    min-height: 0;
+    padding-top: 4px;
+    padding-bottom: 14px;
+  }
+
+  .procedure-hero__inner > .procedure-breadcrumb {
+    margin-bottom: 8px;
+  }
+
+  .procedure-hero__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .procedure-hero__eyebrow {
+    max-width: 55%;
+    margin: 0 0 4px;
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .procedure-hero__content .procedure-hero__title {
+    max-width: 56%;
+    margin: 0 0 10px;
+    font-size: clamp(22px, 5.8vw, 24px);
+    line-height: 1.06;
+    font-weight: 800;
+    letter-spacing: 0;
+    overflow-wrap: normal;
+    text-wrap: balance;
+    word-break: normal;
+  }
+
+  .procedure-hero__content .procedure-hero__description {
+    max-width: 55%;
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .procedure-hero__trust-row {
+    width: 56%;
+    max-width: 202px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .procedure-hero__trust-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 36px;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 7px;
+    font-size: 11px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .procedure-hero__trust-card svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  .procedure-hero__actions {
+    width: 54%;
+    max-width: 194px;
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding-bottom: 0;
+  }
+}

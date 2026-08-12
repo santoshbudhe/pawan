@@ -1,0 +1,52 @@
+page:
+  id: smf-procedure
+  route: /procedures/selective-motor-fasciculotomy
+  title: Selective Motor Fasciculotomy (SMF)
+  single_continuous_document: true
+  reference_slices:
+  - part-1
+  - part-2
+  render_reference_seam_labels: false
+  header_instances: 1
+  footer_instances: 1
+section_order:
+- site-header
+- breadcrumb
+- hero
+- what-is-smf
+- who-may-benefit
+- when-not-appropriate
+- problems-smf-may-address
+- assessment-and-patient-selection
+- how-smf-works
+- potential-treatment-goals
+- limitations-and-considerations
+- treatment-comparison
+- treatment-and-rehabilitation-journey
+- risks-and-important-information
+- medically-reviewed-by
+- multidisciplinary-team
+- patient-journeys
+- faq
+- references
+- closing-cta
+- value-strip
+- site-footer
+desktop_composition:
+  reference_width: 1440px
+  container_max_width: 1280px
+  outer_space_at_reference_width: 80px each side
+  grid_columns: 12
+  grid_gutter: 24px
+  calculated_column_width: 84.667px
+mobile_composition:
+  reference_width: 390px
+  side_padding: 16px
+  grid_columns: 4
+  grid_gutter: 8px
+  calculated_column_width: 83.5px
+page_shell:
+  background: white
+  content_flow: normal document flow
+  horizontal_overflow: hidden at page level
+  section_anchor_navigation: true

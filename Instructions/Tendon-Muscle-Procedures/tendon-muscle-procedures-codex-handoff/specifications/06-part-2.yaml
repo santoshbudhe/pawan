@@ -1,0 +1,63 @@
+part: 2
+references:
+  mobile_mock: 1000105001.png
+  mobile_grid: 1000105005.png
+  desktop_mock: 1000105009.png
+  desktop_grid: 1000105004.png
+sections:
+- id: potential-treatment-goals
+  display_number_in_mock: 1
+  desktop: columns 1-6
+  mobile: full-width block
+  padding_px: 24
+- id: limitations-and-considerations
+  display_number_in_mock: 2
+  desktop: columns 7-12
+  mobile: full-width block below goals
+  warning_callout: true
+  padding_px: 24
+- id: procedure-comparison
+  display_number_in_mock: 3
+  layout: horizontal carousel
+  desktop_visible_cards: 4
+  mobile_visible_cards: 2
+  mobile_card_width: calc((100% - 12px) / 2)
+  gap_px: 12
+  scroll_snap: x mandatory
+  selected_card: tendon-muscle-procedures
+- id: hospital-stay-and-early-recovery
+  display_number_in_mock: 4
+  desktop: columns 1-6
+  mobile: two-column internal media/list layout
+  image_aspect_ratio: 16/9
+- id: rehabilitation-after-procedures
+  display_number_in_mock: 5
+  desktop: columns 7-12
+  mobile: full-width block
+  cta: Explore the Full Rehabilitation Page
+- id: risks-and-important-information
+  display_number_in_mock: 6
+  desktop: columns 1-5
+  mobile: full-width accordion
+  accordion_row_min_height_px: 48
+- id: treating-team
+  display_number_in_mock: 7
+  desktop: columns 6-8
+  mobile: 2-by-2 equal-height card grid
+- id: reviewed-by
+  display_number_in_mock: 8
+  desktop: columns 9-12
+  mobile: portrait and details in two-column internal grid
+- id: patient-journeys
+  display_number_in_mock: 9
+  layout: horizontal carousel
+  desktop_visible_cards: 2
+  mobile_visible_cards: 1 plus second-card peek
+  consent_gate: true
+  do_not_use_mock_media_as_production: true
+- id: bottom-cta
+  desktop: full width, title left/center and two stacked buttons right
+  mobile: stacked full-width title and buttons
+- id: footer
+  desktop: five-column shared footer
+  mobile: follow global shell behavior; do not duplicate

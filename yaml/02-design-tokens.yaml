@@ -1,0 +1,377 @@
+# ==========================================================
+# 02-design-tokens.yaml
+# Design System Tokens
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+designTokens:
+
+  version: "1.0.0"
+
+# ==========================================================
+# COLOR SYSTEM
+# ==========================================================
+
+colors:
+
+  primary:
+
+    50: "#F3F7FC"
+    100: "#DCE8F8"
+    200: "#BFD4F2"
+    300: "#8FB3E8"
+    400: "#5E91DD"
+    500: "#1F5FBF"
+    600: "#0A3D91"
+    700: "#083579"
+    800: "#062A5F"
+    900: "#041E45"
+
+  secondary:
+
+    50: "#F2FBFA"
+    100: "#D8F3F0"
+    200: "#B6E7E0"
+    300: "#86D6CB"
+    400: "#49C2B4"
+    500: "#0A9E8F"
+    600: "#087D72"
+    700: "#066257"
+    800: "#04463F"
+    900: "#032D29"
+
+  accent:
+
+    warning: "#F5B400"
+    success: "#1FA971"
+    danger: "#D64545"
+
+  neutral:
+
+    white: "#FFFFFF"
+    surface: "#FAFBFD"
+    background: "#F6F8FB"
+
+    borderLight: "#E7ECF3"
+    borderMedium: "#D5DCE8"
+
+    textPrimary: "#18325B"
+    textSecondary: "#52637A"
+    textMuted: "#7E8B9C"
+
+# ==========================================================
+# TYPOGRAPHY
+# ==========================================================
+
+typography:
+
+  fontFamily:
+
+    primary:
+      "Inter"
+
+    fallback:
+      "system-ui, sans-serif"
+
+  headings:
+
+    h1:
+
+      desktop:
+        size: 56px
+        lineHeight: 64px
+        weight: 700
+
+      mobile:
+        size: 34px
+        lineHeight: 42px
+        weight: 700
+
+    h2:
+
+      desktop:
+        size: 32px
+        lineHeight: 40px
+        weight: 700
+
+      mobile:
+        size: 20px
+        lineHeight: 28px
+        weight: 700
+
+    h3:
+
+      desktop:
+        size: 20px
+        lineHeight: 28px
+        weight: 600
+
+      mobile:
+        size: 16px
+        lineHeight: 22px
+        weight: 600
+
+  body:
+
+    large:
+
+      size: 18px
+      lineHeight: 30px
+      weight: 400
+
+    regular:
+
+      size: 16px
+      lineHeight: 24px
+      weight: 400
+
+    small:
+
+      size: 14px
+      lineHeight: 20px
+      weight: 400
+
+    caption:
+
+      size: 12px
+      lineHeight: 16px
+      weight: 400
+
+  buttons:
+
+    desktop:
+
+      size: 16px
+      weight: 600
+      lineHeight: 20px
+
+    mobile:
+
+      size: 15px
+      weight: 600
+      lineHeight: 20px
+
+# ==========================================================
+# SPACING SYSTEM
+# ==========================================================
+
+spacing:
+
+  baseUnit: 8px
+
+  scale:
+
+    xs: 8px
+    sm: 16px
+    md: 24px
+    lg: 32px
+    xl: 40px
+    2xl: 48px
+    3xl: 56px
+    4xl: 64px
+    5xl: 80px
+
+# ==========================================================
+# BORDER RADIUS
+# ==========================================================
+
+radius:
+
+  xs: 4px
+  sm: 8px
+  md: 12px
+  lg: 16px
+  xl: 20px
+  full: 9999px
+
+# ==========================================================
+# SHADOWS
+# ==========================================================
+
+shadows:
+
+  none: "none"
+
+  sm: "0 2px 8px rgba(0,0,0,0.05)"
+
+  md: "0 8px 24px rgba(0,0,0,0.08)"
+
+  lg: "0 18px 48px rgba(0,0,0,0.12)"
+
+# ==========================================================
+# BORDERS
+# ==========================================================
+
+borders:
+
+  light:
+    width: 1px
+    color: borderLight
+
+  medium:
+    width: 1px
+    color: borderMedium
+
+# ==========================================================
+# BUTTONS
+# ==========================================================
+
+buttons:
+
+  height:
+
+    desktop: 48px
+
+    mobile: 48px
+
+  padding:
+
+    horizontal: 24px
+
+    vertical: 12px
+
+  radius: md
+
+# ==========================================================
+# ICONS
+# ==========================================================
+
+icons:
+
+  library: "Lucide React"
+
+  sizes:
+
+    xs: 16px
+    sm: 20px
+    md: 24px
+    lg: 32px
+    xl: 40px
+
+  strokeWidth: 2
+
+# ==========================================================
+# IMAGES
+# ==========================================================
+
+images:
+
+  objectFit: cover
+
+  borderRadius: lg
+
+  loading: lazy
+
+# ==========================================================
+# GRID
+# ==========================================================
+
+grid:
+
+  desktop:
+
+    columns: 12
+
+    gutter: 24px
+
+    container: 1280px
+
+    sidePadding: 80px
+
+  tablet:
+
+    columns: 8
+
+    gutter: 24px
+
+    container: 92%
+
+  mobile:
+
+    columns: 4
+
+    gutter: 8px
+
+    container: 358px
+
+    sidePadding: 16px
+
+# ==========================================================
+# BREAKPOINTS
+# ==========================================================
+
+breakpoints:
+
+  mobile: 767px
+
+  tablet: 1024px
+
+  desktop: 1025px
+
+# ==========================================================
+# ANIMATION TOKENS
+# ==========================================================
+
+motion:
+
+  duration:
+
+    fast: 150ms
+
+    normal: 250ms
+
+    slow: 400ms
+
+  easing:
+
+    standard: "ease"
+
+    smooth: "ease-in-out"
+
+# ==========================================================
+# Z-INDEX
+# ==========================================================
+
+zIndex:
+
+  base: 1
+
+  dropdown: 100
+
+  stickyHeader: 500
+
+  modal: 1000
+
+  toast: 1200
+
+# ==========================================================
+# ACCESSIBILITY
+# ==========================================================
+
+accessibility:
+
+  minimumTouchTarget: 44px
+
+  minimumContrast: "WCAG AA"
+
+# ==========================================================
+# IMPLEMENTATION NOTES
+# ==========================================================
+
+implementation:
+
+  useTailwindUtilities: true
+
+  hardcodedValuesAllowed: false
+
+  allSpacingUsesScale: true
+
+  allColorsUseTokens: true
+
+  allTypographyUsesTokens: true
+
+  allBorderRadiusUsesTokens: true
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

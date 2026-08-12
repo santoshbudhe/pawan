@@ -1,0 +1,77 @@
+status: recommended CSS tokens derived from approved mocks; reuse existing site tokens when identical
+colors:
+  brand_navy: '#0B2D6B'
+  brand_blue: '#0B2D9F'
+  brand_teal: '#0A8A6E'
+  text_primary: '#1A2F57'
+  text_heading: '#0B2D6B'
+  text_muted: '#475569'
+  surface: '#FFFFFF'
+  surface_subtle: '#F8FAFC'
+  surface_blue: '#EFF6FF'
+  border: '#E2E8F0'
+  warning: '#F59E0B'
+  warning_surface: '#FFF8EE'
+  footer: '#073B8F'
+  focus: '#2563EB'
+typography:
+  font_family: inherit the existing website font; do not introduce a new family
+  desktop:
+    hero_eyebrow: 14px/20px 600
+    hero_title: 56-64px/1.1 700
+    hero_body: 18px/28px 400
+    section_title: 28-36px/1.2 700
+    card_title: 16-18px/24px 600-700
+    body: 16-18px/1.6 400
+    supporting: 14-16px/20-24px 400
+    button: 16px/20px 600
+    footer: 14px/20px 400-600
+  mobile:
+    hero_eyebrow: 12px/16px 600
+    hero_title: 32px/40px 700
+    hero_body: 16px/24px 400
+    section_title: 18px/24px 700
+    card_title: 15px/20px 600
+    body: 16px/24px 400
+    supporting: 14px/20px 400
+    button: 15-16px/20px 600
+    footer: 12-14px/18-20px 400
+  letter_spacing:
+    headings: -0.02em to 0
+    eyebrow: 0.06em uppercase
+    buttons: 0 to 0.01em
+spacing:
+  base_unit: 8px
+  allowed_scale:
+  - 4px
+  - 8px
+  - 12px
+  - 16px
+  - 24px
+  - 32px
+  - 40px
+  - 48px
+  - 64px
+  - 72px
+  - 80px
+  - 96px
+  desktop_section_padding_block: 64-96px according to grid mock
+  mobile_section_padding_block: 20-24px
+  desktop_card_gap: 24px
+  mobile_card_gap: 8-16px
+shape:
+  card_radius: 16px
+  small_radius: 12px
+  button_radius: 8-12px
+  pill_radius: 999px
+  border_width: 1px
+shadow:
+  card: 0 8px 24px rgba(11,45,107,0.06)
+  elevated_button: 0 10px 24px rgba(11,45,107,0.08)
+controls:
+  minimum_target: 44px
+  desktop_button_height: 48-56px
+  mobile_button_height: 44-48px
+  icon_default: 20px
+  icon_large: 28-32px
+  carousel_arrow: 44px

@@ -1,0 +1,375 @@
+# ==========================================================
+# 06-responsive.yaml
+# Responsive Layout Specification
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+responsive:
+
+# ==========================================================
+# BREAKPOINTS
+# ==========================================================
+
+breakpoints:
+
+  mobile:
+
+    min: 320
+
+    max: 767
+
+  tablet:
+
+    min: 768
+
+    max: 1024
+
+  desktop:
+
+    min: 1025
+
+# ==========================================================
+# CONTAINERS
+# ==========================================================
+
+containers:
+
+  desktop:
+
+    width: 100%
+
+    maxWidth: 1280
+
+    paddingInline: 80
+
+    marginInline: auto
+
+  tablet:
+
+    width: 100%
+
+    paddingInline: 48
+
+  mobile:
+
+    width: 100%
+
+    paddingInline: 16
+
+# ==========================================================
+# GRID
+# ==========================================================
+
+grid:
+
+  desktop:
+
+    columns: 12
+
+    gutter: 24
+
+  tablet:
+
+    columns: 8
+
+    gutter: 20
+
+  mobile:
+
+    columns: 4
+
+    gutter: 8
+
+# ==========================================================
+# HEADER
+# ==========================================================
+
+header:
+
+  desktop:
+
+    sticky: true
+
+    navigation: visible
+
+    hamburger: false
+
+  tablet:
+
+    sticky: true
+
+    navigation: hidden
+
+    hamburger: true
+
+  mobile:
+
+    sticky: true
+
+    navigation: hidden
+
+    hamburger: true
+
+# ==========================================================
+# HERO
+# ==========================================================
+
+hero:
+
+  desktop:
+
+    layout: split
+
+    image: right
+
+    content: left
+
+  tablet:
+
+    layout: stacked
+
+  mobile:
+
+    layout: stacked
+
+    imageFirst: false
+
+# ==========================================================
+# TRUST STRIP
+# ==========================================================
+
+trustStrip:
+
+  desktop:
+
+    horizontal: true
+
+    wrap: false
+
+  mobile:
+
+    horizontalScroll: true
+
+# ==========================================================
+# WHO WE HELP
+# ==========================================================
+
+whoWeHelp:
+
+  desktop:
+
+    cardsPerRow: 3
+
+  tablet:
+
+    cardsPerRow: 2
+
+  mobile:
+
+    carousel: true
+
+    visibleCards: 1.15
+
+# ==========================================================
+# PROCEDURES
+# ==========================================================
+
+procedures:
+
+  desktop:
+
+    cardsPerRow: 4
+
+  tablet:
+
+    cardsPerRow: 2
+
+  mobile:
+
+    carousel: true
+
+    visibleCards: 1.1
+
+# ==========================================================
+# GOALS
+# ==========================================================
+
+goals:
+
+  desktop:
+
+    cardsPerRow: 4
+
+  tablet:
+
+    cardsPerRow: 2
+
+  mobile:
+
+    carousel: true
+
+# ==========================================================
+# PATIENT STORIES
+# ==========================================================
+
+patientStories:
+
+  desktop:
+
+    cardsPerView: 3
+
+    arrows: true
+
+    pagination: true
+
+  tablet:
+
+    cardsPerView: 2
+
+  mobile:
+
+    cardsPerView: 1.1
+
+    swipe: true
+
+    pagination: true
+
+# ==========================================================
+# DOCTOR SECTION
+# ==========================================================
+
+doctorSection:
+
+  desktop:
+
+    columns: 3
+
+  tablet:
+
+    columns: 2
+
+  mobile:
+
+    carousel: true
+
+# ==========================================================
+# HOSPITALS
+# ==========================================================
+
+hospitals:
+
+  desktop:
+
+    columns: 2
+
+  tablet:
+
+    columns: 2
+
+  mobile:
+
+    stacked: true
+
+# ==========================================================
+# CTA
+# ==========================================================
+
+cta:
+
+  desktop:
+
+    centered: true
+
+  mobile:
+
+    stacked: true
+
+# ==========================================================
+# FOOTER
+# ==========================================================
+
+footer:
+
+  desktop:
+
+    columns: 4
+
+  tablet:
+
+    columns: 2
+
+  mobile:
+
+    stacked: true
+
+# ==========================================================
+# TYPOGRAPHY
+# ==========================================================
+
+typography:
+
+  desktop:
+
+    heroTitle: 56
+
+    sectionTitle: 32
+
+  tablet:
+
+    heroTitle: 44
+
+    sectionTitle: 28
+
+  mobile:
+
+    heroTitle: 34
+
+    sectionTitle: 20
+
+# ==========================================================
+# IMAGES
+# ==========================================================
+
+images:
+
+  desktop:
+
+    objectFit: cover
+
+  mobile:
+
+    objectFit: cover
+
+    preserveFocusPoint: true
+
+# ==========================================================
+# TOUCH TARGETS
+# ==========================================================
+
+interaction:
+
+  minimumTouchTarget: 44
+
+  minimumSpacing: 8
+
+# ==========================================================
+# IMPLEMENTATION
+# ==========================================================
+
+implementation:
+
+  useCSSGridDesktop: true
+
+  useFlexboxMobile: true
+
+  preserveDesktopMock: true
+
+  preserveMobileMock: true
+
+  neverInferLayouts: true
+
+  doNotRedesign: true
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

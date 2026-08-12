@@ -1,0 +1,54 @@
+breakpoints:
+  mobile:
+    min_px: 0
+    max_px: 767
+    reference_px: 390
+  tablet:
+    min_px: 768
+    max_px: 1199
+  desktop:
+    min_px: 1200
+    reference_px: 1440
+grids:
+  mobile:
+    columns: 4
+    side_padding_px: 16
+    gutter_px: 8
+    usable_width_at_390_px: 358
+    column_width_at_390_px: 83.5
+    template: repeat(4, minmax(0, 1fr))
+  tablet:
+    columns: 8
+    side_padding_px: 24
+    gutter_px: 24
+    template: repeat(8, minmax(0, 1fr))
+  desktop:
+    columns: 12
+    container_max_width_px: 1280
+    side_padding_at_1440_px: 80
+    gutter_px: 24
+    usable_column_space_px: 1016
+    column_width_px: 84.67
+    template: repeat(12, minmax(0, 1fr))
+responsive_rules:
+- Do not derive mobile by cropping or shrinking the desktop hero.
+- Use the supplied mobile and desktop hero artwork through a picture/source switch.
+- Use content-driven heights; mock heights are references, not fixed CSS heights.
+- At mobile, stack major sections vertically while preserving approved internal two-column mini-layouts.
+- At tablet, use 8-column layouts and reduce multi-column card counts without inventing new compositions.
+- Convert approved card rows to horizontal scroll-snap carousels at mobile where shown.
+- All carousel, hamburger, accordion and CTA controls must have at least a 44px touch target.
+image_behavior:
+  hero_desktop:
+    object_fit: cover
+    object_position: center right
+  hero_mobile:
+    object_fit: cover
+    object_position: center
+  supporting_photos:
+    object_fit: cover
+    object_position: center
+  doctor_portrait:
+    object_fit: cover
+    object_position: center top
+    shape: circle

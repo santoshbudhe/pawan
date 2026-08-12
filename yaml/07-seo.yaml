@@ -1,0 +1,203 @@
+# ==========================================================
+# 07-seo.yaml
+# SEO Specification
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+seo:
+
+  enabled: true
+
+# ==========================================================
+# WEBSITE
+# ==========================================================
+
+website:
+
+  name: "Dr. Pawan Kumar Sadhvani"
+
+  category: Medical Clinic
+
+  language: en-IN
+
+  region: India
+
+  city: Hyderabad
+
+# ==========================================================
+# HOMEPAGE
+# ==========================================================
+
+homepage:
+
+  url: "/"
+
+  title: >
+    Cerebral Palsy & Spasticity Specialist in Hyderabad |
+    Dr. Pawan Kumar Sadhvani
+
+  description: >
+    Expert treatment for Cerebral Palsy, Spasticity,
+    SDR, SMF, Hyperselective Neurectomy,
+    Deformity Correction and Rehabilitation.
+
+  robots:
+
+    index: true
+
+    follow: true
+
+# ==========================================================
+# PRIMARY KEYWORDS
+# ==========================================================
+
+keywords:
+
+  primary:
+
+    - cerebral palsy specialist Hyderabad
+    - cerebral palsy treatment Hyderabad
+    - spasticity treatment Hyderabad
+    - SDR surgery India
+    - selective dorsal rhizotomy India
+    - selective motor fasciculotomy India
+    - hyperselective neurectomy India
+
+  secondary:
+
+    - toe walking treatment
+    - upper limb spasticity
+    - stroke spasticity
+    - deformity correction
+    - tendon lengthening
+    - muscle release surgery
+
+# ==========================================================
+# OPEN GRAPH
+# ==========================================================
+
+openGraph:
+
+  type: website
+
+  title: Homepage Title
+
+  description: Homepage Description
+
+  image: /assets/social/og-image.jpg
+
+# ==========================================================
+# TWITTER
+# ==========================================================
+
+twitter:
+
+  card: summary_large_image
+
+# ==========================================================
+# STRUCTURED DATA
+# ==========================================================
+
+schema:
+
+  MedicalClinic:
+
+    enabled: true
+
+  Physician:
+
+    enabled: true
+
+  FAQPage:
+
+    enabled: true
+
+  BreadcrumbList:
+
+    enabled: true
+
+# ==========================================================
+# IMAGES
+# ==========================================================
+
+images:
+
+  altTextRequired: true
+
+  descriptiveFileNames: true
+
+  lazyLoadBelowFold: true
+
+# ==========================================================
+# URLS
+# ==========================================================
+
+urls:
+
+  lowercase: true
+
+  hyphenSeparated: true
+
+  trailingSlash: false
+
+# ==========================================================
+# INTERNAL LINKING
+# ==========================================================
+
+internalLinks:
+
+  procedures:
+
+    enabled: true
+
+  patientStories:
+
+    enabled: true
+
+  doctorProfile:
+
+    enabled: true
+
+  hospitals:
+
+    enabled: true
+
+# ==========================================================
+# PERFORMANCE
+# ==========================================================
+
+coreWebVitals:
+
+  largestContentfulPaint:
+
+    target: "<2.5s"
+
+  cumulativeLayoutShift:
+
+    target: "<0.1"
+
+  interactionToNextPaint:
+
+    target: "<200ms"
+
+# ==========================================================
+# IMPLEMENTATION RULES
+# ==========================================================
+
+rules:
+
+  - Every page must have a unique title.
+  - Every page must have a unique meta description.
+  - Every image requires descriptive alt text.
+  - Use semantic HTML.
+  - Use heading hierarchy (H1 → H2 → H3).
+  - Only one H1 per page.
+  - Generate sitemap.xml.
+  - Generate robots.txt.
+  - Generate canonical URLs.
+  - Include JSON-LD structured data.
+  - Do not duplicate metadata across pages.
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

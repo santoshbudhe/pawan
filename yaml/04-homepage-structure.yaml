@@ -1,0 +1,473 @@
+# ==========================================================
+# 04-homepage-structure.yaml
+# Homepage Layout Blueprint
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+page:
+
+  id: homepage
+
+  route: "/"
+
+  layout: responsive
+
+  scrollBehavior: smooth
+
+  maxWidth: 1280
+
+  mobileFirst: true
+
+# ==========================================================
+# PAGE ORDER
+# ==========================================================
+
+sections:
+
+# ----------------------------------------------------------
+# HEADER
+# ----------------------------------------------------------
+
+  - id: header
+
+    order: 1
+
+    component: Header
+
+    sticky: true
+
+    desktop:
+
+      layout: horizontal
+
+      columns: 12
+
+      height: 88
+
+    mobile:
+
+      layout: horizontal
+
+      height: 72
+
+    assets:
+
+      logo: primary
+
+# ----------------------------------------------------------
+# HERO
+# ----------------------------------------------------------
+
+  - id: hero
+
+    order: 2
+
+    component: Hero
+
+    priority: highest
+
+    desktop:
+
+      layout: two-column
+
+      leftSpan: 5
+
+      rightSpan: 7
+
+    mobile:
+
+      layout: stacked
+
+    assets:
+
+      desktopHero: desktop
+
+      mobileHero: mobile
+
+    cta:
+
+      primary:
+
+        text: Request Assessment
+
+      secondary:
+
+        text: Learn More
+
+# ----------------------------------------------------------
+# TRUST STRIP
+# ----------------------------------------------------------
+
+  - id: trust-strip
+
+    order: 3
+
+    component: TrustStrip
+
+    layout:
+
+      desktop: horizontal
+
+      mobile: horizontal-scroll
+
+    assets:
+
+      trustedFamilies
+
+# ----------------------------------------------------------
+# WHY CHOOSE US
+# ----------------------------------------------------------
+
+  - id: whyChooseUs
+
+    order: 4
+
+    component: FeatureGrid
+
+    desktop:
+
+      columns: 4
+
+    mobile:
+
+      columns: 1
+
+# ----------------------------------------------------------
+# WHO WE HELP
+# ----------------------------------------------------------
+
+  - id: whoWeHelp
+
+    order: 5
+
+    component: ConditionCards
+
+    desktop:
+
+      cardsPerRow: 3
+
+    mobile:
+
+      carousel: true
+
+      visibleCards: 1.15
+
+    assets:
+
+      whoWeHelp
+
+# ----------------------------------------------------------
+# UNDERSTANDING SPASTICITY
+# ----------------------------------------------------------
+
+  - id: understanding
+
+    order: 6
+
+    component: EducationalSection
+
+    desktop:
+
+      layout: two-column
+
+    mobile:
+
+      stacked
+
+# ----------------------------------------------------------
+# ASSESSMENT JOURNEY
+# ----------------------------------------------------------
+
+  - id: assessmentJourney
+
+    order: 7
+
+    component: Timeline
+
+    desktop:
+
+      orientation: horizontal
+
+    mobile:
+
+      orientation: vertical
+
+# ----------------------------------------------------------
+# PROCEDURES
+# ----------------------------------------------------------
+
+  - id: procedures
+
+    order: 8
+
+    component: ProcedureCards
+
+    assets:
+
+      procedures
+
+    desktop:
+
+      cardsPerRow: 4
+
+    mobile:
+
+      carousel: true
+
+      visibleCards: 1.1
+
+# ----------------------------------------------------------
+# COMBINED CARE
+# ----------------------------------------------------------
+
+  - id: combinedCare
+
+    order: 9
+
+    component: InformationSection
+
+    desktop:
+
+      layout: image-left
+
+    mobile:
+
+      stacked
+
+# ----------------------------------------------------------
+# FEATURED PROCEDURE
+# ----------------------------------------------------------
+
+  - id: featuredProcedure
+
+    order: 10
+
+    component: FeatureHighlight
+
+    asset:
+
+      smfThumbnail
+
+# ----------------------------------------------------------
+# TREATMENT GOALS
+# ----------------------------------------------------------
+
+  - id: treatmentGoals
+
+    order: 11
+
+    component: GoalCards
+
+    desktop:
+
+      columns: 4
+
+    mobile:
+
+      carousel: true
+
+# ----------------------------------------------------------
+# PATIENT STORIES
+# ----------------------------------------------------------
+
+  - id: patientStories
+
+    order: 12
+
+    component: StoryCarousel
+
+    assets:
+
+      patientStories
+
+    desktop:
+
+      visibleCards: 3
+
+      arrows: true
+
+      pagination: true
+
+    mobile:
+
+      visibleCards: 1.1
+
+      swipe: true
+
+      pagination: true
+
+    behaviour:
+
+      autoplay: false
+
+      infinite: false
+
+      preserveOrder: true
+
+# ----------------------------------------------------------
+# SPECIALIST TEAM
+# ----------------------------------------------------------
+
+  - id: specialistTeam
+
+    order: 13
+
+    component: DoctorCards
+
+    assets:
+
+      doctors
+
+    desktop:
+
+      columns: 3
+
+    mobile:
+
+      carousel: true
+
+# ----------------------------------------------------------
+# HOSPITALS
+# ----------------------------------------------------------
+
+  - id: hospitals
+
+    order: 14
+
+    component: HospitalCards
+
+    assets:
+
+      hospitals
+
+    desktop:
+
+      columns: 2
+
+    mobile:
+
+      stacked
+
+# ----------------------------------------------------------
+# FINAL CTA
+# ----------------------------------------------------------
+
+  - id: consultationCTA
+
+    order: 15
+
+    component: CTASection
+
+    desktop:
+
+      centered
+
+    mobile:
+
+      stacked
+
+# ----------------------------------------------------------
+# FOOTER
+# ----------------------------------------------------------
+
+  - id: footer
+
+    order: 16
+
+    component: Footer
+
+    logo:
+
+      footer
+
+# ==========================================================
+# SECTION RULES
+# ==========================================================
+
+rules:
+
+  spacingSystem:
+
+    base: 8
+
+  equalHeightCards: true
+
+  preserveApprovedSpacing: true
+
+  preserveApprovedTypography: true
+
+  preserveApprovedImages: true
+
+# ==========================================================
+# CAROUSELS
+# ==========================================================
+
+carousels:
+
+  procedures:
+
+    desktop:
+
+      enabled: false
+
+    mobile:
+
+      enabled: true
+
+  patientStories:
+
+    desktop:
+
+      enabled: true
+
+    mobile:
+
+      enabled: true
+
+  specialistTeam:
+
+    desktop:
+
+      enabled: false
+
+    mobile:
+
+      enabled: true
+
+# ==========================================================
+# RESPONSIVE
+# ==========================================================
+
+responsive:
+
+  desktop:
+
+    grid: 12
+
+  tablet:
+
+    grid: 8
+
+  mobile:
+
+    grid: 4
+
+# ==========================================================
+# IMPLEMENTATION RULES
+# ==========================================================
+
+implementation:
+
+  useCSSGrid: true
+
+  useFlexboxForSmallLayouts: true
+
+  avoidAbsolutePositioning: true
+
+  maintainVisualParityWithApprovedMocks: true
+
+  doNotRedesign: true
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

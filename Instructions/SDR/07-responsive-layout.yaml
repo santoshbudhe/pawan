@@ -1,0 +1,1364 @@
+schema_version: "1.0"
+
+file:
+  name: "07-responsive-layout.yaml"
+  purpose: >
+    Defines the responsive layout, grid behaviour, section composition,
+    spacing, card counts, image treatment, stacking rules and breakpoint
+    transitions for the SDR procedure page.
+
+page:
+  id: "sdr-procedure-page"
+  route: "/procedures/selective-dorsal-rhizotomy"
+  component: "SdrProcedurePage"
+  page_type: "long-form responsive procedure page"
+
+implementation_priority:
+  - "Approved clean mocks control visual composition and section order."
+  - "Final hero assets control the medical artwork and crop."
+  - "Grid references control measured and recommended layout values."
+  - "This file controls responsive implementation behaviour."
+  - "The existing shared website design system controls equivalent shared values."
+
+reference_files:
+  approved_mocks:
+    mobile_part_1: "1000104948.png"
+    mobile_part_2: "1000104953.jpg"
+    desktop_part_1: "1000104950.png"
+    desktop_part_2: "1000104952.png"
+
+  grid_references:
+    mobile_part_1: "1000104951.png"
+    mobile_part_2: "1000104956.png"
+    desktop_part_1: "1000104955.png"
+    desktop_part_2: "1000104954.png"
+
+  production_hero_assets:
+    mobile: "1000104949.png"
+    desktop: "1000104957.png"
+
+  filename_rules:
+    rename_allowed: false
+    exact_filenames_required: true
+
+global_layout:
+  width: "100%"
+  min_width: "320px"
+  max_page_width: "none"
+  horizontal_overflow: "hidden only at the page shell; do not hide broken component overflow"
+  base_spacing_unit: "8px"
+
+  main:
+    display: "block"
+    width: "100%"
+
+  container:
+    width: "100%"
+    margin_inline: "auto"
+
+  content_order:
+    preserve_exactly: true
+
+  section_markers:
+    part_1_end:
+      text: "Continues in Part 2"
+      production_visibility: false
+
+    part_2_start:
+      text: "Continuing from Part 1"
+      production_visibility: false
+
+  repeated_shell_elements:
+    second_header: false
+    second_footer: false
+
+breakpoints:
+  mobile_small:
+    query: "max-width: 374px"
+    reference: "Narrow mobile fallback"
+
+  mobile:
+    query: "max-width: 767px"
+    reference_width: "390px"
+    columns: 4
+    gutter: "8px"
+    side_padding: "16px"
+
+  tablet:
+    query: "min-width: 768px and max-width: 1199px"
+    columns: 8
+    gutter: "20px"
+    side_padding: "24px to 48px"
+
+  desktop:
+    query: "min-width: 1200px"
+    reference_width: "1440px"
+    columns: 12
+    gutter: "24px"
+    side_padding: "clamp(32px, 5.56vw, 80px)"
+    content_max_width: "1280px"
+
+  wide_desktop:
+    query: "min-width: 1600px"
+    columns: 12
+    gutter: "24px"
+    content_max_width: "1280px"
+    side_padding: "auto"
+
+grid_system:
+  desktop:
+    viewport_reference: "1440px"
+    container:
+      width: "calc(100% - 160px)"
+      max_width: "1280px"
+      margin_inline: "auto"
+      padding_inline: "0"
+
+    grid:
+      display: "grid"
+      grid_template_columns: "repeat(12, minmax(0, 1fr))"
+      column_gap: "24px"
+
+    calculated_reference_values:
+      container_width: "1280px"
+      total_gutter_width: "264px"
+      column_width: "84.6667px"
+      left_margin: "80px"
+      right_margin: "80px"
+
+  tablet:
+    container:
+      width: "100%"
+      max_width: "none"
+      margin_inline: "auto"
+      padding_inline: "clamp(24px, 4vw, 48px)"
+
+    grid:
+      display: "grid"
+      grid_template_columns: "repeat(8, minmax(0, 1fr))"
+      column_gap: "20px"
+
+  mobile:
+    viewport_reference: "390px"
+
+    container:
+      width: "100%"
+      max_width: "none"
+      margin_inline: "auto"
+      padding_inline: "16px"
+
+    grid:
+      display: "grid"
+      grid_template_columns: "repeat(4, minmax(0, 1fr))"
+      column_gap: "8px"
+
+    calculated_reference_values:
+      available_content_width: "358px"
+      total_gutter_width: "24px"
+      column_width: "83.5px"
+      left_padding: "16px"
+      right_padding: "16px"
+
+section_spacing:
+  desktop:
+    standard_padding_block: "80px"
+    compact_padding_block: "64px"
+    spacious_padding_block: "96px"
+    standard_section_gap: "80px"
+    accepted_range: "72px to 96px"
+
+  tablet:
+    standard_padding_block: "64px"
+    compact_padding_block: "48px"
+    spacious_padding_block: "80px"
+    standard_section_gap: "64px"
+
+  mobile:
+    standard_padding_block: "56px"
+    compact_padding_block: "40px"
+    spacious_padding_block: "64px"
+    standard_section_gap: "56px"
+    accepted_range: "48px to 72px"
+
+  rules:
+    - "Use spacing in multiples of 8px wherever practical."
+    - "Do not shrink the page vertically to show every section at once."
+    - "Allow the page to remain a long, naturally scrollable document."
+    - "Do not introduce oversized blank areas on desktop."
+    - "Do not compress mobile content to imitate the desktop height."
+
+shared_header:
+  component: "SiteHeader"
+
+  desktop:
+    height: "80px"
+    position: "sticky where established"
+    layout: "logo left, navigation right, Request Assessment CTA at far right"
+    container_span: "12 columns"
+    logo_span: "approximately 3 columns"
+    navigation_span: "approximately 6 columns"
+    cta_span: "approximately 3 columns"
+    hamburger_visible: false
+
+  tablet:
+    height: "76px"
+    navigation:
+      rule: "Use the shared website breakpoint behaviour."
+    hamburger_visible: "Use existing header convention."
+
+  mobile:
+    height: "72px"
+    padding_inline: "16px"
+    layout: "logo left, assessment action and hamburger right"
+    navigation_links_visible: false
+    hamburger_visible: true
+    hamburger_target: "44px by 44px"
+    cta_min_height: "44px"
+
+  z_index: 100
+  sticky_offset_for_anchors:
+    desktop: "96px"
+    tablet: "88px"
+    mobile: "80px"
+
+hero:
+  id: "sdr-hero"
+
+  assets:
+    mobile: "1000104949.png"
+    desktop: "1000104957.png"
+
+  common:
+    width: "100%"
+    background: "pale blue-white matching the supplied hero assets"
+    overflow: "hidden"
+    content:
+      editable_html:
+        - "Breadcrumb"
+        - "Specialized Procedure eyebrow"
+        - "Selective Dorsal Rhizotomy (SDR) heading"
+        - "Supporting paragraph"
+        - "Nerve Procedure tag"
+        - "Lower-Limb Spasticity tag"
+        - "Request Assessment button"
+        - "Talk to Our Team button"
+
+      baked_into_image:
+        - "Anatomical medical artwork"
+        - "Circular magnifier"
+        - "Magnifier connector lines"
+        - "Explanatory sensory-nerve sentence"
+
+  desktop:
+    minimum_height: "512px"
+    recommended_height: "520px to 576px"
+    container: "1280px centred"
+    layout: "CSS Grid"
+    grid_template_columns: "repeat(12, minmax(0, 1fr))"
+    column_gap: "24px"
+    align_items: "center"
+
+    html_content:
+      grid_column: "1 / span 6"
+      z_index: 2
+      max_width: "560px"
+      padding_block: "48px"
+
+    artwork:
+      grid_column: "5 / -1"
+      position: "absolute or grid-positioned behind the right side"
+      object_fit: "cover"
+      object_position: "center right"
+      width: "100%"
+      height: "100%"
+
+    buttons:
+      layout: "flex"
+      flex_direction: "row"
+      wrap: true
+      gap: "16px"
+      minimum_height: "48px"
+
+  tablet:
+    minimum_height: "recommended 560px"
+    layout: "balanced overlay or two-area composition"
+    html_content_width: "approximately 52%"
+    artwork_width: "approximately 60%"
+    rule:
+      - "Preserve the complete magnifier and baked-in sentence."
+      - "Do not allow the image to obscure the heading or CTAs."
+      - "Use the desktop asset only when its crop remains safe."
+      - "The mobile asset may be used on narrow tablets if it better preserves the composition."
+
+  mobile:
+    reference_width: "390px"
+    minimum_height: "recommended 640px"
+    padding_inline: "16px"
+    padding_top: "24px"
+    padding_bottom: "40px"
+    layout: "stacked mobile hero using the approved safe image composition"
+
+    html_content:
+      grid_column: "1 / -1"
+      max_width: "100%"
+      z_index: 2
+      order:
+        - "Breadcrumb"
+        - "Eyebrow"
+        - "Heading"
+        - "Description"
+        - "Tags"
+        - "Request Assessment"
+        - "Talk to Our Team"
+
+    artwork:
+      source: "1000104949.png"
+      object_fit: "cover"
+      object_position: "center right"
+      preserve:
+        - "Anatomical figure"
+        - "Magnifier"
+        - "Connector lines"
+        - "Complete baked-in sentence"
+
+    tags:
+      layout: "flex"
+      flex_wrap: true
+      gap: "8px"
+
+    buttons:
+      layout: "grid"
+      grid_template_columns: "1fr"
+      gap: "12px"
+      width: "100%"
+      minimum_height: "48px"
+
+  small_mobile:
+    title:
+      font_size: "30px to 34px"
+      wrapping: "natural"
+
+    hero:
+      minimum_height: "auto"
+      padding_bottom: "32px"
+
+    rule:
+      - "Do not reduce body text below 16px."
+      - "Increase hero height rather than overlap the artwork."
+      - "Allow tags to wrap onto multiple rows."
+
+what_is_sdr:
+  id: "what-is-sdr"
+
+  common:
+    layout: "full-width information card"
+    container_span: "full container"
+    card_radius: "16px"
+    card_padding:
+      desktop: "32px"
+      mobile: "20px"
+
+  desktop:
+    section_grid_column: "1 / -1"
+    education_grid:
+      display: "grid"
+      grid_template_columns: "repeat(4, minmax(0, 1fr))"
+      gap: "24px"
+      equal_height: true
+
+    goal_callout:
+      width: "100%"
+      min_height: "72px"
+
+    information_strip:
+      width: "100%"
+      margin_top: "24px"
+
+  tablet:
+    education_grid:
+      grid_template_columns: "repeat(2, minmax(0, 1fr))"
+      gap: "20px"
+
+  mobile:
+    section_grid_column: "1 / -1"
+    layout: "block"
+    education_grid:
+      primary: "repeat(2, minmax(0, 1fr))"
+      fallback_below: "350px"
+      fallback: "1fr"
+      gap: "12px"
+
+    cards:
+      min_height: "auto"
+      text_wrap: true
+      padding: "16px"
+
+    information_strip:
+      margin_top: "16px"
+
+who_may_benefit_and_suitability:
+  desktop:
+    parent:
+      display: "grid"
+      grid_template_columns: "repeat(12, minmax(0, 1fr))"
+      gap: "24px"
+      align_items: "stretch"
+
+    who_may_benefit:
+      grid_column: "1 / span 6"
+
+    suitability:
+      grid_column: "7 / span 6"
+
+    equal_height_sections: true
+
+  tablet:
+    parent:
+      display: "grid"
+      grid_template_columns: "repeat(8, minmax(0, 1fr))"
+      gap: "20px"
+
+    who_may_benefit:
+      grid_column: "1 / span 4"
+
+    suitability:
+      grid_column: "5 / span 4"
+
+  mobile:
+    parent:
+      display: "block"
+
+    order:
+      - "Who may benefit?"
+      - "When SDR may not be appropriate"
+
+    section_gap: "24px"
+    side_by_side_prohibited: true
+
+    who_may_benefit:
+      width: "100%"
+      image_position: "below list when present"
+
+    suitability:
+      width: "100%"
+      internal_grid:
+        preferred: "repeat(2, minmax(0, 1fr))"
+        fallback_below: "350px"
+        fallback: "1fr"
+        gap: "12px"
+
+problems_carousel:
+  id: "problems-sdr-may-address"
+
+  common:
+    full_width: true
+    overflow_clip_parent: false
+    scroll_snap_type: "x mandatory"
+    card_radius: "16px"
+
+  desktop:
+    layout:
+      primary: "CSS Grid when all cards fit"
+      grid_template_columns: "repeat(5, minmax(0, 1fr))"
+      gap: "24px"
+
+    card_count_visible: 5
+    equal_height: true
+    controls:
+      show_only_when_overflow_exists: true
+
+  tablet:
+    layout: "horizontal carousel"
+    card_width: "calc((100% - 20px) / 2)"
+    visible_count: 2
+    partial_next_card: true
+    gap: "20px"
+
+  mobile:
+    layout: "horizontal carousel"
+    full_bleed_scroll_area: true
+    scroll_padding_inline: "16px"
+    card_width: "112px to 136px"
+    card_flex: "0 0 auto"
+    gap: "16px"
+    next_card_peek: true
+    touch_swipe: true
+    page_horizontal_overflow: false
+
+assessment_and_selection:
+  id: "assessment-and-patient-selection"
+
+  desktop:
+    display: "grid"
+    grid_template_columns: "repeat(12, minmax(0, 1fr))"
+    gap: "24px"
+    align_items: "stretch"
+
+    steps:
+      grid_column: "1 / span 7"
+
+    image:
+      grid_column: "8 / span 5"
+      aspect_ratio: "recommended 4 / 3"
+      object_fit: "cover"
+      object_position: "center"
+
+  tablet:
+    display: "grid"
+    grid_template_columns: "repeat(8, minmax(0, 1fr))"
+    gap: "20px"
+
+    steps:
+      grid_column: "1 / span 5"
+
+    image:
+      grid_column: "6 / span 3"
+
+  mobile:
+    display: "block"
+    content_order:
+      - "Heading"
+      - "Assessment steps"
+      - "Supporting image"
+
+    side_by_side_prohibited: true
+
+    step_row:
+      display: "grid"
+      grid_template_columns: "auto minmax(0, 1fr)"
+      column_gap: "12px"
+      padding_block: "16px"
+      min_height: "auto"
+
+    step_content:
+      display: "block"
+
+    step_title:
+      width: "100%"
+
+    step_description:
+      display: "block"
+      margin_top: "4px"
+      width: "100%"
+      wrap: true
+
+    image:
+      width: "100%"
+      margin_top: "24px"
+      aspect_ratio: "4 / 3"
+      object_fit: "cover"
+
+how_sdr_works:
+  id: "how-sdr-works"
+  mandatory: true
+
+  reference_warning:
+    issue: "The Mobile Part 1 grid image does not display the entire section."
+    source_of_truth: "1000104948.png and the desktop references"
+    instruction: "Do not omit this section."
+
+  desktop:
+    display: "grid"
+    grid_template_columns: "repeat(4, minmax(0, 1fr))"
+    gap: "24px"
+    equal_height_cards: true
+
+  tablet:
+    display: "grid"
+    grid_template_columns: "repeat(2, minmax(0, 1fr))"
+    gap: "20px"
+
+  mobile:
+    preferred:
+      display: "grid"
+      grid_template_columns: "1fr"
+      gap: "16px"
+
+    card:
+      width: "100%"
+      min_height: "auto"
+      padding: "20px"
+
+    alternative:
+      allowed: "Horizontal carousel only when it matches the locked mock more closely"
+      card_width: "min(86vw, 336px)"
+      next_card_peek: true
+
+    rule:
+      - "Do not show multiple narrow procedure cards side by side."
+      - "Keep descriptions at 16px minimum."
+      - "Allow each card to grow naturally."
+
+goals_and_limitations:
+  desktop:
+    parent:
+      display: "grid"
+      grid_template_columns: "repeat(12, minmax(0, 1fr))"
+      gap: "24px"
+      align_items: "stretch"
+
+    goals:
+      grid_column: "1 / span 6"
+
+    limitations:
+      grid_column: "7 / span 6"
+
+    equal_height_sections: true
+
+  tablet:
+    parent:
+      display: "grid"
+      grid_template_columns: "repeat(8, minmax(0, 1fr))"
+      gap: "20px"
+
+    goals:
+      grid_column: "1 / span 4"
+
+    limitations:
+      grid_column: "5 / span 4"
+
+  mobile:
+    parent:
+      display: "block"
+
+    order:
+      - "Potential goals of SDR"
+      - "Limitations and important considerations"
+
+    section_gap: "24px"
+    side_by_side_prohibited: true
+
+    section_card:
+      width: "100%"
+      display: "block"
+
+    supporting_image:
+      width: "100%"
+      margin_top: "20px"
+      aspect_ratio: "4 / 3"
+      object_fit: "cover"
+
+treatment_comparison:
+  id: "sdr-treatment-comparison"
+
+  desktop:
+    display: "grid or carousel"
+    grid_template_columns: "repeat(4, minmax(0, 1fr))"
+    gap: "24px"
+    visible_cards: 4
+    equal_height_cards: true
+
+  tablet:
+    display: "horizontal carousel"
+    card_width: "calc((100% - 20px) / 2)"
+    gap: "20px"
+    visible_cards: 2
+    next_card_peek: true
+
+  mobile:
+    display: "horizontal carousel"
+    card_width: "min(82vw, 310px)"
+    card_flex: "0 0 auto"
+    gap: "16px"
+    next_card_peek: true
+    scroll_snap_align: "start"
+
+    rule:
+      - "Do not reduce every comparison card to fit within one row."
+      - "The selected SDR card remains visually highlighted."
+      - "The current SDR card is not a navigation link."
+
+recovery_and_rehabilitation:
+  id: "recovery-and-rehabilitation"
+
+  desktop:
+    display: "grid"
+    grid_template_columns: "repeat(12, minmax(0, 1fr))"
+    gap: "24px"
+    align_items: "stretch"
+
+    steps:
+      grid_column: "1 / span 5"
+
+    image:
+      grid_column: "6 / span 7"
+      aspect_ratio: "recommended 16 / 10"
+      object_fit: "cover"
+
+    callout:
+      grid_column: "1 / -1"
+      margin_top: "24px"
+
+  tablet:
+    display: "grid"
+    grid_template_columns: "repeat(8, minmax(0, 1fr))"
+    gap: "20px"
+
+    steps:
+      grid_column: "1 / span 4"
+
+    image:
+      grid_column: "5 / span 4"
+
+    callout:
+      grid_column: "1 / -1"
+
+  mobile:
+    display: "block"
+    content_order:
+      - "Heading"
+      - "Recovery steps"
+      - "Rehabilitation image"
+      - "Recovery callout"
+
+    side_by_side_prohibited: true
+
+    step_row:
+      display: "grid"
+      grid_template_columns: "auto minmax(0, 1fr)"
+      gap: "12px"
+      padding_block: "16px"
+      flexible_height: true
+
+    image:
+      width: "100%"
+      margin_top: "24px"
+      aspect_ratio: "4 / 3"
+      object_fit: "cover"
+
+    callout:
+      margin_top: "16px"
+
+risks_and_information:
+  id: "risks-and-important-information"
+
+  desktop:
+    display: "grid"
+    grid_template_columns: "repeat(12, minmax(0, 1fr))"
+    gap: "24px"
+
+    accordion:
+      grid_column: "1 / span 7"
+
+    explanatory_panel:
+      grid_column: "8 / span 5"
+
+  tablet:
+    display: "grid"
+    grid_template_columns: "repeat(8, minmax(0, 1fr))"
+    gap: "20px"
+
+    accordion:
+      grid_column: "1 / span 5"
+
+    explanatory_panel:
+      grid_column: "6 / span 3"
+
+  mobile:
+    display: "block"
+    accordion_width: "100%"
+    explanatory_panel_width: "100%"
+    panel_margin_top: "16px"
+
+    accordion_row:
+      min_height: "52px"
+      width: "100%"
+      padding: "14px 16px"
+
+medical_review:
+  id: "medical-review"
+
+  desktop:
+    width: "100%"
+    max_width: "880px"
+    margin_inline: "auto"
+    display: "grid"
+    grid_template_columns: "auto minmax(0, 1fr) auto"
+    gap: "20px"
+    align_items: "center"
+
+  tablet:
+    width: "100%"
+    grid_template_columns: "auto minmax(0, 1fr)"
+
+  mobile:
+    width: "100%"
+    display: "grid"
+    grid_template_columns: "72px minmax(0, 1fr)"
+    gap: "16px"
+    align_items: "start"
+
+    review_date:
+      grid_column: "1 / -1"
+      margin_top: "8px"
+
+multidisciplinary_team:
+  id: "multidisciplinary-team"
+
+  desktop:
+    display: "grid"
+    grid_template_columns: "repeat(4, minmax(0, 1fr))"
+    gap: "24px"
+    equal_height_cards: true
+
+  tablet:
+    display: "grid"
+    grid_template_columns: "repeat(2, minmax(0, 1fr))"
+    gap: "20px"
+
+  mobile:
+    preferred:
+      display: "grid"
+      grid_template_columns: "repeat(2, minmax(0, 1fr))"
+      gap: "12px"
+
+    fallback_below: "340px"
+
+    fallback:
+      display: "grid"
+      grid_template_columns: "1fr"
+
+    rule:
+      - "Do not place four narrow role cards in one row."
+      - "Allow long role names to wrap."
+      - "Keep icons large enough to understand."
+
+patient_journeys:
+  id: "patient-journeys"
+
+  desktop:
+    display: "horizontal carousel or two-card grid"
+    visible_cards: 2
+    gap: "24px"
+
+    story_card:
+      width: "calc((100% - 24px) / 2)"
+
+  tablet:
+    display: "horizontal carousel"
+    visible_cards: 1
+    card_width: "min(78vw, 620px)"
+    next_card_peek: true
+
+  mobile:
+    display: "horizontal carousel"
+    visible_cards: 1
+    card_width: "min(88vw, 342px)"
+    card_flex: "0 0 auto"
+    gap: "16px"
+    next_card_peek: true
+
+    story_card:
+      layout: "block"
+
+    before_after_media:
+      display: "grid"
+      grid_template_columns: "repeat(2, minmax(0, 1fr))"
+      gap: "8px"
+      width: "100%"
+
+    story_text:
+      width: "100%"
+      margin_top: "16px"
+
+    rule:
+      - "Do not place the full story text beside the image pair."
+      - "Keep all story text below the Before and After images."
+
+frequently_asked_questions:
+  id: "frequently-asked-questions"
+
+  desktop:
+    width: "100%"
+    max_width: "960px"
+    margin_inline: "auto"
+
+  tablet:
+    width: "100%"
+
+  mobile:
+    width: "100%"
+
+    accordion_row:
+      min_height: "52px"
+      padding: "14px 16px"
+
+    question_text:
+      font_size: "16px"
+      line_height: "24px"
+
+references:
+  id: "references-and-further-reading"
+
+  desktop:
+    width: "100%"
+    max_width: "960px"
+    margin_inline: "auto"
+
+  tablet:
+    width: "100%"
+
+  mobile:
+    width: "100%"
+    link_rows:
+      min_height: "44px"
+      wrap: true
+
+closing_cta:
+  id: "closing-assessment-cta"
+
+  common:
+    width: "100%"
+    text_align: "center"
+    border_radius: "20px"
+
+  desktop:
+    padding: "64px"
+    content_max_width: "760px"
+    content_margin_inline: "auto"
+
+    actions:
+      display: "flex"
+      flex_direction: "row"
+      justify_content: "center"
+      gap: "16px"
+      margin_top: "24px"
+
+  tablet:
+    padding: "48px"
+
+    actions:
+      display: "flex"
+      justify_content: "center"
+      flex_wrap: true
+      gap: "16px"
+
+  mobile:
+    padding: "32px 20px"
+
+    actions:
+      display: "grid"
+      grid_template_columns: "1fr"
+      gap: "12px"
+      margin_top: "24px"
+
+    buttons:
+      width: "100%"
+      min_height: "48px"
+
+shared_footer:
+  component: "SiteFooter"
+  render_count: 1
+
+  desktop:
+    padding_block: "64px"
+    layout: "Use existing multi-column footer"
+    container: "1280px centred"
+
+  tablet:
+    padding_block: "56px"
+    layout: "Use existing responsive footer"
+
+  mobile:
+    padding_block: "48px"
+    padding_inline: "16px"
+    layout: "stacked"
+    section_gap: "24px"
+
+typography_scaling:
+  desktop:
+    hero_title: "clamp(48px, 4.2vw, 64px)"
+    hero_body: "18px"
+    section_title: "clamp(34px, 3vw, 44px)"
+    body: "16px to 18px"
+    card_title: "18px"
+    card_body: "16px"
+
+  tablet:
+    hero_title: "44px to 52px"
+    hero_body: "17px"
+    section_title: "30px to 38px"
+    body: "16px"
+    card_title: "17px"
+    card_body: "16px"
+
+  mobile:
+    hero_title: "clamp(32px, 9vw, 40px)"
+    hero_body: "16px"
+    section_title: "clamp(26px, 7vw, 32px)"
+    body: "16px"
+    card_title: "17px"
+    card_body: "16px"
+    metadata_minimum: "13px"
+
+  rules:
+    - "Do not scale the desktop page down proportionally to create mobile."
+    - "Do not use body text smaller than 16px except approved supporting metadata."
+    - "Allow headings and body text to wrap naturally."
+    - "Do not use fixed heights that clip translated or enlarged text."
+
+image_behaviour:
+  common:
+    display: "block"
+    width: "100%"
+    max_width: "100%"
+    height: "auto"
+
+  hero:
+    mobile:
+      file: "1000104949.png"
+
+    desktop:
+      file: "1000104957.png"
+
+    rule:
+      - "Do not interchange the mobile and desktop assets."
+      - "Do not rename the files."
+      - "Do not crop the magnifier or baked-in explanation."
+
+  below_fold:
+    object_fit: "cover"
+    object_position: "center"
+    border_radius: "16px"
+    loading: "lazy"
+    decoding: "async"
+
+  meaningful_images:
+    alt_required: true
+
+  decorative_images:
+    alt: ""
+
+  layout_shift:
+    width_and_height_attributes_required: true
+    aspect_ratio_required: true
+
+card_responsiveness:
+  desktop:
+    equal_height: true
+    standard_padding: "24px"
+    large_padding: "32px"
+    gap: "24px"
+
+  tablet:
+    equal_height: "within each row where practical"
+    standard_padding: "20px"
+    gap: "20px"
+
+  mobile:
+    equal_height: false
+    natural_height: true
+    standard_padding: "20px"
+    compact_padding: "16px"
+    gap: "16px"
+
+  rule:
+    - "Never force mobile cards to share a fixed height when copy lengths differ."
+    - "Avoid placing more cards in a row than can remain readable."
+    - "Use full-width cards for important explanatory content."
+
+carousel_responsiveness:
+  desktop:
+    arrow_controls: true
+    pagination: true
+    native_scroll: true
+    grid_allowed_when_all_items_fit: true
+
+  tablet:
+    arrow_controls: true
+    touch_swipe: true
+    partial_next_card: true
+
+  mobile:
+    touch_swipe: true
+    arrow_controls: "Only where shown in the approved mock"
+    pagination: true
+    partial_next_card: true
+    overscroll_behaviour_inline: "contain"
+    full_page_horizontal_overflow: false
+
+  rule:
+    - "Do not shrink every card to fit one mobile row."
+    - "Use scroll snapping."
+    - "Do not rotate automatically."
+    - "Keep vertical page scrolling functional while swiping."
+
+touch_targets:
+  minimum: "44px by 44px"
+
+  preferred:
+    buttons: "48px high"
+    accordion_rows: "52px high"
+    carousel_arrows: "44px by 44px"
+    hamburger: "44px by 44px"
+    linked_cards: "Complete visible card"
+
+  spacing:
+    adjacent_targets_minimum_gap: "8px"
+
+responsive_visibility:
+  desktop_only:
+    - "Full desktop navigation"
+    - "Desktop hero asset"
+
+  mobile_only:
+    - "Hamburger menu where required"
+    - "Mobile hero asset"
+
+  shared:
+    - "All page content sections"
+    - "All medical information"
+    - "All CTAs"
+    - "All accessibility text"
+    - "All required accordions and carousels"
+
+  prohibited:
+    - "Do not hide medically important content solely to simplify mobile."
+    - "Do not remove sections at tablet sizes."
+    - "Do not show both hero assets simultaneously."
+
+safe_tablet_adaptation:
+  principles:
+    - "Tablet is a transition between approved desktop and mobile compositions."
+    - "Preserve section order."
+    - "Use two-column grids only when content remains comfortably readable."
+    - "Convert wide repeated-card rows into carousels."
+    - "Do not invent tablet-specific content."
+    - "Do not allow the tablet implementation to change the mobile layout."
+
+container_queries:
+  required: false
+  allowed: true
+
+  recommended_use:
+    - "Reusable card grids embedded in variable-width containers."
+    - "Medical review card wrapping."
+    - "Team role-card wrapping."
+
+  rule: "Viewport breakpoints remain the main page-layout system."
+
+css_implementation_notes:
+  page_container:
+    recommended:
+      css: |
+        .sdr-container {
+          width: 100%;
+          max-width: 1280px;
+          margin-inline: auto;
+          padding-inline: 16px;
+        }
+
+        @media (min-width: 768px) {
+          .sdr-container {
+            padding-inline: clamp(24px, 4vw, 48px);
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .sdr-container {
+            padding-inline: 0;
+          }
+        }
+
+  desktop_grid:
+    recommended:
+      css: |
+        .sdr-grid {
+          display: grid;
+          grid-template-columns: repeat(12, minmax(0, 1fr));
+          column-gap: 24px;
+        }
+
+  mobile_grid:
+    recommended:
+      css: |
+        @media (max-width: 767px) {
+          .sdr-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 8px;
+          }
+
+          .sdr-grid > * {
+            grid-column: 1 / -1;
+            min-width: 0;
+          }
+        }
+
+  carousel:
+    recommended:
+      css: |
+        .sdr-carousel-track {
+          display: flex;
+          gap: 16px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-padding-inline: 16px;
+          overscroll-behavior-inline: contain;
+          scrollbar-width: none;
+        }
+
+        .sdr-carousel-track::-webkit-scrollbar {
+          display: none;
+        }
+
+        .sdr-carousel-item {
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+        }
+
+  anchor_offset:
+    recommended:
+      css: |
+        .sdr-section {
+          scroll-margin-top: 96px;
+        }
+
+        @media (max-width: 1199px) {
+          .sdr-section {
+            scroll-margin-top: 88px;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .sdr-section {
+            scroll-margin-top: 80px;
+          }
+        }
+
+  reduced_motion:
+    recommended:
+      css: |
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+
+          .sdr-carousel-track {
+            scroll-behavior: auto;
+          }
+        }
+
+responsive_test_matrix:
+  - viewport:
+      width: 320
+      height: 568
+      type: "small mobile"
+
+    checks:
+      - "No clipped heading text."
+      - "No horizontal page overflow."
+      - "Major sections are stacked."
+      - "Buttons remain at least 44px high."
+      - "Hero artwork does not cover the HTML copy."
+
+  - viewport:
+      width: 390
+      height: 844
+      type: "approved mobile reference"
+
+    checks:
+      - "Layout matches the approved mobile mocks."
+      - "Side padding is 16px."
+      - "Four-column grid calculations remain valid."
+      - "Body copy remains at least 16px."
+      - "Carousel peeks remain visible."
+
+  - viewport:
+      width: 768
+      height: 1024
+      type: "small tablet"
+
+    checks:
+      - "Eight-column layout is active."
+      - "Wide card rows collapse safely."
+      - "No mobile or desktop artwork collision occurs."
+
+  - viewport:
+      width: 1024
+      height: 768
+      type: "large tablet"
+
+    checks:
+      - "Paired sections remain readable."
+      - "Comparison and stories use controlled carousels when required."
+      - "The header follows the existing tablet convention."
+
+  - viewport:
+      width: 1280
+      height: 800
+      type: "desktop"
+
+    checks:
+      - "Twelve-column grid is active."
+      - "Container remains within available width."
+      - "The hero remains balanced."
+      - "Section spacing is not compressed."
+
+  - viewport:
+      width: 1440
+      height: 900
+      type: "approved desktop reference"
+
+    checks:
+      - "Container width is approximately 1280px."
+      - "Outer margins are approximately 80px."
+      - "Desktop layout matches the approved mocks."
+      - "Desktop hero asset is used."
+
+  - viewport:
+      width: 1920
+      height: 1080
+      type: "wide desktop"
+
+    checks:
+      - "Content container remains capped at 1280px."
+      - "Cards and paragraphs do not stretch excessively."
+      - "Outer whitespace remains balanced."
+
+validation:
+  global:
+    - "The page is one continuous responsive document."
+    - "Section order matches 02-page-sdr.yaml."
+    - "There is one header and one footer."
+    - "No mock-only continuation markers are visible."
+    - "The exact supplied filenames are preserved."
+
+  desktop:
+    - "The page uses a 12-column centred grid."
+    - "The 1440px reference uses a 1280px maximum container."
+    - "The outer margins are approximately 80px."
+    - "Body text is 16–18px."
+    - "Major section spacing is approximately 72–96px."
+    - "No paragraph is stretched across the full canvas."
+
+  tablet:
+    - "The page uses an eight-column transitional layout."
+    - "Wide repeated-card rows convert safely."
+    - "No unapproved tablet design is invented."
+    - "All content remains present."
+
+  mobile:
+    - "The page uses four columns with 16px side padding."
+    - "Major sections are stacked vertically."
+    - "No desktop-style large sections are placed side by side."
+    - "Body text remains at least 16px."
+    - "Touch targets remain at least 44px."
+    - "Repeated card sections use swipeable carousels where specified."
+    - "The complete How SDR works section is present."
+    - "No horizontal page overflow exists."
+
+  hero:
+    - "1000104949.png is used on mobile."
+    - "1000104957.png is used on desktop."
+    - "The magnifier remains visible."
+    - "The baked-in sentence remains visible."
+    - "React-rendered text and buttons remain readable."
+    - "The two hero assets are never displayed together."
+
+  regression:
+    - "The responsive implementation does not modify the intended homepage layout."
+    - "The responsive implementation does not alter the SMF procedure page."
+    - "Shared header and footer behaviour remains intact."
+    - "Desktop CSS does not override the approved mobile composition."
+    - "Mobile CSS does not flatten the approved desktop composition."

@@ -1,0 +1,76 @@
+page_component: SmfProcedurePage
+recommended_files:
+- src/pages/SmfProcedurePage.tsx
+- src/content/smfPageContent.ts
+- src/components/smf/SmfHero.tsx
+- src/components/smf/NumberedSectionHeading.tsx
+- src/components/smf/InfoCard.tsx
+- src/components/smf/HorizontalCardCarousel.tsx
+- src/components/smf/AssessmentSteps.tsx
+- src/components/smf/ProcessFlow.tsx
+- src/components/smf/TreatmentComparison.tsx
+- src/components/smf/RehabilitationJourney.tsx
+- src/components/smf/AccordionList.tsx
+- src/components/smf/MedicalReviewCard.tsx
+- src/components/smf/TeamCard.tsx
+- src/components/smf/PatientStoryCarousel.tsx
+- src/components/smf/SmfClosingCta.tsx
+composition:
+- component: SiteHeader
+  reuse: true
+- component: Breadcrumbs
+  reuse: true
+- component: SmfHero
+  grid_span: 1 / -1
+- component: WhatIsSmfSection
+  grid_span: 1 / -1
+- component: BenefitSection
+  desktop_span: 6
+  mobile_span: 4
+- component: NotAppropriateSection
+  desktop_span: 6
+  mobile_span: 4
+- component: ProblemsCarousel
+  grid_span: 1 / -1
+- component: AssessmentSection
+  grid_span: 1 / -1
+- component: ProcessFlow
+  grid_span: 1 / -1
+- component: GoalsSection
+  grid_span: 1 / -1
+- component: LimitationsSection
+  grid_span: 1 / -1
+- component: TreatmentComparison
+  grid_span: 1 / -1
+- component: RehabilitationJourney
+  grid_span: 1 / -1
+- component: RiskAccordion
+  grid_span: 1 / -1
+- component: MedicalReviewCard
+  desktop_span: 6
+  mobile_span: 4
+- component: TeamCard
+  desktop_span: 6
+  mobile_span: 4
+- component: PatientStoryCarousel
+  grid_span: 1 / -1
+- component: FaqAccordion
+  desktop_span: 6
+  mobile_span: 4
+- component: ReferencesCard
+  desktop_span: 6
+  mobile_span: 4
+- component: SmfClosingCta
+  grid_span: 1 / -1
+- component: ValueStrip
+  reuse: true
+- component: SiteFooter
+  reuse: true
+implementation_rules:
+- Use data-driven map rendering for repeated cards and steps.
+- Use one reusable carousel primitive for problems, comparison and stories, configured per section.
+- Use one reusable accordion primitive for risks and FAQ.
+- Use semantic section elements with stable ids.
+- Use shared CTA button components and existing modal/route behaviour.
+- No component should contain hard-coded responsive pixel positioning.
+- Do not use absolute positioning for normal section layout.

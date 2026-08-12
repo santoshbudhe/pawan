@@ -1,0 +1,84 @@
+part: 1
+references:
+  mobile_mock: 1000105008.png
+  mobile_grid: 1000105000.png
+  desktop_mock: 1000105006.png
+  desktop_grid: 1000105003.png
+  mobile_hero: 1000105007.png
+  desktop_hero: 1000105002.png
+sections:
+- id: hero
+  layout:
+    desktop: 12-column grid; content spans 1-5 and media spans 6-12
+    mobile: 4-column grid; text/media composition follows the mobile mock, with full-width CTAs below
+    padding_block_px:
+      desktop: 24
+      mobile: 16
+    gap_px:
+      desktop: 24
+      mobile: 8
+  media:
+    component: picture
+    desktop_src: 1000105002.png
+    mobile_src: 1000105007.png
+    rule: Production hero artwork takes precedence over any raster media details visible inside the page mocks.
+    contains_baked_wording: true
+  components:
+  - breadcrumb
+  - eyebrow
+  - title
+  - subtitle
+  - body
+  - feature_chips
+  - primary_cta
+  - secondary_cta
+  - personalised_plan_note
+- id: what-are-procedures
+  number_badge: 1
+  desktop: copy 5 columns + 4 equal-height cards across 7 columns
+  mobile: copy full width, then 2-by-2 equal-height card grid
+  card_gap_px: 8
+  card_padding_px: 16
+- id: who-may-benefit
+  number_badge: 2
+  desktop: left half of paired section; bullets plus image
+  mobile: 2-column internal split as approved; stack only below narrow widths if text becomes cramped
+  image_aspect_ratio: 4/3
+- id: when-not-appropriate
+  number_badge: 3
+  desktop: right half of paired section
+  mobile: full-width card; internal responsive grid of caution cards
+  warning_callout: true
+- id: problems-addressed
+  number_badge: 4
+  layout: horizontal carousel
+  desktop_visible_cards: 6
+  mobile_visible_cards: 3 plus edge peek
+  scroll_snap: x mandatory
+  controls:
+  - previous
+  - next
+  - pagination
+  - view_all
+- id: assessment-and-surgical-planning
+  number_badge: 5
+  desktop: 6 columns
+  mobile: full-width card with list and supporting image
+  image_aspect_ratio: 4/3
+- id: treatment-overview
+  number_badge: 6
+  desktop: 6 columns
+  mobile: five-step horizontal flow within full-width section
+  steps: 5
+- id: part-1-closing-cta
+  layout: desktop flex / mobile stacked
+  buttons:
+  - Request Assessment
+  - Talk to Our Care Team
+- id: part-1-trust-strip
+  layout: 4 equal items
+  items:
+  - Evidence-based care
+  - Compassionate support
+  - Better movement
+  - Better future

@@ -1,0 +1,21 @@
+package: SMF_Codex_Handoff
+version: 1.0.0
+files:
+- 00-README.md
+- 01-project.yaml
+- 02-page-smf.yaml
+- 03-design-tokens.yaml
+- 04-layout-responsive.yaml
+- 05-content-model.yaml
+- 06-component-map.yaml
+- 07-interactions-state.yaml
+- 08-assets-manifest.yaml
+- 09-seo-accessibility.yaml
+- 10-firebase-storage-seed.yaml
+- 11-reference-file-map.yaml
+- 12-build-order.md
+- 13-consistency-audit.md
+- 14-codex-master-instructions.md
+- 15-acceptance-checklist.md
+- manifest.yaml
+required_reference_images: 10

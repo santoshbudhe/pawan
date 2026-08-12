@@ -1,0 +1,1390 @@
+schema_version: "1.0"
+
+file:
+  name: "05-component-map.yaml"
+  purpose: >
+    Defines the React component architecture for the complete SDR procedure
+    page, including shared components, page-specific components, component
+    responsibilities, props, responsive behaviour, interactions and
+    accessibility requirements.
+
+project:
+  page: "Selective Dorsal Rhizotomy procedure page"
+  abbreviation: "SDR"
+  route: "/procedures/selective-dorsal-rhizotomy"
+  page_component: "SdrProcedurePage"
+
+implementation_principles:
+  - "Reuse existing shared website components wherever possible."
+  - "Follow the component conventions established for the SMF procedure page."
+  - "Do not rebuild the shared header, footer, buttons or navigation specifically for SDR."
+  - "Do not render approved mock images as webpage backgrounds."
+  - "Use semantic React components and accessible HTML."
+  - "Keep editable headings, paragraphs, buttons and labels as HTML."
+  - "Use the exact supplied hero filenames."
+  - "Part 1 and Part 2 must render as one continuous page."
+  - "Do not render the mock-only continuation markers."
+  - "Do not redesign the approved mobile or desktop layouts."
+  - "Desktop and mobile compositions must be implemented independently where specified."
+
+reference_files:
+  approved_mocks:
+    mobile_part_1: "1000104948.png"
+    mobile_part_2: "1000104953.jpg"
+    desktop_part_1: "1000104950.png"
+    desktop_part_2: "1000104952.png"
+
+  grid_references:
+    mobile_part_1: "1000104951.png"
+    mobile_part_2: "1000104956.png"
+    desktop_part_1: "1000104955.png"
+    desktop_part_2: "1000104954.png"
+
+  production_assets:
+    mobile_hero: "1000104949.png"
+    desktop_hero: "1000104957.png"
+
+recommended_folder_structure:
+  page:
+    path: "src/pages/procedures/sdr/"
+    files:
+      - "SdrProcedurePage.tsx"
+      - "sdrContent.ts"
+      - "sdrTypes.ts"
+      - "sdrPage.css"
+      - "index.ts"
+
+  components:
+    path: "src/components/procedures/sdr/"
+    files:
+      - "SdrHero.tsx"
+      - "SdrIntroduction.tsx"
+      - "SdrBenefitSection.tsx"
+      - "SdrSuitabilityWarning.tsx"
+      - "SdrProblemsCarousel.tsx"
+      - "SdrAssessmentSection.tsx"
+      - "SdrProcedureSteps.tsx"
+      - "SdrGoalsSection.tsx"
+      - "SdrLimitationsSection.tsx"
+      - "TreatmentComparisonCarousel.tsx"
+      - "SdrRecoverySection.tsx"
+      - "SdrRisksAccordion.tsx"
+      - "MedicalReviewCard.tsx"
+      - "MultidisciplinaryTeam.tsx"
+      - "PatientJourneysCarousel.tsx"
+      - "SdrFaqAccordion.tsx"
+      - "SdrReferences.tsx"
+      - "SdrClosingCta.tsx"
+
+  note: >
+    Codex may consolidate small components when this matches the existing
+    project architecture, but it must preserve component responsibilities and
+    must not create one excessively large page component.
+
+shared_components:
+  SiteHeader:
+    source: "Existing website component"
+    reuse_required: true
+    render_count: 1
+
+    responsibilities:
+      - "Render the shared doctor logo and branding."
+      - "Render the existing desktop navigation."
+      - "Render the existing mobile navigation."
+      - "Render the shared Request Assessment action."
+      - "Use the website's existing sticky-header behaviour."
+
+    prohibited:
+      - "Do not create an SDR-only header."
+      - "Do not render another header at the beginning of Part 2."
+
+  SiteFooter:
+    source: "Existing website component"
+    reuse_required: true
+    render_count: 1
+
+    responsibilities:
+      - "Render the approved website footer."
+      - "Preserve existing footer navigation and contact information."
+      - "Maintain existing desktop and mobile footer compositions."
+
+    prohibited:
+      - "Do not create an SDR-only footer."
+      - "Do not render a footer between Part 1 and Part 2."
+
+  Breadcrumbs:
+    source: "Existing shared component where available"
+    reuse_required: true
+
+    items:
+      - label: "Home"
+        path: "/"
+
+      - label: "Procedures"
+        preferred_path: "/procedures"
+        fallback_path: "/#procedures"
+
+      - label: "SDR"
+        path: null
+        aria_current: "page"
+
+  PrimaryButton:
+    source: "Existing shared component"
+    reuse_required: true
+    minimum_height:
+      desktop: "48px"
+      mobile: "48px"
+
+  SecondaryButton:
+    source: "Existing shared component"
+    reuse_required: true
+    minimum_height:
+      desktop: "48px"
+      mobile: "48px"
+
+  SectionHeading:
+    source: "Existing SMF or shared procedure component"
+    reuse_preferred: true
+
+    props:
+      number:
+        type: "number | undefined"
+
+      title:
+        type: "string"
+
+      icon:
+        type: "LucideIcon | ReactNode | undefined"
+
+      tone:
+        type: "'default' | 'warning' | 'information'"
+
+      action:
+        type: "ReactNode | undefined"
+
+  ProcedureCard:
+    source: "Existing shared procedure-card primitive"
+    reuse_preferred: true
+
+    props:
+      title:
+        type: "string"
+
+      description:
+        type: "string | undefined"
+
+      icon:
+        type: "LucideIcon | ReactNode"
+
+      selected:
+        type: "boolean"
+
+      onClick:
+        type: "function | undefined"
+
+  CarouselControls:
+    source: "Existing shared carousel controls"
+    reuse_required: true
+
+    props:
+      previousLabel:
+        type: "string"
+
+      nextLabel:
+        type: "string"
+
+      canGoPrevious:
+        type: "boolean"
+
+      canGoNext:
+        type: "boolean"
+
+      onPrevious:
+        type: "function"
+
+      onNext:
+        type: "function"
+
+  Accordion:
+    source: "Existing shared accordion where available"
+    reuse_required: true
+
+    props:
+      items:
+        type: "AccordionItem[]"
+
+      allowMultiple:
+        type: "boolean"
+
+      defaultOpenIds:
+        type: "string[]"
+
+      minimumRowHeight:
+        type: "string"
+
+  AssessmentAction:
+    source: "Existing Request Assessment flow"
+    reuse_required: true
+
+  ContactAction:
+    source: "Existing Talk to Our Team or WhatsApp flow"
+    reuse_required: true
+
+page_component:
+  name: "SdrProcedurePage"
+  semantic_root: "main"
+  id: "main-content"
+
+  responsibilities:
+    - "Set the page title and metadata."
+    - "Render the shared header once."
+    - "Render the complete SDR page section order."
+    - "Render the shared footer once."
+    - "Load SDR content from the typed content module."
+    - "Select responsive hero artwork."
+    - "Coordinate inline expansion states where necessary."
+    - "Avoid duplicate route or modal implementations."
+
+  section_order:
+    - "SdrHero"
+    - "SdrIntroduction"
+    - "SdrBenefitSection"
+    - "SdrSuitabilityWarning"
+    - "SdrProblemsCarousel"
+    - "SdrAssessmentSection"
+    - "SdrProcedureSteps"
+    - "SdrGoalsSection"
+    - "SdrLimitationsSection"
+    - "TreatmentComparisonCarousel"
+    - "SdrRecoverySection"
+    - "SdrRisksAccordion"
+    - "MedicalReviewCard"
+    - "MultidisciplinaryTeam"
+    - "PatientJourneysCarousel"
+    - "SdrFaqAccordion"
+    - "SdrReferences"
+    - "SdrClosingCta"
+
+  composition_rule:
+    desktop: >
+      Follow the approved desktop mocks and 12-column grid. Use side-by-side
+      sections only where they appear in the desktop design.
+
+    mobile: >
+      Follow the approved mobile mocks and four-column grid. Stack all major
+      sections vertically and never compress desktop arrangements into the
+      mobile width.
+
+components:
+  SdrHero:
+    semantic_element: "section"
+    id: "sdr-hero"
+
+    props:
+      breadcrumbItems:
+        type: "BreadcrumbItem[]"
+
+      eyebrow:
+        type: "string"
+
+      title:
+        type: "string"
+
+      description:
+        type: "string"
+
+      tags:
+        type: "ProcedureTag[]"
+
+      mobileAsset:
+        type: "string"
+        value: "1000104949.png"
+
+      desktopAsset:
+        type: "string"
+        value: "1000104957.png"
+
+      onRequestAssessment:
+        type: "function"
+
+      onTalkToTeam:
+        type: "function"
+
+    content:
+      eyebrow: "Specialized Procedure"
+      title: "Selective Dorsal Rhizotomy (SDR)"
+      description: >
+        A precise nerve procedure that reduces lower-limb spasticity and
+        improves movement and function.
+
+      tags:
+        - "Nerve Procedure"
+        - "Lower-Limb Spasticity"
+
+    asset_handling:
+      mobile:
+        file: "1000104949.png"
+        breakpoint: "below 768px"
+
+      desktop:
+        file: "1000104957.png"
+        breakpoint: "1200px and above"
+
+      tablet:
+        rule: >
+          Select the asset and crop that best preserves the complete magnifier
+          and baked-in explanatory sentence without inventing a new composition.
+
+      picture_element_recommended: true
+
+      requirements:
+        - "Do not rename either file."
+        - "Do not crop the magnifier."
+        - "Do not crop the baked-in explanatory sentence."
+        - "Do not duplicate the baked-in sentence as visible HTML."
+        - "Provide equivalent accessible text for screen readers."
+        - "Keep the React-rendered title, tags and buttons separate from the image."
+
+    layout:
+      desktop:
+        type: "CSS Grid"
+        columns: 12
+        content_span: "approximately columns 1–6"
+        visual_span: "approximately columns 6–13"
+        min_height: "512px"
+
+      mobile:
+        type: "stacked mobile hero"
+        columns: 4
+        content_span: "1 / -1"
+        buttons: "stacked full-width"
+        side_padding: "16px"
+
+    accessibility:
+      labelled_by: "sdr-page-title"
+      hidden_equivalent_text: >
+        Only the abnormal sensory nerve signals are selectively treated while
+        preserving strength and feeling.
+
+  SdrIntroduction:
+    semantic_element: "section"
+    id: "what-is-sdr"
+
+    props:
+      heading:
+        type: "string"
+
+      body:
+        type: "string"
+
+      goal:
+        type: "CalloutContent"
+
+      educationCards:
+        type: "EducationCard[]"
+
+      informationText:
+        type: "string"
+
+    child_components:
+      - "SectionHeading"
+      - "GoalCallout"
+      - "EducationCardGrid"
+      - "InformationStrip"
+
+    layout:
+      desktop:
+        education_cards: "repeat(4, minmax(0, 1fr))"
+        gap: "24px"
+
+      mobile:
+        education_cards: "repeat(2, minmax(0, 1fr)) when readable"
+        fallback: "1 column"
+        gap: "12px to 16px"
+
+  GoalCallout:
+    semantic_element: "aside"
+
+    props:
+      label:
+        type: "string"
+        value: "Goal"
+
+      text:
+        type: "string"
+
+      icon:
+        type: "LucideIcon"
+
+    style:
+      tone: "information"
+      full_width: true
+
+  EducationCardGrid:
+    semantic_element: "div"
+    role: "list"
+
+    child_component: "EducationCard"
+
+    accessibility:
+      cards_use_role_listitem: true
+
+  EducationCard:
+    semantic_element: "article"
+
+    props:
+      title:
+        type: "string"
+
+      icon:
+        type: "LucideIcon | CustomSvg"
+
+      iconLabel:
+        type: "string | undefined"
+
+    layout:
+      equal_height_desktop: true
+      natural_height_mobile: true
+
+  InformationStrip:
+    semantic_element: "aside"
+
+    props:
+      text:
+        type: "string"
+
+      icon:
+        type: "LucideIcon"
+
+      tone:
+        type: "'information' | 'warning'"
+
+  SdrBenefitSection:
+    semantic_element: "section"
+    id: "who-may-benefit"
+
+    props:
+      heading:
+        type: "string"
+
+      items:
+        type: "string[]"
+
+      image:
+        type: "MediaAsset | undefined"
+
+    layout:
+      desktop:
+        rule: "Use the approved desktop card composition."
+
+      mobile:
+        type: "block"
+        content_order:
+          - "Heading"
+          - "Benefit list"
+          - "Supporting image when shown"
+        side_by_side_prohibited: true
+
+  SdrSuitabilityWarning:
+    semantic_element: "section"
+    id: "when-sdr-may-not-be-appropriate"
+    tone: "warning"
+
+    props:
+      heading:
+        type: "string"
+
+      items:
+        type: "SuitabilityWarningItem[]"
+
+      finalNote:
+        type: "string"
+
+    layout:
+      desktop:
+        type: "CSS Grid"
+        internal_columns: 2
+        gap: "16px"
+
+      mobile:
+        type: "block or two-column compact grid"
+        rule: >
+          Use two internal columns only when text remains fully readable.
+          Otherwise stack items vertically.
+
+    accessibility:
+      warning_icon_hidden: true
+      final_note_announced_as_text: true
+
+  SdrProblemsCarousel:
+    semantic_element: "section"
+    id: "problems-sdr-may-address"
+
+    props:
+      heading:
+        type: "string"
+
+      cards:
+        type: "ProblemCard[]"
+
+      initiallyExpanded:
+        type: "boolean"
+        value: false
+
+    state:
+      expanded:
+        type: "boolean"
+
+      activeIndex:
+        type: "number"
+
+    child_components:
+      - "SectionHeading"
+      - "ProblemCard"
+      - "CarouselControls"
+      - "CarouselPagination"
+
+    interaction:
+      view_all:
+        behaviour: "Expand all problem content inline"
+        route_change: false
+        modal: false
+
+      carousel:
+        touch_swipe: true
+        mouse_drag: true
+        keyboard_navigation: true
+        scroll_snap: true
+
+    layout:
+      desktop:
+        visible_cards: 5
+        grid_when_all_fit: true
+        carousel_controls_only_when_needed: true
+
+      mobile:
+        type: "horizontal carousel"
+        card_width: "recommended 112px to 136px"
+        next_card_peek: true
+        full_page_horizontal_overflow_prohibited: true
+
+  ProblemCard:
+    semantic_element: "article"
+
+    props:
+      id:
+        type: "string"
+
+      title:
+        type: "string"
+
+      icon:
+        type: "LucideIcon | CustomSvg"
+
+    requirements:
+      equal_height_desktop: true
+      title_wrap_allowed: true
+      minimum_interactive_height: "44px when clickable"
+
+  SdrAssessmentSection:
+    semantic_element: "section"
+    id: "assessment-and-patient-selection"
+
+    props:
+      heading:
+        type: "string"
+
+      steps:
+        type: "AssessmentStep[]"
+
+      image:
+        type: "MediaAsset"
+
+    child_components:
+      - "AssessmentStepList"
+      - "AssessmentMedia"
+
+    layout:
+      desktop:
+        type: "CSS Grid"
+        columns: 12
+        step_list_span: "approximately 7 columns"
+        image_span: "approximately 5 columns"
+        gap: "24px"
+
+      mobile:
+        type: "block"
+        content_order:
+          - "Heading"
+          - "Assessment steps"
+          - "Image"
+        side_by_side_prohibited: true
+
+  AssessmentStepList:
+    semantic_element: "ol"
+
+    child_component: "AssessmentStepRow"
+
+  AssessmentStepRow:
+    semantic_element: "li"
+
+    props:
+      number:
+        type: "number"
+
+      title:
+        type: "string"
+
+      description:
+        type: "string"
+
+      icon:
+        type: "LucideIcon"
+
+    layout:
+      desktop:
+        display: "grid"
+        columns: "auto auto minmax(0, 1fr)"
+
+      mobile:
+        display: "grid"
+        columns: "auto minmax(0, 1fr)"
+        title_and_description: "stacked inside the content column"
+        flexible_height: true
+
+  SdrProcedureSteps:
+    semantic_element: "section"
+    id: "how-sdr-works"
+
+    props:
+      heading:
+        type: "string"
+
+      steps:
+        type: "ProcedureStep[]"
+
+    child_components:
+      - "ProcedureStepCard"
+
+    layout:
+      desktop:
+        type: "CSS Grid"
+        columns: "repeat(4, minmax(0, 1fr))"
+        gap: "24px"
+
+      tablet:
+        columns: "repeat(2, minmax(0, 1fr))"
+
+      mobile:
+        primary: "stacked full-width cards"
+        alternative: "horizontal carousel only when required by approved mock"
+        minimum_body_text: "16px"
+
+    mandatory:
+      rule: >
+        This section must be implemented even though it is not fully visible in
+        the Mobile Part 1 grid reference.
+
+  ProcedureStepCard:
+    semantic_element: "article"
+
+    props:
+      number:
+        type: "number"
+
+      title:
+        type: "string"
+
+      description:
+        type: "string"
+
+      illustration:
+        type: "CustomSvg | MediaAsset"
+
+    requirements:
+      equal_height_desktop: true
+      natural_height_mobile: true
+
+  SdrGoalsSection:
+    semantic_element: "section"
+    id: "potential-goals-of-sdr"
+
+    props:
+      items:
+        type: "string[]"
+
+      image:
+        type: "MediaAsset"
+
+    layout:
+      desktop:
+        paired_with: "SdrLimitationsSection"
+        grid_span: "6 columns"
+
+      mobile:
+        full_width: true
+        image_below_text: true
+        side_by_side_prohibited: true
+
+  SdrLimitationsSection:
+    semantic_element: "section"
+    id: "limitations-and-important-considerations"
+    tone: "warning"
+
+    props:
+      items:
+        type: "string[]"
+
+      image:
+        type: "MediaAsset"
+
+    layout:
+      desktop:
+        paired_with: "SdrGoalsSection"
+        grid_span: "6 columns"
+
+      mobile:
+        full_width: true
+        image_below_text: true
+        side_by_side_prohibited: true
+
+  TreatmentComparisonCarousel:
+    semantic_element: "section"
+    id: "sdr-treatment-comparison"
+
+    props:
+      cards:
+        type: "TreatmentComparisonCard[]"
+
+      currentProcedureId:
+        type: "string"
+        value: "sdr"
+
+    state:
+      activeIndex:
+        type: "number"
+
+    behaviour:
+      current_sdr_card:
+        selected: true
+        clickable: false
+        aria_current: "page"
+
+      smf_card:
+        destination: "/procedures/selective-motor-fasciculotomy"
+
+      unapproved_routes:
+        rule: "Do not invent destinations."
+        action: "Disable or use existing approved project behaviour."
+
+    layout:
+      desktop:
+        visible_cards: 4
+
+      mobile:
+        type: "horizontal carousel"
+        card_width: "min(82vw, 310px)"
+        next_card_peek: true
+
+  TreatmentComparisonCard:
+    semantic_element: "article"
+
+    props:
+      title:
+        type: "string"
+
+      description:
+        type: "string"
+
+      selected:
+        type: "boolean"
+
+      destination:
+        type: "string | null"
+
+      actionLabel:
+        type: "string"
+
+    accessibility:
+      selected_label: "Current procedure"
+      disabled_action_not_focusable: true
+
+  SdrRecoverySection:
+    semantic_element: "section"
+    id: "recovery-and-rehabilitation"
+
+    props:
+      steps:
+        type: "RecoveryStep[]"
+
+      image:
+        type: "MediaAsset"
+
+      callout:
+        type: "CalloutContent"
+
+    layout:
+      desktop:
+        type: "CSS Grid"
+        columns: 12
+        steps_span: "approximately 5 columns"
+        image_span: "approximately 7 columns"
+        gap: "24px"
+
+      mobile:
+        type: "block"
+        content_order:
+          - "Heading"
+          - "Recovery steps"
+          - "Image"
+          - "Callout"
+        side_by_side_prohibited: true
+
+  SdrRisksAccordion:
+    semantic_element: "section"
+    id: "risks-and-important-information"
+    tone: "warning"
+
+    props:
+      introduction:
+        type: "string"
+
+      items:
+        type: "RiskAccordionItem[]"
+
+      finalNote:
+        type: "string"
+
+    state:
+      openItemId:
+        type: "string | null"
+
+    interaction:
+      allow_multiple: false
+      full_row_clickable: true
+      keyboard_accessible: true
+
+    accessibility:
+      minimum_row_height: "52px"
+      aria_expanded: true
+      aria_controls: true
+      unique_panel_ids: true
+
+  MedicalReviewCard:
+    semantic_element: "aside"
+    id: "medical-review"
+
+    props:
+      reviewer:
+        type: "MedicalReviewer"
+
+    content_verification:
+      required: true
+      fields:
+        - "Name"
+        - "Qualifications"
+        - "Designation"
+        - "Experience statement"
+        - "Reviewed-on date"
+        - "Portrait"
+
+    layout:
+      desktop: "compact horizontal card"
+      mobile: "full-width card with responsive wrapping"
+
+  MultidisciplinaryTeam:
+    semantic_element: "section"
+    id: "multidisciplinary-team"
+
+    props:
+      roles:
+        type: "TeamRole[]"
+
+      supportingText:
+        type: "string"
+
+    child_component: "TeamRoleCard"
+
+    layout:
+      desktop:
+        type: "CSS Grid"
+        columns: "repeat(4, minmax(0, 1fr))"
+
+      tablet:
+        columns: "repeat(2, minmax(0, 1fr))"
+
+      mobile:
+        type: "CSS Grid"
+        columns: "repeat(2, minmax(0, 1fr))"
+        fallback: "horizontal carousel"
+        rule: "Role names must remain readable."
+
+  TeamRoleCard:
+    semantic_element: "article"
+
+    props:
+      title:
+        type: "string"
+
+      icon:
+        type: "CustomSvg"
+
+  PatientJourneysCarousel:
+    semantic_element: "section"
+    id: "patient-journeys"
+
+    props:
+      stories:
+        type: "PatientStory[]"
+
+      disclaimer:
+        type: "string"
+
+    state:
+      expanded:
+        type: "boolean"
+
+      activeIndex:
+        type: "number"
+
+    interaction:
+      view_all:
+        behaviour: "Expand all stories inline into the swipeable carousel"
+        route_change: false
+        modal: false
+
+    content_safety:
+      consent_required: true
+      verified_content_required: true
+      placeholder_allowed_until_approved: true
+
+    layout:
+      desktop:
+        visible_cards: 2
+
+      mobile:
+        visible_cards: 1
+        next_card_peek: true
+        story_card_width: "min(88vw, 342px)"
+
+  PatientStoryCard:
+    semantic_element: "article"
+
+    props:
+      caseLabel:
+        type: "string"
+
+      title:
+        type: "string"
+
+      summary:
+        type: "string"
+
+      outcome:
+        type: "string"
+
+      beforeImage:
+        type: "MediaAsset"
+
+      afterImage:
+        type: "MediaAsset"
+
+      onViewFullStory:
+        type: "function | undefined"
+
+    layout:
+      desktop:
+        before_after_images: "side by side"
+        story_text: "below or beside according to approved desktop mock"
+
+      mobile:
+        before_after_images: "two-column image row"
+        story_text: "below images"
+        compressed_desktop_layout_prohibited: true
+
+  SdrFaqAccordion:
+    semantic_element: "section"
+    id: "frequently-asked-questions"
+
+    props:
+      items:
+        type: "FaqItem[]"
+
+    state:
+      expanded:
+        type: "boolean"
+
+      openItemId:
+        type: "string | null"
+
+    interaction:
+      view_all:
+        behaviour: "Reveal all FAQ questions inline"
+        route_change: false
+
+      accordion:
+        allow_multiple: false
+        full_row_clickable: true
+
+    content_rule:
+      answers:
+        source: "Doctor-approved SDR content"
+        invention_prohibited: true
+
+  SdrReferences:
+    semantic_element: "section"
+    id: "references-and-further-reading"
+
+    props:
+      introduction:
+        type: "string"
+
+      references:
+        type: "ReferenceItem[]"
+
+    state:
+      expanded:
+        type: "boolean"
+
+    interaction:
+      view_references:
+        preferred: "Expand the complete reference list inline"
+        alternative: "Use an approved references panel"
+        route_change: false
+
+    verification:
+      medical_review_required: true
+      external_links_checked: true
+
+  SdrClosingCta:
+    semantic_element: "section"
+    id: "closing-assessment-cta"
+
+    props:
+      heading:
+        type: "string"
+
+      body:
+        type: "string"
+
+      onRequestAssessment:
+        type: "function"
+
+      onTalkToTeam:
+        type: "function"
+
+    layout:
+      desktop:
+        content_alignment: "center"
+        actions: "horizontal"
+
+      mobile:
+        content_alignment: "center"
+        actions: "stacked full-width"
+        button_height: "48px"
+
+homepage_component_update:
+  target:
+    component: "Existing homepage procedures component"
+    procedure_id: "sdr"
+
+  required_change:
+    - "Locate the existing SDR procedure card or data item."
+    - "Add the SDR route to that existing item."
+    - "Make the complete card clickable."
+    - "Use a React Router Link or the project's semantic navigation component."
+    - "Apply the same behaviour on mobile and desktop."
+
+  destination:
+    path: "/procedures/selective-dorsal-rhizotomy"
+
+  accessibility:
+    accessible_name: "Learn about Selective Dorsal Rhizotomy"
+    visible_focus_state: true
+    minimum_mobile_target: "44px by 44px"
+
+  prohibited:
+    - "Do not add a duplicate SDR card."
+    - "Do not open the SDR page as a modal."
+    - "Do not use a click handler on a non-semantic div when a link is appropriate."
+    - "Do not nest buttons or links inside the enclosing card link."
+
+content_types:
+  BreadcrumbItem:
+    fields:
+      label: "string"
+      path: "string | null"
+      clickable: "boolean"
+
+  ProcedureTag:
+    fields:
+      id: "string"
+      label: "string"
+      icon: "LucideIcon"
+
+  CalloutContent:
+    fields:
+      label: "string | undefined"
+      text: "string"
+      icon: "LucideIcon | undefined"
+
+  MediaAsset:
+    fields:
+      src: "string"
+      alt: "string"
+      width: "number | undefined"
+      height: "number | undefined"
+      objectPosition: "string | undefined"
+
+  EducationCard:
+    fields:
+      id: "string"
+      title: "string"
+      iconType: "'lucide' | 'custom-svg'"
+      iconName: "string"
+
+  SuitabilityWarningItem:
+    fields:
+      id: "string"
+      text: "string"
+      iconType: "'lucide' | 'custom-svg'"
+      iconName: "string"
+
+  ProblemCard:
+    fields:
+      id: "string"
+      title: "string"
+      iconType: "'lucide' | 'custom-svg'"
+      iconName: "string"
+
+  AssessmentStep:
+    fields:
+      number: "number"
+      title: "string"
+      description: "string"
+      iconName: "string"
+
+  ProcedureStep:
+    fields:
+      number: "number"
+      title: "string"
+      description: "string"
+      illustration: "string"
+
+  TreatmentComparisonCard:
+    fields:
+      id: "string"
+      title: "string"
+      description: "string"
+      selected: "boolean"
+      destination: "string | null"
+      actionLabel: "string"
+
+  RecoveryStep:
+    fields:
+      number: "number"
+      title: "string"
+      description: "string"
+      iconName: "string"
+
+  RiskAccordionItem:
+    fields:
+      id: "string"
+      title: "string"
+      summary: "string"
+      iconName: "string"
+
+  MedicalReviewer:
+    fields:
+      name: "string"
+      qualifications: "string"
+      designation: "string"
+      experience: "string"
+      reviewedOn: "string"
+      portrait: "MediaAsset"
+
+  TeamRole:
+    fields:
+      id: "string"
+      title: "string"
+      iconName: "string"
+
+  PatientStory:
+    fields:
+      id: "string"
+      caseLabel: "string"
+      title: "string"
+      summary: "string"
+      outcome: "string"
+      beforeImage: "MediaAsset"
+      afterImage: "MediaAsset"
+      actionLabel: "string"
+
+  FaqItem:
+    fields:
+      id: "string"
+      question: "string"
+      answer: "string | null"
+
+  ReferenceItem:
+    fields:
+      id: "string"
+      title: "string"
+      source: "string | undefined"
+      url: "string | undefined"
+
+state_management:
+  preferred:
+    - "Local component state for individual accordions."
+    - "Local component state for inline View all expansion."
+    - "Existing carousel library state or reusable carousel hook."
+    - "Existing assessment and contact global flow."
+
+  global_state_not_required:
+    - "Problem carousel index"
+    - "FAQ open item"
+    - "Risk open item"
+    - "Patient-story carousel index"
+
+  url_state:
+    required: false
+    exception: "Allow normal section hashes for direct anchor navigation."
+
+performance:
+  code_splitting:
+    page: "Recommended"
+    heavy_below_fold_components: "May be dynamically imported when this matches existing architecture"
+
+  assets:
+    hero:
+      loading: "eager"
+      fetch_priority: "high"
+
+    below_fold:
+      loading: "lazy"
+      decoding: "async"
+
+  rendering:
+    - "Provide image dimensions or CSS aspect ratios."
+    - "Avoid cumulative layout shift."
+    - "Do not load both full-resolution hero files unnecessarily."
+    - "Use picture, source media queries or equivalent responsive selection."
+    - "Avoid unnecessary re-renders of static card data."
+
+accessibility_requirements:
+  page:
+    - "Use one H1."
+    - "Use logical H2 and H3 hierarchy."
+    - "Use semantic sections with unique IDs."
+    - "Provide a skip-to-content target if supported by the shared shell."
+
+  carousels:
+    - "Provide descriptive region labels."
+    - "Label Previous and Next controls."
+    - "Do not trap keyboard focus."
+    - "Support keyboard navigation."
+    - "Do not automatically rotate."
+    - "Respect reduced-motion settings."
+
+  accordions:
+    - "Use buttons for accordion triggers."
+    - "Set aria-expanded."
+    - "Set aria-controls."
+    - "Associate each trigger with a unique panel ID."
+    - "Make the full visible row clickable."
+
+  images:
+    - "Use descriptive alt text for meaningful images."
+    - "Use empty alt text for decorative medical artwork."
+    - "Provide equivalent hidden text for information baked into hero images."
+
+  controls:
+    - "Maintain visible focus rings."
+    - "Maintain 44px minimum touch targets."
+    - "Do not use icon-only controls without accessible labels."
+
+responsive_component_rules:
+  desktop:
+    breakpoint: "1200px and above"
+
+    rules:
+      - "Use the 12-column 1280px centred layout."
+      - "Use approved paired sections."
+      - "Use equal-height repeated cards where shown."
+      - "Show the desktop navigation."
+      - "Use 1000104957.png for the hero."
+
+  tablet:
+    breakpoint: "768px to 1199px"
+
+    rules:
+      - "Use an 8-column layout."
+      - "Collapse four-card rows to two cards where required."
+      - "Convert wide repeated-card rows to carousels when necessary."
+      - "Do not invent a separate tablet design."
+
+  mobile:
+    breakpoint: "below 768px"
+
+    rules:
+      - "Use the four-column mobile grid."
+      - "Use 16px side padding."
+      - "Stack all major sections vertically."
+      - "Do not place major sections side by side."
+      - "Use 1000104949.png for the hero."
+      - "Use full-width primary information cards."
+      - "Use horizontal carousels for repeated compact cards."
+      - "Allow text to wrap naturally."
+      - "Maintain at least 16px body text."
+
+testing:
+  component_tests:
+    - "SdrHero selects the correct responsive asset."
+    - "SdrProblemsCarousel expands inline."
+    - "SdrRisksAccordion opens and closes one item at a time."
+    - "SdrFaqAccordion expands FAQs inline."
+    - "PatientJourneysCarousel expands inline without routing."
+    - "TreatmentComparisonCarousel links SMF correctly."
+    - "Current SDR comparison card is not an active navigation link."
+    - "Closing CTA calls the shared assessment and contact actions."
+
+  route_tests:
+    - "Homepage SDR card navigates to the SDR route."
+    - "Direct navigation to the SDR URL renders the page."
+    - "Only one shared header renders."
+    - "Only one shared footer renders."
+
+  responsive_tests:
+    viewports:
+      - width: 390
+        type: "mobile"
+
+      - width: 768
+        type: "tablet"
+
+      - width: 1024
+        type: "tablet"
+
+      - width: 1440
+        type: "desktop"
+
+    assertions:
+      - "No horizontal page overflow."
+      - "No body text below the approved minimum."
+      - "Major mobile sections are not side by side."
+      - "Hero artwork and magnifier remain visible."
+      - "Buttons meet minimum touch-target requirements."
+
+validation_checklist:
+  - "SdrProcedurePage follows the exact approved section order."
+  - "Part 1 and Part 2 are joined into one page."
+  - "Continuation labels are not rendered."
+  - "Shared components are reused rather than duplicated."
+  - "The exact hero filenames are used."
+  - "The Mobile Part 1 How SDR works section is present."
+  - "Homepage SDR navigation works."
+  - "View all actions remain inline."
+  - "No unapproved routes are invented."
+  - "Medical and patient content is verified before publication."
+  - "All components are keyboard accessible."
+  - "The implementation remains visually consistent with the SMF page."

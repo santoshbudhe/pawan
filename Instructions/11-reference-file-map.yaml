@@ -1,0 +1,27 @@
+upload_with_handoff:
+- logical_name: 01-mobile-part-1-clean.png
+  role: mobile content and visual source
+- logical_name: 02-mobile-part-1-grid.png
+  role: mobile Part 1 measurements and implementation
+- logical_name: 03-mobile-part-2-clean.png
+  role: mobile Part 2 content and visual source
+- logical_name: 04-mobile-part-2-grid.png
+  role: mobile Part 2 measurements and implementation
+- logical_name: 05-desktop-part-1-clean.png
+  role: desktop Part 1 content and visual source
+- logical_name: 06-desktop-part-1-grid.png
+  role: desktop Part 1 measurements and implementation
+- logical_name: 07-desktop-part-2-clean.png
+  role: desktop Part 2 content and visual source
+- logical_name: 08-desktop-part-2-grid.png
+  role: desktop Part 2 measurements and implementation
+- logical_name: 09-smf-hero-mobile.png
+  role: production mobile hero visual
+- logical_name: 10-smf-hero-desktop.png
+  role: production desktop hero visual
+rules:
+- Rename the files to the logical names above before uploading to Codex.
+- Clean mocks control appearance and copy.
+- Grid mocks control layout values.
+- Hero images are production assets; the other eight files are references only.
+- Codex must not extract text or interface components from the mock screenshots.

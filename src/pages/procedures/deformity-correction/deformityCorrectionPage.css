@@ -1,0 +1,234 @@
+.dcs-page {
+  --dcs-navy: #123b63;
+  --dcs-teal: #07877d;
+  --dcs-text: #25394d;
+  --dcs-border: #dbe5ec;
+  min-width: 320px;
+  overflow-x: clip;
+  background: #fff;
+  color: var(--dcs-text);
+}
+
+.dcs-page *,
+.dcs-page *::before,
+.dcs-page *::after {
+  box-sizing: border-box;
+}
+
+.dcs-page main section[id],
+.dcs-page main .spc-01[id] {
+  scroll-margin-top: 84px;
+}
+
+.dcs-container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.dcs-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #eef5ff;
+}
+
+.dcs-hero-art {
+  opacity: 1;
+}
+
+.dcs-page .dcs-hero-inner > .procedure-breadcrumb {
+  margin-bottom: 8px;
+}
+
+.dcs-eyebrow {
+  color: var(--dcs-teal);
+}
+
+.dcs-hero h1 {
+  color: var(--dcs-navy);
+}
+
+.dcs-hero h1:focus {
+  outline: none;
+}
+
+.dcs-hero-description {
+  color: var(--dcs-text);
+}
+
+.dcs-hero-features .procedure-hero__trust-card {
+  border: 1px solid var(--dcs-border);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--dcs-navy);
+}
+
+.dcs-hero-features svg {
+  color: var(--dcs-teal);
+}
+
+.dcs-image-placeholder {
+  position: relative;
+}
+
+.dcs-image-placeholder .spc-01__badge {
+  right: 8px;
+  left: auto;
+}
+
+@media (max-width: 767px) {
+  .dcs-page .floating-whatsapp.dcs-floating-whatsapp--content-guarded {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .dcs-hero .procedure-hero__visual-image {
+    right: 0;
+    bottom: -50px;
+    width: min(72vw, 340px);
+    height: 112%;
+    transform: scale(1.1);
+    transform-origin: right bottom;
+  }
+
+  .dcs-hero .procedure-breadcrumb__list {
+    flex-wrap: wrap;
+    row-gap: 2px;
+    white-space: normal;
+  }
+
+  .dcs-hero .procedure-breadcrumb__item,
+  .dcs-hero .procedure-breadcrumb__current {
+    white-space: normal;
+  }
+
+  .dcs-page .smf-what-panel .smf-section-heading h2,
+  .dcs-page .dcs-suitability-panel .smf-section-heading h2 {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 768px) {
+  .dcs-container {
+    padding-inline: 32px;
+  }
+
+  .dcs-hero,
+  .dcs-hero-inner {
+    min-height: 650px;
+  }
+
+  .dcs-hero-art {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 52%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .dcs-hero-art img {
+    position: static;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: 48% center;
+  }
+
+  .dcs-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 16px;
+  }
+
+  .dcs-page .dcs-hero-inner > .procedure-breadcrumb {
+    margin-bottom: 12px;
+  }
+
+  .dcs-hero-copy {
+    width: 57%;
+    max-width: 510px;
+  }
+
+  .dcs-eyebrow {
+    margin: 0 0 6px;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 800;
+  }
+
+  .dcs-hero h1 {
+    margin: 0 0 10px;
+    font-size: 48px;
+    line-height: 52px;
+    font-weight: 800;
+    letter-spacing: 0;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .dcs-hero-description {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .dcs-hero-features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .dcs-hero-features .procedure-hero__trust-card {
+    min-width: 0;
+    min-height: 66px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    border-radius: 8px;
+    font-size: 10px;
+    line-height: 13px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .dcs-hero-features svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+
+  .dcs-hero-actions {
+    width: 100%;
+    max-width: none;
+  }
+
+  .dcs-page .dcs-hero-copy .procedure-hero-whatsapp {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dcs-page *,
+  .dcs-page *::before,
+  .dcs-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

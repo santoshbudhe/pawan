@@ -1,0 +1,431 @@
+# ==========================================================
+# 05-components.yaml
+# Component Registry
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+components:
+
+# ==========================================================
+# HEADER
+# ==========================================================
+
+  Header:
+
+    reusable: true
+
+    component: Header.tsx
+
+    purpose: >
+      Primary website navigation.
+
+    children:
+
+      - Logo
+      - Navigation
+      - CTAButton
+      - MobileMenu
+
+    desktop:
+
+      height: 88
+
+      layout: flex
+
+      justify: space-between
+
+    mobile:
+
+      height: 72
+
+      hamburger: true
+
+    props:
+
+      transparent: boolean
+
+      sticky: boolean
+
+      currentPage: string
+
+# ==========================================================
+# HERO
+# ==========================================================
+
+  Hero:
+
+    reusable: false
+
+    component: Hero.tsx
+
+    desktop:
+
+      layout: two-column
+
+    mobile:
+
+      layout: stacked
+
+    children:
+
+      - HeroContent
+
+      - HeroImage
+
+      - PrimaryCTA
+
+      - SecondaryCTA
+
+    assets:
+
+      desktopHeroBanner
+
+      mobileHeroBanner
+
+# ==========================================================
+# BUTTON
+# ==========================================================
+
+  Button:
+
+    reusable: true
+
+    component: Button.tsx
+
+    variants:
+
+      - primary
+
+      - secondary
+
+      - outline
+
+      - ghost
+
+    sizes:
+
+      - small
+
+      - medium
+
+      - large
+
+    props:
+
+      text: string
+
+      icon: LucideIcon
+
+      href: string
+
+      disabled: boolean
+
+      loading: boolean
+
+# ==========================================================
+# SECTION TITLE
+# ==========================================================
+
+  SectionTitle:
+
+    reusable: true
+
+    component: SectionTitle.tsx
+
+    props:
+
+      eyebrow: string
+
+      title: string
+
+      subtitle: string
+
+      centered: boolean
+
+# ==========================================================
+# TRUST STRIP
+# ==========================================================
+
+  TrustStrip:
+
+    reusable: true
+
+    component: TrustStrip.tsx
+
+    assets:
+
+      trustedFamilies
+
+    desktop:
+
+      layout: horizontal
+
+    mobile:
+
+      layout: scroll
+
+# ==========================================================
+# CONDITION CARD
+# ==========================================================
+
+  ConditionCard:
+
+    reusable: true
+
+    component: ConditionCard.tsx
+
+    props:
+
+      image: Asset
+
+      title: string
+
+      description: string
+
+      href: string
+
+# ==========================================================
+# PROCEDURE CARD
+# ==========================================================
+
+  ProcedureCard:
+
+    reusable: true
+
+    component: ProcedureCard.tsx
+
+    props:
+
+      image: Asset
+
+      title: string
+
+      description: string
+
+      duration: string
+
+      link: string
+
+# ==========================================================
+# STORY CARD
+# ==========================================================
+
+  StoryCard:
+
+    reusable: true
+
+    component: StoryCard.tsx
+
+    props:
+
+      image: Asset
+
+      category: string
+
+      title: string
+
+      summary: string
+
+      video: string
+
+      buttonLabel: string
+
+    interaction:
+
+      clickable: true
+
+# ==========================================================
+# GOAL CARD
+# ==========================================================
+
+  GoalCard:
+
+    reusable: true
+
+    component: GoalCard.tsx
+
+    props:
+
+      icon: LucideIcon
+
+      title: string
+
+      description: string
+
+# ==========================================================
+# DOCTOR CARD
+# ==========================================================
+
+  DoctorCard:
+
+    reusable: true
+
+    component: DoctorCard.tsx
+
+    props:
+
+      image: Asset
+
+      name: string
+
+      qualification: string
+
+      designation: string
+
+      description: string
+
+# ==========================================================
+# HOSPITAL CARD
+# ==========================================================
+
+  HospitalCard:
+
+    reusable: true
+
+    component: HospitalCard.tsx
+
+    props:
+
+      image: Asset
+
+      hospitalName: string
+
+      address: string
+
+      directions: string
+
+# ==========================================================
+# CTA SECTION
+# ==========================================================
+
+  CTASection:
+
+    reusable: true
+
+    component: CTASection.tsx
+
+    children:
+
+      - Heading
+
+      - Description
+
+      - CTAButton
+
+# ==========================================================
+# FOOTER
+# ==========================================================
+
+  Footer:
+
+    reusable: true
+
+    component: Footer.tsx
+
+    children:
+
+      - Logo
+
+      - Navigation
+
+      - Contact
+
+      - SocialIcons
+
+      - Copyright
+
+# ==========================================================
+# SHARED COMPONENTS
+# ==========================================================
+
+shared:
+
+  Carousel:
+
+    library: Embla Carousel
+
+    reusable: true
+
+  Modal:
+
+    reusable: true
+
+  Badge:
+
+    reusable: true
+
+  Avatar:
+
+    reusable: true
+
+  Divider:
+
+    reusable: true
+
+  Icon:
+
+    provider: Lucide React
+
+# ==========================================================
+# RESPONSIVE RULES
+# ==========================================================
+
+responsive:
+
+  desktop:
+
+    useGrid: true
+
+  tablet:
+
+    reduceColumns: true
+
+  mobile:
+
+    stackVertically: true
+
+    useCarouselWhereSpecified: true
+
+# ==========================================================
+# ACCESSIBILITY
+# ==========================================================
+
+accessibility:
+
+  buttons:
+
+    keyboardAccessible: true
+
+    focusVisible: true
+
+  images:
+
+    altRequired: true
+
+  forms:
+
+    labelsRequired: true
+
+# ==========================================================
+# IMPLEMENTATION RULES
+# ==========================================================
+
+implementation:
+
+  useFunctionalComponents: true
+
+  useTypeScriptInterfaces: true
+
+  avoidInlineStyles: true
+
+  useTailwindUtilities: true
+
+  useNamedExports: true
+
+  keepComponentsSmall: true
+
+  extractRepeatedLogic: true
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

@@ -1,0 +1,407 @@
+# ==========================================================
+# 08-content-model.yaml
+# Homepage Content Model
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+content:
+
+# ==========================================================
+# HEADER
+# ==========================================================
+
+  header:
+
+    logo: primary
+
+    navigation:
+
+      - Home
+      - Procedures
+      - Patient Stories
+      - About
+      - Contact
+
+    cta:
+
+      label: "Request Assessment"
+
+# ==========================================================
+# HERO
+# ==========================================================
+
+  hero:
+
+    eyebrow:
+
+      editable: true
+
+    heading:
+
+      editable: true
+
+    description:
+
+      editable: true
+
+    buttons:
+
+      primary:
+
+        label: "Request Assessment"
+
+      secondary:
+
+        label: "Learn More"
+
+# ==========================================================
+# TRUST STRIP
+# ==========================================================
+
+  trustStrip:
+
+    familyImages:
+
+      source: trustedFamilies
+
+    statistics:
+
+      editable: true
+
+# ==========================================================
+# WHY CHOOSE US
+# ==========================================================
+
+  whyChooseUs:
+
+    heading:
+
+      editable: true
+
+    cards:
+
+      repeatable: true
+
+      fields:
+
+        icon
+
+        title
+
+        description
+
+# ==========================================================
+# WHO WE HELP
+# ==========================================================
+
+  whoWeHelp:
+
+    heading:
+
+      editable: true
+
+    cards:
+
+      repeatable: true
+
+      fields:
+
+        image
+
+        title
+
+        description
+
+        link
+
+# ==========================================================
+# UNDERSTANDING SPASTICITY
+# ==========================================================
+
+  understandingSpasticity:
+
+    heading:
+
+      editable: true
+
+    body:
+
+      editable: true
+
+    illustration:
+
+      editable: true
+
+# ==========================================================
+# ASSESSMENT JOURNEY
+# ==========================================================
+
+  assessmentJourney:
+
+    steps:
+
+      repeatable: true
+
+      fields:
+
+        number
+
+        title
+
+        description
+
+# ==========================================================
+# PROCEDURES
+# ==========================================================
+
+  procedures:
+
+    heading:
+
+      editable: true
+
+    cards:
+
+      repeatable: true
+
+      fields:
+
+        image
+
+        title
+
+        description
+
+        duration
+
+        buttonLabel
+
+        link
+
+# ==========================================================
+# FEATURED PROCEDURE
+# ==========================================================
+
+  featuredProcedure:
+
+    image:
+
+      asset: smfThumbnail
+
+    heading:
+
+      editable: true
+
+    description:
+
+      editable: true
+
+    button:
+
+      editable: true
+
+# ==========================================================
+# TREATMENT GOALS
+# ==========================================================
+
+  treatmentGoals:
+
+    cards:
+
+      repeatable: true
+
+      fields:
+
+        icon
+
+        title
+
+        description
+
+# ==========================================================
+# PATIENT STORIES
+# ==========================================================
+
+  patientStories:
+
+    heading:
+
+      editable: true
+
+    cards:
+
+      repeatable: true
+
+      source: stories
+
+      fields:
+
+        thumbnail
+
+        tag
+
+        title
+
+        summary
+
+        buttonLabel
+
+        videoURL
+
+# ==========================================================
+# SPECIALIST TEAM
+# ==========================================================
+
+  doctors:
+
+    repeatable: true
+
+    fields:
+
+      image
+
+      name
+
+      qualifications
+
+      designation
+
+      biography
+
+# ==========================================================
+# HOSPITALS
+# ==========================================================
+
+  hospitals:
+
+    repeatable: true
+
+    fields:
+
+      image
+
+      hospitalName
+
+      location
+
+      description
+
+      mapLink
+
+# ==========================================================
+# CTA
+# ==========================================================
+
+  consultationCTA:
+
+    heading:
+
+      editable: true
+
+    description:
+
+      editable: true
+
+    button:
+
+      editable: true
+
+# ==========================================================
+# FOOTER
+# ==========================================================
+
+  footer:
+
+    logo:
+
+      footer
+
+    quickLinks:
+
+      repeatable: true
+
+    procedures:
+
+      repeatable: true
+
+    contact:
+
+      editable: true
+
+    social:
+
+      generatedFrom: Lucide
+
+# ==========================================================
+# CONTENT RULES
+# ==========================================================
+
+rules:
+
+  editableContent: true
+
+  repeatableCollections:
+
+    - procedures
+
+    - patientStories
+
+    - doctors
+
+    - hospitals
+
+    - treatmentGoals
+
+    - whoWeHelp
+
+  htmlAllowed: false
+
+  markdownAllowed: false
+
+  richTextEditor: false
+
+  plainTextOnly: true
+
+# ==========================================================
+# FIRESTORE MAPPING
+# ==========================================================
+
+firestore:
+
+  homepage:
+
+    collection: homepage
+
+  procedures:
+
+    collection: procedures
+
+  stories:
+
+    collection: stories
+
+  doctors:
+
+    collection: doctors
+
+  hospitals:
+
+    collection: hospitals
+
+# ==========================================================
+# IMPLEMENTATION RULES
+# ==========================================================
+
+implementation:
+
+  neverHardcodeContent: true
+
+  contentDrivenComponents: true
+
+  supportFutureCMSMigration: true
+
+  allCollectionsRepeatable: true
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

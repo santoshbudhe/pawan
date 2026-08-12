@@ -1,0 +1,67 @@
+import {
+  Accessibility,
+  Activity,
+  Bone,
+  Building2,
+  Calendar,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ClipboardList,
+  Footprints,
+  Globe,
+  Handshake,
+  HeartHandshake,
+  LucideIcon,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Network,
+  Phone,
+  Play,
+  ScanSearch,
+  ShieldCheck,
+  Smile,
+  Sparkles,
+  Star,
+  Stethoscope,
+  Target,
+  Users,
+  Video
+} from "lucide-react";
+
+const icons: Record<string, LucideIcon> = {
+  Accessibility,
+  Activity,
+  Bone,
+  Building2,
+  Calendar,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ClipboardList,
+  Footprints,
+  Globe,
+  Handshake,
+  HeartHandshake,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Network,
+  Phone,
+  Play,
+  ScanSearch,
+  ShieldCheck,
+  Smile,
+  Sparkles,
+  Star,
+  Stethoscope,
+  Target,
+  Users,
+  Video
+};
+
+export function Icon({ name, className }: { name?: string; className?: string }) {
+  const Component = icons[name ?? "ShieldCheck"] ?? ShieldCheck;
+  return <Component className={className} aria-hidden="true" strokeWidth={2} />;
+}

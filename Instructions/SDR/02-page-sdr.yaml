@@ -1,0 +1,1023 @@
+schema_version: "1.0"
+
+file:
+  name: "02-page-sdr.yaml"
+  purpose: "Defines the complete SDR procedure page structure, section order, approved content and responsive composition."
+
+page:
+  id: "sdr-procedure-page"
+  component_name: "SdrProcedurePage"
+  procedure_name: "Selective Dorsal Rhizotomy"
+  abbreviation: "SDR"
+  route: "/procedures/selective-dorsal-rhizotomy"
+  page_type: "procedure-detail"
+  language: "en-IN"
+  status: "approved-for-build"
+
+  rendering:
+    continuous_page: true
+    part_1_and_part_2_are_reference_splits_only: true
+    render_second_header: false
+    render_second_footer: false
+    render_continuation_markers: false
+
+  reference_files:
+    mobile_part_1_mock: "1000104948.png"
+    mobile_part_2_mock: "1000104953.jpg"
+    desktop_part_1_mock: "1000104950.png"
+    desktop_part_2_mock: "1000104952.png"
+
+    mobile_part_1_grid: "1000104951.png"
+    mobile_part_2_grid: "1000104956.png"
+    desktop_part_1_grid: "1000104955.png"
+    desktop_part_2_grid: "1000104954.png"
+
+    mobile_hero_asset: "1000104949.png"
+    desktop_hero_asset: "1000104957.png"
+
+  reference_priority:
+    - "Approved clean page mocks control content, order and composition."
+    - "Standalone hero assets control the final hero artwork and crop."
+    - "Grid images control implementation measurements."
+    - "This YAML controls semantic structure, responsive behaviour and interactions."
+
+seo:
+  title: "Selective Dorsal Rhizotomy (SDR) in Hyderabad | Dr. Pawan Kumar Sadhvani"
+  meta_description: "Learn about Selective Dorsal Rhizotomy, who may benefit, patient assessment, rehabilitation, risks and how to request an SDR evaluation."
+  canonical_path: "/procedures/selective-dorsal-rhizotomy"
+  indexable: true
+
+  open_graph:
+    title: "Selective Dorsal Rhizotomy (SDR)"
+    description: "A specialised nerve procedure for carefully selected children and adults with lower-limb spasticity."
+    image: null
+    image_rule: "Use the website's approved SDR social-sharing image if one is supplied later."
+
+homepage_link:
+  required: true
+  source: "Existing SDR procedure entry on the homepage"
+  destination: "/procedures/selective-dorsal-rhizotomy"
+  navigation_type: "client-side React route"
+  open_in_modal: false
+  open_in_new_tab: false
+  duplicate_homepage_card: false
+
+  clickable_elements:
+    - "Complete SDR procedure card"
+    - "SDR title"
+    - "Existing SDR Learn more or procedure action"
+
+  accessibility:
+    semantic_component: "Link"
+    accessible_name: "Learn about Selective Dorsal Rhizotomy"
+    keyboard_accessible: true
+    visible_focus_state: true
+    minimum_mobile_target: "44px by 44px"
+
+page_shell:
+  header:
+    component: "SiteHeader"
+    shared: true
+    position: "sticky where already supported by the website"
+    desktop_navigation_visible: true
+    mobile_hamburger_visible: true
+    primary_cta:
+      label: "Request Assessment"
+      action: "Use the existing website assessment flow."
+
+  main:
+    semantic_element: "main"
+    id: "main-content"
+
+  footer:
+    component: "SiteFooter"
+    shared: true
+    render_once: true
+
+breadcrumbs:
+  component: "Breadcrumbs"
+  aria_label: "Breadcrumb"
+  items:
+    - label: "Home"
+      route: "/"
+      clickable: true
+
+    - label: "Procedures"
+      route: "/procedures"
+      clickable: true
+      fallback_route: "/#procedures"
+
+    - label: "SDR"
+      route: null
+      clickable: false
+      aria_current: "page"
+
+section_order:
+  - "hero"
+  - "what-is-sdr"
+  - "who-may-benefit"
+  - "when-sdr-may-not-be-appropriate"
+  - "problems-sdr-may-address"
+  - "assessment-and-patient-selection"
+  - "how-sdr-works"
+  - "potential-goals-of-sdr"
+  - "limitations-and-important-considerations"
+  - "treatment-comparison"
+  - "recovery-and-rehabilitation"
+  - "risks-and-important-information"
+  - "medical-review"
+  - "multidisciplinary-team"
+  - "patient-journeys"
+  - "frequently-asked-questions"
+  - "references-and-further-reading"
+  - "closing-assessment-cta"
+
+sections:
+  hero:
+    id: "sdr-hero"
+    semantic_element: "section"
+    aria_label: "Selective Dorsal Rhizotomy introduction"
+
+    assets:
+      mobile: "1000104949.png"
+      desktop: "1000104957.png"
+      asset_role: "responsive hero background or positioned hero image"
+
+    html_content:
+      eyebrow: "Specialized Procedure"
+      heading:
+        text: "Selective Dorsal Rhizotomy (SDR)"
+        element: "h1"
+
+      description: "A precise nerve procedure that reduces lower-limb spasticity and improves movement and function."
+
+      tags:
+        - id: "nerve-procedure"
+          label: "Nerve Procedure"
+          icon: "Sparkles"
+
+        - id: "lower-limb-spasticity"
+          label: "Lower-Limb Spasticity"
+          icon: "Footprints"
+
+      actions:
+        - id: "request-assessment"
+          label: "Request Assessment"
+          style: "primary"
+          icon: "CalendarDays"
+          action: "Use the established assessment flow."
+
+        - id: "talk-to-team"
+          label: "Talk to Our Team"
+          style: "secondary"
+          icon: "MessagesCircle"
+          action: "Use the established website contact or WhatsApp flow."
+
+    baked_into_asset:
+      - "Anatomical spine and lower-limb nerve illustration"
+      - "Circular nerve magnifier"
+      - "Magnifier connector lines"
+      - "Only the abnormal sensory nerve signals are selectively treated while preserving strength and feeling."
+
+    accessibility:
+      equivalent_hidden_text: "Only the abnormal sensory nerve signals are selectively treated while preserving strength and feeling."
+      decorative_image_alt: ""
+      rule: "Do not duplicate baked-in image wording visually as additional HTML."
+
+    desktop:
+      layout: "two-area hero composition"
+      html_content_position: "left"
+      artwork_position: "right"
+      text_max_width: "approximately 520px"
+      minimum_height: "recommended 520px"
+      image_fit: "cover"
+      image_position: "center right"
+
+    mobile:
+      layout: "approved composite hero with HTML content over or beside safe empty image area"
+      reference_width: "390px"
+      hero_content_order:
+        - "Breadcrumb"
+        - "Eyebrow"
+        - "Heading"
+        - "Description"
+        - "Tags"
+        - "Request Assessment"
+        - "Talk to Our Team"
+      image_fit: "cover"
+      image_position: "center right"
+      preserve_magnifier_and_baked_text: true
+
+  what-is-sdr:
+    id: "what-is-sdr"
+    semantic_element: "section"
+    section_number: 1
+    heading:
+      text: "What is SDR?"
+      element: "h2"
+
+    body: "SDR is a microsurgical procedure that selectively reduces overactive sensory nerve signals from the spinal cord. It helps lower spasticity while preserving strength and feeling."
+
+    goal:
+      icon: "ShieldCheck"
+      label: "Goal"
+      text: "Better movement, easier daily activities, and improved quality of life."
+
+    education_cards:
+      - id: "sensory-rootlets"
+        title: "Sensory rootlets carry signals from the lower limbs."
+        icon_type: "custom-svg"
+        icon_name: "sensory-rootlets"
+
+      - id: "lower-spinal-level"
+        title: "SDR works at the lower spinal level."
+        icon_type: "custom-svg"
+        icon_name: "lower-spine"
+
+      - id: "overactive-rootlets"
+        title: "Only overactive sensory rootlets are selectively treated."
+        icon_type: "custom-svg"
+        icon_name: "sensory-signal"
+
+      - id: "preserve-strength"
+        title: "The aim is to preserve strength and feeling while reducing spasticity."
+        icon_type: "lucide"
+        icon_name: "ShieldCheck"
+
+    information_strip:
+      icon: "Info"
+      text: "SDR works on sensory nerve rootlets in the lower spine and is different from SMF, which works on peripheral motor nerve branches."
+
+    desktop:
+      layout: "full-width card"
+      education_card_layout: "four equal columns"
+      equal_height_cards: true
+
+    mobile:
+      layout: "full-width stacked card"
+      education_card_layout: "two-column grid when shown in the approved mock"
+      fallback: "stack cards if required to maintain readable 16px text"
+
+  who-may-benefit:
+    id: "who-may-benefit"
+    semantic_element: "section"
+    section_number: 2
+    heading:
+      text: "Who may benefit from SDR?"
+      mobile_text: "Who may benefit?"
+      element: "h2"
+
+    items:
+      - "Children or adults with spasticity"
+      - "Cerebral palsy affecting walking or lower-limb movement"
+      - "Stiffness or tightness in the legs impacting daily activities"
+      - "Good potential for rehabilitation and functional gains"
+
+    supporting_image:
+      asset_id: "sdr-benefit-rehabilitation-image"
+      alt: "Child practising supported walking with a rehabilitation professional"
+      object_fit: "cover"
+      object_position: "center"
+
+    desktop:
+      layout: "content and supporting image within the approved card"
+      grid_span: "6 columns when paired with the suitability section"
+
+    mobile:
+      layout: "full-width stacked card"
+      image_position: "below bullet list when shown"
+      image_optional: true
+      rule: "Follow the approved mobile mock and do not force a side-by-side layout."
+
+  when-sdr-may-not-be-appropriate:
+    id: "when-sdr-may-not-be-appropriate"
+    semantic_element: "section"
+    section_number: 3
+    tone: "warning"
+    heading:
+      text: "When SDR may not be appropriate"
+      element: "h2"
+      icon: "TriangleAlert"
+
+    items:
+      - id: "severe-muscle-weakness"
+        text: "Severe muscle weakness"
+        icon: "TriangleAlert"
+
+      - id: "fixed-deformity"
+        text: "Significant fixed deformity or contractures"
+        icon_type: "custom-svg"
+        icon_name: "fixed-deformity"
+
+      - id: "medical-conditions"
+        text: "Poor wound healing or uncontrolled medical conditions"
+        icon: "ClipboardPlus"
+
+      - id: "expectations"
+        text: "Expectations not aligned with realistic outcomes"
+        icon_type: "custom-svg"
+        icon_name: "realistic-expectations"
+
+    final_note:
+      text: "Final suitability is determined after detailed assessment."
+      icon: "Info"
+
+    desktop:
+      layout: "two-column warning-card grid"
+      grid_span: "6 columns when paired with Who may benefit"
+      equal_height_items: true
+
+    mobile:
+      layout: "full-width card"
+      internal_grid: "two columns where readable"
+      fallback: "stack individual warning items vertically"
+      rule: "Do not position this section beside Who may benefit on mobile."
+
+  problems-sdr-may-address:
+    id: "problems-sdr-may-address"
+    semantic_element: "section"
+    section_number: 4
+    heading:
+      text: "Problems SDR may address"
+      element: "h2"
+
+    view_all:
+      label: "View all"
+      action: "Expand all related cards inline."
+      route_change: false
+      modal: false
+
+    carousel:
+      id: "sdr-problems-carousel"
+      type: "horizontal"
+      loop: false
+      show_arrows: true
+      show_pagination: true
+      keyboard_accessible: true
+
+      cards:
+        - id: "leg-stiffness"
+          title: "Leg Stiffness"
+          icon_type: "custom-svg"
+          icon_name: "leg-stiffness"
+
+        - id: "toe-walking"
+          title: "Toe Walking"
+          icon_type: "custom-svg"
+          icon_name: "toe-walking"
+
+        - id: "scissoring-gait"
+          title: "Scissoring Gait"
+          icon_type: "custom-svg"
+          icon_name: "scissoring-gait"
+
+        - id: "walking-difficulty"
+          title: "Walking Difficulty"
+          icon: "Accessibility"
+
+        - id: "positioning-daily-care"
+          title: "Positioning & Daily Care"
+          icon: "HeartHandshake"
+
+    desktop:
+      visible_cards: 5
+      equal_height_cards: true
+      rule: "Only show carousel controls if additional cards or controlled scrolling exist."
+
+    mobile:
+      behaviour: "horizontal swipe carousel"
+      touch_enabled: true
+      snap: "mandatory"
+      approved_mock_visible_count: "compact repeated-card row"
+      minimum_card_width: "recommended 112px"
+      minimum_touch_target: "44px"
+      rule: "Do not navigate to another page when View all is selected."
+
+  assessment-and-patient-selection:
+    id: "assessment-and-patient-selection"
+    semantic_element: "section"
+    section_number: 5
+    heading:
+      text: "Assessment & patient selection"
+      element: "h2"
+
+    steps:
+      - number: 1
+        title: "History & Goals"
+        description: "Understand your concerns and goals."
+        icon: "ClipboardList"
+
+      - number: 2
+        title: "Clinical Examination"
+        description: "Detailed neurological and physical exam."
+        icon: "Stethoscope"
+
+      - number: 3
+        title: "Imaging & Records"
+        description: "MRI and records reviewed carefully."
+        icon: "ScanLine"
+
+      - number: 4
+        title: "Gait & Movement Review"
+        description: "Video analysis of walking and posture."
+        icon: "Accessibility"
+
+      - number: 5
+        title: "Personalised Recommendation"
+        description: "Plan tailored to your needs and goals."
+        icon: "Target"
+
+    supporting_image:
+      asset_id: "sdr-assessment-image"
+      alt: "Doctor assessing a child's walking and lower-limb movement"
+      object_fit: "cover"
+      object_position: "center"
+
+    desktop:
+      layout: "two-column section"
+      steps_position: "left"
+      image_position: "right"
+      column_ratio: "approximately 7:5"
+
+    mobile:
+      layout: "stacked full-width section"
+      rows:
+        flexible_height: true
+        title_and_description_wrap: true
+      rule: "Do not force assessment content and image side by side."
+
+  how-sdr-works:
+    id: "how-sdr-works"
+    semantic_element: "section"
+    section_number: 6
+    heading:
+      text: "How SDR works"
+      desktop_text: "How SDR works (overview)"
+      element: "h2"
+
+    steps:
+      - number: 1
+        title: "Identify Sensory Rootlets"
+        description: "Surgeon locates the nerve rootlets in the spinal canal."
+        illustration: "identify-sensory-rootlets"
+
+      - number: 2
+        title: "Test & Select Rootlets"
+        description: "Precise testing identifies overactive rootlets to treat."
+        illustration: "test-select-rootlets"
+
+      - number: 3
+        title: "Treat Targeted Rootlets"
+        description: "Selectively reduces nerve signals causing spasticity."
+        illustration: "treat-targeted-rootlets"
+
+      - number: 4
+        title: "Begin Rehabilitation"
+        description: "Personalised therapy to build strength, mobility and function."
+        illustration: "begin-rehabilitation"
+
+    desktop:
+      layout: "four-card row"
+      equal_height_cards: true
+
+    mobile:
+      layout: "follow the approved Mobile Part 1 mock"
+      primary_behaviour: "stacked full-width step cards when required for readability"
+      alternative_behaviour: "controlled horizontal carousel only when matching the final approved mock"
+      minimum_body_text: "16px"
+
+    reference_warning:
+      issue: "The Mobile Part 1 grid image does not visibly show this complete section."
+      rule: "This section is mandatory and must not be omitted."
+
+  potential-goals-of-sdr:
+    id: "potential-goals-of-sdr"
+    semantic_element: "section"
+    heading:
+      text: "Potential goals of SDR"
+      element: "h2"
+      icon: "Target"
+
+    items:
+      - "Reduce lower-limb spasticity"
+      - "Support easier movement and walking"
+      - "Improve positioning, comfort and balance"
+      - "Create better conditions for rehabilitation and functional progress"
+
+    supporting_image:
+      asset_id: "sdr-goals-image"
+      alt: "Child practising walking with support from a rehabilitation professional"
+      object_fit: "cover"
+
+    desktop:
+      layout: "one half of a two-card row"
+      grid_span: "6 columns"
+
+    mobile:
+      layout: "full-width stacked card"
+      image_position: "below content"
+      rule: "Do not place this section beside Limitations on mobile."
+
+  limitations-and-important-considerations:
+    id: "limitations-and-important-considerations"
+    semantic_element: "section"
+    heading:
+      text: "Limitations & important considerations"
+      element: "h2"
+      icon: "TriangleAlert"
+
+    items:
+      - "SDR does not directly increase muscle strength"
+      - "Results vary from person to person"
+      - "Ongoing physiotherapy and active rehabilitation are essential"
+      - "Some people may still need additional orthopaedic or soft-tissue procedures"
+      - "This procedure is not suitable for everyone"
+
+    supporting_image:
+      asset_id: "sdr-limitations-spine-image"
+      alt: "Medical illustration of the lower spine and nerve structures"
+      object_fit: "cover"
+
+    desktop:
+      layout: "one half of a two-card row"
+      grid_span: "6 columns"
+
+    mobile:
+      layout: "full-width stacked card"
+      image_position: "below content"
+      rule: "Do not place this section beside Potential goals on mobile."
+
+  treatment-comparison:
+    id: "sdr-treatment-comparison"
+    semantic_element: "section"
+    heading:
+      text: "SDR compared with other treatment options"
+      element: "h2"
+
+    helper_text: "Swipe to explore"
+
+    carousel:
+      type: "horizontal"
+      loop: false
+      show_arrows: true
+      show_pagination: true
+      cards:
+        - id: "sdr"
+          title: "SDR"
+          selected: true
+          description: "Treats selected sensory nerve rootlets in the lower spine to reduce lower-limb spasticity."
+          action_label: "Learn more"
+          destination: "/procedures/selective-dorsal-rhizotomy"
+
+        - id: "smf"
+          title: "SMF"
+          selected: false
+          description: "Targets specific motor nerve branches for focal spasticity in upper or lower limbs."
+          action_label: "Learn more"
+          destination: "/procedures/selective-motor-fasciculotomy"
+
+        - id: "tendon-muscle-procedures"
+          title: "Tendon & Muscle Procedures"
+          selected: false
+          description: "Addresses muscle-tendon tightness, imbalance or contractures."
+          action_label: "Learn more"
+          destination: null
+
+        - id: "deformity-correction"
+          title: "Deformity Correction Surgery"
+          selected: false
+          description: "Helps correct fixed bony deformities that affect function or posture."
+          action_label: "Learn more"
+          destination: null
+
+    destination_rule:
+      null_destination_behaviour: "Use the project's existing related procedure behaviour or disable navigation until a destination is approved."
+
+    desktop:
+      visible_cards: 4
+      equal_height_cards: true
+
+    mobile:
+      horizontal_swipe: true
+      minimum_touch_target: "44px"
+      scroll_snap: true
+      rule: "Do not shrink all cards to fit simultaneously."
+
+  recovery-and-rehabilitation:
+    id: "recovery-and-rehabilitation"
+    semantic_element: "section"
+    heading:
+      text: "Recovery & rehabilitation journey"
+      element: "h2"
+
+    steps:
+      - number: 1
+        title: "Hospital stay"
+        description: "Typically 3–7 days depending on recovery and individual needs."
+        icon: "Hospital"
+
+      - number: 2
+        title: "Pain management & early care"
+        description: "Comfort-focused pain relief and medical care in the initial period."
+        icon: "Bed"
+
+      - number: 3
+        title: "Rehabilitation begins"
+        description: "Physiotherapy usually begins in hospital once stable."
+        icon: "Accessibility"
+
+      - number: 4
+        title: "Intensive therapy"
+        description: "Structured physiotherapy 4–6 sessions per week to build progress."
+        icon: "Activity"
+
+      - number: 5
+        title: "Follow-up & progress review"
+        description: "Regular follow-ups to monitor progress and guide ongoing care."
+        icon: "CalendarCheck"
+
+    supporting_image:
+      asset_id: "sdr-recovery-image"
+      alt: "Child undertaking walking rehabilitation with a physiotherapist"
+      object_fit: "cover"
+      object_position: "center"
+
+    callout:
+      icon: "Star"
+      text: "Recovery timelines vary. Your team will guide you with a personalised rehabilitation plan."
+
+    desktop:
+      layout: "two-column"
+      steps_position: "left"
+      image_position: "right"
+      column_ratio: "approximately 5:7"
+
+    mobile:
+      layout: "stacked card"
+      steps_position: "top"
+      image_position: "below steps"
+      flexible_step_height: true
+
+  risks-and-important-information:
+    id: "risks-and-important-information"
+    semantic_element: "section"
+    tone: "warning"
+    heading:
+      text: "Risks & important information"
+      element: "h2"
+      icon: "ShieldAlert"
+
+    introduction: "Like all surgeries, SDR carries some risks. These may include, but are not limited to:"
+
+    accordion:
+      allow_multiple_open: false
+      full_row_clickable: true
+      minimum_row_height: "44px"
+
+      items:
+        - id: "neurological-changes"
+          title: "Possible neurological changes"
+          summary: "Altered sensation or weakness may occur in rare cases."
+          icon: "Brain"
+
+        - id: "infection-bleeding"
+          title: "Infection, bleeding & wound concerns"
+          summary: "Risks may relate to surgery, bleeding or wound healing."
+          icon: "Hospital"
+
+        - id: "delayed-healing"
+          title: "Bleeding or delayed healing or wound healing"
+          summary: "Healing time and wound recovery vary between individuals."
+          icon: "Bandage"
+
+        - id: "bladder-bowel"
+          title: "Bladder or bowel changes"
+          summary: "Temporary changes may occur in some patients."
+          icon: "ShieldAlert"
+
+        - id: "csf-leak"
+          title: "CSF leak & other uncommon complications"
+          summary: "Uncommon complications may include headaches or neurological concerns."
+          icon: "Droplets"
+
+        - id: "limited-improvement"
+          title: "Possibility of limited improvement or further treatment"
+          summary: "Some individuals may need additional treatment or procedures."
+          icon: "ClipboardPlus"
+
+    final_note: "The treating team will explain procedure-specific risks, alternatives and expected outcomes during assessment."
+
+    medical_copy_rule:
+      verification_required: true
+      instruction: "Do not expand or alter risk wording without doctor-approved content."
+
+    desktop:
+      layout: "accordion and explanatory risk panel"
+      grid_span: "approximately 6 columns each"
+
+    mobile:
+      layout: "stacked accordion"
+      full_width: true
+
+  medical-review:
+    id: "medical-review"
+    semantic_element: "aside"
+    heading:
+      text: "Medically reviewed by"
+      element: "h2"
+      icon: "ShieldCheck"
+
+    reviewer:
+      name: "Dr. Pawan Kumar Sadhvani"
+      qualifications: "MBBS, MS (Ortho), MCh (Ortho)"
+      designation: "Cerebral Palsy, Spasticity & Deformity Correction Specialist"
+      experience: "20+ years of experience"
+      reviewed_on: "18 May 2025"
+      portrait_asset_id: "dr-pawan-review-portrait"
+      portrait_alt: "Dr. Pawan Kumar Sadhvani"
+
+    verification:
+      required_before_publication: true
+      fields:
+        - "Qualifications"
+        - "Experience statement"
+        - "Reviewed-on date"
+
+    desktop:
+      layout: "compact review card"
+
+    mobile:
+      layout: "full-width review card"
+
+  multidisciplinary-team:
+    id: "multidisciplinary-team"
+    semantic_element: "section"
+    heading:
+      text: "Our multidisciplinary team"
+      element: "h2"
+      icon: "Users"
+
+    roles:
+      - title: "Neuro-Orthopaedic Surgeon"
+        icon_type: "custom-svg"
+        icon_name: "neuro-orthopaedic-surgeon"
+
+      - title: "Neuro-Surgeon"
+        icon_type: "custom-svg"
+        icon_name: "neuro-surgeon"
+
+      - title: "Physiotherapists & Rehabilitation Experts"
+        icon_type: "custom-svg"
+        icon_name: "rehabilitation-team"
+
+      - title: "Nursing & Care Team"
+        icon_type: "custom-svg"
+        icon_name: "nursing-care-team"
+
+    supporting_text: "Working together to provide comprehensive, evidence-based care."
+
+    desktop:
+      layout: "four equal cards"
+
+    mobile:
+      layout: "follow approved mock"
+      recommended_fallback: "two-column grid"
+      rule: "Do not reduce role labels below readable size."
+
+  patient-journeys:
+    id: "patient-journeys"
+    semantic_element: "section"
+    heading:
+      text: "Real patient journeys after SDR"
+      element: "h2"
+
+    view_all:
+      label: "View all stories"
+      behaviour: "Expand the section inline into a swipeable carousel."
+      route_change: false
+
+    carousel:
+      type: "horizontal"
+      loop: false
+      show_arrows: true
+      show_pagination: true
+
+      stories:
+        - id: "case-1-improved-walking"
+          case_label: "Case 1"
+          title: "Improved walking & independence"
+          summary: "A 9-year-old child with spastic diplegia experienced reduced leg stiffness and better walking after SDR and dedicated rehabilitation."
+          outcome: "Better walking, better balance and improved daily participation."
+          before_image_asset_id: "sdr-case-1-before"
+          after_image_asset_id: "sdr-case-1-after"
+          action_label: "View full story"
+
+        - id: "case-2-posture-comfort"
+          case_label: "Case 2"
+          title: "Better posture & daily comfort"
+          summary: "A 12-year-old child with spastic diplegia had improved sitting posture and greater ease in daily activities after SDR."
+          outcome: "Improved posture, comfort and functional independence."
+          before_image_asset_id: "sdr-case-2-before"
+          after_image_asset_id: "sdr-case-2-after"
+          action_label: "View full story"
+
+    disclaimer: "Patients are unique. Results depend on individual condition, therapy and follow-up care."
+
+    content_rule:
+      verification_required: true
+      consent_required: true
+      instruction: "Use only patient stories and images that have final documented approval."
+
+    desktop:
+      visible_stories: 2
+
+    mobile:
+      visible_stories: 1
+      swipe_enabled: true
+      story_layout: "Follow the approved mobile mock."
+
+  frequently-asked-questions:
+    id: "frequently-asked-questions"
+    semantic_element: "section"
+    heading:
+      text: "Frequently asked questions"
+      element: "h2"
+
+    view_all:
+      label: "View all FAQs"
+      behaviour: "Expand all FAQ items inline."
+      route_change: false
+
+    accordion:
+      full_row_clickable: true
+      allow_multiple_open: false
+      minimum_row_height: "44px"
+
+      questions:
+        - id: "suitable-for-every-child"
+          question: "Is SDR suitable for every child with CP?"
+          answer: null
+
+        - id: "best-age-range"
+          question: "What age range is best suited for SDR?"
+          answer: null
+
+        - id: "rehabilitation-length"
+          question: "How long is the rehabilitation process?"
+          answer: null
+
+        - id: "permanent-spasticity-reduction"
+          question: "Does SDR permanently reduce spasticity?"
+          answer: null
+
+        - id: "additional-surgeries"
+          question: "Will additional surgeries be needed?"
+          answer: null
+
+        - id: "success-rates"
+          question: "What are the success rates of SDR?"
+          answer: null
+
+    answer_rule:
+      instruction: "Answers must come from doctor-approved SDR content. Do not invent medical answers."
+
+  references-and-further-reading:
+    id: "references-and-further-reading"
+    semantic_element: "section"
+    heading:
+      text: "References & further reading"
+      element: "h2"
+      icon: "BookOpen"
+
+    introduction: "We base our care on globally accepted evidence and best practices, from reputable clinical publications."
+
+    references:
+      - "AANEM – Practice Parameters"
+      - "AANS/CNS – Clinical Guidelines"
+      - "AACPDM – SDR Clinical Guidelines"
+      - "Publications related to SDR / Dorsal Rhizotomy"
+      - "Latest peer-reviewed evidence on SDR"
+
+    action:
+      label: "View references"
+      behaviour: "Expand the complete reference list inline or open the approved references panel."
+      route_change: false
+
+    publication_rule:
+      instruction: "Final references and external links must be medically reviewed before publication."
+
+  closing-assessment-cta:
+    id: "closing-assessment-cta"
+    semantic_element: "section"
+    heading:
+      text: "Not sure if SDR is right for your child or loved one?"
+      element: "h2"
+
+    body: "Our team is here to help you take the next step."
+
+    actions:
+      - id: "closing-request-assessment"
+        label: "Request Assessment"
+        style: "primary"
+        icon: "CalendarDays"
+        action: "Use the established assessment flow."
+
+      - id: "closing-talk-to-team"
+        label: "Talk to Our Team"
+        style: "secondary"
+        icon: "MessagesCircle"
+        action: "Use the established website contact or WhatsApp flow."
+
+    desktop:
+      layout: "full-width centred CTA"
+
+    mobile:
+      layout: "full-width stacked CTA"
+      actions_stacked: true
+      minimum_button_height: "48px"
+
+part_reference_markers:
+  production_visibility: false
+
+  part_1_end:
+    reference_text: "Continues in Part 2"
+    render: false
+
+  part_2_start:
+    reference_text: "Continuing from Part 1"
+    render: false
+
+responsive:
+  desktop:
+    breakpoint: "1200px and above"
+    reference_width: "1440px"
+    container_max_width: "1280px"
+    side_margin_at_reference: "80px"
+    columns: 12
+    gutter: "24px"
+
+  tablet:
+    breakpoint: "768px to 1199px"
+    columns: 8
+    side_padding: "24px to 48px"
+    rule: "Preserve content order and adapt approved desktop compositions without inventing new sections."
+
+  mobile:
+    breakpoint: "below 768px"
+    reference_width: "390px"
+    columns: 4
+    side_padding: "16px"
+    gutter: "8px"
+    minimum_body_text: "16px"
+    minimum_touch_target: "44px"
+    rule: "Stack major sections and preserve approved mobile carousel behaviour."
+
+accessibility:
+  heading_structure:
+    h1:
+      - "Selective Dorsal Rhizotomy (SDR)"
+
+    h2:
+      - "What is SDR?"
+      - "Who may benefit from SDR?"
+      - "When SDR may not be appropriate"
+      - "Problems SDR may address"
+      - "Assessment & patient selection"
+      - "How SDR works"
+      - "Potential goals of SDR"
+      - "Limitations & important considerations"
+      - "SDR compared with other treatment options"
+      - "Recovery & rehabilitation journey"
+      - "Risks & important information"
+      - "Medically reviewed by"
+      - "Our multidisciplinary team"
+      - "Real patient journeys after SDR"
+      - "Frequently asked questions"
+      - "References & further reading"
+      - "Not sure if SDR is right for your child or loved one?"
+
+  requirements:
+    - "Use semantic HTML elements."
+    - "Maintain logical heading order."
+    - "Provide visible keyboard focus states."
+    - "Use descriptive alt text for meaningful images."
+    - "Hide decorative icons from assistive technology."
+    - "Make complete accordion rows clickable."
+    - "Label carousel controls clearly."
+    - "Respect prefers-reduced-motion."
+    - "Do not use colour as the only warning indicator."
+    - "Meet WCAG AA contrast requirements."
+
+implementation_validation:
+  required_checks:
+    - "The homepage SDR entry navigates to this page."
+    - "The route is /procedures/selective-dorsal-rhizotomy."
+    - "Part 1 and Part 2 render as one continuous page."
+    - "Only one shared header and one shared footer render."
+    - "The exact uploaded filenames remain unchanged."
+    - "1000104949.png is used for the mobile hero."
+    - "1000104957.png is used for the desktop hero."
+    - "The complete How SDR works section is present on mobile."
+    - "View all interactions expand inline without route changes."
+    - "FAQ and risk rows meet minimum touch-target requirements."
+    - "Medical claims, review information and patient stories are verified before publication."

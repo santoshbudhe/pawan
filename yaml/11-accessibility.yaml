@@ -1,0 +1,235 @@
+# ==========================================================
+# 11-accessibility.yaml
+# Accessibility Specification
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+accessibility:
+
+  version: "1.0.0"
+
+# ==========================================================
+# COMPLIANCE
+# ==========================================================
+
+compliance:
+
+  standard: WCAG 2.2 AA
+
+  semanticHTML: true
+
+  keyboardAccessible: true
+
+  screenReaderFriendly: true
+
+# ==========================================================
+# LANDMARKS
+# ==========================================================
+
+landmarks:
+
+  required:
+
+    - header
+    - nav
+    - main
+    - section
+    - footer
+
+# ==========================================================
+# HEADING STRUCTURE
+# ==========================================================
+
+headings:
+
+  homepage:
+
+    h1: 1
+
+    h2:
+
+      - Hero
+      - Why Choose Us
+      - Who We Help
+      - Procedures
+      - Patient Stories
+      - Doctors
+      - Hospitals
+
+    h3:
+
+      - Cards
+      - Features
+      - Story Titles
+
+# ==========================================================
+# IMAGES
+# ==========================================================
+
+images:
+
+  everyImageRequiresAlt: true
+
+  decorativeImages:
+
+    alt: ""
+
+  informativeImages:
+
+    descriptiveAlt: true
+
+# ==========================================================
+# BUTTONS
+# ==========================================================
+
+buttons:
+
+  minimumTouchTarget: 44
+
+  keyboardFocusable: true
+
+  visibleFocusState: true
+
+# ==========================================================
+# LINKS
+# ==========================================================
+
+links:
+
+  descriptiveText: true
+
+  avoidClickHere: true
+
+  externalLinks:
+
+    openInNewTab: true
+
+    rel:
+
+      - noopener
+
+      - noreferrer
+
+# ==========================================================
+# FORMS
+# ==========================================================
+
+forms:
+
+  labelsRequired: true
+
+  placeholderNotLabel: true
+
+  requiredFieldsIndicated: true
+
+  autocompleteEnabled: true
+
+  validation:
+
+    inline: true
+
+    accessible: true
+
+# ==========================================================
+# COLOR
+# ==========================================================
+
+color:
+
+  minimumContrast:
+
+    normalText: "4.5:1"
+
+    largeText: "3:1"
+
+# ==========================================================
+# KEYBOARD
+# ==========================================================
+
+keyboard:
+
+  tabNavigation: true
+
+  skipToContent: true
+
+  logicalTabOrder: true
+
+# ==========================================================
+# CAROUSELS
+# ==========================================================
+
+carousels:
+
+  keyboardNavigation: true
+
+  swipeSupport: true
+
+  pauseOnHover: true
+
+  noAutoplay: true
+
+# ==========================================================
+# MODALS
+# ==========================================================
+
+modals:
+
+  trapFocus: true
+
+  escClosesModal: true
+
+  restoreFocusOnClose: true
+
+# ==========================================================
+# REDUCED MOTION
+# ==========================================================
+
+motion:
+
+  respectPrefersReducedMotion: true
+
+# ==========================================================
+# SCREEN READERS
+# ==========================================================
+
+screenReaders:
+
+  ariaLabelsRequired: true
+
+  ariaExpanded:
+
+    supported: true
+
+  ariaCurrent:
+
+    navigation: true
+
+# ==========================================================
+# ERROR HANDLING
+# ==========================================================
+
+errors:
+
+  announceErrors: true
+
+  inlineMessages: true
+
+# ==========================================================
+# IMPLEMENTATION RULES
+# ==========================================================
+
+implementation:
+
+  useSemanticElements: true
+
+  neverUseDivForButtons: true
+
+  neverRemoveOutlineWithoutReplacement: true
+
+  everyInteractiveElementFocusable: true
+
+  testKeyboardOnlyNavigation: true
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

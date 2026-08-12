@@ -1,0 +1,61 @@
+page_shell:
+  header:
+    reuse_existing_component: true
+    position: sticky
+    top: 0
+    z_index: 100
+    desktop_height_recommended_px: 72
+    mobile_height_recommended_px: 72
+    desktop:
+      logo_area: left
+      navigation:
+      - Home
+      - About
+      - Procedures
+      - Patient Resources
+      - Contact
+      primary_cta: Request Assessment
+    mobile:
+      logo_area: left
+      primary_cta: Request Assessment
+      hamburger: true
+      minimum_touch_target_px: 44
+  main:
+    max_width_desktop_px: 1280
+    margin_inline: auto
+    desktop_side_padding_at_1440_px: 80
+    mobile_side_padding_px: 16
+    content_height: content-driven
+  part_transition:
+    label: Continuing from Part 1
+    desktop: centered label between dotted horizontal rules
+    mobile: compact text row below sticky header
+  footer:
+    reuse_existing_component: true
+    desktop_visible: true
+    mobile_rule: Follow the existing global mobile-footer behavior. Do not add a duplicate footer if the site shell already
+      owns it.
+    columns_desktop: 5
+full_page_section_order:
+- header
+- part_1_hero
+- what_are_tendon_and_muscle_procedures
+- who_may_benefit
+- when_not_appropriate
+- problems_addressed
+- assessment_and_surgical_planning
+- treatment_overview
+- part_1_closing_cta
+- part_1_trust_strip
+- continuation_divider
+- potential_treatment_goals
+- limitations_and_considerations
+- procedure_comparison
+- hospital_stay_and_early_recovery
+- rehabilitation_after_procedures
+- risks_and_important_information
+- treating_team
+- reviewed_by
+- patient_journeys
+- bottom_cta
+- footer

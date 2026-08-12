@@ -1,0 +1,243 @@
+# ==========================================================
+# 10-performance.yaml
+# Performance Specification
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+performance:
+
+  version: "1.0.0"
+
+# ==========================================================
+# CORE WEB VITALS
+# ==========================================================
+
+coreWebVitals:
+
+  largestContentfulPaint:
+
+    target: "<2.5s"
+
+  interactionToNextPaint:
+
+    target: "<200ms"
+
+  cumulativeLayoutShift:
+
+    target: "<0.1"
+
+# ==========================================================
+# IMAGE OPTIMIZATION
+# ==========================================================
+
+images:
+
+  formats:
+
+    preferred:
+
+      - webp
+
+      - avif
+
+    fallback:
+
+      - jpg
+
+      - png
+
+  loading:
+
+    hero:
+
+      eager: true
+
+      fetchPriority: high
+
+    belowFold:
+
+      lazy: true
+
+  decoding:
+
+    async: true
+
+  responsive:
+
+    enabled: true
+
+    srcSet: true
+
+    sizes: true
+
+# ==========================================================
+# FONT OPTIMIZATION
+# ==========================================================
+
+fonts:
+
+  preload:
+
+    enabled: true
+
+  display:
+
+    swap
+
+  families:
+
+    - Inter
+
+# ==========================================================
+# JAVASCRIPT
+# ==========================================================
+
+javascript:
+
+  codeSplitting: true
+
+  treeShaking: true
+
+  lazyRoutes: true
+
+  removeUnusedDependencies: true
+
+# ==========================================================
+# CSS
+# ==========================================================
+
+css:
+
+  purgeUnusedTailwind: true
+
+  minimize: true
+
+  inlineCriticalCSS: false
+
+# ==========================================================
+# REACT
+# ==========================================================
+
+react:
+
+  memoizeHeavyComponents: true
+
+  lazyLoadSections: true
+
+  suspenseEnabled: true
+
+# ==========================================================
+# CAROUSELS
+# ==========================================================
+
+carousel:
+
+  initializeOnlyWhenVisible: true
+
+  pauseWhenHidden: true
+
+# ==========================================================
+# ANIMATIONS
+# ==========================================================
+
+animations:
+
+  gpuAccelerated: true
+
+  transformOnly: true
+
+  avoidLayoutThrashing: true
+
+# ==========================================================
+# NETWORK
+# ==========================================================
+
+network:
+
+  preconnect:
+
+    - fonts.googleapis.com
+
+  dnsPrefetch:
+
+    enabled: true
+
+# ==========================================================
+# FIREBASE
+# ==========================================================
+
+firebase:
+
+  cacheStaticAssets: true
+
+  enableCompression: true
+
+# ==========================================================
+# SEO PERFORMANCE
+# ==========================================================
+
+seo:
+
+  preloadHeroImage: true
+
+  sitemapCached: true
+
+  robotsCached: true
+
+# ==========================================================
+# BROWSER SUPPORT
+# ==========================================================
+
+browserSupport:
+
+  chrome: latest
+
+  edge: latest
+
+  firefox: latest
+
+  safari: latest
+
+# ==========================================================
+# IMPLEMENTATION RULES
+# ==========================================================
+
+implementation:
+
+  avoidLargeBundles: true
+
+  avoidBlockingScripts: true
+
+  lazyLoadEverythingBelowFold: true
+
+  neverAnimateWidthHeight: true
+
+  preferTransformAnimations: true
+
+  optimizeForLighthouse: true
+
+# ==========================================================
+# PERFORMANCE BUDGET
+# ==========================================================
+
+budget:
+
+  javascript:
+
+    maxInitialBundleKB: 250
+
+  css:
+
+    maxKB: 80
+
+  images:
+
+    heroMaxKB: 350
+
+    sectionImageMaxKB: 180
+
+    thumbnailMaxKB: 80
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

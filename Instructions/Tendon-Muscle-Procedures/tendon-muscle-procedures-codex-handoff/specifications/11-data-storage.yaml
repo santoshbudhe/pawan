@@ -1,0 +1,26 @@
+data_policy:
+  page_copy_location: React/TypeScript source
+  new_firestore_collections: []
+  reason: This is a static procedure page; existing project convention keeps page copy in TSX/data modules.
+firebase_storage:
+  recommended_folder: procedures/tendon-muscle/
+  upload_exact_filenames:
+  - 1000105002.png
+  - 1000105007.png
+  metadata:
+    cache_control: public,max-age=31536000,immutable
+    content_type: image/png
+  rule: If the project already uses another Storage folder convention, follow that convention without changing filenames.
+content_model_recommended:
+  module: src/content/procedures/tendonMuscle.ts
+  exports:
+  - hero
+  - part1Sections
+  - part2Sections
+  - comparisonCards
+  - riskItems
+  - teamRoles
+  - patientStories
+patient_story_data:
+  source: existing consent-approved patient story records only
+  fallback: Do not fabricate or infer outcomes. Hide or mark the story carousel pending approval if data is unavailable.

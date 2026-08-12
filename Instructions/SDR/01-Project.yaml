@@ -1,0 +1,437 @@
+schema_version: "1.0"
+
+project:
+  id: "dr-pawan-cp-spasticity-sdr"
+  name: "Dr. Pawan Kumar Sadhvani — SDR Procedure Page"
+  website_name: "Dr. Pawan Kumar Sadhvani"
+  procedure:
+    full_name: "Selective Dorsal Rhizotomy"
+    abbreviation: "SDR"
+  implementation_type: "React procedure page"
+  status: "approved for implementation"
+  language: "en-IN"
+
+technology:
+  frontend:
+    framework: "React"
+    language: "TypeScript"
+    styling: "Tailwind CSS and existing project CSS conventions"
+  routing:
+    type: "existing React router"
+    navigation_mode: "client-side routing without full-page reload"
+  backend:
+    platform: "Firebase"
+  icons:
+    library: "Lucide React"
+  content_storage:
+    editorial_copy: "typed frontend TypeScript content files"
+    raster_assets: "existing Firebase Storage or public asset pipeline"
+    structured_public_content: "frontend content model unless an existing project convention requires Firestore"
+
+page:
+  id: "sdr-procedure-page"
+  route: "/procedures/selective-dorsal-rhizotomy"
+  canonical_route: "/procedures/selective-dorsal-rhizotomy"
+  page_type: "procedure detail page"
+  page_title: "Selective Dorsal Rhizotomy (SDR)"
+  continuous_page: true
+
+  composition:
+    - "Shared site header"
+    - "Breadcrumbs"
+    - "SDR hero"
+    - "SDR Part 1 content sections"
+    - "SDR Part 2 content sections"
+    - "Closing assessment CTA"
+    - "Shared site footer"
+
+  split_reference_rule:
+    part_1_and_part_2:
+      purpose: "Visual-reference files only"
+      implementation: "Render as one continuous page"
+      separate_routes: false
+      second_header: false
+      second_footer: false
+      visible_part_dividers_in_production: false
+
+scope:
+  required:
+    - "Build the complete SDR procedure page."
+    - "Implement all approved Part 1 and Part 2 sections."
+    - "Integrate the SDR page into the existing website router."
+    - "Make the existing SDR homepage procedure entry clickable."
+    - "Reuse the website's approved shared header and footer."
+    - "Reuse established SMF page conventions where applicable."
+    - "Implement responsive desktop, tablet and mobile behaviour."
+    - "Use the exact supplied hero assets for mobile and desktop."
+    - "Preserve all approved medical content and section order."
+    - "Implement accessible carousels and accordions."
+    - "Use Lucide icons where specified."
+    - "Create custom SVG illustrations only where specified in later files."
+
+  excluded:
+    - "Do not redesign the approved SDR page."
+    - "Do not create a second SDR card on the homepage."
+    - "Do not open the SDR procedure page inside a modal."
+    - "Do not create separate routes for Part 1 and Part 2."
+    - "Do not bake editable headings, buttons or body copy into new raster images."
+    - "Do not replace supplied assets with unrelated stock images."
+    - "Do not rename the supplied files."
+    - "Do not alter approved medical claims or wording without explicit approval."
+    - "Do not use the reference mock or grid images as production page backgrounds."
+
+homepage_integration:
+  required: true
+  procedure: "Selective Dorsal Rhizotomy"
+  abbreviation: "SDR"
+  destination_route: "/procedures/selective-dorsal-rhizotomy"
+
+  source:
+    component: "existing homepage procedure card or procedure data entry"
+    duplicate_entry_allowed: false
+
+  clickable_targets:
+    - "SDR procedure card"
+    - "SDR procedure title"
+    - "Associated SDR action where present"
+
+  behaviour:
+    navigation: "internal React navigation"
+    full_page_reload: false
+    open_in_modal: false
+    preserve_scroll_position_on_return: "use existing project convention"
+    desktop_required: true
+    mobile_required: true
+
+  accessibility:
+    semantic_element: "React router Link or equivalent semantic anchor"
+    keyboard_accessible: true
+    visible_focus_state: true
+    accessible_name: "Learn about Selective Dorsal Rhizotomy"
+    minimum_touch_target_mobile: "44px by 44px"
+
+routes:
+  sdr:
+    path: "/procedures/selective-dorsal-rhizotomy"
+    component: "SdrProcedurePage"
+    lazy_loading: "recommended if consistent with the existing router"
+
+  breadcrumbs:
+    items:
+      - label: "Home"
+        route: "/"
+        clickable: true
+
+      - label: "Procedures"
+        route: "/procedures"
+        clickable: true
+        fallback:
+          rule: "If no procedures index route exists, use the existing homepage procedures section anchor."
+          recommended_anchor: "/#procedures"
+
+      - label: "SDR"
+        route: null
+        clickable: false
+        aria_current: "page"
+
+shared_components:
+  must_reuse:
+    - "SiteHeader"
+    - "SiteFooter"
+    - "Breadcrumbs"
+    - "PrimaryButton"
+    - "SecondaryButton"
+    - "SectionHeading"
+    - "ProcedureCard"
+    - "CarouselControls"
+    - "Accordion"
+    - "AssessmentCTA"
+
+  reuse_existing_design_system:
+    colours: true
+    typography: true
+    spacing: true
+    shadows: true
+    border_radii: true
+    button_styles: true
+    focus_styles: true
+
+  procedure_page_alignment:
+    reference_page: "SMF procedure page"
+    reuse:
+      - "Page shell"
+      - "Shared header behaviour"
+      - "Shared footer structure"
+      - "Breadcrumb treatment"
+      - "Section numbering treatment"
+      - "Card styling"
+      - "Carousel controls"
+      - "Accordion behaviour"
+      - "CTA behaviour"
+      - "Responsive conventions"
+
+reference_files:
+  rename_allowed: false
+  exact_filename_required: true
+
+  clean_mocks:
+    mobile_part_1:
+      filename: "1000104948.png"
+      role: "Approved SDR Mobile Part 1 mock"
+
+    mobile_part_2:
+      filename: "1000104953.jpg"
+      role: "Approved SDR Mobile Part 2 mock"
+
+    desktop_part_1:
+      filename: "1000104950.png"
+      role: "Approved SDR Desktop Part 1 mock"
+
+    desktop_part_2:
+      filename: "1000104952.png"
+      role: "Approved SDR Desktop Part 2 mock"
+
+  grid_mocks:
+    mobile_part_1:
+      filename: "1000104951.png"
+      role: "SDR Mobile Part 1 CSS grid and measurement reference"
+
+    mobile_part_2:
+      filename: "1000104956.png"
+      role: "SDR Mobile Part 2 CSS grid and measurement reference"
+
+    desktop_part_1:
+      filename: "1000104955.png"
+      role: "SDR Desktop Part 1 CSS grid and measurement reference"
+
+    desktop_part_2:
+      filename: "1000104954.png"
+      role: "SDR Desktop Part 2 CSS grid and measurement reference"
+
+  production_hero_assets:
+    mobile:
+      filename: "1000104949.png"
+      role: "Final SDR mobile hero composite"
+
+    desktop:
+      filename: "1000104957.png"
+      role: "Final SDR desktop hero composite"
+
+source_of_truth:
+  priority:
+    - rank: 1
+      source: "Approved clean mocks"
+      controls:
+        - "Section order"
+        - "Content"
+        - "Overall visual composition"
+        - "Mobile and desktop design intent"
+
+    - rank: 2
+      source: "Final standalone hero assets"
+      controls:
+        - "Actual hero medical illustration"
+        - "Magnifier"
+        - "Baked-in explanatory sentence"
+        - "Mobile and desktop hero crop"
+
+    - rank: 3
+      source: "CSS grid mocks"
+      controls:
+        - "Canvas dimensions"
+        - "Container dimensions"
+        - "Grid columns"
+        - "Gutters"
+        - "Spacing"
+        - "Recommended component measurements"
+
+    - rank: 4
+      source: "SDR YAML and Markdown implementation package"
+      controls:
+        - "Component implementation"
+        - "Responsive behaviour"
+        - "Interactions"
+        - "Accessibility"
+        - "Asset mapping"
+
+    - rank: 5
+      source: "Existing project design system"
+      controls:
+        - "Shared implementation details not contradicted by approved SDR references"
+
+conflict_resolution:
+  hero:
+    rule: "The standalone hero files override provisional hero artwork visible inside the clean mocks."
+    mobile_asset: "1000104949.png"
+    desktop_asset: "1000104957.png"
+
+  mobile_part_1_grid:
+    issue: "1000104951.png does not visibly include the complete How SDR works section."
+    resolution:
+      - "Use 1000104948.png as the source of truth for the complete Mobile Part 1 section sequence."
+      - "Implement How SDR works after Assessment & patient selection."
+      - "Use the desktop Part 1 references and later SDR specifications for component details."
+      - "Do not omit the section merely because it is absent from the Mobile Part 1 grid board."
+
+  part_dividers:
+    rule: "Continues in Part 2 and Continuing from Part 1 are reference-image markers only."
+    production_visibility: false
+
+responsive_baseline:
+  desktop:
+    breakpoint: "1200px and above"
+    reference_viewport: "1440px"
+    container_max_width: "1280px"
+    page_side_margin_at_reference: "80px"
+    grid_columns: 12
+    gutter: "24px"
+
+  tablet:
+    breakpoint: "768px to 1199px"
+    grid_columns: 8
+    side_padding: "24px to 48px"
+    rule: "Adapt approved compositions without inventing a conflicting layout."
+
+  mobile:
+    breakpoint: "below 768px"
+    reference_viewport: "390px"
+    grid_columns: 4
+    side_padding: "16px"
+    base_grid_gutter: "8px"
+    body_text_minimum: "16px"
+    minimum_touch_target: "44px"
+    rule: "Use the supplied mobile mock as the primary mobile layout reference."
+
+hero_asset_rules:
+  mobile:
+    source: "1000104949.png"
+    use_only_at: "mobile and narrow tablet sizes where appropriate"
+    editable_html_overlay:
+      - "Breadcrumb"
+      - "Specialized Procedure eyebrow"
+      - "Selective Dorsal Rhizotomy (SDR) heading"
+      - "Hero supporting paragraph"
+      - "Nerve Procedure tag"
+      - "Lower-Limb Spasticity tag"
+      - "Request Assessment button"
+      - "Talk to Our Team button"
+
+  desktop:
+    source: "1000104957.png"
+    use_only_at: "desktop and wide tablet sizes where appropriate"
+    editable_html_overlay:
+      - "Breadcrumb"
+      - "Specialized Procedure eyebrow"
+      - "Selective Dorsal Rhizotomy (SDR) heading"
+      - "Hero supporting paragraph"
+      - "Nerve Procedure tag"
+      - "Lower-Limb Spasticity tag"
+      - "Request Assessment button"
+      - "Talk to Our Team button"
+
+  baked_into_assets:
+    - "Medical anatomical illustration"
+    - "Circular magnifier"
+    - "Magnifier connector lines"
+    - "Only the abnormal sensory nerve signals are selectively treated while preserving strength and feeling."
+
+  accessibility:
+    decorative_background_handling: "Use an empty image alt when the asset is decorative and provide equivalent nearby HTML or visually hidden text."
+    equivalent_text: "Only the abnormal sensory nerve signals are selectively treated while preserving strength and feeling."
+
+interaction_baseline:
+  carousels:
+    input:
+      - "Touch swipe"
+      - "Mouse drag where supported"
+      - "Previous and next buttons"
+      - "Keyboard navigation"
+    requirements:
+      - "Do not trap keyboard focus."
+      - "Use accessible labels on arrow controls."
+      - "Preserve visible pagination indicators where shown."
+      - "Respect prefers-reduced-motion."
+
+  view_all:
+    behaviour: "Expand related content inline into a swipeable carousel."
+    route_change: false
+    modal: false
+    applicable_to:
+      - "Problems SDR may address"
+      - "Patient stories"
+      - "Other repeated sections where explicitly shown"
+
+  accordions:
+    full_row_clickable: true
+    keyboard_accessible: true
+    minimum_row_height: "44px"
+    aria_expanded_required: true
+    aria_controls_required: true
+
+  request_assessment:
+    component: "existing assessment flow"
+    action: "Open or navigate using the established website assessment behaviour."
+
+  talk_to_team:
+    component: "existing website contact or WhatsApp behaviour"
+    action: "Use the established production behaviour without creating a duplicate contact flow."
+
+content_rules:
+  important_text_format: "HTML"
+  editable_copy_in_images: false
+  medical_meaning_must_be_preserved: true
+  approved_section_order_must_be_preserved: true
+  doctor_credentials:
+    rule: "Use only verified credentials already approved for the website."
+  review_date:
+    rule: "Use the approved content value supplied in the SDR content model."
+  outcome_claims:
+    rule: "Do not guarantee results. Preserve individual-outcome disclaimers."
+
+accessibility:
+  semantic_landmarks:
+    - "header"
+    - "nav"
+    - "main"
+    - "section"
+    - "footer"
+
+  requirements:
+    - "Use one H1 for the SDR page."
+    - "Maintain logical heading order."
+    - "Use descriptive link and button labels."
+    - "Use visible keyboard focus indicators."
+    - "Provide descriptive alt text for meaningful images."
+    - "Hide decorative icons from assistive technology."
+    - "Meet WCAG AA colour contrast."
+    - "Maintain minimum mobile touch targets."
+    - "Do not communicate warnings through colour alone."
+    - "Ensure carousel controls and accordions work with keyboard and screen readers."
+
+seo:
+  indexable: true
+  canonical_path: "/procedures/selective-dorsal-rhizotomy"
+  title_template: "Selective Dorsal Rhizotomy (SDR) in Hyderabad | Dr. Pawan Kumar Sadhvani"
+  meta_description_intent: "Explain SDR, who may benefit, assessment, rehabilitation, risks and how to request an evaluation."
+  structured_data:
+    use_existing_site_schema: true
+    recommended_types:
+      - "WebPage"
+      - "MedicalWebPage"
+      - "BreadcrumbList"
+      - "Physician"
+    rule: "Do not add unsupported medical claims to structured data."
+
+implementation_rules:
+  no_independent_visual_decisions: true
+  preserve_approved_mock: true
+  preserve_mobile_and_desktop_independently: true
+  use_exact_uploaded_filenames: true
+  rename_assets: false
+  reference_images_ship_to_production: false
+  production_hero_assets_ship_to_production: true
+  important_copy_as_html: true
+  accessible_html_required: true
+  responsive_images_required: true
+  lazy_load_below_fold_images: true
+  avoid_layout_shift: true

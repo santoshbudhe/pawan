@@ -1,0 +1,310 @@
+# ==========================================================
+# 03-assets.yaml
+# Asset Registry
+# Dr. Pawan Kumar Sadhvani Website
+# ==========================================================
+
+assets:
+
+  root: "/assets"
+
+# ==========================================================
+# LOGOS
+# ==========================================================
+
+logos:
+
+  primary:
+
+    src: "assets/logos/transparentMainLogo2000px.png"
+
+    alt: "Dr. Pawan Kumar Sadhvani logo"
+
+    usage:
+
+      - header
+      - desktop
+      - mobile
+
+  footer:
+
+    src: "assets/logos/transparentWhiteLogo1600.png"
+
+    alt: "Dr. Pawan Kumar Sadhvani footer logo"
+
+    usage:
+
+      - footer
+
+# ==========================================================
+# HERO
+# ==========================================================
+
+hero:
+
+  desktop:
+
+    src: "assets/hero/desktopHeroBanner.png"
+
+    alt: "Dr. Pawan Kumar Sadhvani hero banner"
+
+    loading: eager
+
+    priority: true
+
+  mobile:
+
+    src: "assets/hero/mobileHeroBanner.png"
+
+    alt: "Mobile hero banner"
+
+    loading: eager
+
+    priority: true
+
+# ==========================================================
+# DOCTORS
+# ==========================================================
+
+doctors:
+
+  pawan:
+
+    src: "assets/doctors/pawan.png"
+
+    alt: "Dr. Pawan Kumar Sadhvani"
+
+    role: "Neuro-Orthopaedic Specialist"
+
+  purohit:
+
+    src: "assets/doctors/purohit.png"
+
+    alt: "Prof. Dr. A. K. Purohit"
+
+    role: "Senior Neurosurgeon"
+
+  harry:
+
+    src: "assets/doctors/harry.png"
+
+    alt: "Dr. M. Harry Fernandez"
+
+    role: "Orthopaedic Specialist"
+
+# ==========================================================
+# PROCEDURES
+# ==========================================================
+
+procedures:
+
+  sdr:
+
+    src: "assets/procedures/sdr.jpg"
+
+    alt: "Selective Dorsal Rhizotomy"
+
+  smf:
+
+    src: "assets/procedures/smf.jpg"
+
+    alt: "Selective Motor Fasciculotomy"
+
+  smfThumbnail:
+
+    src: "assets/procedures/smfThumbnail.png"
+
+    alt: "Selective Motor Fasciculotomy featured"
+
+  tendonMuscle:
+
+    src: "assets/procedures/tendonAndMuscleProcedures.jpg"
+
+    alt: "Tendon and Muscle Procedures"
+
+  deformityCorrection:
+
+    src: "assets/procedures/deformityCorrection.jpg"
+
+    alt: "Deformity Correction"
+
+# ==========================================================
+# WHO WE HELP
+# ==========================================================
+
+whoWeHelp:
+
+  cerebralPalsy:
+
+    src: "assets/who-we-help/who1.jpg"
+
+    alt: "Child with cerebral palsy"
+
+  toeWalking:
+
+    src: "assets/who-we-help/who2.jpg"
+
+    alt: "Toe walking"
+
+  upperLimb:
+
+    src: "assets/who-we-help/who3.jpg"
+
+    alt: "Upper limb stiffness"
+
+  stroke:
+
+    src: "assets/who-we-help/who4.jpg"
+
+    alt: "Spasticity after stroke"
+
+  deformity:
+
+    src: "assets/who-we-help/who5.jpg"
+
+    alt: "Contracture and deformity"
+
+  dailyLife:
+
+    src: "assets/who-we-help/who6.jpg"
+
+    alt: "Difficulty with daily activities"
+
+# ==========================================================
+# TRUST STRIP
+# ==========================================================
+
+trustedFamilies:
+
+  family1:
+
+    src: "assets/trust/trustedFamily1.png"
+
+  family2:
+
+    src: "assets/trust/trustedFamily2.png"
+
+  family3:
+
+    src: "assets/trust/trustedFamily3.png"
+
+  family4:
+
+    src: "assets/trust/trustedFamily4.png"
+
+  family5:
+
+    src: "assets/trust/trustedFamily5.png"
+
+# ==========================================================
+# PATIENT STORIES
+# ==========================================================
+
+patientStories:
+
+  story1:
+
+    src: "assets/stories/story1.jpg"
+
+    tag: "Child · CP"
+
+    alt: "Toe walking improvement"
+
+  story2:
+
+    src: "assets/stories/story2.jpg"
+
+    tag: "Child · CP"
+
+    alt: "Walking improvement"
+
+  story3:
+
+    src: "assets/stories/story3.jpg"
+
+    tag: "Adult · Stroke"
+
+    alt: "Stroke rehabilitation"
+
+# ==========================================================
+# HOSPITALS
+# ==========================================================
+
+hospitals:
+
+  asterPrime:
+
+    src: "assets/hospitals/asterPrimeHospital.jpg"
+
+    alt: "Aster Prime Hospital Hyderabad"
+
+  yashoda:
+
+    src: "assets/hospitals/yashodaHospital.jpg"
+
+    alt: "Yashoda Hospital Hyderabad"
+
+# ==========================================================
+# ICON STRATEGY
+# ==========================================================
+
+icons:
+
+  provider: "lucide-react"
+
+  importStyle: "named"
+
+  customImageIcons: false
+
+  examples:
+
+    - Calendar
+    - Phone
+    - MapPin
+    - ChevronRight
+    - ChevronLeft
+    - Menu
+    - Play
+    - Star
+    - Users
+    - Stethoscope
+    - ShieldCheck
+    - Building2
+    - MessageCircle
+    - ArrowRight
+
+# ==========================================================
+# IMAGE LOADING
+# ==========================================================
+
+loading:
+
+  hero:
+
+    priority: true
+
+    lazy: false
+
+  belowFold:
+
+    lazy: true
+
+  decoding: "async"
+
+# ==========================================================
+# IMAGE RULES
+# ==========================================================
+
+rules:
+
+  - Never hardcode image paths inside React components.
+  - Import assets only from this registry.
+  - Hero images must be eager-loaded.
+  - All remaining images should lazy-load.
+  - Every image must have descriptive alt text.
+  - Preserve original aspect ratios unless specified by the approved mock.
+  - Do not substitute assets without updating this file.
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

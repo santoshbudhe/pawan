@@ -1,0 +1,192 @@
+content_policy:
+  storage: React/TypeScript source content, not Firestore
+  preserve_approved_copy: true
+  do_not_make_outcome_guarantees: true
+  medical_review_required: true
+hero:
+  breadcrumb:
+  - Home
+  - Procedures
+  - Tendon & Muscle Procedures
+  eyebrow: ORTHOPEDIC PROCEDURES
+  title: Tendon & Muscle Procedures
+  subtitle: for Spasticity and Contractures
+  body: Targeted orthopedic surgeries that may reduce muscle–tendon tightness, improve alignment and create better conditions
+    for movement, comfort and rehabilitation.
+  feature_chips:
+  - Improves Alignment
+  - Supports Mobility
+  primary_cta: Request Assessment
+  secondary_cta: Talk to Our Care Team
+  note: Every child and adult is different. A personalised plan is essential for the best outcome.
+part_1:
+  what_are_procedures:
+    title: What are tendon & muscle procedures?
+    body: These are orthopedic soft-tissue surgeries used to reduce abnormal pull from tight muscles or tendons, improve joint
+      position and alignment, and support better movement and function.
+    cards:
+    - Address tight muscles and tendons
+    - Improve alignment and joint position
+    - Enhance movement, balance and function
+    - Support comfort, self-care and daily participation
+  who_may_benefit:
+    title: Who may benefit?
+    items:
+    - Children or adults with spasticity and contractures
+    - Tight muscles or tendons limiting movement or posture
+    - Difficulty with walking, balance or daily activities
+    - Toe walking or limited joint range due to tightness
+    - Goals of care that require better alignment and function
+    - Motivated to participate in rehabilitation
+  when_not_appropriate:
+    title: When these procedures may not be appropriate
+    items:
+    - Main problem is weakness rather than tightness
+    - Symptoms mainly due to dystonia rather than spasticity
+    - Unrealistic goals or expectations of surgery
+    - Uncontrolled medical conditions or poor overall health
+    - Unable to participate in rehabilitation or post-operative care
+    callout: Suitability can only be determined after a detailed clinical and neurological assessment.
+  problems_addressed:
+    title: Problems these procedures may address
+    items:
+    - Toe walking / equinus
+    - Knee-flexion contracture
+    - Hip-adductor tightness
+    - Elbow or wrist flexion
+    - Thumb-in-palm posture
+    - General muscle tightness
+  assessment_and_planning:
+    title: Assessment & surgical planning
+    steps:
+    - title: History & functional goals
+      body: Understand concerns, challenges and what matters most.
+    - title: Clinical examination
+      body: Detailed neurological and physical examination.
+    - title: Movement or gait analysis
+      body: Assess how tightness affects movement and posture.
+    - title: Distinguish tightness vs contracture
+      body: Identify muscles/tendons that are overactive or fixed.
+    - title: Identify target muscles & tendons
+      body: Decide the structures to be treated for best outcome.
+    - title: Personalised treatment plan
+      body: Choose the most appropriate procedure(s) and plan rehabilitation and follow-up.
+  treatment_overview:
+    title: How the treatment works (overview)
+    steps:
+    - title: Plan
+      body: Identify tight structures and plan the most appropriate procedure.
+    - title: Surgery
+      body: Perform the tendon or muscle procedure with precision.
+    - title: Early care
+      body: Protect the repair and begin gentle mobilisation in early recovery.
+    - title: Rehabilitation
+      body: Physiotherapy focuses on range, strength, balance and functional goals.
+    - title: Follow-up
+      body: Regular reviews to monitor progress and refine the plan for best results.
+  closing_cta:
+    title: You don’t have to figure it out alone.
+    body: Our team is here to help you take the next step with confidence.
+part_2:
+  potential_goals:
+    title: Potential treatment goals
+    items:
+    - Reduce focal spasticity in targeted muscles
+    - Improve ease of movement and positioning
+    - Enhance comfort, daily care and participation
+    - Support better outcomes with rehabilitation
+  limitations:
+    title: Limitations & important considerations
+    items:
+    - Results vary between individuals and depend on the muscles involved and overall condition.
+    - These procedures do not reverse muscle strength.
+    - They do not correct bone deformities—additional orthopedic procedures may be needed.
+    - Rehabilitation and follow-up are essential for the best outcome.
+    - Growth, development and underlying condition may influence the final results.
+    callout: Your surgeon will discuss the potential benefits, risks and alternatives in detail to help you make an informed
+      decision.
+  comparison:
+    title: How tendon & muscle procedures compare
+    cards:
+    - id: tendon-muscle-procedures
+      title: Tendon & Muscle Procedures
+      selected: true
+      body: Reduce muscle-tendon tightness and improve alignment, balance and movement.
+      goal: Improve function and make rehabilitation easier.
+    - id: smf
+      title: SMF
+      subtitle_as_shown_in_mock: Selective Motor Fasciectomy
+      body: Targets overactive nerve branches to reduce spasticity in selected upper or lower limb muscles.
+      goal: Reduce spasticity while preserving strength.
+    - id: sdr
+      title: SDR
+      subtitle: Selective Dorsal Rhizotomy
+      body: Treats selected sensory nerve rootlets in the lower spine to reduce lower-limb spasticity.
+      goal: Improve function and support participation.
+    - id: deformity-correction
+      title: Deformity Correction Surgeries
+      body: Helps correct fixed bony deformities that affect function or posture.
+      goal: Improve alignment, function and long-term outcomes.
+  hospital_stay:
+    title: Hospital stay & early recovery
+    items:
+    - 'Hospital stay: Typically short stay (2–5 days) depending on procedures performed.'
+    - Pain relief and antibiotic care are provided.
+    - Early movement and gentle exercises begin as advised by the care team.
+    - Discharge with a clear rehabilitation plan and follow-up schedule.
+  rehabilitation:
+    title: Rehabilitation after Tendon & Muscle Procedures
+    items:
+    - Gentle movement and guided exercises begin when appropriate.
+    - Physiotherapy focuses on flexibility, strength, balance and walking.
+    - Occupational therapy may help posture, daily activities and comfort.
+    - A home program and follow-up help maintain progress.
+    - Recovery is individualized based on the procedure, goals and response.
+    cta: Explore the Full Rehabilitation Page
+  risks:
+    title: Risks & important information
+    items:
+    - Temporary or rarely persistent weakness in treated muscles
+    - Infection, bleeding or wound healing issues
+    - Nerve irritation or altered sensation
+    - Recurrence or need for future treatment
+    - Need for additional procedures in some cases
+    - Risks related to anesthesia
+    callout: Your surgeon will discuss the specific risks, alternatives and expected outcomes in detail during your assessment.
+  team:
+    title: Meet your treating team
+    roles:
+    - Orthopedic Surgeon
+    - Physiotherapists & Rehab Therapists
+    - Neuro-Orthopedic Surgeon
+    - Nursing & Care Team
+    body: Working together to deliver comprehensive, compassionate and outcome-focused care.
+  reviewed_by:
+    title: Reviewed by
+    name: Dr. Pawan Kumar Sadhvani
+    role: Consultant Pediatric Spine & Deformity Correction Specialist
+    credentials: MBBS, MS (Ortho), MCh (Ortho)
+    experience: 20+ years of experience
+    trust_statement: Thousands of children helped
+    last_reviewed_as_shown: May 2025
+  patient_journeys:
+    title: Real patient journeys
+    consent_required: true
+    stories:
+    - title: Toe walking due to tight calf muscles
+      description: 5-year-old boy with spastic cerebral palsy.
+      outcome: Improved heel contact, better balance and greater confidence in walking.
+    - title: Knee-flexion contracture
+      description: 12-year-old child with spastic diplegia had improved sitting posture and ease in daily activities after
+        surgery.
+      outcome: Improved posture, comfort and functional independence.
+  bottom_cta:
+    title: Not sure if tendon or muscle surgery is right for your child?
+    body: Our team is here to help you take the next step.
+    primary: Request an Assessment
+    secondary: Talk to Our Care Team
+trust_strip:
+- Evidence-based care
+- Compassionate support
+- Better movement
+- Better future

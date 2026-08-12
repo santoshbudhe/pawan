@@ -1,0 +1,47 @@
+seo:
+  title: Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani
+  description: Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment,
+    potential goals, limitations, rehabilitation and risks.
+  canonical_path: /procedures/selective-motor-fasciculotomy
+  heading_rules:
+    h1_count: 1
+    h1: Selective Motor Fasciculotomy (SMF)
+    section_titles: h2
+    card_titles: h3 where semantically appropriate
+  structured_data:
+  - MedicalWebPage
+  - Physician using central doctor data
+  - FAQPage only after medically reviewed answers are supplied
+  - BreadcrumbList
+  medical_content_rules:
+  - Do not add outcome guarantees.
+  - Do not add unsupported superiority or exclusivity claims.
+  - Do not alter clinical wording without medical review.
+  - References shown in the mock must be verified before production.
+  - FAQ answers must be supplied or approved by the clinical team before publishing.
+accessibility:
+  landmarks:
+  - header
+  - nav
+  - main
+  - section
+  - footer
+  skip_link: true
+  focus_visible: true
+  minimum_touch_target: 44x44px
+  minimum_body_text_mobile: 16px for normal prose
+  contrast: WCAG AA minimum
+  carousel:
+    aria_roledescription: carousel
+    label_each_slide: true
+    keyboard_controls: true
+    announcements: polite, minimal
+  accordion:
+    native_button_trigger: true
+    aria_expanded: true
+    aria_controls: true
+  images:
+    hero: descriptive alt text
+    before_after: meaningful alt text without promising results
+    decorative_icons: alt empty or aria-hidden
+  motion: honour prefers-reduced-motion

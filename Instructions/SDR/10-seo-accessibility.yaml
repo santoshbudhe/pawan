@@ -1,0 +1,1008 @@
+schema_version: "1.0"
+
+file:
+  name: "10-seo-accessibility.yaml"
+  purpose: >
+    Defines search-engine optimisation, metadata, structured data, semantic
+    HTML, accessibility, keyboard interaction, image alternatives, focus
+    management and validation requirements for the SDR procedure page.
+
+page:
+  id: "sdr-procedure-page"
+  procedure_name: "Selective Dorsal Rhizotomy"
+  abbreviation: "SDR"
+  route: "/procedures/selective-dorsal-rhizotomy"
+  page_type: "Medical procedure detail page"
+  language: "en-IN"
+  indexable: true
+
+implementation_principles:
+  - "Reuse the existing website SEO and accessibility utilities."
+  - "Do not introduce a second SEO library when the project already has one."
+  - "Keep important content as semantic HTML."
+  - "Do not use the supplied mock screenshots as production page content."
+  - "Do not add medical claims that are not present in the approved content."
+  - "Do not guarantee treatment outcomes."
+  - "Do not invent FAQ answers, patient outcomes, references or doctor credentials."
+  - "Part 1 and Part 2 must be indexed as one continuous procedure page."
+  - "The homepage SDR entry must link to the canonical SDR route."
+  - "Use the exact supplied filenames without renaming them."
+
+reference_files:
+  clean_mocks:
+    mobile_part_1: "1000104948.png"
+    mobile_part_2: "1000104953.jpg"
+    desktop_part_1: "1000104950.png"
+    desktop_part_2: "1000104952.png"
+
+  grid_references:
+    mobile_part_1: "1000104951.png"
+    mobile_part_2: "1000104956.png"
+    desktop_part_1: "1000104955.png"
+    desktop_part_2: "1000104954.png"
+
+  production_hero_assets:
+    mobile: "1000104949.png"
+    desktop: "1000104957.png"
+
+seo:
+  canonical:
+    path: "/procedures/selective-dorsal-rhizotomy"
+    absolute_url: null
+    source: "Build from the existing production site origin."
+    trailing_slash: "Follow the existing project convention."
+    lowercase: true
+
+  title:
+    value: "Selective Dorsal Rhizotomy (SDR) in Hyderabad | Dr. Pawan Kumar Sadhvani"
+    recommended_max_length: 65
+    implementation:
+      - "Use the project's existing metadata component or route-level SEO helper."
+      - "Do not repeat the website name twice."
+      - "Do not use all capital letters."
+
+  meta_description:
+    value: >
+      Learn about Selective Dorsal Rhizotomy, who may benefit, assessment,
+      rehabilitation, risks and how to request an SDR evaluation with
+      Dr. Pawan Kumar Sadhvani.
+    recommended_length: "Approximately 140 to 165 characters"
+    rule:
+      - "Use natural language."
+      - "Do not promise a successful result."
+      - "Do not use unsupported exclusivity claims."
+
+  robots:
+    value: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+
+  language:
+    html_lang: "en-IN"
+    locale: "en_IN"
+
+  keywords:
+    usage: "Do not add a meta keywords tag."
+    editorial_targets:
+      primary:
+        - "Selective Dorsal Rhizotomy"
+        - "SDR"
+        - "Selective Dorsal Rhizotomy in Hyderabad"
+        - "SDR for spasticity"
+        - "SDR for cerebral palsy"
+
+      secondary:
+        - "Lower-limb spasticity treatment"
+        - "Cerebral palsy spasticity surgery"
+        - "SDR assessment"
+        - "SDR rehabilitation"
+        - "Spasticity specialist Hyderabad"
+
+    rules:
+      - "Use terms naturally within approved copy."
+      - "Do not repeat exact keywords unnaturally."
+      - "Do not add location names to every heading."
+      - "Do not alter medical meaning for keyword density."
+
+  headings:
+    h1:
+      count: 1
+      value: "Selective Dorsal Rhizotomy (SDR)"
+      location: "Hero"
+
+    h2_order:
+      - "What is SDR?"
+      - "Who may benefit from SDR?"
+      - "When SDR may not be appropriate"
+      - "Problems SDR may address"
+      - "Assessment & patient selection"
+      - "How SDR works"
+      - "Potential goals of SDR"
+      - "Limitations & important considerations"
+      - "SDR compared with other treatment options"
+      - "Recovery & rehabilitation journey"
+      - "Risks & important information"
+      - "Medically reviewed by"
+      - "Our multidisciplinary team"
+      - "Real patient journeys after SDR"
+      - "Frequently asked questions"
+      - "References & further reading"
+      - "Not sure if SDR is right for your child or loved one?"
+
+    rules:
+      - "Do not use heading elements only for visual styling."
+      - "Do not skip heading levels unnecessarily."
+      - "Card titles may use H3 when they introduce distinct content."
+      - "Compact labels and badges must not be headings."
+
+  internal_links:
+    homepage_to_sdr:
+      required: true
+      source: "Existing homepage SDR procedure entry"
+      destination: "/procedures/selective-dorsal-rhizotomy"
+      link_text: "Learn about Selective Dorsal Rhizotomy"
+      full_card_clickable: true
+      mobile_required: true
+      desktop_required: true
+      open_in_modal: false
+      open_in_new_tab: false
+      create_duplicate_card: false
+
+    breadcrumbs:
+      home:
+        label: "Home"
+        destination: "/"
+
+      procedures:
+        label: "Procedures"
+        preferred_destination: "/procedures"
+        fallback_destination: "/#procedures"
+
+      current:
+        label: "SDR"
+        clickable: false
+        aria_current: "page"
+
+    related_procedures:
+      smf:
+        label: "SMF"
+        destination: "/procedures/selective-motor-fasciculotomy"
+        enable_when_route_exists: true
+
+      current_sdr:
+        destination: "/procedures/selective-dorsal-rhizotomy"
+        clickable: false
+        aria_current: "page"
+
+      unapproved_routes:
+        rule: "Do not invent related-procedure URLs."
+
+  URL_rules:
+    - "Use readable lowercase route segments."
+    - "Do not create separate Part 1 and Part 2 URLs."
+    - "Do not create duplicate SDR URLs with different abbreviations."
+    - "Do not use a query parameter as the canonical procedure URL."
+    - "Ensure direct browser refresh works on Firebase Hosting."
+
+  sitemap:
+    include: true
+    path: "/procedures/selective-dorsal-rhizotomy"
+    priority: "recommended 0.8"
+    change_frequency: "recommended monthly"
+    last_modified: "Use the actual content publication or modification date."
+    rule: "Use the project's existing sitemap generation system."
+
+  social_metadata:
+    open_graph:
+      type: "website"
+      title: "Selective Dorsal Rhizotomy (SDR)"
+      description: >
+        Learn about SDR, patient selection, rehabilitation, risks and how to
+        request an assessment.
+      url: "Use the canonical absolute URL."
+      site_name: "Dr. Pawan Kumar Sadhvani"
+      locale: "en_IN"
+      image:
+        source: null
+        rule: >
+          Use an approved social-sharing image when available. Do not
+          automatically use the tall mobile hero as an Open Graph image.
+
+    twitter:
+      card: "summary_large_image"
+      title: "Selective Dorsal Rhizotomy (SDR)"
+      description: >
+        Learn about SDR, who may benefit, recovery, rehabilitation and
+        assessment.
+      image: null
+
+  duplicate_content:
+    rules:
+      - "Render one canonical SDR page."
+      - "Do not publish the Part 1 and Part 2 mocks as separate webpages."
+      - "Do not expose grid-reference images as indexable content pages."
+      - "Do not generate an alternate page containing the same SDR copy."
+      - "Use canonical metadata consistently."
+
+structured_data:
+  use_existing_schema_utility: true
+  render_as_json_ld: true
+
+  common_rules:
+    - "Structured data must match visible page content."
+    - "Do not add claims that are absent from approved HTML content."
+    - "Do not create ratings or reviews."
+    - "Do not create aggregateRating."
+    - "Do not add price or offer data."
+    - "Do not mark generic page copy as a diagnosis or medical advice."
+    - "Use the final production URL for all absolute identifiers."
+
+  WebPage:
+    enabled: true
+    type: "MedicalWebPage"
+
+    properties:
+      "@type": "MedicalWebPage"
+      name: "Selective Dorsal Rhizotomy (SDR)"
+      headline: "Selective Dorsal Rhizotomy (SDR)"
+      description: >
+        Information about Selective Dorsal Rhizotomy, patient selection,
+        assessment, rehabilitation, risks and requesting an evaluation.
+      url: "Use the canonical absolute URL."
+      inLanguage: "en-IN"
+      isPartOf: "Reference the existing website schema entity."
+      about:
+        "@type": "MedicalProcedure"
+        name: "Selective Dorsal Rhizotomy"
+      reviewedBy: "Reference the verified physician schema entity only when approved."
+      dateReviewed: "Use the verified medical-review date."
+      dateModified: "Use the actual content modification date."
+      datePublished: "Use the actual publication date."
+
+  MedicalProcedure:
+    enabled: true
+
+    properties:
+      "@type": "MedicalProcedure"
+      name: "Selective Dorsal Rhizotomy"
+      alternateName: "SDR"
+      description: >
+        A procedure that selectively treats sensory nerve rootlets to reduce
+        lower-limb spasticity in carefully selected patients.
+      bodyLocation: "Lower spine and lower limbs"
+      procedureType: "Surgical"
+      status: "Do not add an unsupported schema status value."
+
+    restricted_properties:
+      - "Do not add success rates."
+      - "Do not add guaranteed outcomes."
+      - "Do not add contraindications beyond verified visible content."
+      - "Do not add preparation or follow-up instructions that are not approved."
+
+  BreadcrumbList:
+    enabled: true
+
+    items:
+      - position: 1
+        name: "Home"
+        item: "Use the absolute homepage URL."
+
+      - position: 2
+        name: "Procedures"
+        item: "Use the approved procedures URL or homepage section URL."
+
+      - position: 3
+        name: "Selective Dorsal Rhizotomy"
+        item: "Use the canonical SDR URL."
+
+  Physician:
+    enabled: "Use the existing verified physician schema entity."
+    create_duplicate_entity: false
+
+    verification_required:
+      - "Name"
+      - "Qualifications"
+      - "Medical speciality"
+      - "Profile URL"
+      - "Hospital or workplace associations"
+      - "Image"
+      - "Experience claims"
+
+  FAQPage:
+    enabled_when:
+      - "At least one FAQ answer is medically approved."
+      - "The approved question and answer are visibly rendered on the page."
+      - "The FAQ is accessible without requiring account authentication."
+
+    disabled_when:
+      - "Questions have no approved answers."
+      - "Answers exist only inside source code and are not visible."
+      - "The content is placeholder copy."
+
+    item_rule:
+      - "Include only published FAQ items."
+      - "Schema wording must exactly match the visible question and answer."
+      - "Do not generate answers for schema purposes."
+
+  PatientStories:
+    schema_enabled: false
+    rule:
+      - "Do not mark patient stories as Review schema."
+      - "Do not create rating data."
+      - "Do not create medical outcome claims in structured data."
+
+semantic_html:
+  landmarks:
+    header:
+      component: "SiteHeader"
+      element: "header"
+      count: 1
+
+    navigation:
+      primary:
+        element: "nav"
+        aria_label: "Primary navigation"
+
+      breadcrumbs:
+        element: "nav"
+        aria_label: "Breadcrumb"
+
+      mobile:
+        element: "nav"
+        aria_label: "Mobile navigation"
+
+    main:
+      element: "main"
+      id: "main-content"
+      count: 1
+
+    footer:
+      component: "SiteFooter"
+      element: "footer"
+      count: 1
+
+  sections:
+    element: "section"
+    labelled_by: "Use each section heading ID."
+
+  article_cards:
+    element: "article"
+    use_for:
+      - "Procedure-step cards"
+      - "Patient-story cards"
+      - "Treatment-comparison cards"
+      - "Distinct educational cards where appropriate"
+
+  asides:
+    element: "aside"
+    use_for:
+      - "Medical-review card"
+      - "Information callouts"
+      - "Risk or suitability explanatory panels"
+
+  lists:
+    unordered:
+      use_for:
+        - "Benefit lists"
+        - "Goal lists"
+        - "Limitation lists"
+        - "Reference lists"
+
+    ordered:
+      use_for:
+        - "Assessment steps"
+        - "How SDR works steps"
+        - "Recovery journey"
+
+  prohibited:
+    - "Do not implement all page sections as generic div elements."
+    - "Do not make a div clickable when a link or button is appropriate."
+    - "Do not use br elements to control responsive layout."
+    - "Do not use tables for page layout."
+    - "Do not use heading tags only to enlarge text."
+
+accessibility:
+  target_standard:
+    level: "WCAG 2.1 AA"
+    project_rule: "Meet the existing website accessibility baseline or improve it."
+
+  skip_link:
+    required: true
+    source: "Shared website shell"
+    label: "Skip to main content"
+    destination: "#main-content"
+    visible_on_focus: true
+
+  heading_structure:
+    one_h1: true
+    logical_order: true
+    section_heading_ids_required: true
+
+  language:
+    document_language: "en-IN"
+    abbreviations:
+      first_use: "Selective Dorsal Rhizotomy (SDR)"
+      later_use: "SDR"
+      rule: "Do not rely on the abbreviation before introducing it."
+
+  focus:
+    visible_focus_required: true
+    minimum_contrast: "3:1 against adjacent colours"
+    style:
+      outline: "3px solid the shared focus colour"
+      offset: "3px"
+
+    prohibited:
+      - "Do not remove focus outlines without an accessible replacement."
+      - "Do not show focus only through a subtle colour change."
+
+  route_focus:
+    on_sdr_page_entry:
+      preferred_target: "sdr-page-title"
+      tabindex: -1
+      behaviour: "Focus the H1 or main landmark after client-side navigation."
+
+    browser_back:
+      behaviour: "Use the existing router scroll and focus restoration."
+
+  touch_targets:
+    minimum: "44px by 44px"
+    preferred_button_height: "48px"
+    preferred_accordion_height: "52px"
+
+    applies_to:
+      - "Header CTA"
+      - "Hamburger menu"
+      - "Hero buttons"
+      - "Carousel arrows"
+      - "View all actions"
+      - "Accordion rows"
+      - "Patient-story actions"
+      - "Footer links"
+
+  colour:
+    normal_text_contrast: "4.5:1"
+    large_text_contrast: "3:1"
+    non_text_controls_contrast: "3:1"
+
+    requirements:
+      - "Do not communicate selected, warning or error states through colour alone."
+      - "Use icons, borders, labels or text in addition to colour."
+      - "Check text placed over the hero image at every breakpoint."
+      - "Do not use pale teal for body text on white."
+
+  text:
+    mobile_body_minimum: "16px"
+    zoom_support: "Support at least 200% browser zoom."
+    text_spacing_support: true
+
+    prohibited:
+      - "Do not clip text when users increase font size."
+      - "Do not use fixed card heights that truncate content."
+      - "Do not prevent browser text resizing."
+
+  keyboard:
+    requirements:
+      - "All interactive elements are reachable with Tab."
+      - "Links activate with Enter."
+      - "Buttons activate with Enter and Space."
+      - "No keyboard trap is permitted outside an open modal or navigation drawer."
+      - "Escape closes the mobile drawer and any shared modal."
+      - "Focus returns to the triggering control when a modal or drawer closes."
+
+  links:
+    requirements:
+      - "Use descriptive visible text or accessible names."
+      - "Do not use Click here."
+      - "Do not use SDR alone as the accessible name of the homepage card."
+      - "Show a visible focus state."
+      - "Do not nest interactive controls."
+
+    homepage_sdr:
+      accessible_name: "Learn about Selective Dorsal Rhizotomy"
+      semantic_element: "Link"
+      complete_card_clickable: true
+
+    external_references:
+      indicate_external_destination: true
+      accessible_suffix: "Opens in a new tab"
+      rel:
+        - "noopener"
+        - "noreferrer"
+
+  buttons:
+    requirements:
+      - "Use button type=button unless the button submits a form."
+      - "Do not use an anchor when no navigation occurs."
+      - "Icon-only buttons require aria-label."
+      - "Disabled buttons must use the disabled attribute where appropriate."
+
+  hero:
+    artwork:
+      mobile_file: "1000104949.png"
+      desktop_file: "1000104957.png"
+      role: "Decorative composite containing meaningful baked-in wording"
+      image_alt: ""
+
+    equivalent_accessible_text:
+      required: true
+      text: >
+        Only the abnormal sensory nerve signals are selectively treated while
+        preserving strength and feeling.
+
+    implementation:
+      - "Provide the equivalent wording as nearby HTML or visually hidden text."
+      - "Do not visibly repeat the baked-in sentence."
+      - "Do not place the hidden text inside aria-hidden content."
+      - "Do not use the filename as alt text."
+
+  images:
+    meaningful:
+      alt_required: true
+      rules:
+        - "Describe the relevant activity or information."
+        - "Avoid diagnosing a person through alt text."
+        - "Avoid repeating the nearby caption word for word."
+        - "Do not include image of or picture of."
+
+    decorative:
+      alt: ""
+      aria_hidden: "Optional when the image is already excluded using empty alt."
+
+    doctor_portrait:
+      alt: "Dr. Pawan Kumar Sadhvani"
+
+    patient_stories:
+      requirements:
+        - "Use neutral descriptions."
+        - "Do not state unverified outcomes in alt text."
+        - "Keep Before and After as visible HTML labels."
+        - "Do not combine both images into one inaccessible background."
+
+  icons:
+    decorative:
+      aria_hidden: true
+      focusable: false
+
+    meaningful_icon_only_control:
+      accessible_name_required: true
+
+    rule:
+      - "Do not use an icon as the only indication of a warning."
+      - "Lucide icons should normally use aria-hidden=true when paired with text."
+
+  carousels:
+    requirements:
+      - "Use a descriptive accessible region label."
+      - "Do not rotate automatically."
+      - "Provide Previous and Next buttons where controls are shown."
+      - "Provide keyboard navigation."
+      - "Do not trap focus."
+      - "Do not move keyboard focus when a card scrolls."
+      - "Allow touch swipe without preventing vertical scrolling."
+      - "Respect prefers-reduced-motion."
+
+    labels:
+      problems:
+        region: "Problems SDR may address"
+        previous: "Previous SDR-related problems"
+        next: "Next SDR-related problems"
+
+      comparison:
+        region: "SDR compared with other treatment options"
+        previous: "Previous treatment options"
+        next: "Next treatment options"
+
+      stories:
+        region: "Real patient journeys after SDR"
+        previous: "Previous patient story"
+        next: "Next patient story"
+
+    pagination:
+      buttons: true
+      label_pattern: "Go to item {number}"
+      current_item:
+        aria_current: "true"
+
+    current_sdr_card:
+      aria_current: "page"
+      clickable: false
+      visible_label: "Selected"
+
+  accordions:
+    trigger_element: "button"
+    full_row_clickable: true
+
+    trigger_attributes:
+      aria_expanded: true
+      aria_controls: true
+      unique_id: true
+
+    panel_attributes:
+      unique_id: true
+      aria_labelledby: true
+      role: "region"
+
+    keyboard:
+      Enter: "Toggle the focused item."
+      Space: "Toggle the focused item."
+      ArrowDown: "Move to the next trigger."
+      ArrowUp: "Move to the previous trigger."
+      Home: "Move to the first trigger."
+      End: "Move to the last trigger."
+
+    minimum_row_height: "52px"
+
+    faq_rule:
+      - "Do not render an unanswered FAQ as an interactive accordion."
+      - "Do not invent answers."
+
+  inline_expansion:
+    applies_to:
+      - "Problems View all"
+      - "Patient Stories View all"
+      - "FAQ View all"
+      - "References View references"
+
+    trigger:
+      semantic_element: "button"
+      aria_expanded: true
+      aria_controls: true
+      collapsed_and_expanded_labels_required: true
+
+    focus:
+      keep_on_trigger: true
+      announce_state_change: true
+
+    navigation:
+      route_change: false
+      modal: false
+
+  warnings:
+    requirements:
+      - "Use a warning icon and heading in addition to amber colour."
+      - "Ensure warning text meets contrast requirements."
+      - "Do not use role=alert for static medical information."
+      - "Reserve role=alert for immediate form or system errors."
+
+  medical_review:
+    semantic_element: "aside"
+    labelled_by: "medical-review-heading"
+
+    verification_before_publish:
+      - "Doctor name"
+      - "Qualifications"
+      - "Designation"
+      - "Experience statement"
+      - "Review date"
+
+  forms_and_ctas:
+    assessment:
+      source: "Existing website assessment flow"
+      create_new_flow: false
+
+    contact:
+      source: "Existing website contact or WhatsApp flow"
+      create_new_flow: false
+
+    form_fields:
+      labels_required: true
+      placeholders_not_labels: true
+      error_association:
+        aria_describedby: true
+        aria_invalid: true
+      error_summary: "Use when the existing assessment flow supports it."
+
+  mobile_navigation:
+    trigger:
+      element: "button"
+      aria_label_closed: "Open navigation menu"
+      aria_label_open: "Close navigation menu"
+      aria_expanded: true
+      aria_controls: true
+
+    drawer:
+      focus_trap: true
+      close_on_escape: true
+      restore_focus: true
+      body_scroll_lock: true
+      close_on_route_change: true
+
+  reduced_motion:
+    media_query: "prefers-reduced-motion: reduce"
+
+    disable:
+      - "Smooth scrolling"
+      - "Non-essential hover transforms"
+      - "Animated carousel scrolling"
+      - "Accordion height animation"
+      - "Large entrance effects"
+
+    preserve:
+      - "Immediate state changes"
+      - "Content visibility"
+      - "Focus indication"
+
+  landmarks_validation:
+    required_counts:
+      header: 1
+      main: 1
+      footer: 1
+      h1: 1
+
+    prohibited:
+      - "Do not render another header at the start of Part 2."
+      - "Do not render another footer between the two reference parts."
+      - "Do not render mock-only continuation markers."
+
+performance_and_core_web_vitals:
+  goals:
+    LCP: "Recommended below 2.5 seconds"
+    CLS: "Recommended below 0.1"
+    INP: "Recommended below 200 milliseconds"
+
+  hero:
+    mobile_asset: "1000104949.png"
+    desktop_asset: "1000104957.png"
+    loading: "eager"
+    fetch_priority: "high"
+    decoding: "async"
+
+    requirements:
+      - "Reserve the hero's rendered space."
+      - "Use responsive source selection."
+      - "Avoid downloading both full hero assets where possible."
+      - "Do not lazy-load the above-fold hero."
+      - "Do not preload the wrong breakpoint asset."
+
+  below_fold_images:
+    loading: "lazy"
+    decoding: "async"
+    dimensions_required: true
+    aspect_ratio_required: true
+
+  reference_files:
+    ship_in_user_facing_bundle: false
+    files:
+      - "1000104948.png"
+      - "1000104953.jpg"
+      - "1000104950.png"
+      - "1000104952.png"
+      - "1000104951.png"
+      - "1000104956.png"
+      - "1000104955.png"
+      - "1000104954.png"
+
+  JavaScript:
+    rules:
+      - "Lazy-load the SDR route when consistent with the existing router."
+      - "Import Lucide icons individually."
+      - "Avoid a new carousel library when the project already has one."
+      - "Do not initialise hidden carousels unnecessarily."
+      - "Use local state for local expansion and accordion behaviour."
+
+  layout_shift:
+    prevent:
+      - "Specify image dimensions."
+      - "Reserve carousel-card dimensions."
+      - "Avoid inserting delayed content above the user's scroll position."
+      - "Use stable font loading from the existing website."
+
+medical_content_safety:
+  rules:
+    - "The page provides educational information and does not replace individual medical advice."
+    - "Do not add a diagnosis tool to this page."
+    - "Do not describe every person with cerebral palsy as suitable for SDR."
+    - "Do not present rehabilitation duration as identical for every patient."
+    - "Do not add success-rate figures without verified sources and doctor approval."
+    - "Do not state that improvement is guaranteed or permanent."
+    - "Do not publish unverified contraindications or complications."
+    - "Do not alter risk wording without medical approval."
+
+  optional_disclaimer:
+    use_when_consistent_with_existing_site: true
+    text: >
+      This information is for general educational purposes. Suitability,
+      treatment decisions and expected outcomes require an individual clinical
+      assessment.
+
+  review_requirements:
+    - "Hero medical copy"
+    - "Suitability criteria"
+    - "Limitations"
+    - "Procedure explanation"
+    - "Hospital-stay information"
+    - "Rehabilitation schedule"
+    - "Risk content"
+    - "FAQ answers"
+    - "References"
+    - "Patient stories"
+    - "Doctor credentials and review date"
+
+patient_privacy:
+  stories:
+    publish_only_when:
+      - "Final patient or guardian consent exists."
+      - "The final edited story has been approved."
+      - "All shown images and videos are covered by consent."
+      - "Medical wording has been reviewed."
+      - "The story publish flag is true."
+
+    prohibited:
+      - "Do not publish placeholder identities."
+      - "Do not create fictional patient details."
+      - "Do not expose uploaded file metadata."
+      - "Do not include personal health information in analytics."
+      - "Do not use generated patient images as evidence of real results."
+
+analytics_accessibility:
+  events:
+    permitted:
+      - "homepage_sdr_open"
+      - "sdr_request_assessment"
+      - "sdr_talk_to_team"
+      - "sdr_problem_view_all"
+      - "sdr_story_view_all"
+      - "sdr_faq_toggle"
+      - "sdr_risk_toggle"
+      - "sdr_comparison_open"
+
+    prohibited_parameters:
+      - "Patient name"
+      - "Email address"
+      - "Phone number"
+      - "Diagnosis"
+      - "Medical history"
+      - "Assessment form answers"
+      - "Free-text messages"
+
+  consent:
+    rule: "Follow the website's existing analytics and consent configuration."
+
+homepage_link_validation:
+  required: true
+
+  checks:
+    - "Locate the existing SDR procedure item on the homepage."
+    - "Do not create a duplicate SDR card."
+    - "Make the complete existing SDR card clickable."
+    - "Use the destination /procedures/selective-dorsal-rhizotomy."
+    - "Use client-side routing."
+    - "Do not open the route in a modal."
+    - "Apply the route on both desktop and mobile."
+    - "Use a semantic link element."
+    - "Provide a visible keyboard focus state."
+    - "Use the accessible name Learn about Selective Dorsal Rhizotomy."
+    - "Ensure browser Back returns to the homepage correctly."
+
+technical_validation:
+  automated:
+    recommended_tools:
+      - "Existing project lint and type-check commands"
+      - "axe-core or the project's existing accessibility test integration"
+      - "Lighthouse"
+      - "React Testing Library"
+      - "Existing route tests"
+
+    required_checks:
+      - "No duplicate element IDs."
+      - "No empty interactive links."
+      - "No nested interactive controls."
+      - "No buttons without accessible names."
+      - "No meaningful images without alt text."
+      - "No headings out of sequence."
+      - "No focusable content inside hidden accordion panels."
+      - "No horizontal page overflow at 390px."
+      - "No body text below the approved minimum."
+      - "No missing H1."
+      - "No duplicate header, main or footer landmarks."
+
+  manual_keyboard:
+    sequence:
+      - "Use the skip link."
+      - "Navigate the shared header."
+      - "Activate the homepage SDR link."
+      - "Navigate both hero CTAs."
+      - "Operate the problem carousel."
+      - "Expand and collapse View all sections."
+      - "Operate every risk accordion."
+      - "Operate every published FAQ."
+      - "Navigate patient stories."
+      - "Navigate references."
+      - "Reach the closing CTA and footer."
+      - "Open and close the mobile navigation using keyboard controls."
+
+  screen_reader:
+    test_recommendations:
+      - "Android TalkBack"
+      - "NVDA with a Chromium browser when available"
+      - "VoiceOver when available"
+
+    checks:
+      - "The route and H1 are announced."
+      - "Breadcrumb current state is announced."
+      - "Hero baked information has an accessible equivalent."
+      - "Carousel regions and controls are understandable."
+      - "Accordion states are announced."
+      - "The selected SDR comparison card is identified."
+      - "Patient Before and After labels are announced in the correct order."
+
+  responsive:
+    viewports:
+      - width: 320
+        type: "small mobile"
+
+      - width: 390
+        type: "approved mobile reference"
+
+      - width: 768
+        type: "tablet"
+
+      - width: 1024
+        type: "large tablet"
+
+      - width: 1440
+        type: "approved desktop reference"
+
+      - width: 1920
+        type: "wide desktop"
+
+    checks:
+      - "The correct hero asset is selected."
+      - "Text does not overlap hero artwork."
+      - "The magnifier and baked sentence remain visible."
+      - "Mobile sections stack vertically."
+      - "Touch targets meet the minimum size."
+      - "At 200% zoom, content remains available and readable."
+
+  SEO:
+    checks:
+      - "The canonical URL is correct."
+      - "The title and description render in the document head."
+      - "The page is indexable."
+      - "The route appears in the sitemap."
+      - "Structured data is valid and matches visible copy."
+      - "FAQ schema is absent until approved answers are published."
+      - "No mock or grid reference image is indexed as page content."
+      - "No duplicate Part 1 or Part 2 URL exists."
+
+acceptance_criteria:
+  SEO:
+    - "One canonical SDR route exists."
+    - "The page has a unique title and meta description."
+    - "The page has one H1."
+    - "The complete section hierarchy is semantic."
+    - "The homepage contains a functioning internal link to the SDR page."
+    - "MedicalWebPage and BreadcrumbList schema use verified visible content."
+    - "Unapproved FAQ schema is not rendered."
+
+  accessibility:
+    - "The page meets the project's WCAG AA target."
+    - "Every interaction works with keyboard controls."
+    - "Every visible control has an accessible name."
+    - "All focus states are visible."
+    - "Touch targets meet the minimum size."
+    - "Carousels do not rotate automatically."
+    - "Accordions expose their expanded states."
+    - "The hero's baked information has an accessible equivalent."
+    - "Reduced-motion preferences are respected."
+    - "The page remains usable at 200% zoom."
+
+  content:
+    - "No medical guarantee has been introduced."
+    - "No unverified FAQ answer is published."
+    - "No unapproved patient story is published."
+    - "Doctor credentials and the review date are verified."
+    - "The How SDR works section is included."
+
+  assets:
+    - "Mobile hero uses 1000104949.png."
+    - "Desktop hero uses 1000104957.png."
+    - "The eight mock and grid files are not rendered in production."
+    - "None of the 10 supplied filenames is renamed."
+
+  routing:
+    - "The existing homepage SDR card opens the SDR procedure page."
+    - "The route is /procedures/selective-dorsal-rhizotomy."
+    - "Navigation is client-side."
+    - "The page does not open inside a modal."
+    - "Part 1 and Part 2 render as one continuous page."
+    - "Only one shared header and one shared footer are present."
