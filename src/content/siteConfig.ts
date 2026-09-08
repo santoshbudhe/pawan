@@ -28,7 +28,7 @@ export const siteConfig: SiteConfig = {
     { label: "Home", href: "/" },
     { label: "About", href: "/#about" },
     { label: "Procedures", href: "/#treatments" },
-    { label: "Patient Resources", href: "/#patient-stories" },
+    { label: "Patient Resources", href: "/#patient-journeys" },
     { label: "Contact", href: "/#contact" }
   ]
 };

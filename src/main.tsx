@@ -1,5 +1,6 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { GlobalSplashLoader, PageReadinessObserver } from "./components/GlobalSplashLoader";
 import "./styles.css";
 import "./components/design-system/standardCompactCarousel.css";
 
@@ -38,11 +39,27 @@ function currentPath(): string {
 
 function AppRouter() {
   const [path, setPath] = useState(currentPath);
+  const [routeReady, setRouteReady] = useState(false);
+  const [initialLoad, setInitialLoad] = useState(true);
+  const routeRootRef = useRef<HTMLDivElement>(null);
+  const activePathRef = useRef(path);
 
   useEffect(() => {
-    const handleNavigation = () => setPath(currentPath());
+    const handleNavigation = () => {
+      const nextPath = currentPath();
+      if (nextPath === activePathRef.current) return;
+
+      activePathRef.current = nextPath;
+      setRouteReady(false);
+      setPath(nextPath);
+    };
     window.addEventListener("popstate", handleNavigation);
     return () => window.removeEventListener("popstate", handleNavigation);
+  }, []);
+
+  const handleRouteReady = useCallback(() => {
+    setRouteReady(true);
+    setInitialLoad(false);
   }, []);
 
   const Page = path === smfPath
@@ -61,9 +78,23 @@ function AppRouter() {
           ? Homepage
           : NotFoundPage;
   return (
-    <Suspense fallback={<div className="app-loading" role="status" aria-label="Loading page" />}>
-      <Page />
-    </Suspense>
+    <>
+      <div
+        ref={routeRootRef}
+        className={`app-route-stage${routeReady ? "" : " app-route-stage--loading"}`}
+        aria-hidden={!routeReady}
+      >
+        <Suspense fallback={null}>
+          <Page />
+          <PageReadinessObserver
+            routeKey={path}
+            rootRef={routeRootRef}
+            onReady={handleRouteReady}
+          />
+        </Suspense>
+      </div>
+      <GlobalSplashLoader active={!routeReady} immediate={initialLoad} />
+    </>
   );
 }
 

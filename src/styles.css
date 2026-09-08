@@ -214,7 +214,9 @@ a {
 
 .brand img {
   width: 292px;
-  height: auto;
+  height: 64px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .brand-mark {
@@ -1685,12 +1687,13 @@ h3 {
   }
 
   .site-header {
-    position: absolute;
+    position: sticky;
+    top: 0;
     inset-inline: 0;
     width: 100%;
     max-width: 100%;
-    background: transparent;
-    border-bottom: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(231, 236, 243, 0.88);
     backdrop-filter: none;
   }
 
@@ -1717,8 +1720,18 @@ h3 {
   .brand img {
     width: 100%;
     max-width: 204px;
-    height: auto;
+    height: 54px;
     transform: none;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .brand .brand-logo-primary {
+    width: 100%;
+    max-width: 166px;
+    height: 54px;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .header-cta {
@@ -1762,14 +1775,10 @@ h3 {
   }
 
   .hero-grid {
-    --hero-art-scale: 1.055;
-    --hero-art-x: 4px;
-    --hero-art-y: 8px;
-
     display: block;
     width: 100%;
     max-width: 100%;
-    height: clamp(572px, 147vw, 632px);
+    height: clamp(536px, 138vw, 594px);
     min-height: 0;
     padding-inline: 16px;
     border-radius: 0;
@@ -1783,7 +1792,7 @@ h3 {
     width: 100%;
     max-width: none;
     min-width: 0;
-    padding: 97px 0 0;
+    padding: 50px 0 0;
     background: none;
     z-index: 5;
   }
@@ -1965,10 +1974,9 @@ h3 {
 
   .hero-composite img {
     object-fit: cover;
-    object-position: center 8%;
-    filter: saturate(1.14) contrast(1.04) brightness(1.02);
-    transform: translate3d(var(--hero-art-x), var(--hero-art-y), 0) scale(var(--hero-art-scale));
-    transform-origin: right top;
+    object-position: right center;
+    filter: none;
+    transform: none;
   }
 
   .hero-composite .hero-video {
@@ -2994,17 +3002,14 @@ h3 {
 
   .footer-brand {
     min-width: 0;
-    display: grid;
-    grid-template-columns: 46px minmax(0, 1fr);
-    align-items: center;
-    gap: 5px;
+    display: block;
   }
 
   .footer-grid .footer-brand img {
-    width: 46px;
-    height: 46px;
-    margin: 0;
-    object-fit: cover;
+    width: min(100%, 112px);
+    height: auto;
+    margin: 0 0 4px;
+    object-fit: contain;
     object-position: left center;
   }
 
@@ -5399,7 +5404,7 @@ main > .assessment-journey-section.section-band {
   font-weight: 800;
 }
 
-#patient-stories {
+#patient-journeys {
   scroll-margin-top: 96px;
 }
 

@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import mainLogo from "../../../../assets/logos/transparentMainLogo2000px.png";
-import footerLogo from "../../../../assets/logos/transparentWhiteLogo1600.png";
 import { SdrHero } from "../../../components/procedures/sdr/SdrHero";
 import { SdrPartOne } from "../../../components/procedures/sdr/SdrPartOne";
 import { SdrPartTwo } from "../../../components/procedures/sdr/SdrPartTwo";
@@ -8,27 +6,11 @@ import { FloatingWhatsApp } from "../../../components/FloatingWhatsApp";
 import { ProcedureClosingSections, SiteFooter } from "../../../components/SiteClosingSections";
 import { SmfHeader } from "../../../components/smf/SmfHeader";
 import { getProcedureWhatsAppUrl } from "../../../content/contactDetails";
-import { AssetRegistry } from "../../../services/assetService";
 import { sdrPageContent } from "./sdrContent";
 import "../../../smf.css";
 import "./sdrPage.css";
 
 const SITE_ORIGIN = "https://www.drpawans.com";
-
-const localSharedAssets: AssetRegistry = {
-  logos: {
-    transparentMainLogo: { url: mainLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentMainLogo2000px.png" },
-    footer: { url: footerLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentWhiteLogo1600.png" }
-  },
-  hero: {},
-  doctors: {},
-  procedures: {},
-  whoWeHelp: {},
-  trustedFamilies: {},
-  patientStories: {},
-  hospitals: {},
-  smf: {}
-};
 
 function setMeta(selector: string, attribute: "name" | "property", key: string, content: string): () => void {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -146,7 +128,7 @@ export function SdrProcedurePage() {
   return (
     <div className="smf-page sdr-page">
       <SdrStructuredData />
-      <SmfHeader assets={localSharedAssets} mainId="main-content" />
+      <SmfHeader mainId="main-content" />
       <main id="main-content" tabIndex={-1}>
         <SdrHero
           content={sdrPageContent.hero}
@@ -160,7 +142,7 @@ export function SdrProcedurePage() {
         href={procedureWhatsAppHref}
         ariaLabel={`Chat with our team on WhatsApp about ${procedureName}`}
       />
-      <SiteFooter assets={localSharedAssets} />
+      <SiteFooter />
     </div>
   );
 }

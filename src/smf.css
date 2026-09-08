@@ -94,8 +94,7 @@
 
 .smf-brand img {
   width: min(100%, 206px);
-  height: auto;
-  max-height: none;
+  height: 58px;
   object-fit: contain;
   object-position: left center;
 }
@@ -382,8 +381,9 @@
 
   .smf-brand img {
     width: min(100%, 190px);
-    height: auto;
+    height: 54px;
     object-fit: contain;
+    object-position: left center;
   }
 
   .smf-page .smf-header-cta {
@@ -1574,6 +1574,9 @@
 
   .smf-brand img {
     width: clamp(240px, 21vw, 320px);
+    height: 64px;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .smf-desktop-nav {

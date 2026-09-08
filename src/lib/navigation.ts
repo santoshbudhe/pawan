@@ -31,14 +31,18 @@ export function navigateTo(href: string): void {
   const nextLocation = `${destination.pathname}${destination.search}${destination.hash}`;
   const currentLocation = `${window.location.pathname}${window.location.search}${window.location.hash}`;
 
+  if (samePage) {
+    if (nextLocation !== currentLocation) {
+      window.history.pushState({}, "", nextLocation);
+    }
+    window.requestAnimationFrame(scrollToCurrentLocation);
+    return;
+  }
+
   if (nextLocation !== currentLocation) {
     window.history.pushState({}, "", nextLocation);
   }
   window.dispatchEvent(new PopStateEvent("popstate"));
-
-  if (samePage) {
-    window.requestAnimationFrame(scrollToCurrentLocation);
-  }
 }
 
 export function handleInternalLinkClick(event: MouseEvent<HTMLAnchorElement>, href: string): void {

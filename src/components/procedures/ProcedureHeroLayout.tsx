@@ -69,6 +69,7 @@ export function ProcedureHeroLayout({
           loading="eager"
           decoding="async"
           fetchPriority="high"
+          data-route-critical="true"
         />
       </picture>
 

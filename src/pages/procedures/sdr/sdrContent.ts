@@ -44,7 +44,7 @@ export const sdrPageContent = {
       { id: "hero-talk-to-team", label: "Talk to Our Team", href: siteConfig.careTeamHref, style: "secondary", icon: "MessagesCircle" }
     ],
     accessibleArtworkExplanation: "Only the abnormal sensory nerve signals are selectively treated while preserving strength and feeling.",
-    mobileAsset: "/assets/procedures/sdr/1000104949.png",
+    mobileAsset: "/assets/procedures/sdr/1000104949.webp",
     desktopAsset: "/assets/procedures/sdr/1000104957.png"
   },
   sections: {

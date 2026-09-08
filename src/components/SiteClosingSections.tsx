@@ -1,4 +1,5 @@
 import { Phone } from "lucide-react";
+import { FOOTER_BRAND_LOGO } from "../content/brandAssets";
 import { consultationLocationMapLinks } from "../content/consultationLocations";
 import { contactDetails } from "../content/contactDetails";
 import { siteConfig } from "../content/siteConfig";
@@ -120,12 +121,19 @@ export function TreatmentContactBanner() {
   );
 }
 
-export function SiteFooter({ assets }: { assets?: AssetRegistry }) {
+export function SiteFooter() {
   return (
     <footer className="site-footer" id="contact">
       <div className="container footer-grid">
         <div className="footer-brand">
-          {assets?.logos.footer?.url ? <img src={assets.logos.footer.url} alt="Dr. Pawan Kumar Sadhvani footer logo" /> : null}
+          <img
+            src={FOOTER_BRAND_LOGO.src}
+            alt={FOOTER_BRAND_LOGO.alt}
+            width={FOOTER_BRAND_LOGO.width}
+            height={FOOTER_BRAND_LOGO.height}
+            loading="lazy"
+            decoding="async"
+          />
           <p>Neuro-Orthopedic Care for a Better Movement & Life.</p>
         </div>
         <nav className="footer-links" aria-label="Quick links">

@@ -1,7 +1,7 @@
 # ==========================================================
 # 03-assets.yaml
 # Asset Registry
-# Dr. Pawan Kumar Sadhvani Website
+# Ortho-Neuro Cerebral Palsy & Spasticity Clinic Website
 # ==========================================================
 
 assets:
@@ -16,9 +16,9 @@ logos:
 
   primary:
 
-    src: "assets/logos/transparentMainLogo2000px.png"
+    src: "assets/logos/ortho-neuro-logo-horizontal.png"
 
-    alt: "Dr. Pawan Kumar Sadhvani logo"
+    alt: "Ortho-Neuro Cerebral Palsy & Spasticity Clinic"
 
     usage:
 
@@ -28,9 +28,9 @@ logos:
 
   footer:
 
-    src: "assets/logos/transparentWhiteLogo1600.png"
+    src: "assets/logos/ortho-neuro-logo-horizontal-white.png"
 
-    alt: "Dr. Pawan Kumar Sadhvani footer logo"
+    alt: "Ortho-Neuro Cerebral Palsy & Spasticity Clinic"
 
     usage:
 

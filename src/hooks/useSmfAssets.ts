@@ -13,12 +13,10 @@ interface SmfAssetState {
 
 const criticalAssetDocumentIds = [
   "smf_smf-hero-mobile",
-  "smf_smf-hero-desktop",
-  "logos_transparentMainLogo2000px"
+  "smf_smf-hero-desktop"
 ] as const;
 
 const supportingAssetDocumentIds = [
-  "logos_transparentWhiteLogo1600",
   "doctors_pawan"
 ] as const;
 

@@ -3,6 +3,7 @@ import type { SyntheticEvent } from "react";
 import type { Asset } from "../services/assetService";
 
 const HOMEPAGE_HERO_VIDEO = "/assets/home/hero/1000105145.mp4";
+const HOMEPAGE_MOBILE_HERO = "/assets/home/hero/home-hero-collaboration-mobile.jpg";
 const MOBILE_HERO_QUERY = "(max-width: 767px)";
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
@@ -22,10 +23,10 @@ export function HomepageHeroMedia({ desktopHero, mobileHero }: HomepageHeroMedia
   );
   const [videoUnavailable, setVideoUnavailable] = useState(false);
 
-  const desktopPoster = desktopHero?.url ?? mobileHero?.url;
-  const mobilePoster = mobileHero?.url ?? desktopHero?.url;
+  const desktopPoster = desktopHero?.url ?? mobileHero?.url ?? HOMEPAGE_MOBILE_HERO;
+  const mobilePoster = HOMEPAGE_MOBILE_HERO;
   const activePoster = isMobile ? mobilePoster : desktopPoster;
-  const showVideo = !prefersReducedMotion && !videoUnavailable;
+  const showVideo = !isMobile && !prefersReducedMotion && !videoUnavailable;
 
   useEffect(() => {
     const mobileQuery = window.matchMedia(MOBILE_HERO_QUERY);
@@ -64,6 +65,7 @@ export function HomepageHeroMedia({ desktopHero, mobileHero }: HomepageHeroMedia
           loading="eager"
           decoding="async"
           fetchPriority="high"
+          data-route-critical="true"
         />
       </picture>
 

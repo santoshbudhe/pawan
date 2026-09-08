@@ -1,7 +1,6 @@
 import { collection, doc, DocumentData, DocumentSnapshot, getDoc, getDocs } from "firebase/firestore";
 import { getDownloadURL, ref } from "firebase/storage";
-import canonicalMainLogo from "../../assets/logos/transparentMainLogo2000px.png";
-import canonicalFooterLogo from "../../assets/logos/transparentWhiteLogo1600.png";
+import { FOOTER_BRAND_LOGO, PRIMARY_BRAND_LOGO } from "../content/brandAssets";
 import { getFirebaseServices } from "../lib/firebase";
 
 export interface Asset {
@@ -14,8 +13,6 @@ export interface AssetRegistry {
   logos: {
     primary?: Asset;
     main?: Asset;
-    transparentMainLogo?: Asset;
-    transparentMainLogo2000px?: Asset;
     footer?: Asset;
   } & Record<string, Asset | undefined>;
   hero: {
@@ -45,8 +42,24 @@ interface AssetLoadFailure {
   reason: string;
 }
 
+const canonicalBrandAsset: Asset = {
+  url: PRIMARY_BRAND_LOGO.src,
+  alt: PRIMARY_BRAND_LOGO.alt,
+  storagePath: PRIMARY_BRAND_LOGO.storagePath
+};
+
+const canonicalFooterBrandAsset: Asset = {
+  url: FOOTER_BRAND_LOGO.src,
+  alt: FOOTER_BRAND_LOGO.alt,
+  storagePath: FOOTER_BRAND_LOGO.storagePath
+};
+
 const emptyRegistry = (): AssetRegistry => ({
-  logos: {},
+  logos: {
+    primary: canonicalBrandAsset,
+    main: canonicalBrandAsset,
+    footer: canonicalFooterBrandAsset
+  },
   hero: {},
   doctors: {},
   procedures: {},
@@ -74,16 +87,6 @@ function titleFromName(name: string): string {
 
 function mapAsset(registry: AssetRegistry, category: string, key: string, asset: Asset): void {
   if (category === "logos") {
-    if (key.toLowerCase().includes("white")) {
-      registry.logos.footer = asset;
-    } else {
-      registry.logos.primary = asset;
-      registry.logos.main = asset;
-      registry.logos[key] = asset;
-      if (key.toLowerCase().includes("transparentmainlogo")) {
-        registry.logos.transparentMainLogo = asset;
-      }
-    }
     return;
   }
 
@@ -184,12 +187,6 @@ async function resolveRegistry(documents: Array<DocumentSnapshot<DocumentData>>)
       }
       const key = baseName(data.filename);
       if (data.category === "logos") {
-        const isFooterLogo = key.toLowerCase().includes("white");
-        mapAsset(registry, data.category, key, {
-          url: isFooterLogo ? canonicalFooterLogo : canonicalMainLogo,
-          storagePath: data.storagePath,
-          alt: "Dr. Pawan Kumar Sadhvani"
-        });
         return;
       }
       try {

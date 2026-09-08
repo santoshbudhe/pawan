@@ -60,6 +60,7 @@ export function SmfHero({ content, assets, whatsappHref }: SmfHeroProps) {
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
+                data-route-critical="true"
               />
             </picture>
           ) : (

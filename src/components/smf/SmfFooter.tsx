@@ -1,13 +1,12 @@
 import { HeartHandshake, MoveRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "../Button";
 import { Icon } from "../Icon";
+import { FOOTER_BRAND_LOGO } from "../../content/brandAssets";
 import { siteConfig } from "../../content/siteConfig";
 import { SmfPageContent } from "../../content/smfPageContent";
-import { AssetRegistry } from "../../services/assetService";
 
 interface SmfFooterProps {
   content: SmfPageContent["footer"];
-  assets?: AssetRegistry;
 }
 
 const valueItems = [
@@ -32,18 +31,19 @@ export function SmfValueStrip() {
   );
 }
 
-export function SmfFooter({ content, assets }: SmfFooterProps) {
-  const footerLogo = assets?.logos.footer;
-
+export function SmfFooter({ content }: SmfFooterProps) {
   return (
     <footer className="smf-footer" id="smf-contact">
       <div className="smf-container smf-footer-grid">
         <div className="smf-footer-about">
-          {footerLogo?.url ? (
-            <img src={footerLogo.url} alt={`${siteConfig.name} logo`} width="910" height="229" loading="lazy" decoding="async" />
-          ) : (
-            <strong>{siteConfig.name}</strong>
-          )}
+          <img
+            src={FOOTER_BRAND_LOGO.src}
+            alt={FOOTER_BRAND_LOGO.alt}
+            width={FOOTER_BRAND_LOGO.width}
+            height={FOOTER_BRAND_LOGO.height}
+            loading="lazy"
+            decoding="async"
+          />
           <p>{content.about}</p>
         </div>
 
@@ -57,7 +57,7 @@ export function SmfFooter({ content, assets }: SmfFooterProps) {
 
         <nav aria-label="Patient resources">
           <h2>Patient Resources</h2>
-          {content.patientResources.map((label) => <a key={label} href="/#patient-stories">{label}</a>)}
+          {content.patientResources.map((label) => <a key={label} href="/#patient-journeys">{label}</a>)}
         </nav>
 
         <div className="smf-footer-contact">

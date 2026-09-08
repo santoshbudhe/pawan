@@ -13,8 +13,9 @@
     "test:dcs": "tsx --test src/pages/procedures/deformity-correction/deformityCorrectionContent.test.ts",
     "test:dcs-eligibility": "tsx --test src/pages/procedures/deformity-correction/deformityCorrectionEligibility.test.ts",
     "test:tendon-risks": "tsx --test src/pages/procedures/tendon-muscle/tendonMuscleRisks.test.ts",
+    "test:site-footer": "tsx --test src/components/SiteFooter.test.tsx",
     "test:success-stories": "tsx --test src/data/successStories.database.test.tsx",
-    "test": "npm run test:spc-01 && npm run test:procedure-faq && npm run test:dcs && npm run test:dcs-eligibility && npm run test:tendon-risks && npm run test:success-stories && npm run build"
+    "test": "npm run test:spc-01 && npm run test:procedure-faq && npm run test:dcs && npm run test:dcs-eligibility && npm run test:tendon-risks && npm run test:site-footer && npm run test:success-stories && npm run build"
   },
   "keywords": [],
   "author": "",

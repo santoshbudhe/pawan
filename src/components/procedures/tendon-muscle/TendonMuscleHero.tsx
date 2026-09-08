@@ -21,6 +21,7 @@ export function TendonMuscleHero({ content, whatsappHref }: TendonMuscleHeroProp
           loading="eager"
           decoding="async"
           fetchPriority="high"
+          data-route-critical="true"
         />
       </picture>
 

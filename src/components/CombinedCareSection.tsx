@@ -240,7 +240,7 @@ export function CombinedCareSection({ onProcedureFocus }: CombinedCareSectionPro
               Together, these approaches help reduce stiffness, improve alignment and support better
               long-term function.
             </p>
-            <a href="#patient-stories">
+            <a href="#patient-journeys">
               <span>See real patient journeys</span>
               <ArrowRight aria-hidden="true" />
             </a>

@@ -1,22 +1,20 @@
 import { Menu, Phone, X } from "lucide-react";
 import { KeyboardEvent, useEffect, useId, useRef, useState } from "react";
+import { PRIMARY_BRAND_LOGO } from "../../content/brandAssets";
 import { contactDetails } from "../../content/contactDetails";
-import { AssetRegistry } from "../../services/assetService";
 import { siteConfig } from "../../content/siteConfig";
 
 interface SmfHeaderProps {
-  assets?: AssetRegistry;
   mainId?: string;
 }
 
 const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-export function SmfHeader({ assets, mainId = "smf-main" }: SmfHeaderProps) {
+export function SmfHeader({ mainId = "smf-main" }: SmfHeaderProps) {
   const [open, setOpen] = useState(false);
   const drawerId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
-  const logo = assets?.logos.transparentMainLogo ?? assets?.logos.primary;
 
   useEffect(() => {
     const closeOnNavigation = () => setOpen(false);
@@ -67,12 +65,13 @@ export function SmfHeader({ assets, mainId = "smf-main" }: SmfHeaderProps) {
     <header className="smf-site-header">
       <a className="skip-link" href={`#${mainId}`}>Skip to main content</a>
       <div className="smf-container smf-header-inner">
-        <a className="smf-brand" href="/" aria-label={`${siteConfig.name} home`}>
-          {logo?.url ? (
-            <img src={logo.url} alt={`${siteConfig.name} logo`} width="910" height="229" />
-          ) : (
-            <span>{siteConfig.name}</span>
-          )}
+        <a className="smf-brand" href="/" aria-label={`${PRIMARY_BRAND_LOGO.alt} home`}>
+          <img
+            src={PRIMARY_BRAND_LOGO.src}
+            alt={PRIMARY_BRAND_LOGO.alt}
+            width={PRIMARY_BRAND_LOGO.width}
+            height={PRIMARY_BRAND_LOGO.height}
+          />
         </a>
 
         <nav className="smf-desktop-nav" aria-label="Primary navigation">

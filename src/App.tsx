@@ -23,6 +23,7 @@ import { SpasticityExplainer } from "./components/SpasticityExplainer";
 import { SuccessStoryCarousel } from "./components/success-stories/SuccessStoryCarousel";
 import { UnderstandingSpasticity } from "./components/UnderstandingSpasticity";
 import { WhatsAppIcon } from "./components/WhatsAppIcon";
+import { PRIMARY_BRAND_LOGO } from "./content/brandAssets";
 import { contactDetails } from "./content/contactDetails";
 import { getPreviewHomepageStories } from "./data/successStories.database";
 import { useHomepageData } from "./hooks/useHomepageData";
@@ -49,16 +50,21 @@ function MissingAsset({ id }: { id: string }) {
   );
 }
 
-function Header({ assets }: { assets?: AssetRegistry }) {
+function Header() {
   const nav = ["Home", "About", "Conditions", "Treatments", "For Families", "Locations", "Resources"];
   const dropdownItems = new Set(["Conditions", "Treatments", "For Families", "Resources"]);
-  const logo = assets?.logos.transparentMainLogo ?? assets?.logos.primary;
   return (
     <header className="site-header">
       <a className="skip-link" href="#main">Skip to content</a>
       <div className="container header-inner">
-        <a className="brand" href="/" aria-label="Dr. Pawan Kumar Sadhvani home">
-          {assetUrl(logo) ? <img src={logo?.url} alt="Dr. Pawan Kumar Sadhvani logo" /> : assets ? <MissingAsset id="logos_transparentMainLogo" /> : null}
+        <a className="brand" href="/" aria-label={`${PRIMARY_BRAND_LOGO.alt} home`}>
+          <img
+            className="brand-logo-primary"
+            src={PRIMARY_BRAND_LOGO.src}
+            alt={PRIMARY_BRAND_LOGO.alt}
+            width={PRIMARY_BRAND_LOGO.width}
+            height={PRIMARY_BRAND_LOGO.height}
+          />
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map((item) => (
@@ -104,11 +110,7 @@ function Hero({ content, assets }: { content: HomepageContent; assets?: AssetReg
     <section className="hero section-band">
       <div className="container hero-grid">
         <motion.div className="hero-composite" {...fadeUp}>
-          {assetUrl(desktopHero) || assetUrl(mobileHero) ? (
-            <HomepageHeroMedia desktopHero={desktopHero} mobileHero={mobileHero} />
-          ) : assets ? (
-            <MissingAsset id="hero_mobileHeroBanner" />
-          ) : null}
+          <HomepageHeroMedia desktopHero={desktopHero} mobileHero={mobileHero} />
         </motion.div>
         <motion.div className="hero-copy" {...fadeUp}>
           <p className="eyebrow">{content.hero.eyebrow}</p>
@@ -403,7 +405,7 @@ function Homepage() {
   return (
     <>
       <StructuredData />
-      <Header assets={assets} />
+      <Header />
       <main id="main" aria-busy={loading}>
         {error ? <p className="sr-only" role="status">{error}</p> : null}
         <Hero content={content} assets={assets} />
@@ -426,12 +428,12 @@ function Homepage() {
           stories={getPreviewHomepageStories()}
           title="Real Success Stories"
           subtitle="Real patient journeys showing progress through specialist care and rehabilitation."
-          sectionId="real-success-stories"
+          sectionId="patient-journeys"
         />
         <TreatmentContactBanner />
       </main>
       <FloatingWhatsApp />
-      <SiteFooter assets={assets} />
+      <SiteFooter />
     </>
   );
 }

@@ -451,7 +451,7 @@ function SmfLowerSections({ assets }: { assets: SmfAssetMap }) {
 }
 
 export function SmfProcedurePage() {
-  const { assets, smfAssets, loading, error } = useSmfAssets();
+  const { smfAssets, loading, error } = useSmfAssets();
   const procedureName = smfPageContent.hero.title;
   const procedureWhatsAppHref = getProcedureWhatsAppUrl(procedureName);
   useSmfSeo();
@@ -459,8 +459,12 @@ export function SmfProcedurePage() {
   return (
     <div className="smf-page">
       <SmfStructuredData />
-      <SmfHeader assets={assets} />
-      <main id="smf-main" aria-busy={loading}>
+      <SmfHeader />
+      <main
+        id="smf-main"
+        aria-busy={loading}
+        data-route-critical-busy={loading ? "true" : undefined}
+      >
         {error ? <p className="sr-only" role="status">{error}</p> : null}
         <ProcedureBreadcrumb procedure="smf" className="procedure-breadcrumb--standalone smf-container" />
         <SmfHero content={smfPageContent.hero} assets={smfAssets} whatsappHref={procedureWhatsAppHref} />
@@ -483,7 +487,7 @@ export function SmfProcedurePage() {
         href={procedureWhatsAppHref}
         ariaLabel={`Chat with our team on WhatsApp about ${procedureName}`}
       />
-      <SiteFooter assets={assets} />
+      <SiteFooter />
     </div>
   );
 }

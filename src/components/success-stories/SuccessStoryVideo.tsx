@@ -127,6 +127,7 @@ export function SuccessStoryVideo({
                 src={poster}
                 alt=""
                 aria-hidden="true"
+                data-route-critical="true"
               />
             ) : null}
             <button
@@ -158,6 +159,7 @@ export function SuccessStoryVideo({
       aria-label={`${ariaLabel} media placeholder`}
       aria-live="polite"
       aria-busy={status === "resolving"}
+      data-route-critical-busy={status === "resolving" ? "true" : undefined}
     >
       {poster ? (
         <img
@@ -165,6 +167,7 @@ export function SuccessStoryVideo({
           src={poster}
           alt=""
           aria-hidden="true"
+          data-route-critical="true"
         />
       ) : (
         <Video className="success-story-video-player__fallback-icon" aria-hidden="true" />

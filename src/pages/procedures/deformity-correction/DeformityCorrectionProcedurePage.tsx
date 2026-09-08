@@ -14,8 +14,6 @@ import {
   TriangleAlert
 } from "lucide-react";
 import { ComponentType, SVGProps, useEffect } from "react";
-import mainLogo from "../../../../assets/logos/transparentMainLogo2000px.png";
-import footerLogo from "../../../../assets/logos/transparentWhiteLogo1600.png";
 import reviewerPortrait from "../../../../assets/doctors/pawan.png";
 import deformityImage from "../../../../assets/procedures/deformityCorrection.jpg";
 import {
@@ -35,7 +33,6 @@ import { SuccessStoryCarousel } from "../../../components/success-stories/Succes
 import { getProcedureWhatsAppUrl } from "../../../content/contactDetails";
 import { deformityCorrectionFaqs } from "../../../content/procedureFaqs";
 import { getStoriesForProcedure } from "../../../data/successStories.database";
-import { AssetRegistry } from "../../../services/assetService";
 import {
   DcsIconName,
   deformityCorrectionContent as content
@@ -59,14 +56,6 @@ const iconMap: Record<DcsIconName, ComponentType<SVGProps<SVGSVGElement>>> = {
   ShieldAlert,
   Target,
   TriangleAlert
-};
-
-const localSharedAssets: AssetRegistry = {
-  logos: {
-    transparentMainLogo: { url: mainLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentMainLogo2000px.png" },
-    footer: { url: footerLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentWhiteLogo1600.png" }
-  },
-  hero: {}, doctors: {}, procedures: {}, whoWeHelp: {}, trustedFamilies: {}, patientStories: {}, hospitals: {}, smf: {}
 };
 
 function DcsIcon({ name }: { name: DcsIconName }) {
@@ -511,7 +500,7 @@ export function DeformityCorrectionProcedurePage() {
   return (
     <div className="smf-page dcs-page">
       <StructuredData />
-      <SmfHeader assets={localSharedAssets} mainId="main-content" />
+      <SmfHeader mainId="main-content" />
       <main id="main-content" tabIndex={-1}>
         <Hero whatsappHref={whatsappHref} />
         <WhatIsSection />
@@ -533,7 +522,7 @@ export function DeformityCorrectionProcedurePage() {
         <ProcedureClosingSections />
       </main>
       <FloatingWhatsApp href={whatsappHref} ariaLabel={`Chat with our team on WhatsApp about ${content.hero.title}`} />
-      <SiteFooter assets={localSharedAssets} />
+      <SiteFooter />
     </div>
   );
 }
