@@ -1,3 +1,5 @@
+import { siteConfig } from "../../../content/siteConfig";
+
 export type DcsIconName =
   | "Activity"
   | "Bone"
@@ -47,15 +49,15 @@ export const deformityCorrectionSectionOrder = [
   "Medical review",
   "Real Patient Journeys",
   "Frequently asked questions",
-  "Our Specialist Team",
-  "Consultation Locations",
+  "Meet Dr. Pawan",
+  "Consultation Location",
   "Bottom treatment CTA",
   "Footer"
 ] as const;
 
 export const deformityCorrectionContent = {
   metadata: {
-    title: "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani",
+    title: `Deformity Correction Surgery | ${siteConfig.doctorName}`,
     description: "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function.",
     canonicalPath: "/procedures/deformity-correction-surgery"
   },
@@ -322,7 +324,7 @@ export const deformityCorrectionContent = {
       "Bone healing and correction timelines vary.",
       "Additional soft-tissue or nerve procedures may sometimes be needed.",
       "Recurrence, under-correction or over-correction is possible.",
-      "Suitability depends on detailed orthopaedic and neurological assessment."
+      "Suitability depends on detailed orthopaedic and functional assessment."
     ]
   },
   journey: {
@@ -354,7 +356,7 @@ export const deformityCorrectionContent = {
   review: {
     id: "medical-review",
     title: "Medically reviewed by",
-    name: "Dr. Pawan Kumar Sadhvani",
+    name: siteConfig.doctorName,
     verificationNote: "Professional qualifications, experience and review date are awaiting final verification for this procedure page."
   },
 } as const;

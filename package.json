@@ -14,7 +14,8 @@
     "test:dcs-eligibility": "tsx --test src/pages/procedures/deformity-correction/deformityCorrectionEligibility.test.ts",
     "test:tendon-risks": "tsx --test src/pages/procedures/tendon-muscle/tendonMuscleRisks.test.ts",
     "test:success-stories": "tsx --test src/data/successStories.database.test.tsx",
-    "test": "npm run test:spc-01 && npm run test:procedure-faq && npm run test:dcs && npm run test:dcs-eligibility && npm run test:tendon-risks && npm run test:success-stories && npm run build"
+    "test:pass1": "tsx --test src/passOneMigration.test.ts",
+    "test": "npm run test:spc-01 && npm run test:procedure-faq && npm run test:dcs && npm run test:dcs-eligibility && npm run test:tendon-risks && npm run test:success-stories && npm run test:pass1 && npm run build"
   },
   "keywords": [],
   "author": "",

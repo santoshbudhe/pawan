@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.drpawans.com/</loc>
+    <loc>https://pawankumarsadhvani.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.drpawans.com/procedures/selective-motor-fasciculotomy</loc>
+    <loc>https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.drpawans.com/procedures/selective-dorsal-rhizotomy</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.drpawans.com/procedures/tendon-muscle-procedures</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://pawankumarsadhvani.com/procedures/deformity-correction-surgery</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pawankumarsadhvani.com/success-stories/from-crouch-gait-to-straighter-steps</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawankumarsadhvani.com/success-stories/improved-right-hand-grip-and-thumb-control-after-smf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawankumarsadhvani.com/success-stories/better-right-arm-control-for-everyday-activities</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawankumarsadhvani.com/success-stories/improved-left-hand-grasp-and-daily-function-after-smf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

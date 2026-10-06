@@ -28,8 +28,8 @@ const assessmentSteps: AssessmentStep[] = [
   },
   {
     id: 2,
-    title: "Clinical Exam",
-    subtitle: "Tone, posture & movement",
+    title: "Orthopedic Exam",
+    subtitle: "Joints, alignment & movement",
     imageSrc: "/assets/home/assessment-journey/assessment-clinical-exam.webp",
     imageAlt: "Doctor carrying out a clinical examination of a child's leg",
     icon: Stethoscope
@@ -45,7 +45,7 @@ const assessmentSteps: AssessmentStep[] = [
   {
     id: 4,
     title: "Video Gait Analysis",
-    subtitle: "AI-assisted walking review",
+    subtitle: "Walking & alignment review",
     imageSrc: "/assets/home/assessment-journey/assessment-video-gait-analysis.webp",
     imageAlt: "Child completing a video-assisted gait assessment",
     icon: VideoIcon
@@ -66,7 +66,7 @@ export function AssessmentJourney() {
       <div className="container">
         <header className="assessment-journey-heading">
           <h2 id="assessment-journey-title">Your Assessment Journey</h2>
-          <p>A simple step-by-step process to understand your child’s movement, goals, and treatment options.</p>
+          <p>A step-by-step orthopedic assessment of movement, alignment, goals and treatment options.</p>
         </header>
 
         <CarouselFrame

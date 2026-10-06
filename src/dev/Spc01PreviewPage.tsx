@@ -57,7 +57,7 @@ const longTitleCards = baseCards.map((card, index) => ({
   ...card,
   title: [
     "Selective assessment for focal movement concerns",
-    "Coordinated neuro-orthopedic treatment planning",
+    "Coordinated orthopedic treatment planning",
     "Rehabilitation goals for everyday independence",
     "Longer descriptive titles wrap at normal spaces"
   ][index]

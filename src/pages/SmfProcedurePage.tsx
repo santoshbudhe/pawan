@@ -5,7 +5,6 @@
   Footprints,
   Hand,
   HandGrab,
-  Info,
   PersonStanding,
   Target
 } from "lucide-react";
@@ -114,13 +113,13 @@ const smfProcessCards: StandardCarouselCard[] = smfPageContent.process.steps.map
   description: step.body
 }));
 
-function updateMeta(name: string, content: string): () => void {
-  let meta = document.head.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
+function updateMeta(name: string, content: string, attribute: "name" | "property" = "name"): () => void {
+  let meta = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`);
   const previousContent = meta?.content;
   const created = !meta;
   if (!meta) {
     meta = document.createElement("meta");
-    meta.name = name;
+    meta.setAttribute(attribute, name);
     document.head.appendChild(meta);
   }
   meta.content = content;
@@ -133,18 +132,25 @@ function updateMeta(name: string, content: string): () => void {
 function useSmfSeo() {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani";
-    const restoreDescription = updateMeta(
-      "description",
-      "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks."
-    );
+    const title = `Selective Motor Fasciculotomy (SMF) in Hyderabad | ${siteConfig.doctorName}`;
+    const description = "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks.";
+    const canonicalUrl = `${siteConfig.siteUrl}${SMF_PATH}`;
+    document.title = title;
+    const restore = [
+      updateMeta("description", description),
+      updateMeta("og:title", title, "property"),
+      updateMeta("og:description", description, "property"),
+      updateMeta("og:url", canonicalUrl, "property"),
+      updateMeta("twitter:title", title),
+      updateMeta("twitter:description", description)
+    ];
     const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     const previousCanonical = canonical?.href;
-    if (canonical) canonical.href = `https://www.drpawans.com${SMF_PATH}`;
+    if (canonical) canonical.href = canonicalUrl;
 
     return () => {
       document.title = previousTitle;
-      restoreDescription();
+      restore.forEach((cleanup) => cleanup());
       if (canonical && previousCanonical) canonical.href = previousCanonical;
     };
   }, []);
@@ -157,19 +163,19 @@ function SmfStructuredData() {
       "@type": "MedicalWebPage",
       name: smfPageContent.hero.title,
       description: smfPageContent.hero.body,
-      url: `https://www.drpawans.com${SMF_PATH}`
+      url: `${siteConfig.siteUrl}${SMF_PATH}`
     },
     {
       "@context": "https://schema.org",
       "@type": "Physician",
       name: siteConfig.name,
-      medicalSpecialty: "Neuro-Orthopaedic Spasticity Care",
+      url: `${siteConfig.siteUrl}/`,
+      medicalSpecialty: "Orthopedic Care and Deformity Correction",
       telephone: siteConfig.phoneLabel,
       email: siteConfig.email,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Hyderabad",
-        addressCountry: "IN"
+        ...siteConfig.address
       }
     },
     {
@@ -179,7 +185,7 @@ function SmfStructuredData() {
         "@type": "ListItem",
         position: index + 1,
         name,
-        item: index === 0 ? "https://www.drpawans.com/" : `https://www.drpawans.com${SMF_PATH}`
+        item: index === 0 ? `${siteConfig.siteUrl}/` : `${siteConfig.siteUrl}${SMF_PATH}`
       }))
     }
   ];
@@ -225,11 +231,6 @@ function WhatIsSmfSection() {
     ["Only the abnormal", "fascicles are treated."],
     ["Useful movement is", "aimed to be preserved."]
   ];
-  const infoLines = [
-    "SMF works at the level of peripheral motor nerves",
-    "and is different from SDR, which works on sensory",
-    "nerve rootlets in the lower spine."
-  ];
   return (
     <section id={section.id} className="smf-section smf-card-section">
       <div className="smf-container">
@@ -243,15 +244,6 @@ function WhatIsSmfSection() {
             <span className="smf-desktop-copy">{section.body}</span>
             </>
           ]}
-          calloutIcon={<Info aria-hidden="true" />}
-          calloutContent={
-            <>
-              <span className="smf-mobile-lines">
-                {infoLines.map((line) => <span key={line}>{line}</span>)}
-              </span>
-              <span className="smf-desktop-copy">{section.infoNote}</span>
-            </>
-          }
         >
           <div className="smf-principle-grid">
             {section.principles.map((principle, index) => (

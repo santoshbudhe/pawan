@@ -1,5 +1,5 @@
 const whatsappMessage =
-  "Hello Dr. Pawan Kumar Sadhvani's team. I would like to discuss a patient's movement or spasticity concern and share videos or reports.";
+  "Hello, I would like to enquire about an orthopedic consultation with Dr. Pawan Kumar Sadhvani.";
 
 export const contactDetails = {
   phoneDisplay: "+91 90002 30401",
@@ -12,7 +12,7 @@ export const contactDetails = {
 
 export function getProcedureWhatsAppUrl(procedureName: string): string {
   const message =
-    `Hello Dr. Pawan Kumar Sadhvani's team. I would like to know more about ${procedureName} and share a patient's videos, reports or questions.`;
+    `Hello, I would like to enquire about ${procedureName} with Dr. Pawan Kumar Sadhvani and share relevant reports or questions.`;
 
   return `https://wa.me/${contactDetails.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

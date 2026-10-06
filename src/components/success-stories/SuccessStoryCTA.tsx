@@ -1,5 +1,6 @@
 import { HeartHandshake, Phone } from "lucide-react";
 import { contactDetails } from "../../content/contactDetails";
+import { siteConfig } from "../../content/siteConfig";
 import { WhatsAppIcon } from "../WhatsAppIcon";
 
 export function SuccessStoryCTA() {
@@ -16,7 +17,7 @@ export function SuccessStoryCTA() {
         <a
           className="success-story-cta__call"
           href={contactDetails.phoneHref}
-          aria-label="Call Dr. Pawan Kumar Sadhvani"
+          aria-label={`Call ${siteConfig.doctorName}`}
         >
           <Phone aria-hidden="true" />
           <span>Call</span>

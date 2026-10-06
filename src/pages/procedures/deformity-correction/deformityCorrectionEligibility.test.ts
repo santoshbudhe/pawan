@@ -91,8 +91,9 @@ test("the eligibility image-only update preserves card content and SPC-01 layout
   assert.equal(section.title, "Who may benefit from Deformity Correction?");
   assert.equal(contentDigest, "013d0197dddfa171d25ddc8d59392737d8d310564efd11cd08ee72f253d4e427");
 
-  const carouselStart = pageSource.indexOf("<StandardCompactCarousel\n          title={benefit.title}");
-  const carouselEnd = pageSource.indexOf("/>", carouselStart);
+  const titlePosition = pageSource.indexOf("title={benefit.title}");
+  const carouselStart = pageSource.lastIndexOf("<StandardCompactCarousel", titlePosition);
+  const carouselEnd = pageSource.indexOf("/>", titlePosition);
   assert.ok(carouselStart >= 0 && carouselEnd > carouselStart, "eligibility must remain on SPC-01");
 
   const carouselMarkup = pageSource.slice(carouselStart, carouselEnd + 2);
@@ -104,4 +105,3 @@ test("the eligibility image-only update preserves card content and SPC-01 layout
   assert.match(carouselMarkup, /\bembedded\b/);
   assert.doesNotMatch(carouselMarkup, /variant=|cardWidth=|mobileCardWidth=|HorizontalCardCarousel/);
 });
-

@@ -1,16 +1,16 @@
 import {
+  Activity,
   ArrowRight,
   Bone,
-  Check,
+  ClipboardCheck,
+  Footprints,
   HeartHandshake,
-  Network,
-  PersonStanding,
-  Users
+  PersonStanding
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { CarouselFrame } from "./CarouselFrame";
 
-export type ProcedureFocusKey = "sdr" | "smf" | "tendonMuscle" | "deformityCorrection";
+export type ProcedureFocusKey = "smf" | "tendonMuscle" | "deformityCorrection";
 
 type PathwayStep = {
   id: string;
@@ -28,73 +28,74 @@ type CombinedCareSectionProps = {
 
 const assetBase = "/assets/home/combined-care";
 
-const combinedCareContent = {
-  heading: "How Combined Neuro-Orthopedic Care Helps",
-  introduction:
-    "Some patients need both spasticity management and orthopedic correction. When our neuro and orthopedic teams plan together, we can improve comfort, alignment, walking and independence."
-};
-
 const pathwaySteps: PathwayStep[] = [
   {
-    id: "spasticity",
+    id: "assessment",
     number: 1,
-    title: "Spasticity / nerve-related tightness",
-    description: "Overactive nerve signals may contribute to muscle stiffness.",
-    image: `${assetBase}/pathway-spasticity-tightness.webp`,
-    imageAlt: "Child holding one arm close to the body",
-    icon: Network
+    title: "Orthopedic Assessment",
+    description: "Review symptoms, joint movement, function and individual goals.",
+    image: `${assetBase}/pathway-combined-treatment-plan.webp`,
+    imageAlt: "Clinician discussing an assessment with a child and parent",
+    icon: ClipboardCheck
   },
   {
     id: "alignment",
     number: 2,
-    title: "Bone, joint or foot alignment concerns",
-    description: "Tightness and imbalance may affect alignment, movement and daily activities.",
+    title: "Gait & Alignment Evaluation",
+    description: "Assess standing, walking and limb alignment where relevant.",
     image: `${assetBase}/pathway-foot-alignment.webp`,
-    imageAlt: "Rear view of feet showing a foot-alignment concern",
+    imageAlt: "Rear view of feet during an alignment assessment",
+    icon: Footprints
+  },
+  {
+    id: "planning",
+    number: 3,
+    title: "Treatment Planning",
+    description: "Consider appropriate non-operative and surgical options after assessment.",
+    image: `${assetBase}/pathway-orthopedic-care.webp`,
+    imageAlt: "Orthopedic clinician assessing a child's lower leg",
+    icon: ClipboardCheck
+  },
+  {
+    id: "correction",
+    number: 4,
+    title: "Correction Where Indicated",
+    description: "Treatment may address soft-tissue tightness or structural deformity when appropriate.",
     icon: Bone
   },
   {
-    id: "combined-plan",
-    number: 3,
-    title: "One combined treatment plan",
-    description: "Our neuro and orthopedic teams plan treatment together.",
-    image: `${assetBase}/pathway-combined-treatment-plan.webp`,
-    imageAlt: "Clinician discussing a coordinated treatment plan with a patient and family member",
-    icon: Users
-  },
-  {
-    id: "outcome",
-    number: 4,
-    title: "Better movement, comfort & independence",
-    description: "The goal is better function, comfort and participation in daily life.",
+    id: "follow-up",
+    number: 5,
+    title: "Rehabilitation & Follow-Up",
+    description: "Recovery and follow-up are planned according to the treatment provided.",
     icon: HeartHandshake
   }
 ];
 
 const careCards = [
   {
-    id: "neuro",
-    heading: "Neuro Care: Spasticity Treatment",
+    id: "soft-tissue",
+    heading: "Soft-Tissue & Contracture Care",
     description:
-      "We target overactive nerves to reduce stiffness, improve movement and make therapy more effective.",
-    cta: "See specialised neuro procedures",
-    image: `${assetBase}/pathway-neuro-care.webp`,
-    imageAlt: "Clinician examining a patient's leg during a spasticity assessment",
-    icon: Network,
-    firstCard: "sdr" as const,
-    highlightedCards: ["sdr", "smf"] as ProcedureFocusKey[]
+      "Tendon or muscle procedures may be considered when tightness or contracture limits movement, alignment or function.",
+    cta: "View tendon & muscle procedures",
+    image: `${assetBase}/pathway-orthopedic-care.webp`,
+    imageAlt: "Orthopedic clinician assessing a child's lower leg",
+    icon: Activity,
+    firstCard: "tendonMuscle" as const,
+    highlightedCards: ["tendonMuscle"] as ProcedureFocusKey[]
   },
   {
-    id: "orthopedic",
-    heading: "Orthopedic Care: Correction & Alignment",
+    id: "deformity",
+    heading: "Deformity Correction & Alignment",
     description:
-      "We correct muscle, tendon or bone issues to improve alignment, positioning and walking.",
-    cta: "See specialised orthopedic procedures",
-    image: `${assetBase}/pathway-orthopedic-care.webp`,
-    imageAlt: "Orthopedic clinician fitting support around a patient's lower leg",
+      "Bone or joint correction may be considered for structural deformity affecting alignment, comfort or movement.",
+    cta: "View deformity correction",
+    image: `${assetBase}/pathway-foot-alignment.webp`,
+    imageAlt: "Rear view of feet during an alignment assessment",
     icon: Bone,
-    firstCard: "tendonMuscle" as const,
-    highlightedCards: ["tendonMuscle", "deformityCorrection"] as ProcedureFocusKey[]
+    firstCard: "deformityCorrection" as const,
+    highlightedCards: ["deformityCorrection"] as ProcedureFocusKey[]
   }
 ];
 
@@ -104,10 +105,10 @@ function PathwayCarousel() {
       className="combined-pathway-carousel__viewport combined-pathway-carousel__track"
       shellClassName="combined-pathway-carousel"
       itemCount={pathwaySteps.length}
-      label="combined neuro-orthopedic treatment pathway"
-      previousLabel="Previous treatment pathway cards"
-      nextLabel="Next treatment pathway cards"
-      dotLabel={(index) => `Go to treatment pathway position ${index + 1}`}
+      label="orthopedic deformity care pathway"
+      previousLabel="Previous care pathway cards"
+      nextLabel="Next care pathway cards"
+      dotLabel={(index) => `Go to care pathway position ${index + 1}`}
     >
       {pathwaySteps.map((step, index) => {
         const StepIcon = step.icon;
@@ -129,7 +130,7 @@ function PathwayCarousel() {
                   src={step.image}
                   alt={step.imageAlt}
                   width="456"
-                  height={index < 2 ? "379" : "356"}
+                  height="380"
                   loading="lazy"
                   decoding="async"
                   draggable={false}
@@ -159,14 +160,18 @@ function PathwayCarousel() {
 export function CombinedCareSection({ onProcedureFocus }: CombinedCareSectionProps) {
   return (
     <section
-      id="combined-neuro-orthopedic-care"
+      id="orthopedic-deformity-care"
       className="section-band combined-pathway-section"
-      aria-labelledby="combined-care-heading"
+      aria-labelledby="orthopedic-care-heading"
     >
       <div className="container combined-pathway-section__container">
         <header className="combined-pathway-section__header">
-          <h2 id="combined-care-heading">{combinedCareContent.heading}</h2>
-          <p>{combinedCareContent.introduction}</p>
+          <h2 id="orthopedic-care-heading">How Orthopedic Deformity Care Helps</h2>
+          <p>
+            Care begins with an orthopedic assessment of movement, alignment and function.
+            Treatment is personalised and may include non-operative care, soft-tissue procedures
+            or deformity correction when appropriate.
+          </p>
         </header>
 
         <PathwayCarousel />
@@ -181,7 +186,7 @@ export function CombinedCareSection({ onProcedureFocus }: CombinedCareSectionPro
                     src={card.image}
                     alt={card.imageAlt}
                     width="456"
-                    height={card.id === "neuro" ? "356" : "380"}
+                    height="380"
                     loading="lazy"
                     decoding="async"
                     draggable={false}
@@ -208,44 +213,6 @@ export function CombinedCareSection({ onProcedureFocus }: CombinedCareSectionPro
             );
           })}
         </div>
-
-        <article className="combined-results-card">
-          <div className="combined-results-card__media">
-            <img
-              src={`${assetBase}/pathway-team-collaboration.webp`}
-              alt="Neuro and orthopedic clinicians reviewing a treatment plan together"
-              width="456"
-              height="380"
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-            />
-          </div>
-          <div className="combined-results-card__icon" aria-hidden="true">
-            <Users />
-          </div>
-          <div className="combined-results-card__intro">
-            <h3>Stronger Results, Together</h3>
-            <p>
-              Our neuro and orthopedic specialists collaborate on a personalized plan that addresses
-              the root causes from both sides.
-            </p>
-          </div>
-          <div className="combined-results-card__divider" aria-hidden="true" />
-          <div className="combined-results-card__check" aria-hidden="true">
-            <Check />
-          </div>
-          <div className="combined-results-card__result">
-            <p>
-              Together, these approaches help reduce stiffness, improve alignment and support better
-              long-term function.
-            </p>
-            <a href="#patient-stories">
-              <span>See real patient journeys</span>
-              <ArrowRight aria-hidden="true" />
-            </a>
-          </div>
-        </article>
       </div>
     </section>
   );

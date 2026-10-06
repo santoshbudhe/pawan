@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 195163
+Cache-Control: max-age=3600
+Content-Type: text/javascript; charset=utf-8
+Etag: "bc6dcc0fae9858e3f7a9f2ccd002b445b5c7572eef86b1197fe941517174cb52"
+Last-Modified: Tue, 08 Sep 2026 12:36:18 GMT
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+Accept-Ranges: bytes
+Date: Tue, 08 Sep 2026 12:37:17 GMT
+X-Served-By: cache-bom-vanm7210036-BOM
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1788871037.947495,VS0,VE435
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+

@@ -13,12 +13,10 @@ interface SmfAssetState {
 
 const criticalAssetDocumentIds = [
   "smf_smf-hero-mobile",
-  "smf_smf-hero-desktop",
-  "logos_transparentMainLogo2000px"
+  "smf_smf-hero-desktop"
 ] as const;
 
 const supportingAssetDocumentIds = [
-  "logos_transparentWhiteLogo1600",
   "doctors_pawan"
 ] as const;
 
@@ -37,7 +35,7 @@ function mergeRegistries(primary: AssetRegistry, supporting: AssetRegistry): Ass
 }
 
 export function useSmfAssets(): SmfAssetState {
-  const [registry, setRegistry] = useState<AssetRegistry>();
+  const [registry, setRegistry] = useState<AssetRegistry>(() => assetService.fallback());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>();
 

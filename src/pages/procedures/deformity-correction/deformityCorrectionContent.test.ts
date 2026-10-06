@@ -27,8 +27,8 @@ test("Deformity Correction retains the locked procedure-page section order", () 
     "Medical review",
     "Real Patient Journeys",
     "Frequently asked questions",
-    "Our Specialist Team",
-    "Consultation Locations",
+    "Meet Dr. Pawan",
+    "Consultation Location",
     "Bottom treatment CTA",
     "Footer"
   ]);
@@ -66,6 +66,18 @@ test("renamed, added and removed Deformity sections retain the approved content 
   assert.equal(serialized.includes("Who may need it?"), false);
   assert.equal(serialized.includes("What it may include"), false);
   assert.equal(serialized.includes("What difference it may make"), false);
+});
+
+test("Deformity Correction uses the current individual orthopedic practice identity", () => {
+  const serialized = JSON.stringify(deformityCorrectionContent);
+
+  assert.equal(
+    deformityCorrectionContent.metadata.title,
+    "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani"
+  );
+  assert.equal(deformityCorrectionContent.review.name, "Dr. Pawan Kumar Sadhvani");
+  assert.doesNotMatch(serialized, /Sadwani|Sadhwani|Neuro[- ]?Orthop|neurological assessment/i);
+  assert.match(serialized, /orthopaedic and functional assessment/i);
 });
 
 test("approved Deformity card imagery maps to the four supplied six-image sets", () => {

@@ -72,7 +72,6 @@ export interface SmfPageContent {
     title: string;
     body: string;
     principles: SmfTextItem[];
-    infoNote: string;
   };
   whoMayBenefit: {
     id: string;
@@ -171,8 +170,7 @@ export const smfPageContent: SmfPageContent = {
       { text: "Nerves are made of many tiny fascicles.", icon: "fascicles" },
       { text: "Only the abnormal fascicles are treated.", icon: "scissors" },
       { text: "Useful movement is aimed to be preserved.", icon: "movement" }
-    ],
-    infoNote: "SMF works at the level of peripheral motor nerves and is different from SDR, which works on sensory nerve rootlets in the lower spine."
+    ]
   },
   whoMayBenefit: {
     id: "who-may-benefit",
@@ -336,13 +334,13 @@ export const smfPageContent: SmfPageContent = {
     doctor: {
       name: "Dr. Pawan Kumar Sadhvani",
       qualifications: ["MBBS", "MS (Ortho)", "MCh (Ortho)"],
-      specialty: "Cerebral Palsy, Spasticity & Deformity Correction Specialist",
+      specialty: "Deformity Correction Specialist",
       experience: "20+ years of experience",
       reviewedOn: "18 May 2025"
     }
   },
   footer: {
-    about: "Specialised care for children and adults with spasticity due to cerebral palsy and neurological conditions.",
+    about: "Specialised orthopedic care for deformity, alignment and mobility.",
     quickLinks: ["Home", "About", "Treatments", "Results", "Resources", "Contact"],
     patientResources: ["Patient Stories", "FAQs", "Care Pathways", "Guides & Articles", "Insurance & Costs"],
     legal: ["Privacy Policy", "Terms of Use", "Disclaimer"]

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.drpawans.com/sitemap.xml
+Sitemap: https://pawankumarsadhvani.com/sitemap.xml

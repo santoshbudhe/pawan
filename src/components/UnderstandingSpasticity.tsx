@@ -9,14 +9,14 @@ const assetBase = "/assets/homepage/signs-of-spasticity";
 
 const cards = [
   {
-    title: "Stiff or Tight Muscles",
-    description: "Muscles may feel tight and resist smooth movement.",
+    title: "Persistent Muscle or Tendon Tightness",
+    description: "Tightness may limit smooth joint movement.",
     image: `${assetBase}/signs-spasticity-stiff-tight-muscles.webp`,
     alt: "Clinician examining a child's leg for muscle stiffness"
   },
   {
-    title: "Walking Difficulty",
-    description: "Walking may look awkward, tiring or less stable.",
+    title: "Difficulty Standing or Walking",
+    description: "Standing or walking may become tiring or less stable.",
     image: `${assetBase}/signs-spasticity-walking-difficulty.webp`,
     alt: "Child practising walking between parallel bars with a therapist"
   },
@@ -27,8 +27,8 @@ const cards = [
     alt: "Close-up of a child walking on their toes"
   },
   {
-    title: "Posture or Joint Changes Over Time",
-    description: "Long-term tightness may affect alignment, posture and comfort.",
+    title: "Alignment, Posture or Joint Changes",
+    description: "Changes in limb or joint position may affect movement and comfort.",
     image: `${assetBase}/signs-spasticity-posture-joint-changes.webp`,
     alt: "Clinician assessing a child's standing posture and alignment"
   }
@@ -38,15 +38,15 @@ export function UnderstandingSpasticity() {
   return (
     <section
       className="section-band signs-spasticity-section"
-      id="signs-of-spasticity"
-      aria-labelledby="signs-of-spasticity-title"
+      id="orthopedic-assessment-signs"
+      aria-labelledby="orthopedic-assessment-signs-title"
     >
       <div className="container">
         <header className="signs-spasticity-heading">
-          <h2 id="signs-of-spasticity-title">Signs of Spasticity</h2>
+          <h2 id="orthopedic-assessment-signs-title">Signs That May Need Orthopedic Assessment</h2>
           <p>
-            These are some common signs families may notice. Similar symptoms can have different
-            causes, so a clinical assessment is important.
+            These signs can have different causes. An orthopedic assessment can help clarify the
+            underlying musculoskeletal concern.
           </p>
         </header>
         <div className="signs-spasticity-grid">

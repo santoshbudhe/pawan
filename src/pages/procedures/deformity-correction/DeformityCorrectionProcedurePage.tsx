@@ -14,8 +14,7 @@ import {
   TriangleAlert
 } from "lucide-react";
 import { ComponentType, SVGProps, useEffect } from "react";
-import mainLogo from "../../../../assets/logos/transparentMainLogo2000px.png";
-import footerLogo from "../../../../assets/logos/transparentWhiteLogo1600.png";
+import brandLogo from "../../../../assets/logos/dr-pawan-logo.jpg";
 import reviewerPortrait from "../../../../assets/doctors/pawan.png";
 import deformityImage from "../../../../assets/procedures/deformityCorrection.jpg";
 import {
@@ -33,6 +32,7 @@ import { SmfHeader } from "../../../components/smf/SmfHeader";
 import { SmfSectionHeading } from "../../../components/smf/SmfSectionHeading";
 import { SuccessStoryCarousel } from "../../../components/success-stories/SuccessStoryCarousel";
 import { getProcedureWhatsAppUrl } from "../../../content/contactDetails";
+import { siteConfig } from "../../../content/siteConfig";
 import { deformityCorrectionFaqs } from "../../../content/procedureFaqs";
 import { getStoriesForProcedure } from "../../../data/successStories.database";
 import { AssetRegistry } from "../../../services/assetService";
@@ -43,7 +43,7 @@ import {
 import "../../../smf.css";
 import "./deformityCorrectionPage.css";
 
-const SITE_ORIGIN = "https://www.drpawans.com";
+const SITE_ORIGIN = siteConfig.siteUrl;
 const PENDING_IMAGE_BADGE = "Image pending";
 
 const iconMap: Record<DcsIconName, ComponentType<SVGProps<SVGSVGElement>>> = {
@@ -63,8 +63,8 @@ const iconMap: Record<DcsIconName, ComponentType<SVGProps<SVGSVGElement>>> = {
 
 const localSharedAssets: AssetRegistry = {
   logos: {
-    transparentMainLogo: { url: mainLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentMainLogo2000px.png" },
-    footer: { url: footerLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentWhiteLogo1600.png" }
+    transparentMainLogo: { url: brandLogo, alt: siteConfig.logoAlt, storagePath: "assets/logos/dr-pawan-logo.jpg" },
+    footer: { url: brandLogo, alt: siteConfig.logoAlt, storagePath: "assets/logos/dr-pawan-logo.jpg" }
   },
   hero: {}, doctors: {}, procedures: {}, whoWeHelp: {}, trustedFamilies: {}, patientStories: {}, hospitals: {}, smf: {}
 };
@@ -74,13 +74,13 @@ function DcsIcon({ name }: { name: DcsIconName }) {
   return <Icon aria-hidden="true" />;
 }
 
-function setMeta(name: string, contentValue: string) {
-  let meta = document.head.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
+function setMeta(name: string, contentValue: string, attribute: "name" | "property" = "name") {
+  let meta = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`);
   const created = !meta;
   const previous = meta?.content;
   if (!meta) {
     meta = document.createElement("meta");
-    meta.name = name;
+    meta.setAttribute(attribute, name);
     document.head.appendChild(meta);
   }
   meta.content = contentValue;
@@ -106,7 +106,12 @@ function useDcsDocumentState() {
     document.title = content.metadata.title;
     const restore = [
       setMeta("description", content.metadata.description),
-      setMeta("robots", "index,follow,max-image-preview:large,max-snippet:-1")
+      setMeta("robots", "index,follow,max-image-preview:large,max-snippet:-1"),
+      setMeta("og:title", content.metadata.title, "property"),
+      setMeta("og:description", content.metadata.description, "property"),
+      setMeta("og:url", canonicalUrl, "property"),
+      setMeta("twitter:title", content.metadata.title),
+      setMeta("twitter:description", content.metadata.description)
     ];
     requestAnimationFrame(() => {
       if (window.location.hash) document.querySelector<HTMLElement>(window.location.hash)?.scrollIntoView({ block: "start" });
@@ -532,7 +537,7 @@ export function DeformityCorrectionProcedurePage() {
         <ProcedureFAQ items={deformityCorrectionFaqs} />
         <ProcedureClosingSections />
       </main>
-      <FloatingWhatsApp href={whatsappHref} ariaLabel={`Chat with our team on WhatsApp about ${content.hero.title}`} />
+      <FloatingWhatsApp href={whatsappHref} ariaLabel={`Enquire about ${content.hero.title} with ${siteConfig.doctorName}`} />
       <SiteFooter assets={localSharedAssets} />
     </div>
   );

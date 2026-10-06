@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import type { SyntheticEvent } from "react";
+import desktopHeroPoster from "../../assets/hero/desktopHeroBanner.png";
+import mobileHeroPoster from "../../assets/hero/mobileHeroBanner.png";
 import type { Asset } from "../services/assetService";
 
 const HOMEPAGE_HERO_VIDEO = "/assets/home/hero/1000105145.mp4";
@@ -22,8 +24,8 @@ export function HomepageHeroMedia({ desktopHero, mobileHero }: HomepageHeroMedia
   );
   const [videoUnavailable, setVideoUnavailable] = useState(false);
 
-  const desktopPoster = desktopHero?.url ?? mobileHero?.url;
-  const mobilePoster = mobileHero?.url ?? desktopHero?.url;
+  const desktopPoster = desktopHero?.url ?? desktopHeroPoster;
+  const mobilePoster = mobileHero?.url ?? mobileHeroPoster;
   const activePoster = isMobile ? mobilePoster : desktopPoster;
   const showVideo = !prefersReducedMotion && !videoUnavailable;
 

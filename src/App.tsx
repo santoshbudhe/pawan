@@ -1,6 +1,6 @@
-import { Menu, Phone, ShieldCheck, Star } from "lucide-react";
+import { Menu, Phone, ShieldCheck, Star, X } from "lucide-react";
 import { motion } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { type KeyboardEvent, useCallback, useEffect, useId, useRef, useState } from "react";
 import { AssessmentJourney } from "./components/AssessmentJourney";
 import { CarouselFrame } from "./components/CarouselFrame";
 import { CombinedCareSection, ProcedureFocusKey } from "./components/CombinedCareSection";
@@ -19,15 +19,15 @@ import {
   SpecialistTeam,
   TreatmentContactBanner
 } from "./components/SiteClosingSections";
-import { SpasticityExplainer } from "./components/SpasticityExplainer";
 import { SuccessStoryCarousel } from "./components/success-stories/SuccessStoryCarousel";
 import { UnderstandingSpasticity } from "./components/UnderstandingSpasticity";
 import { WhatsAppIcon } from "./components/WhatsAppIcon";
 import { contactDetails } from "./content/contactDetails";
+import { siteConfig } from "./content/siteConfig";
 import { getPreviewHomepageStories } from "./data/successStories.database";
 import { useHomepageData } from "./hooks/useHomepageData";
 import { handleInternalLinkClick, scrollToCurrentLocation } from "./lib/navigation";
-import { Asset, AssetRegistry } from "./services/assetService";
+import { assetService, Asset, AssetRegistry } from "./services/assetService";
 import { FeatureItem, HomepageContent, ImageCardContent, ProcedureContent } from "./services/homepageService";
 
 const fadeUp = {
@@ -41,86 +41,186 @@ function assetUrl(asset?: Asset): string | undefined {
   return asset?.url;
 }
 
-function MissingAsset({ id }: { id: string }) {
-  return (
-    <div className="missing-asset" role="alert">
-      Missing Firebase asset: {id}
-    </div>
-  );
-}
+const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 function Header({ assets }: { assets?: AssetRegistry }) {
-  const nav = ["Home", "About", "Conditions", "Treatments", "For Families", "Locations", "Resources"];
-  const dropdownItems = new Set(["Conditions", "Treatments", "For Families", "Resources"]);
-  const logo = assets?.logos.transparentMainLogo ?? assets?.logos.primary;
+  const [open, setOpen] = useState(false);
+  const drawerId = useId();
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const logo = assets?.logos.transparentMainLogo ?? assets?.logos.primary ?? assetService.fallback().logos.primary;
+
+  useEffect(() => {
+    const closeOnNavigation = () => setOpen(false);
+    window.addEventListener("popstate", closeOnNavigation);
+    return () => window.removeEventListener("popstate", closeOnNavigation);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : undefined;
+    document.body.style.overflow = "hidden";
+    drawerRef.current?.querySelector<HTMLElement>(focusableSelector)?.focus();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      (previousFocus ?? triggerRef.current)?.focus();
+    };
+  }, [open]);
+
+  const handleDrawerKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      setOpen(false);
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusable = Array.from(drawerRef.current?.querySelectorAll<HTMLElement>(focusableSelector) ?? []);
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
   return (
-    <header className="site-header">
-      <a className="skip-link" href="#main">Skip to content</a>
-      <div className="container header-inner">
-        <a className="brand" href="/" aria-label="Dr. Pawan Kumar Sadhvani home">
-          {assetUrl(logo) ? <img src={logo?.url} alt="Dr. Pawan Kumar Sadhvani logo" /> : assets ? <MissingAsset id="logos_transparentMainLogo" /> : null}
-        </a>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {nav.map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} aria-current={item === "Home" ? "page" : undefined}>
-              {item}
-              {dropdownItems.has(item) ? <Icon name="ChevronDown" /> : null}
+    <>
+      <header className="site-header">
+        <a className="skip-link" href="#main">Skip to content</a>
+        <div className="container header-inner">
+          <a
+            className="brand"
+            href="/"
+            aria-label={`${siteConfig.doctorName} home`}
+            onClick={(event) => handleInternalLinkClick(event, "/")}
+          >
+            <img src={logo?.url} alt={siteConfig.logoAlt} width="1280" height="427" />
+          </a>
+          <nav className="desktop-nav" aria-label="Primary navigation">
+            {siteConfig.navigation.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                aria-current={item.href === "/" ? "page" : undefined}
+                onClick={(event) => handleInternalLinkClick(event, item.href)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <a
+            className="btn btn-primary header-cta header-call-link"
+            href={contactDetails.phoneHref}
+            aria-label={`Call ${siteConfig.doctorName}`}
+          >
+            <Phone aria-hidden="true" />
+            <span>Call Now</span>
+          </a>
+          <button
+            ref={triggerRef}
+            className="menu-button"
+            type="button"
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            aria-controls={drawerId}
+            onClick={() => setOpen((current) => !current)}
+          >
+            <Menu aria-hidden="true" />
+          </button>
+        </div>
+      </header>
+
+      {open ? (
+        <div className="home-drawer-layer" role="presentation" onMouseDown={() => setOpen(false)}>
+          <div
+            id={drawerId}
+            ref={drawerRef}
+            className="home-nav-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            onKeyDown={handleDrawerKeyDown}
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <div className="home-drawer-header">
+              <strong>Menu</strong>
+              <button type="button" aria-label="Close navigation" onClick={() => setOpen(false)}>
+                <X aria-hidden="true" />
+              </button>
+            </div>
+            <nav aria-label="Mobile navigation">
+              {siteConfig.navigation.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(event) => {
+                    setOpen(false);
+                    handleInternalLinkClick(event, item.href);
+                  }}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <a
+              className="btn btn-primary home-drawer-cta"
+              href={contactDetails.phoneHref}
+              aria-label={`Call ${siteConfig.doctorName}`}
+            >
+              <Phone aria-hidden="true" />
+              <span>Call Now</span>
             </a>
-          ))}
-        </nav>
-        <a
-          className="btn btn-primary header-cta header-call-link"
-          href={contactDetails.phoneHref}
-          aria-label="Call Dr. Pawan Kumar Sadhvani"
-        >
-          <Phone aria-hidden="true" />
-          <span>Call Now</span>
-        </a>
-        <button className="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
-          <Menu aria-hidden="true" />
-        </button>
-      </div>
-    </header>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
 
 function Hero({ content, assets }: { content: HomepageContent; assets?: AssetRegistry }) {
-  const desktopHero = assets?.hero.desktopHeroBanner ?? assets?.hero.desktop;
-  const mobileHero = assets?.hero.mobileHeroBanner ?? assets?.hero.mobile;
   const families = (Object.values(assets?.trustedFamilies ?? {}).filter(Boolean) as Asset[])
     .sort((a, b) => a.storagePath.localeCompare(b.storagePath));
   const familyCount = content.trustStats[0].replace(/^Trusted by\s*/i, "");
   const [rating, ...reviewWords] = content.trustStats[1].split(" ");
   const heroDescriptionLines = [
-    "Compassionate, expert care for children",
-    "and adults with cerebral palsy,",
-    "stroke-related spasticity, and other",
-    "neurological conditions \u2014 helping",
-    "you move better, live easier,",
-    "and stay independent."
+    "Orthopedic evaluation and personalised",
+    "treatment for children and adults with",
+    "limb deformity, joint contracture,",
+    "gait difficulty and other",
+    "musculoskeletal conditions."
   ];
 
   return (
-    <section className="hero section-band">
+    <section className="hero section-band" id="home">
       <div className="container hero-grid">
         <motion.div className="hero-composite" {...fadeUp}>
-          {assetUrl(desktopHero) || assetUrl(mobileHero) ? (
-            <HomepageHeroMedia desktopHero={desktopHero} mobileHero={mobileHero} />
-          ) : assets ? (
-            <MissingAsset id="hero_mobileHeroBanner" />
-          ) : null}
+          <HomepageHeroMedia />
         </motion.div>
         <motion.div className="hero-copy" {...fadeUp}>
           <p className="eyebrow">{content.hero.eyebrow}</p>
           <h1 aria-label={content.hero.heading}>
-            <span>Specialised Care for</span>
-            <span>Spasticity,</span>
-            <span>Movement</span>
-            <span>Difficulty &</span>
-            <span>Deformity</span>
+            <span>Specialised Care for </span>
+            <span>Deformity, </span>
+            <span>Alignment </span>
+            <span>&amp; Movement</span>
           </h1>
           <p className="hero-description" aria-label={content.hero.description}>
-            {heroDescriptionLines.map((line) => <span key={line}>{line}</span>)}
+            {heroDescriptionLines.map((line, index) => (
+              <span key={line}>
+                {line}
+                {index < heroDescriptionLines.length - 1 ? " " : null}
+              </span>
+            ))}
           </p>
           <div className="hero-contact-actions">
             <a
@@ -128,14 +228,14 @@ function Hero({ content, assets }: { content: HomepageContent; assets?: AssetReg
               href={contactDetails.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Chat with our team on WhatsApp"
+              aria-label={`Chat with ${siteConfig.doctorName}'s practice on WhatsApp`}
             >
               <WhatsAppIcon />
               <span>WhatsApp Us</span>
             </a>
             <p className="hero-contact-note">
               <ShieldCheck aria-hidden="true" />
-              <span>Share videos, reports or questions directly with our team.</span>
+              <span>Share reports or questions before your consultation.</span>
             </p>
           </div>
         </motion.div>
@@ -146,12 +246,10 @@ function Hero({ content, assets }: { content: HomepageContent; assets?: AssetReg
                 families.slice(0, 5).map((asset) => (
                   <img key={asset.storagePath} src={asset.url} alt="" loading="lazy" decoding="async" />
                 ))
-              ) : assets ? (
-                <MissingAsset id="trust_*" />
               ) : null}
             </div>
             <strong className="hero-trust-copy">
-              <span>Trusted by</span>
+              <span>Trusted by </span>
               <span>{familyCount}</span>
             </strong>
           </div>
@@ -182,17 +280,15 @@ function TrustStrip({ content, assets }: { content: HomepageContent; assets?: As
             families.slice(0, 5).map((asset) => (
               <img key={asset.storagePath} src={asset.url} alt="" loading="lazy" decoding="async" />
             ))
-          ) : assets ? (
-            <MissingAsset id="trust_*" />
           ) : null}
         </div>
-        <strong className="trust-copy"><span>Trusted by</span><span>{familyCount}</span></strong>
+        <strong className="trust-copy"><span>Trusted by </span><span>{familyCount}</span></strong>
         <div className="stars" aria-label="Five star rating">
           {Array.from({ length: 5 }).map((_, index) => (
             <Star key={index} fill="currentColor" aria-hidden="true" />
           ))}
         </div>
-        <strong className="trust-review"><span>{rating}</span><small>({reviewWords.join(" ")})</small></strong>
+        <strong className="trust-review"><span>{rating} </span><small>({reviewWords.join(" ")})</small></strong>
       </div>
     </section>
   );
@@ -272,30 +368,30 @@ function Procedures({
   highlightedProcedureKeys: ProcedureFocusKey[];
 }) {
   const procedureRoutes: Record<string, string> = {
-    sdr: "/procedures/selective-dorsal-rhizotomy",
     smf: "/procedures/selective-motor-fasciculotomy",
     tendonMuscle: "/procedures/tendon-muscle-procedures",
     deformityCorrection: "/procedures/deformity-correction-surgery"
   };
   const procedureCardIds: Record<string, string> = {
-    sdr: "procedure-sdr",
     smf: "procedure-smf",
     tendonMuscle: "procedure-tendon-muscle",
     deformityCorrection: "procedure-deformity-correction"
   };
-  const cards: StandardCarouselCard[] = items.map((item) => ({
-    id: item.assetKey,
-    image: assetUrl(assets?.procedures[item.assetKey]) ?? "",
-    imageAlt: item.title,
-    icon: item.icon ? <Icon name={item.icon} /> : undefined,
-    title: item.title,
-    description: item.description,
-    href: procedureRoutes[item.assetKey],
-    ctaLabel: "View procedure",
-    ariaLabel: `View ${item.title}`,
-    elementId: procedureCardIds[item.assetKey],
-    highlighted: highlightedProcedureKeys.includes(item.assetKey as ProcedureFocusKey)
-  }));
+  const cards: StandardCarouselCard[] = items
+    .filter((item) => item.assetKey !== "sdr")
+    .map((item) => ({
+      id: item.assetKey,
+      image: assetUrl(assets?.procedures[item.assetKey]) ?? "",
+      imageAlt: item.title,
+      icon: item.icon ? <Icon name={item.icon} /> : undefined,
+      title: item.title,
+      description: item.description,
+      href: procedureRoutes[item.assetKey],
+      ctaLabel: "View procedure",
+      ariaLabel: `View ${item.title}`,
+      elementId: procedureCardIds[item.assetKey],
+      highlighted: highlightedProcedureKeys.includes(item.assetKey as ProcedureFocusKey)
+    }));
 
   return (
     <div id="procedures" className="section-anchor">
@@ -337,12 +433,13 @@ function StructuredData() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    name: "Dr. Pawan Kumar Sadhvani",
-    medicalSpecialty: "Neuro-Orthopaedic Spasticity Care",
+    name: siteConfig.doctorName,
+    url: `${siteConfig.siteUrl}/`,
+    description: `${siteConfig.doctorTitle} providing ${siteConfig.practiceFocus.toLowerCase()} in Hyderabad.`,
+    medicalSpecialty: "Orthopedic",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Hyderabad",
-      addressCountry: "IN"
+      ...siteConfig.address
     }
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
@@ -382,7 +479,6 @@ function Homepage() {
       document.getElementById("procedures")?.scrollIntoView({ behavior, block: "start" });
 
       const targetCard = document.getElementById({
-        sdr: "procedure-sdr",
         smf: "procedure-smf",
         tendonMuscle: "procedure-tendon-muscle",
         deformityCorrection: "procedure-deformity-correction"
@@ -408,7 +504,6 @@ function Homepage() {
         {error ? <p className="sr-only" role="status">{error}</p> : null}
         <Hero content={content} assets={assets} />
         <TrustStrip content={content} assets={assets} />
-        <SpasticityExplainer />
         <FeatureGrid items={content.whyChooseUs} />
         <ImageCards title="Who We Help" items={content.whoWeHelp} assets={assets} id="conditions" />
         <UnderstandingSpasticity />
@@ -420,8 +515,8 @@ function Homepage() {
         />
         <CombinedCareSection onProcedureFocus={handleProcedureFocus} />
         <Goals items={content.treatmentGoals} />
-        <SpecialistTeam content={content} assets={assets} />
-        <ConsultationLocations content={content} assets={assets} />
+        <SpecialistTeam assets={assets} />
+        <ConsultationLocations />
         <SuccessStoryCarousel
           stories={getPreviewHomepageStories()}
           title="Real Success Stories"

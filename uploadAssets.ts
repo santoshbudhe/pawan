@@ -89,6 +89,24 @@ const DEFAULT_ASSETS_FOLDER =
 const DEFAULT_CREDENTIALS =
     "./credentials/serviceAccountKey.json";
 
+const RETIRED_PUBLIC_ASSET_PATHS = new Set([
+    "doctors/harry.png",
+    "doctors/purohit.png",
+    "hero/desktopHeroBanner.png",
+    "hero/mobileHeroBanner.png",
+    "hospitals/asterPrimeHospital.jpg",
+    "hospitals/yashodaHospital.jpg",
+    "logos/transparentMainLogo2000px.png",
+    "logos/transparentWhiteLogo1600.png",
+    "procedures/sdr.jpg",
+    "who-we-help/who4.jpg"
+].map((assetPath) => assetPath.toLowerCase()));
+
+function isRetiredPublicAssetPath(relativePath: string): boolean {
+    const normalizedPath = relativePath.toLowerCase();
+    return RETIRED_PUBLIC_ASSET_PATHS.has(normalizedPath) || normalizedPath.startsWith("procedures/sdr/");
+}
+
 /**************************************************************************************************
  * SECTION 04
  * TYPES
@@ -500,6 +518,10 @@ async function discoverAssets(): Promise<AssetFile[]> {
         const relativePath = normalizePath(
             path.relative(config.assetsFolder, absolutePath)
         );
+
+        if (isRetiredPublicAssetPath(relativePath)) {
+            continue;
+        }
 
         const stat = fs.statSync(absolutePath);
 

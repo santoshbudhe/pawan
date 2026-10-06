@@ -8,6 +8,7 @@ import {
   UserRound
 } from "lucide-react";
 import { useEffect } from "react";
+import { siteConfig } from "../../content/siteConfig";
 import {
   StandaloneSuccessStory,
   successStoryProcedureLabels
@@ -36,10 +37,39 @@ function getJourneyHeading(gender?: StandaloneSuccessStory["gender"]): string {
 export function SuccessStoryPage({ story, relatedStories }: SuccessStoryPageProps) {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = `${story.title} | Dr. Pawan Kumar Sadhvani`;
+    const title = `${story.title} | ${siteConfig.doctorName}`;
+    const canonicalUrl = `${siteConfig.siteUrl}/success-stories/${story.slug}`;
+    document.title = title;
+    const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const previousCanonical = canonical?.href;
+    if (canonical) canonical.href = canonicalUrl;
+    const restoreMetadata = [
+      ["name", "description", story.introSummary],
+      ["property", "og:title", title],
+      ["property", "og:description", story.introSummary],
+      ["property", "og:url", canonicalUrl],
+      ["name", "twitter:title", title],
+      ["name", "twitter:description", story.introSummary]
+    ].map(([attribute, key, value]) => {
+      let meta = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
+      const previous = meta?.content;
+      const created = !meta;
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute(attribute, key);
+        document.head.appendChild(meta);
+      }
+      meta.content = value;
+      return () => {
+        if (created) meta?.remove();
+        else if (meta && previous !== undefined) meta.content = previous;
+      };
+    });
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {
       document.title = previousTitle;
+      if (canonical && previousCanonical) canonical.href = previousCanonical;
+      restoreMetadata.forEach((cleanup) => cleanup());
     };
   }, [story]);
 

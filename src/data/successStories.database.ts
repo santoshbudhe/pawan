@@ -1,12 +1,11 @@
 /**
- * Local database for the five doctor-confirmed and approved patient stories.
+ * Local database for the four current public patient stories.
  *
  * Keep the supplied video filenames unchanged. Patient image fields remain
  * null until the approved image batches are added.
  */
 
 export type ProcedureId =
-  | "sdr"
   | "smf"
   | "tendon-muscle"
   | "deformity-correction";
@@ -51,34 +50,6 @@ export const successStoriesData: SuccessStoriesDatabase = {
   schemaVersion: 1,
   stories: [
     {
-      id: "patient-01-combined-sdr-orthopaedic",
-      slug: "closer-to-his-dream-after-combined-treatment",
-      title: "Closer to His Dream of Playing and Moving Freely",
-      procedures: ["sdr", "tendon-muscle", "deformity-correction"],
-      age: 13,
-      gender: "male",
-      treatmentDate: "2026-03-17",
-      treatmentYear: 2026,
-      videoFilename: "SDR_patient_story_rough_cut.mp4",
-      videoUrl: "/assets/success-stories/SDR_patient_story_rough_cut.mp4",
-      videoStoragePath: "stories/Patient_1_SDR_Success_Story_Final.mp4",
-      videoDurationSeconds: 38.988,
-      beforeImageUrl: "/assets/success-stories/patient-01/patient-01-before.jpg",
-      afterImageUrl: "/assets/success-stories/patient-01/patient-01-after.jpg",
-      thumbnailUrl: "/assets/success-stories/patient-01/patient-01-thumbnail.jpg",
-      introSummary: "A sports-loving 13-year-old boy with cerebral palsy had severe knee contractures and walked in a crouched, bent-knee position. Combined neurological and orthopaedic treatment helped him move more comfortably and progress toward a more active childhood.",
-      condition: "Cerebral palsy affecting both lower limbs, with severe knee-flexion contractures of approximately 30 degrees. His knees remained bent during walking, causing marked crouch gait and considerable difficulty with mobility.",
-      treatment: "Selective Dorsal Rhizotomy, bilateral hamstring lengthening and bilateral patellar tendon plication were performed as a combined neuro-orthopaedic treatment on 17 March 2026.",
-      result: "Post-treatment footage shows encouraging functional progress, including more comfortable movement and improved ability to manage steps.",
-      journey: "He was born prematurely, required ventilator support and had delayed developmental milestones. As he grew, severe lower-limb spasticity and knee contractures made walking difficult and kept him in a crouched position. He loves sport and wants to take part more freely in everyday childhood activities. Following combined SDR and orthopaedic correction, the later footage shows him managing steps more comfortably and moving closer to that goal.",
-      testimonialVideoUrl: null,
-      testimonialQuote: null,
-      testimonialAttribution: null,
-      guardianApproved: true,
-      published: true,
-      displayOrder: 1
-    },
-    {
       id: "patient-02-crouch-gait",
       slug: "from-crouch-gait-to-straighter-steps",
       title: "From Crouch Gait to Straighter, More Comfortable Steps",
@@ -93,17 +64,17 @@ export const successStoriesData: SuccessStoriesDatabase = {
       beforeImageUrl: "/assets/success-stories/patient-02/patient-02-before.jpg",
       afterImageUrl: "/assets/success-stories/patient-02/patient-02-after.jpg",
       thumbnailUrl: "/assets/success-stories/patient-02/patient-02-thumbnail.jpg",
-      introSummary: "A 14-year-old boy who had undergone SDR years earlier later developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking.",
+      introSummary: "A 14-year-old boy developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking.",
       condition: "Recurrent hamstring tightness with crouch gait and persistent knee flexion during walking. The bent-knee posture made walking difficult and painful.",
       treatment: "In October 2024, he underwent bilateral hamstring lengthening together with bilateral corrective surgery involving the tibial tuberosity and knee-extensor mechanism.",
       result: "The postoperative footage shows reduced knee bending, straighter knee positioning and more comfortable walking.",
-      journey: "He had undergone Selective Dorsal Rhizotomy several years earlier. As he grew, the hamstrings and surrounding leg muscles became tight, causing the knees to remain bent while walking. This led to pain and difficulty with mobility. After bilateral hamstring lengthening and corrective surgery for both knees in October 2024, he is seen walking with a straighter knee position and less crouching.",
+      journey: "As he grew, the hamstrings and surrounding leg muscles became tight, causing the knees to remain bent while walking. This led to pain and difficulty with mobility. After bilateral hamstring lengthening and corrective surgery for both knees in October 2024, he is seen walking with a straighter knee position and less crouching.",
       testimonialVideoUrl: null,
       testimonialQuote: null,
       testimonialAttribution: null,
       guardianApproved: true,
       published: true,
-      displayOrder: 2
+      displayOrder: 1
     },
     {
       id: "patient-03-smf-right-thumb",
@@ -122,13 +93,13 @@ export const successStoriesData: SuccessStoriesDatabase = {
       condition: "Right upper-limb spasticity with the wrist and hand moving into flexion during use. Limited thumb abduction and hand opening made it difficult to grasp and hold objects effectively.",
       treatment: "Right upper-limb Selective Motor Fasciculotomy was performed to reduce harmful spasticity while preserving useful movement.",
       result: "After treatment, he demonstrated improved grasp, better thumb abduction and improved wrist extension. In the video, he holds a chocolate with the right hand and briefly produces a thumbs-up.",
-      journey: "He had previously undergone SDR for lower-limb spasticity, but the right upper limb continued to remain functionally limited. Before SMF, the hand moved into flexion and he struggled to hold objects. Following right upper-limb SMF, the postoperative footage shows the thumb participating more actively in grasp, improved wrist positioning and better control of the right hand.",
+      journey: "The right upper limb remained functionally limited. Before SMF, the hand moved into flexion and he struggled to hold objects. Following right upper-limb SMF, the postoperative footage shows the thumb participating more actively in grasp, improved wrist positioning and better control of the right hand.",
       testimonialVideoUrl: null,
       testimonialQuote: null,
       testimonialAttribution: null,
       guardianApproved: true,
       published: true,
-      displayOrder: 3
+      displayOrder: 2
     },
     {
       id: "patient-04-smf-right-arm",
@@ -154,7 +125,7 @@ export const successStoriesData: SuccessStoriesDatabase = {
       testimonialAttribution: null,
       guardianApproved: true,
       published: true,
-      displayOrder: 4
+      displayOrder: 3
     },
     {
       id: "patient-05-smf-left-hand",
@@ -179,7 +150,7 @@ export const successStoriesData: SuccessStoriesDatabase = {
       testimonialAttribution: null,
       guardianApproved: true,
       published: true,
-      displayOrder: 5
+      displayOrder: 4
     }
   ]
 };
@@ -229,14 +200,12 @@ export type StandaloneSuccessStory = {
 };
 
 export const successStoryProcedureLabels: Record<SuccessStoryProcedure, string> = {
-  sdr: "Selective Dorsal Rhizotomy (SDR)",
   smf: "Selective Motor Fasciculotomy (SMF)",
   "tendon-muscle": "Tendon & Muscle Procedures",
   "deformity-correction": "Deformity Correction Surgery"
 };
 
 export const successStoryProcedureCardLabels: Record<SuccessStoryProcedure, string> = {
-  sdr: "SDR",
   smf: "SMF",
   "tendon-muscle": "Tendon & Muscle",
   "deformity-correction": "Deformity Correction"

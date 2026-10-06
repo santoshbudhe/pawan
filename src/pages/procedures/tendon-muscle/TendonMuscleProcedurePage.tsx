@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import mainLogo from "../../../../assets/logos/transparentMainLogo2000px.png";
-import footerLogo from "../../../../assets/logos/transparentWhiteLogo1600.png";
+import brandLogo from "../../../../assets/logos/dr-pawan-logo.jpg";
 import { TendonMuscleHero } from "../../../components/procedures/tendon-muscle/TendonMuscleHero";
 import { TendonMusclePartOne } from "../../../components/procedures/tendon-muscle/TendonMusclePartOne";
 import { TendonMusclePartTwo } from "../../../components/procedures/tendon-muscle/TendonMusclePartTwo";
@@ -8,17 +7,18 @@ import { FloatingWhatsApp } from "../../../components/FloatingWhatsApp";
 import { ProcedureClosingSections, SiteFooter } from "../../../components/SiteClosingSections";
 import { SmfHeader } from "../../../components/smf/SmfHeader";
 import { getProcedureWhatsAppUrl } from "../../../content/contactDetails";
+import { siteConfig } from "../../../content/siteConfig";
 import { AssetRegistry } from "../../../services/assetService";
 import { tendonMusclePageContent } from "./tendonMuscleContent";
 import "../../../smf.css";
 import "./tendonMusclePage.css";
 
-const SITE_ORIGIN = "https://www.drpawans.com";
+const SITE_ORIGIN = siteConfig.siteUrl;
 
 const localSharedAssets: AssetRegistry = {
   logos: {
-    transparentMainLogo: { url: mainLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentMainLogo2000px.png" },
-    footer: { url: footerLogo, alt: "Dr. Pawan Kumar Sadhvani", storagePath: "assets/logos/transparentWhiteLogo1600.png" }
+    transparentMainLogo: { url: brandLogo, alt: siteConfig.logoAlt, storagePath: "assets/logos/dr-pawan-logo.jpg" },
+    footer: { url: brandLogo, alt: siteConfig.logoAlt, storagePath: "assets/logos/dr-pawan-logo.jpg" }
   },
   hero: {},
   doctors: {},
@@ -71,7 +71,7 @@ function useTendonMuscleDocumentState() {
       setMeta('meta[property="og:title"]', "property", "og:title", "Tendon & Muscle Procedures"),
       setMeta('meta[property="og:description"]', "property", "og:description", metadata.description),
       setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl),
-      setMeta('meta[property="og:site_name"]', "property", "og:site_name", "Dr. Pawan Kumar Sadhvani"),
+      setMeta('meta[property="og:site_name"]', "property", "og:site_name", siteConfig.doctorName),
       setMeta('meta[property="og:locale"]', "property", "og:locale", "en_IN"),
       setMeta('meta[property="og:image"]', "property", "og:image", `${SITE_ORIGIN}${tendonMusclePageContent.hero.desktopAsset}`),
       setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image"),
@@ -120,7 +120,7 @@ function TendonMuscleStructuredData() {
       "@context": "https://schema.org",
       "@type": "MedicalWebPage",
       name: "Tendon & Muscle Procedures",
-      headline: "Tendon & Muscle Procedures for Spasticity and Contractures",
+      headline: "Tendon & Muscle Procedures for Tightness and Contractures",
       description: tendonMusclePageContent.metadata.description,
       url: canonicalUrl,
       inLanguage: "en-IN",
@@ -168,7 +168,7 @@ export function TendonMuscleProcedurePage() {
       </main>
       <FloatingWhatsApp
         href={procedureWhatsAppHref}
-        ariaLabel={`Chat with our team on WhatsApp about ${procedureName}`}
+        ariaLabel={`Enquire about ${procedureName} with ${siteConfig.doctorName}`}
       />
       <SiteFooter assets={localSharedAssets} />
     </div>

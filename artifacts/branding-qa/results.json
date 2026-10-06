@@ -1,0 +1,2546 @@
+{
+  "baseUrl": "https://pawankumarsadhvani.com",
+  "publicDomain": "https://pawankumarsadhvani.com",
+  "doctorName": "Dr. Pawan Kumar Sadhvani",
+  "passed": false,
+  "scenarios": [
+    {
+      "name": "home",
+      "path": "/",
+      "footer": true,
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad",
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "canonical": "https://pawankumarsadhvani.com/",
+        "openGraphUrl": "https://pawankumarsadhvani.com/",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad"
+          },
+          {
+            "key": "og:description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          }
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalClinic",
+            "name": "Dr. Pawan Kumar Sadhvani",
+            "url": "https://pawankumarsadhvani.com/",
+            "description": "Deformity Correction Specialist providing orthopedics & deformity correction in Hyderabad.",
+            "medicalSpecialty": "Orthopedic",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "PG Road, Jogani, Ramgopalpet",
+              "addressLocality": "Secunderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500003",
+              "addressCountry": "IN"
+            }
+          }
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 191.921875,
+          "height": 64.015625,
+          "left": 16,
+          "right": 207.921875,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "footer": true,
+      "width": 820,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 820,
+        "scrollWidth": 820,
+        "title": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad",
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "canonical": "https://pawankumarsadhvani.com/",
+        "openGraphUrl": "https://pawankumarsadhvani.com/",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad"
+          },
+          {
+            "key": "og:description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          }
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalClinic",
+            "name": "Dr. Pawan Kumar Sadhvani",
+            "url": "https://pawankumarsadhvani.com/",
+            "description": "Deformity Correction Specialist providing orthopedics & deformity correction in Hyderabad.",
+            "medicalSpecialty": "Orthopedic",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "PG Road, Jogani, Ramgopalpet",
+              "addressLocality": "Secunderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500003",
+              "addressCountry": "IN"
+            }
+          }
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 292,
+          "height": 72,
+          "left": 48,
+          "right": 340,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "footer": true,
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad",
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "canonical": "https://pawankumarsadhvani.com/",
+        "openGraphUrl": "https://pawankumarsadhvani.com/",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad"
+          },
+          {
+            "key": "og:description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Dr. Pawan Kumar Sadhvani | Deformity Correction Specialist, Hyderabad"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Orthopedic assessment and personalised care for deformity correction, contractures, limb and joint alignment, gait and mobility in Hyderabad."
+          }
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalClinic",
+            "name": "Dr. Pawan Kumar Sadhvani",
+            "url": "https://pawankumarsadhvani.com/",
+            "description": "Deformity Correction Specialist providing orthopedics & deformity correction in Hyderabad.",
+            "medicalSpecialty": "Orthopedic",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "PG Road, Jogani, Ramgopalpet",
+              "addressLocality": "Secunderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500003",
+              "addressCountry": "IN"
+            }
+          }
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 250,
+          "height": 80,
+          "left": 80,
+          "right": 330,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "smf",
+      "path": "/procedures/selective-motor-fasciculotomy",
+      "footer": true,
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani",
+        "h1": "Selective MotorFasciculotomy (SMF)",
+        "canonical": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy",
+        "openGraphUrl": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks."
+          }
+        ],
+        "schemas": [
+          [
+            {
+              "@context": "https://schema.org",
+              "@type": "MedicalWebPage",
+              "name": "Selective Motor Fasciculotomy (SMF)",
+              "description": "A targeted nerve procedure for carefully selected focal spasticity.",
+              "url": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Physician",
+              "name": "Dr. Pawan Kumar Sadhvani",
+              "url": "https://pawankumarsadhvani.com/",
+              "medicalSpecialty": "Orthopedic Care and Deformity Correction",
+              "telephone": "+91 90002 30401",
+              "email": "contact@drpawansadhvani.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "PG Road, Jogani, Ramgopalpet",
+                "addressLocality": "Secunderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500003",
+                "addressCountry": "IN"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://pawankumarsadhvani.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Procedures",
+                  "item": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Selective Motor Fasciculotomy (SMF)",
+                  "item": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+                }
+              ]
+            }
+          ]
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 190,
+          "height": 63.375,
+          "left": 16,
+          "right": 206,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "smf",
+      "path": "/procedures/selective-motor-fasciculotomy",
+      "footer": true,
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani",
+        "h1": "Selective MotorFasciculotomy (SMF)",
+        "canonical": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy",
+        "openGraphUrl": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Learn about Selective Motor Fasciculotomy for carefully selected focal spasticity, including assessment, potential goals, limitations, rehabilitation and risks."
+          }
+        ],
+        "schemas": [
+          [
+            {
+              "@context": "https://schema.org",
+              "@type": "MedicalWebPage",
+              "name": "Selective Motor Fasciculotomy (SMF)",
+              "description": "A targeted nerve procedure for carefully selected focal spasticity.",
+              "url": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Physician",
+              "name": "Dr. Pawan Kumar Sadhvani",
+              "url": "https://pawankumarsadhvani.com/",
+              "medicalSpecialty": "Orthopedic Care and Deformity Correction",
+              "telephone": "+91 90002 30401",
+              "email": "contact@drpawansadhvani.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "PG Road, Jogani, Ramgopalpet",
+                "addressLocality": "Secunderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500003",
+                "addressCountry": "IN"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://pawankumarsadhvani.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Procedures",
+                  "item": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Selective Motor Fasciculotomy (SMF)",
+                  "item": "https://pawankumarsadhvani.com/procedures/selective-motor-fasciculotomy"
+                }
+              ]
+            }
+          ]
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 302.390625,
+          "height": 80,
+          "left": 80,
+          "right": 382.390625,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "tendon",
+      "path": "/procedures/tendon-muscle-procedures",
+      "footer": true,
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "Tendon & Muscle Procedures | Dr. Pawan Kumar Sadhvani",
+        "h1": "Tendon & Muscle Proceduresfor Tightness and Contractures",
+        "canonical": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures",
+        "openGraphUrl": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Tendon & Muscle Procedures"
+          },
+          {
+            "key": "og:description",
+            "value": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary_large_image"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Tendon & Muscle Procedures"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery."
+          },
+          {
+            "key": "og:locale",
+            "value": "en_IN"
+          },
+          {
+            "key": "og:image",
+            "value": "https://pawankumarsadhvani.com/assets/procedures/tendon-muscle/1000105002.png"
+          },
+          {
+            "key": "twitter:image",
+            "value": "https://pawankumarsadhvani.com/assets/procedures/tendon-muscle/1000105002.png"
+          }
+        ],
+        "schemas": [
+          [
+            {
+              "@context": "https://schema.org",
+              "@type": "MedicalWebPage",
+              "name": "Tendon & Muscle Procedures",
+              "headline": "Tendon & Muscle Procedures for Tightness and Contractures",
+              "description": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery.",
+              "url": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures",
+              "inLanguage": "en-IN",
+              "dateModified": "2026-07-29",
+              "about": {
+                "@type": "MedicalProcedure",
+                "name": "Tendon and Muscle Procedures"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "MedicalProcedure",
+              "name": "Tendon and Muscle Procedures",
+              "description": "Orthopedic soft-tissue procedures used to address tight muscles or tendons and support alignment, movement and function.",
+              "bodyLocation": "Muscles and tendons",
+              "procedureType": "Surgical"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://pawankumarsadhvani.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Procedures",
+                  "item": "https://pawankumarsadhvani.com/#treatments"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Tendon & Muscle Procedures",
+                  "item": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures"
+                }
+              ]
+            }
+          ]
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 190,
+          "height": 63.375,
+          "left": 16,
+          "right": 206,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "tendon",
+      "path": "/procedures/tendon-muscle-procedures",
+      "footer": true,
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "Tendon & Muscle Procedures | Dr. Pawan Kumar Sadhvani",
+        "h1": "Tendon & Muscle Proceduresfor Tightness and Contractures",
+        "canonical": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures",
+        "openGraphUrl": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Tendon & Muscle Procedures"
+          },
+          {
+            "key": "og:description",
+            "value": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary_large_image"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Tendon & Muscle Procedures"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery."
+          },
+          {
+            "key": "og:locale",
+            "value": "en_IN"
+          },
+          {
+            "key": "og:image",
+            "value": "https://pawankumarsadhvani.com/assets/procedures/tendon-muscle/1000105002.png"
+          },
+          {
+            "key": "twitter:image",
+            "value": "https://pawankumarsadhvani.com/assets/procedures/tendon-muscle/1000105002.png"
+          }
+        ],
+        "schemas": [
+          [
+            {
+              "@context": "https://schema.org",
+              "@type": "MedicalWebPage",
+              "name": "Tendon & Muscle Procedures",
+              "headline": "Tendon & Muscle Procedures for Tightness and Contractures",
+              "description": "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery.",
+              "url": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures",
+              "inLanguage": "en-IN",
+              "dateModified": "2026-07-29",
+              "about": {
+                "@type": "MedicalProcedure",
+                "name": "Tendon and Muscle Procedures"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "MedicalProcedure",
+              "name": "Tendon and Muscle Procedures",
+              "description": "Orthopedic soft-tissue procedures used to address tight muscles or tendons and support alignment, movement and function.",
+              "bodyLocation": "Muscles and tendons",
+              "procedureType": "Surgical"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://pawankumarsadhvani.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Procedures",
+                  "item": "https://pawankumarsadhvani.com/#treatments"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Tendon & Muscle Procedures",
+                  "item": "https://pawankumarsadhvani.com/procedures/tendon-muscle-procedures"
+                }
+              ]
+            }
+          ]
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 302.390625,
+          "height": 80,
+          "left": 80,
+          "right": 382.390625,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "error": "UNKNOWN: unknown error, open 'C:\\Users\\santu\\Desktop\\pawan\\artifacts\\branding-qa\\tendon-1440-header.png'",
+      "passed": false
+    },
+    {
+      "name": "deformity",
+      "path": "/procedures/deformity-correction-surgery",
+      "footer": true,
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani",
+        "h1": "Deformity Correction Surgery",
+        "canonical": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery",
+        "openGraphUrl": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index,follow,max-image-preview:large,max-snippet:-1"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function."
+          }
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            "name": "Deformity Correction Surgery",
+            "description": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function.",
+            "url": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery",
+            "about": {
+              "@type": "MedicalProcedure",
+              "name": "Deformity Correction Surgery"
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://pawankumarsadhvani.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Procedures",
+                  "item": "https://pawankumarsadhvani.com/#procedures"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Deformity Correction Surgery",
+                  "item": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery"
+                }
+              ]
+            }
+          }
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 190,
+          "height": 63.375,
+          "left": 16,
+          "right": 206,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "deformity",
+      "path": "/procedures/deformity-correction-surgery",
+      "footer": true,
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "approvedFooterLogo": true,
+        "footerLogoProportions": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani",
+        "h1": "Deformity Correction Surgery",
+        "canonical": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery",
+        "openGraphUrl": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index,follow,max-image-preview:large,max-snippet:-1"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Deformity Correction Surgery | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function."
+          }
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            "name": "Deformity Correction Surgery",
+            "description": "Learn how deformity correction surgery may improve bone and joint alignment, stability, comfort and function.",
+            "url": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery",
+            "about": {
+              "@type": "MedicalProcedure",
+              "name": "Deformity Correction Surgery"
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://pawankumarsadhvani.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Procedures",
+                  "item": "https://pawankumarsadhvani.com/#procedures"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Deformity Correction Surgery",
+                  "item": "https://pawankumarsadhvani.com/procedures/deformity-correction-surgery"
+                }
+              ]
+            }
+          }
+        ],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 302.390625,
+          "height": 80,
+          "left": 80,
+          "right": 382.390625,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": true,
+      "footerLogo": {
+        "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+        "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+        "loaded": true,
+        "objectFit": "contain"
+      },
+      "passed": true
+    },
+    {
+      "name": "story-2",
+      "path": "/success-stories/from-crouch-gait-to-straighter-steps",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "From Crouch Gait to Straighter, More Comfortable Steps | Dr. Pawan Kumar Sadhvani",
+        "h1": "From Crouch Gait to Straighter, More Comfortable Steps",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/from-crouch-gait-to-straighter-steps",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/from-crouch-gait-to-straighter-steps",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "A 14-year-old boy developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "From Crouch Gait to Straighter, More Comfortable Steps | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "A 14-year-old boy developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/from-crouch-gait-to-straighter-steps"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "From Crouch Gait to Straighter, More Comfortable Steps | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "A 14-year-old boy developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 190,
+          "height": 63.375,
+          "left": 16,
+          "right": 206,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": false,
+      "passed": true
+    },
+    {
+      "name": "story-2",
+      "path": "/success-stories/from-crouch-gait-to-straighter-steps",
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "From Crouch Gait to Straighter, More Comfortable Steps | Dr. Pawan Kumar Sadhvani",
+        "h1": "From Crouch Gait to Straighter, More Comfortable Steps",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/from-crouch-gait-to-straighter-steps",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/from-crouch-gait-to-straighter-steps",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "A 14-year-old boy developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "From Crouch Gait to Straighter, More Comfortable Steps | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "A 14-year-old boy developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/from-crouch-gait-to-straighter-steps"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "From Crouch Gait to Straighter, More Comfortable Steps | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "A 14-year-old boy developed severe hamstring tightness and painful bent-knee walking. Orthopaedic correction helped reduce the crouched posture and improve knee extension while walking."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 302.390625,
+          "height": 80,
+          "left": 80,
+          "right": 382.390625,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": false,
+      "passed": true
+    },
+    {
+      "name": "story-3",
+      "path": "/success-stories/improved-right-hand-grip-and-thumb-control-after-smf",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "Improved Right-Hand Grip and Thumb Control After SMF | Dr. Pawan Kumar Sadhvani",
+        "h1": "Improved Right-Hand Grip and Thumb Control After SMF",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/improved-right-hand-grip-and-thumb-control-after-smf",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/improved-right-hand-grip-and-thumb-control-after-smf",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Persistent right upper-limb spasticity caused his wrist and hand to move into flexion and made grasping objects difficult. Upper-limb SMF improved his grip, thumb movement and wrist control."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Improved Right-Hand Grip and Thumb Control After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Persistent right upper-limb spasticity caused his wrist and hand to move into flexion and made grasping objects difficult. Upper-limb SMF improved his grip, thumb movement and wrist control."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/improved-right-hand-grip-and-thumb-control-after-smf"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Improved Right-Hand Grip and Thumb Control After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Persistent right upper-limb spasticity caused his wrist and hand to move into flexion and made grasping objects difficult. Upper-limb SMF improved his grip, thumb movement and wrist control."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 190,
+          "height": 63.375,
+          "left": 16,
+          "right": 206,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": false,
+      "passed": true
+    },
+    {
+      "name": "story-3",
+      "path": "/success-stories/improved-right-hand-grip-and-thumb-control-after-smf",
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "Improved Right-Hand Grip and Thumb Control After SMF | Dr. Pawan Kumar Sadhvani",
+        "h1": "Improved Right-Hand Grip and Thumb Control After SMF",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/improved-right-hand-grip-and-thumb-control-after-smf",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/improved-right-hand-grip-and-thumb-control-after-smf",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Persistent right upper-limb spasticity caused his wrist and hand to move into flexion and made grasping objects difficult. Upper-limb SMF improved his grip, thumb movement and wrist control."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Improved Right-Hand Grip and Thumb Control After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Persistent right upper-limb spasticity caused his wrist and hand to move into flexion and made grasping objects difficult. Upper-limb SMF improved his grip, thumb movement and wrist control."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/improved-right-hand-grip-and-thumb-control-after-smf"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Improved Right-Hand Grip and Thumb Control After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Persistent right upper-limb spasticity caused his wrist and hand to move into flexion and made grasping objects difficult. Upper-limb SMF improved his grip, thumb movement and wrist control."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 302.390625,
+          "height": 80,
+          "left": 80,
+          "right": 382.390625,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": false,
+      "passed": true
+    },
+    {
+      "name": "story-4",
+      "path": "/success-stories/better-right-arm-control-for-everyday-activities",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "Better Right-Arm Control for Everyday Activities | Dr. Pawan Kumar Sadhvani",
+        "h1": "Better Right-Arm Control for Everyday Activities",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/better-right-arm-control-for-everyday-activities",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/better-right-arm-control-for-everyday-activities",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Dystonic and involuntary movements of the right upper limb interfered with eating and daily activities. Selective Motor Fasciculotomy reduced the disruptive movement and improved functional arm control."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Better Right-Arm Control for Everyday Activities | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Dystonic and involuntary movements of the right upper limb interfered with eating and daily activities. Selective Motor Fasciculotomy reduced the disruptive movement and improved functional arm control."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/better-right-arm-control-for-everyday-activities"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Better Right-Arm Control for Everyday Activities | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Dystonic and involuntary movements of the right upper limb interfered with eating and daily activities. Selective Motor Fasciculotomy reduced the disruptive movement and improved functional arm control."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 190,
+          "height": 63.375,
+          "left": 16,
+          "right": 206,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": false,
+      "passed": true
+    },
+    {
+      "name": "story-4",
+      "path": "/success-stories/better-right-arm-control-for-everyday-activities",
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "Better Right-Arm Control for Everyday Activities | Dr. Pawan Kumar Sadhvani",
+        "h1": "Better Right-Arm Control for Everyday Activities",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/better-right-arm-control-for-everyday-activities",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/better-right-arm-control-for-everyday-activities",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Dystonic and involuntary movements of the right upper limb interfered with eating and daily activities. Selective Motor Fasciculotomy reduced the disruptive movement and improved functional arm control."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Better Right-Arm Control for Everyday Activities | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Dystonic and involuntary movements of the right upper limb interfered with eating and daily activities. Selective Motor Fasciculotomy reduced the disruptive movement and improved functional arm control."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/better-right-arm-control-for-everyday-activities"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Better Right-Arm Control for Everyday Activities | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Dystonic and involuntary movements of the right upper limb interfered with eating and daily activities. Selective Motor Fasciculotomy reduced the disruptive movement and improved functional arm control."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 302.390625,
+          "height": 80,
+          "left": 80,
+          "right": 382.390625,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": false,
+      "passed": true
+    },
+    {
+      "name": "story-5",
+      "path": "/success-stories/improved-left-hand-grasp-and-daily-function-after-smf",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true,
+        "mobileMenuOpensCloses": true,
+        "mobileMenuKeepsCall": true,
+        "mobileMenuHasNoRetiredLinks": true
+      },
+      "page": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "title": "Improved Left-Hand Grasp and Daily Function After SMF | Dr. Pawan Kumar Sadhvani",
+        "h1": "Improved Left-Hand Grasp and Daily Function After SMF",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/improved-left-hand-grasp-and-daily-function-after-smf",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/improved-left-hand-grasp-and-daily-function-after-smf",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Left-sided hemiplegic cerebral palsy and upper-limb spasticity severely limited the functional use of his left hand. SMF of the median and ulnar nerve motor fascicles improved hand opening, grasp and participation in daily activity."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Improved Left-Hand Grasp and Daily Function After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Left-sided hemiplegic cerebral palsy and upper-limb spasticity severely limited the functional use of his left hand. SMF of the median and ulnar nerve motor fascicles improved hand opening, grasp and participation in daily activity."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/improved-left-hand-grasp-and-daily-function-after-smf"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Improved Left-Hand Grasp and Daily Function After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Left-sided hemiplegic cerebral palsy and upper-limb spasticity severely limited the functional use of his left hand. SMF of the median and ulnar nerve motor fascicles improved hand opening, grasp and participation in daily activity."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 190,
+          "height": 63.375,
+          "left": 16,
+          "right": 206,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "menu": {
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "About",
+            "href": "/#about"
+          },
+          {
+            "text": "Conditions",
+            "href": "/#conditions"
+          },
+          {
+            "text": "Procedures",
+            "href": "/#treatments"
+          },
+          {
+            "text": "For Families",
+            "href": "/#for-families"
+          },
+          {
+            "text": "Patient Stories",
+            "href": "/#real-success-stories"
+          },
+          {
+            "text": "Consultation",
+            "href": "/#locations"
+          },
+          {
+            "text": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "text": "Call Now",
+            "href": "tel:+919000230401"
+          }
+        ],
+        "expanded": true
+      },
+      "footerPresent": false,
+      "passed": true
+    },
+    {
+      "name": "story-5",
+      "path": "/success-stories/improved-left-hand-grasp-and-daily-function-after-smf",
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedHeaderLogo": true,
+        "preservedLogoProportions": true,
+        "headerLogoFits": true,
+        "correctTitleName": true,
+        "correctCanonical": true,
+        "correctOpenGraphUrl": true,
+        "correctedFavicon": true,
+        "noIncorrectPublicSpelling": true,
+        "noIncorrectMetadataOrSchemaSpelling": true,
+        "noObsoletePracticeContent": true,
+        "noPublicDiagnostic": true,
+        "callTargetReachable": true
+      },
+      "page": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "title": "Improved Left-Hand Grasp and Daily Function After SMF | Dr. Pawan Kumar Sadhvani",
+        "h1": "Improved Left-Hand Grasp and Daily Function After SMF",
+        "canonical": "https://pawankumarsadhvani.com/success-stories/improved-left-hand-grasp-and-daily-function-after-smf",
+        "openGraphUrl": "https://pawankumarsadhvani.com/success-stories/improved-left-hand-grasp-and-daily-function-after-smf",
+        "favicon": "https://pawankumarsadhvani.com/assets/dr-pawan-favicon-CM12Hh4x.png",
+        "metadata": [
+          {
+            "key": "viewport",
+            "value": "width=device-width, initial-scale=1.0"
+          },
+          {
+            "key": "robots",
+            "value": "index, follow"
+          },
+          {
+            "key": "theme-color",
+            "value": "#0A3D91"
+          },
+          {
+            "key": "description",
+            "value": "Left-sided hemiplegic cerebral palsy and upper-limb spasticity severely limited the functional use of his left hand. SMF of the median and ulnar nerve motor fascicles improved hand opening, grasp and participation in daily activity."
+          },
+          {
+            "key": "og:type",
+            "value": "website"
+          },
+          {
+            "key": "og:title",
+            "value": "Improved Left-Hand Grasp and Daily Function After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "og:description",
+            "value": "Left-sided hemiplegic cerebral palsy and upper-limb spasticity severely limited the functional use of his left hand. SMF of the median and ulnar nerve motor fascicles improved hand opening, grasp and participation in daily activity."
+          },
+          {
+            "key": "og:url",
+            "value": "https://pawankumarsadhvani.com/success-stories/improved-left-hand-grasp-and-daily-function-after-smf"
+          },
+          {
+            "key": "og:site_name",
+            "value": "Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:card",
+            "value": "summary"
+          },
+          {
+            "key": "twitter:title",
+            "value": "Improved Left-Hand Grasp and Daily Function After SMF | Dr. Pawan Kumar Sadhvani"
+          },
+          {
+            "key": "twitter:description",
+            "value": "Left-sided hemiplegic cerebral palsy and upper-limb spasticity severely limited the functional use of his left hand. SMF of the median and ulnar nerve motor fascicles improved hand opening, grasp and participation in daily activity."
+          }
+        ],
+        "schemas": [],
+        "wrongSpelling": false,
+        "oldPractice": false,
+        "publicDiagnostic": false,
+        "logo": {
+          "src": "https://pawankumarsadhvani.com/assets/dr-pawan-logo-CRHPf9PX.jpg",
+          "alt": "Dr. Pawan Kumar Sadhvani - Deformity Correction Specialist",
+          "loaded": true,
+          "naturalWidth": 1280,
+          "naturalHeight": 427,
+          "width": 302.390625,
+          "height": 80,
+          "left": 80,
+          "right": 382.390625,
+          "objectFit": "contain",
+          "withinHeader": true
+        },
+        "call": {
+          "href": "tel:+919000230401",
+          "reachable": true
+        }
+      },
+      "footerPresent": false,
+      "passed": true
+    }
+  ]
+}

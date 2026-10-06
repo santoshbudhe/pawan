@@ -40,7 +40,7 @@ export function SmfFooter({ content, assets }: SmfFooterProps) {
       <div className="smf-container smf-footer-grid">
         <div className="smf-footer-about">
           {footerLogo?.url ? (
-            <img src={footerLogo.url} alt={`${siteConfig.name} logo`} width="910" height="229" loading="lazy" decoding="async" />
+            <img src={footerLogo.url} alt={footerLogo.alt} width="1280" height="427" loading="lazy" decoding="async" />
           ) : (
             <strong>{siteConfig.name}</strong>
           )}
@@ -57,7 +57,7 @@ export function SmfFooter({ content, assets }: SmfFooterProps) {
 
         <nav aria-label="Patient resources">
           <h2>Patient Resources</h2>
-          {content.patientResources.map((label) => <a key={label} href="/#patient-stories">{label}</a>)}
+          {content.patientResources.map((label) => <a key={label} href="/#real-success-stories">{label}</a>)}
         </nav>
 
         <div className="smf-footer-contact">
@@ -76,7 +76,7 @@ export function SmfFooter({ content, assets }: SmfFooterProps) {
       </div>
 
       <div className="smf-container smf-footer-bottom">
-        <span>&copy; 2025 Dr. Pawan Sadhvani. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} {siteConfig.doctorName}. All rights reserved.</span>
         <nav aria-label="Legal links">
           {content.legal.map((label) => <a key={label} href="/#contact">{label}</a>)}
         </nav>

@@ -67,9 +67,9 @@ export function SmfHeader({ assets, mainId = "smf-main" }: SmfHeaderProps) {
     <header className="smf-site-header">
       <a className="skip-link" href={`#${mainId}`}>Skip to main content</a>
       <div className="smf-container smf-header-inner">
-        <a className="smf-brand" href="/" aria-label={`${siteConfig.name} home`}>
+        <a className="smf-brand" href="/" aria-label={`${siteConfig.doctorName} home`}>
           {logo?.url ? (
-            <img src={logo.url} alt={`${siteConfig.name} logo`} width="910" height="229" />
+            <img src={logo.url} alt={siteConfig.logoAlt} width="1280" height="427" />
           ) : (
             <span>{siteConfig.name}</span>
           )}
@@ -84,7 +84,7 @@ export function SmfHeader({ assets, mainId = "smf-main" }: SmfHeaderProps) {
         <a
           className="btn btn-primary smf-header-cta smf-header-call"
           href={contactDetails.phoneHref}
-          aria-label="Call Dr. Pawan Kumar Sadhvani's team"
+          aria-label={`Call ${siteConfig.doctorName}`}
         >
           <Phone aria-hidden="true" />
           <span>Call Now</span>
@@ -129,7 +129,7 @@ export function SmfHeader({ assets, mainId = "smf-main" }: SmfHeaderProps) {
             <a
               className="btn btn-primary smf-drawer-cta"
               href={contactDetails.phoneHref}
-              aria-label="Call Dr. Pawan Kumar Sadhvani's team"
+              aria-label={`Call ${siteConfig.doctorName}`}
               onClick={() => setOpen(false)}
             >
               <Phone aria-hidden="true" />

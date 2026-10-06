@@ -1,7 +1,13 @@
 import { collection, doc, DocumentData, DocumentSnapshot, getDoc, getDocs } from "firebase/firestore";
 import { getDownloadURL, ref } from "firebase/storage";
-import canonicalMainLogo from "../../assets/logos/transparentMainLogo2000px.png";
-import canonicalFooterLogo from "../../assets/logos/transparentWhiteLogo1600.png";
+import approvedDoctorPortrait from "../../assets/doctors/pawan.png";
+import canonicalBrandLogo from "../../assets/logos/dr-pawan-logo.jpg";
+import trustedFamily1 from "../../assets/trust/trustedFamily1.png";
+import trustedFamily2 from "../../assets/trust/trustedFamily2.png";
+import trustedFamily3 from "../../assets/trust/trustedFamily3.png";
+import trustedFamily4 from "../../assets/trust/trustedFamily4.png";
+import trustedFamily5 from "../../assets/trust/trustedFamily5.png";
+import { currentPractice } from "../content/siteConfig";
 import { getFirebaseServices } from "../lib/firebase";
 
 export interface Asset {
@@ -45,13 +51,57 @@ interface AssetLoadFailure {
   reason: string;
 }
 
+const canonicalBrandAsset: Asset = {
+  url: canonicalBrandLogo,
+  storagePath: "assets/logos/dr-pawan-logo.jpg",
+  alt: currentPractice.logoAlt
+};
+
+const approvedDoctorPortraitAsset: Asset = {
+  url: approvedDoctorPortrait,
+  storagePath: "assets/doctors/pawan.png",
+  alt: currentPractice.doctorName
+};
+
+// These existing decorative avatars must also render before Firebase resolves.
+const localTrustAssets: Record<string, Asset> = Object.fromEntries(
+  [trustedFamily1, trustedFamily2, trustedFamily3, trustedFamily4, trustedFamily5].map((url, index) => [
+    `trustedFamily${index + 1}`,
+    { url, storagePath: `trust/trustedFamily${index + 1}.png`, alt: "" }
+  ])
+);
+
+const retiredPublicAssetDocumentIds = new Set([
+  "doctors_purohit",
+  "doctors_harry",
+  "hospitals_asterPrimeHospital",
+  "hospitals_yashodaHospital",
+  "hero_desktopHeroBanner",
+  "hero_mobileHeroBanner",
+  "logos_transparentMainLogo2000px",
+  "logos_transparentWhiteLogo1600",
+  "who-we-help_who4"
+]);
+
+function isRetiredPublicAssetDocument(documentId: string): boolean {
+  return retiredPublicAssetDocumentIds.has(documentId) || documentId.startsWith("procedures_sdr");
+}
+
 const emptyRegistry = (): AssetRegistry => ({
-  logos: {},
+  logos: {
+    primary: canonicalBrandAsset,
+    main: canonicalBrandAsset,
+    transparentMainLogo: canonicalBrandAsset,
+    transparentMainLogo2000px: canonicalBrandAsset,
+    footer: canonicalBrandAsset
+  },
   hero: {},
-  doctors: {},
+  doctors: {
+    pawan: approvedDoctorPortraitAsset
+  },
   procedures: {},
   whoWeHelp: {},
-  trustedFamilies: {},
+  trustedFamilies: { ...localTrustAssets },
   patientStories: {},
   hospitals: {},
   smf: {}
@@ -151,7 +201,6 @@ function mapAsset(registry: AssetRegistry, category: string, key: string, asset:
       "case-02-before": "story2Before",
       "case-02-after": "story2After",
       "comparison-smf": "comparisonSmf",
-      "comparison-sdr": "comparisonSdr",
       "comparison-tendon-muscle": "comparisonTendonMuscle",
       "comparison-deformity-correction": "comparisonDeformity"
     };
@@ -165,7 +214,9 @@ async function resolveRegistry(documents: Array<DocumentSnapshot<DocumentData>>)
   const failures: AssetLoadFailure[] = [];
 
   await Promise.all(
-    documents.map(async (docSnapshot) => {
+    documents.filter((docSnapshot) => (
+      !isRetiredPublicAssetDocument(docSnapshot.id) && docSnapshot.id !== "doctors_pawan"
+    )).map(async (docSnapshot) => {
       if (!docSnapshot.exists()) {
         failures.push({
           documentId: docSnapshot.id,
@@ -183,15 +234,10 @@ async function resolveRegistry(documents: Array<DocumentSnapshot<DocumentData>>)
         return;
       }
       const key = baseName(data.filename);
-      if (data.category === "logos") {
-        const isFooterLogo = key.toLowerCase().includes("white");
-        mapAsset(registry, data.category, key, {
-          url: isFooterLogo ? canonicalFooterLogo : canonicalMainLogo,
-          storagePath: data.storagePath,
-          alt: "Dr. Pawan Kumar Sadhvani"
-        });
-        return;
-      }
+      if (data.category === "logos") return;
+      // Keep the identical bundled trust images; optional decoration needs no
+      // remote URL lookup and cannot disappear during a registry outage.
+      if (data.category === "trust" && localTrustAssets[key]) return;
       try {
         const url = await getDownloadURL(ref(storage, data.storagePath));
         mapAsset(registry, data.category, key, {
@@ -210,10 +256,7 @@ async function resolveRegistry(documents: Array<DocumentSnapshot<DocumentData>>)
   );
 
   if (failures.length > 0) {
-    console.error("Asset registry failed to resolve one or more Firebase Storage objects.", failures);
-    throw new Error(
-      failures.map((failure) => `${failure.documentId} (${failure.storagePath ?? "missing storagePath"}): ${failure.reason}`).join("; ")
-    );
+    console.warn("Some optional Firebase Storage assets could not be resolved.", failures);
   }
 
   return registry;
@@ -239,14 +282,23 @@ function loadSelectedRegistry(documentIds: readonly string[]): Promise<AssetRegi
 }
 
 export const assetService = {
+  fallback(): AssetRegistry {
+    return emptyRegistry();
+  },
   load(): Promise<AssetRegistry> {
     if (!registryPromise) {
-      registryPromise = loadRegistry();
+      registryPromise = loadRegistry().catch((error) => {
+        console.warn("Using local branding because the remote asset registry is unavailable.", error);
+        return emptyRegistry();
+      });
     }
     return registryPromise;
   },
   loadSelected(documentIds: readonly string[]): Promise<AssetRegistry> {
-    return loadSelectedRegistry(documentIds);
+    return loadSelectedRegistry(documentIds).catch((error) => {
+      console.warn("Using local branding because selected remote assets are unavailable.", error);
+      return emptyRegistry();
+    });
   },
   clearCache(): void {
     registryPromise = undefined;

@@ -23,44 +23,6 @@ export const smfFaqs: FAQItem[] = [
     question: "Can SMF treat lower-limb spasticity?",
     answer:
       "Yes. Selective peripheral motor-nerve procedures may also be considered for focal lower-limb spasticity. The appropriate treatment depends on which muscles are affected and whether the main problem is spasticity, weakness, contracture or deformity."
-  },
-  {
-    question: "How is SMF different from SDR?",
-    answer:
-      "SMF targets selected peripheral motor-nerve fascicles supplying specific overactive muscles. SDR is performed at the lower spine and selectively divides sensory nerve rootlets contributing to lower-limb spasticity. They therefore act at different levels of the nervous system and are used for different patterns of spasticity."
-  }
-];
-
-export const sdrFaqs: FAQItem[] = [
-  {
-    question: "Is SDR suitable for every child with CP?",
-    answer:
-      "No. SDR is considered for carefully selected patients with predominantly spastic lower-limb involvement. Strength, motor control, the distribution of spasticity, other movement disorders, existing deformity and the ability to participate in rehabilitation all influence suitability."
-  },
-  {
-    question: "What age range is best suited for SDR?",
-    answer:
-      "There is no single age that is right for every patient. SDR is commonly considered during childhood, but suitability depends on the individual’s diagnosis, movement pattern, strength, function and rehabilitation potential rather than age alone."
-  },
-  {
-    question: "How long is the rehabilitation process?",
-    answer:
-      "Rehabilitation begins after surgery and is an essential part of SDR treatment. Physiotherapy is usually more intensive initially and continues over many months, with the programme adjusted according to the individual’s progress and goals."
-  },
-  {
-    question: "Does SDR permanently reduce spasticity?",
-    answer:
-      "SDR permanently divides selected sensory nerve rootlets and is intended to provide a long-term reduction in lower-limb spasticity. It does not cure cerebral palsy, and functional outcomes still depend on factors such as strength, motor control, existing deformity and rehabilitation."
-  },
-  {
-    question: "Will additional surgeries be needed?",
-    answer:
-      "Possibly. SDR treats the neurological component of spasticity but does not directly correct every established muscle contracture or bone deformity. Some patients may later require tendon, muscle or orthopaedic procedures depending on growth, alignment and function."
-  },
-  {
-    question: "What are the success rates of SDR?",
-    answer:
-      "There is no single success percentage that applies to every patient because outcomes are measured in different ways, including reduction in spasticity, walking, function, comfort and quality of life. Expected benefits should be discussed individually after detailed assessment."
   }
 ];
 

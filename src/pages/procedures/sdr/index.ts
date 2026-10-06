@@ -1,1 +1,0 @@
-export { SdrProcedurePage } from "./SdrProcedurePage";

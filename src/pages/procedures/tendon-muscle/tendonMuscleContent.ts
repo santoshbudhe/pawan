@@ -1,6 +1,7 @@
 ﻿import doctorPortrait from "../../../../assets/doctors/pawan.png";
 import assessmentImage from "../../../../assets/stories/story1.jpg";
 import benefitImage from "../../../../assets/who-we-help/who1.jpg";
+import { siteConfig } from "../../../content/siteConfig";
 import { TendonMusclePageContent } from "./tendonMuscleTypes";
 
 const assessmentActions = [
@@ -10,8 +11,8 @@ const assessmentActions = [
 
 export const tendonMusclePageContent: TendonMusclePageContent = {
   metadata: {
-    title: "Tendon & Muscle Procedures for Spasticity and Contractures | Dr. Pawan Kumar Sadhvani",
-    description: "Learn how tendon and muscle procedures may address tightness, contractures, alignment and movement in children and adults with spasticity, including assessment, rehabilitation, risks and recovery.",
+    title: `Tendon & Muscle Procedures | ${siteConfig.doctorName}`,
+    description: "Learn how orthopedic tendon and muscle procedures may address tightness, contractures, alignment and movement, including assessment, rehabilitation, risks and recovery.",
     canonicalPath: "/procedures/tendon-muscle-procedures",
     robots: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
   },
@@ -33,7 +34,7 @@ export const tendonMusclePageContent: TendonMusclePageContent = {
   hero: {
     eyebrow: "ORTHOPEDIC PROCEDURES",
     title: "Tendon & Muscle Procedures",
-    subtitle: "for Spasticity and Contractures",
+    subtitle: "for Tightness and Contractures",
     description: "Targeted orthopedic surgeries that may reduce muscle–tendon tightness, improve alignment and create better conditions for movement, comfort and rehabilitation.",
     chips: [
       { id: "alignment", label: "Improves Alignment", icon: "BadgeCheck" },
@@ -118,7 +119,7 @@ export const tendonMusclePageContent: TendonMusclePageContent = {
         { id: "medical-conditions", text: "Uncontrolled medical conditions or poor overall health", icon: "TriangleAlert" },
         { id: "post-operative-care", text: "Unable to participate in rehabilitation or post-operative care", icon: "TriangleAlert" }
       ],
-      callout: "Suitability can only be determined after a detailed clinical and neurological assessment."
+      callout: "Suitability can only be determined after a detailed orthopedic and functional assessment."
     },
     problems: {
       id: "problems-addressed",
@@ -149,7 +150,7 @@ export const tendonMusclePageContent: TendonMusclePageContent = {
           id: "clinical-examination",
           number: 2,
           title: "Clinical examination",
-          description: "Detailed neurological and physical examination.",
+          description: "Detailed orthopedic and functional examination.",
           icon: "Stethoscope",
           image: "/assets/procedures/tendon-muscle/assessment/assessment-clinical-examination.webp",
           imageAlt: "Clinician examining a patient’s lower-limb movement and range"
@@ -303,8 +304,8 @@ export const tendonMusclePageContent: TendonMusclePageContent = {
     review: {
       id: "medical-review",
       heading: "Medically reviewed by",
-      name: "Dr. Pawan Kumar Sadhvani",
-      role: "Consultant Pediatric Spine & Deformity Correction Specialist",
+      name: siteConfig.doctorName,
+      role: siteConfig.doctorTitle,
       credentials: "MBBS, MS (Ortho), MCh (Ortho)",
       experience: "20+ years of experience",
       trustStatement: "Thousands of children helped",

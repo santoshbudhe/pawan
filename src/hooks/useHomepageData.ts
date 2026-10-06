@@ -12,6 +12,7 @@ interface HomepageDataState {
 export function useHomepageData(): HomepageDataState {
   const [state, setState] = useState<HomepageDataState>({
     content: homepageService.fallback,
+    assets: assetService.fallback(),
     loading: true
   });
 
@@ -28,6 +29,7 @@ export function useHomepageData(): HomepageDataState {
         if (active) {
           setState({
             content: homepageService.fallback,
+            assets: assetService.fallback(),
             loading: false,
             error: "Assets are unavailable right now."
           });

@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { siteConfig } from "../../../content/siteConfig";
 
 const contentSource = readFileSync(new URL("./tendonMuscleContent.ts", import.meta.url), "utf8");
+const pageSource = readFileSync(new URL("./TendonMuscleProcedurePage.tsx", import.meta.url), "utf8");
 const risksStart = contentSource.indexOf("    risks: {");
 const risksEnd = contentSource.indexOf("    review: {", risksStart);
 const risksSource = contentSource.slice(risksStart, risksEnd);
@@ -86,4 +88,23 @@ test("Tendon risks continue through the shared responsive accordion and informat
   assert.match(lowerSectionsSource, /\bcolumns\b/);
   assert.match(lowerSectionsSource, /<div className="smf-risk-note">/);
   assert.match(lowerSectionsSource, /<p>\{risks\.note\}<\/p>/);
+});
+
+test("Tendon and Muscle public framing uses the current orthopedic practice identity", () => {
+  assert.equal(siteConfig.doctorName, "Dr. Pawan Kumar Sadhvani");
+  assert.equal(siteConfig.doctorTitle, "Deformity Correction Specialist");
+  assert.match(contentSource, /title: `Tendon & Muscle Procedures \| \$\{siteConfig\.doctorName\}`/);
+  assert.match(contentSource, /subtitle: "for Tightness and Contractures"/);
+  assert.match(contentSource, /detailed orthopedic and functional assessment/i);
+  assert.match(contentSource, /Detailed orthopedic and functional examination/);
+  assert.match(contentSource, /name: siteConfig\.doctorName/);
+  assert.match(contentSource, /role: siteConfig\.doctorTitle/);
+  assert.doesNotMatch(contentSource, /Sadwani|Sadhwani|Neuro[- ]?Orthop|neurological assessment/i);
+
+  assert.match(
+    pageSource,
+    /setMeta\('meta\[property="og:site_name"\]', "property", "og:site_name", siteConfig\.doctorName\)/
+  );
+  assert.match(pageSource, /headline: "Tendon & Muscle Procedures for Tightness and Contractures"/);
+  assert.doesNotMatch(pageSource, /Sadwani|Sadhwani|Neuro[- ]?Orthop/i);
 });

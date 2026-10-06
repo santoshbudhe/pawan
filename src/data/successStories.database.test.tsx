@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import { renderToStaticMarkup } from "react-dom/server";
 import { SuccessStoryCarousel } from "../components/success-stories/SuccessStoryCarousel";
@@ -13,10 +14,6 @@ import {
 } from "./successStories.database";
 
 const approvedStories = [
-  {
-    id: "patient-01-combined-sdr-orthopaedic",
-    title: "Closer to His Dream of Playing and Moving Freely"
-  },
   {
     id: "patient-02-crouch-gait",
     title: "From Crouch Gait to Straighter, More Comfortable Steps"
@@ -37,10 +34,6 @@ const approvedStories = [
 
 const approvedVideoStoragePaths = [
   {
-    id: "patient-01-combined-sdr-orthopaedic",
-    videoStoragePath: "stories/Patient_1_SDR_Success_Story_Final.mp4"
-  },
-  {
     id: "patient-02-crouch-gait",
     videoStoragePath: "stories/Patient_2_Success_Story_Corrected.mp4"
   },
@@ -58,16 +51,17 @@ const approvedVideoStoragePaths = [
   }
 ];
 
-test("database contains only the five approved patient stories", () => {
+test("database contains only the four retained public patient stories", () => {
   const previewStories = getPreviewHomepageStories();
 
-  assert.equal(successStoriesDatabase.length, 5);
+  assert.equal(successStoriesDatabase.length, 4);
   assert.deepEqual(
     successStoriesDatabase.map(({ id, title }) => ({ id, title })),
     approvedStories
   );
-  assert.equal(previewStories.length, 5);
+  assert.equal(previewStories.length, 4);
   assert.ok(successStoriesDatabase.every((story) => story.published && story.guardianApproved));
+  assert.equal(getSuccessStoryBySlug("closer-to-his-dream-after-combined-treatment"), undefined);
   assert.equal(getSuccessStoryBySlug("from-toe-walking-to-improved-heel-contact"), undefined);
 });
 
@@ -76,14 +70,14 @@ test("each approved patient maps to the exact Firebase Storage video path", () =
     successStoriesDatabase.map(({ id, videoStoragePath }) => ({ id, videoStoragePath })),
     approvedVideoStoragePaths
   );
-  assert.equal(new Set(successStoriesDatabase.map((story) => story.videoStoragePath)).size, 5);
+  assert.equal(new Set(successStoriesDatabase.map((story) => story.videoStoragePath)).size, 4);
 });
 
 test("related stories exclude the current route", () => {
-  const slug = "closer-to-his-dream-after-combined-treatment";
+  const slug = "from-crouch-gait-to-straighter-steps";
   const related = getRelatedSuccessStories(slug, 6, true);
 
-  assert.equal(related.length, 4);
+  assert.equal(related.length, 3);
   assert.ok(related.every((story) => story.slug !== slug));
 });
 
@@ -97,27 +91,21 @@ test("published procedure queries use the approved procedure mappings", () => {
     ]
   );
   assert.deepEqual(
-    getStoriesForProcedure("sdr").map((story) => story.id),
-    ["patient-01-combined-sdr-orthopaedic"]
-  );
-  assert.deepEqual(
     getStoriesForProcedure("tendon-muscle").map((story) => story.id),
     [
-      "patient-01-combined-sdr-orthopaedic",
       "patient-02-crouch-gait"
     ]
   );
   assert.deepEqual(
     getStoriesForProcedure("deformity-correction").map((story) => story.id),
     [
-      "patient-01-combined-sdr-orthopaedic",
       "patient-02-crouch-gait"
     ]
   );
 });
 
 test("procedure story carousels link approved cards to their story routes", () => {
-  const procedureIds = ["sdr", "smf", "tendon-muscle", "deformity-correction"] as const;
+  const procedureIds = ["smf", "tendon-muscle", "deformity-correction"] as const;
 
   procedureIds.forEach((procedureId) => {
     const stories = getStoriesForProcedure(procedureId);
@@ -131,6 +119,22 @@ test("procedure story carousels link approved cards to their story routes", () =
     assert.doesNotMatch(markup, /from-toe-walking-to-improved-heel-contact/);
     assert.doesNotMatch(markup, /\.mp4/);
   });
+});
+
+test("retired procedure content is absent from public story copy and app routing", () => {
+  const publicCopy = successStoriesDatabase.map((story) => [
+    story.title,
+    story.introSummary,
+    story.condition,
+    story.treatment,
+    story.result,
+    story.journey,
+    ...story.procedures
+  ].join(" ")).join(" ");
+  const routerSource = readFileSync(new URL("../main.tsx", import.meta.url), "utf8");
+
+  assert.doesNotMatch(publicCopy, /\bSDR\b|Selective Dorsal Rhizotomy|Dorsal Rhizotomy/i);
+  assert.doesNotMatch(routerSource, /selective-dorsal-rhizotomy|SdrProcedurePage/);
 });
 
 test("testimonial priority renders one public format only", () => {
@@ -160,7 +164,7 @@ test("testimonial priority renders one public format only", () => {
 test("patient video presents loading and respectful unavailable states", () => {
   const loading = renderToStaticMarkup(
     <SuccessStoryVideo
-      storagePath="stories/Patient_1_SDR_Success_Story_Final.mp4"
+      storagePath="stories/Patient_2_Success_Story_Corrected.mp4"
       poster="/patient-thumbnail.jpg"
       ariaLabel="Patient journey video"
     />

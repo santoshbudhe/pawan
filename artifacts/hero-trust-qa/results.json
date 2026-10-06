@@ -1,0 +1,563 @@
+{
+  "baseUrl": "https://pawan-202e9.web.app",
+  "passed": true,
+  "scenarios": [
+    {
+      "name": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedLogo": true,
+        "orthopedicCopy": true,
+        "noStaticPortraitOverride": true,
+        "noPublicDiagnostic": true,
+        "noOldPracticeContent": true,
+        "validPoster": true,
+        "mediaBehavior": true,
+        "fiveLocalTrustAvatars": true,
+        "trustStatisticsPreserved": true,
+        "callTarget": true,
+        "whatsappTarget": true
+      },
+      "hero": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "eyebrow": "Specialised Orthopedic & Deformity Care",
+        "description": "Orthopedic evaluation and personalised treatment for children and adults with limb deformity, joint contracture, gait difficulty and other musculoskeletal conditions.",
+        "staticPortraitPresent": false,
+        "missingDiagnosticVisible": false,
+        "oldContentVisible": false,
+        "logo": {
+          "src": "https://pawan-202e9.web.app/assets/dr-pawan-logo-CjfVjXU7.jpg",
+          "alt": "Dr. Pawan Kumar Sadwani - Deformity Correction Specialist",
+          "loaded": true
+        },
+        "poster": {
+          "src": "https://pawan-202e9.web.app/assets/mobileHeroBanner-D7VuFjV5.png",
+          "loaded": true
+        },
+        "video": {
+          "src": "https://pawan-202e9.web.app/assets/home/hero/1000105145.mp4",
+          "readyState": 4,
+          "paused": false,
+          "currentTime": 1.404972,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "playsInline": true,
+          "controls": false,
+          "objectFit": "cover"
+        }
+      },
+      "trust": {
+        "text": "Trusted by 1000+ Families 4.9 (Google Reviews)",
+        "avatars": [
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily1-D_9GkqQn.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily2-DHdleLY7.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily3-DP1Sjd-q.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily4-BVU6tOZy.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily5-CvQC-l9J.png",
+            "local": true,
+            "loaded": true
+          }
+        ]
+      },
+      "ctas": {
+        "call": {
+          "href": "tel:+919000230401",
+          "width": 106.078125,
+          "height": 46,
+          "reachable": true
+        },
+        "whatsapp": {
+          "href": "https://wa.me/919000230401?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20an%20orthopedic%20consultation%20with%20Dr.%20Pawan%20Kumar%20Sadwani.",
+          "width": 176,
+          "height": 48,
+          "reachable": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "tablet-820",
+      "width": 820,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedLogo": true,
+        "orthopedicCopy": true,
+        "noStaticPortraitOverride": true,
+        "noPublicDiagnostic": true,
+        "noOldPracticeContent": true,
+        "validPoster": true,
+        "mediaBehavior": true,
+        "fiveLocalTrustAvatars": true,
+        "trustStatisticsPreserved": true,
+        "callTarget": true,
+        "whatsappTarget": true
+      },
+      "hero": {
+        "viewportWidth": 820,
+        "scrollWidth": 820,
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "eyebrow": "Specialised Orthopedic & Deformity Care",
+        "description": "Orthopedic evaluation and personalised treatment for children and adults with limb deformity, joint contracture, gait difficulty and other musculoskeletal conditions.",
+        "staticPortraitPresent": false,
+        "missingDiagnosticVisible": false,
+        "oldContentVisible": false,
+        "logo": {
+          "src": "https://pawan-202e9.web.app/assets/dr-pawan-logo-CjfVjXU7.jpg",
+          "alt": "Dr. Pawan Kumar Sadwani - Deformity Correction Specialist",
+          "loaded": true
+        },
+        "poster": {
+          "src": "https://pawan-202e9.web.app/assets/desktopHeroBanner-CwBQDMp8.png",
+          "loaded": true
+        },
+        "video": {
+          "src": "https://pawan-202e9.web.app/assets/home/hero/1000105145.mp4",
+          "readyState": 4,
+          "paused": false,
+          "currentTime": 1.450056,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "playsInline": true,
+          "controls": false,
+          "objectFit": "contain"
+        }
+      },
+      "trust": {
+        "text": "Trusted by 1000+ Families 4.9 (Google Reviews)",
+        "avatars": [
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily1-D_9GkqQn.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily2-DHdleLY7.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily3-DP1Sjd-q.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily4-BVU6tOZy.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily5-CvQC-l9J.png",
+            "local": true,
+            "loaded": true
+          }
+        ]
+      },
+      "ctas": {
+        "call": {
+          "href": "tel:+919000230401",
+          "width": 160,
+          "height": 48,
+          "reachable": true
+        },
+        "whatsapp": {
+          "href": "https://wa.me/919000230401?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20an%20orthopedic%20consultation%20with%20Dr.%20Pawan%20Kumar%20Sadwani.",
+          "width": 240,
+          "height": 52,
+          "reachable": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "desktop-1440",
+      "width": 1440,
+      "height": 1000,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedLogo": true,
+        "orthopedicCopy": true,
+        "noStaticPortraitOverride": true,
+        "noPublicDiagnostic": true,
+        "noOldPracticeContent": true,
+        "validPoster": true,
+        "mediaBehavior": true,
+        "fiveLocalTrustAvatars": true,
+        "trustStatisticsPreserved": true,
+        "callTarget": true,
+        "whatsappTarget": true
+      },
+      "hero": {
+        "viewportWidth": 1440,
+        "scrollWidth": 1440,
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "eyebrow": "Specialised Orthopedic & Deformity Care",
+        "description": "Orthopedic evaluation and personalised treatment for children and adults with limb deformity, joint contracture, gait difficulty and other musculoskeletal conditions.",
+        "staticPortraitPresent": false,
+        "missingDiagnosticVisible": false,
+        "oldContentVisible": false,
+        "logo": {
+          "src": "https://pawan-202e9.web.app/assets/dr-pawan-logo-CjfVjXU7.jpg",
+          "alt": "Dr. Pawan Kumar Sadwani - Deformity Correction Specialist",
+          "loaded": true
+        },
+        "poster": {
+          "src": "https://pawan-202e9.web.app/assets/desktopHeroBanner-CwBQDMp8.png",
+          "loaded": true
+        },
+        "video": {
+          "src": "https://pawan-202e9.web.app/assets/home/hero/1000105145.mp4",
+          "readyState": 4,
+          "paused": false,
+          "currentTime": 0.814732,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "playsInline": true,
+          "controls": false,
+          "objectFit": "contain"
+        }
+      },
+      "trust": {
+        "text": "Trusted by 1000+ Families 4.9 (Google Reviews)",
+        "avatars": [
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily1-D_9GkqQn.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily2-DHdleLY7.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily3-DP1Sjd-q.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily4-BVU6tOZy.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily5-CvQC-l9J.png",
+            "local": true,
+            "loaded": true
+          }
+        ]
+      },
+      "ctas": {
+        "call": {
+          "href": "tel:+919000230401",
+          "width": 180,
+          "height": 48,
+          "reachable": true
+        },
+        "whatsapp": {
+          "href": "https://wa.me/919000230401?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20an%20orthopedic%20consultation%20with%20Dr.%20Pawan%20Kumar%20Sadwani.",
+          "width": 240,
+          "height": 52,
+          "reachable": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "reduced-motion-mobile-390",
+      "width": 390,
+      "height": 844,
+      "reducedMotion": true,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedLogo": true,
+        "orthopedicCopy": true,
+        "noStaticPortraitOverride": true,
+        "noPublicDiagnostic": true,
+        "noOldPracticeContent": true,
+        "validPoster": true,
+        "mediaBehavior": true,
+        "fiveLocalTrustAvatars": true,
+        "trustStatisticsPreserved": true,
+        "callTarget": true,
+        "whatsappTarget": true
+      },
+      "hero": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "eyebrow": "Specialised Orthopedic & Deformity Care",
+        "description": "Orthopedic evaluation and personalised treatment for children and adults with limb deformity, joint contracture, gait difficulty and other musculoskeletal conditions.",
+        "staticPortraitPresent": false,
+        "missingDiagnosticVisible": false,
+        "oldContentVisible": false,
+        "logo": {
+          "src": "https://pawan-202e9.web.app/assets/dr-pawan-logo-CjfVjXU7.jpg",
+          "alt": "Dr. Pawan Kumar Sadwani - Deformity Correction Specialist",
+          "loaded": true
+        },
+        "poster": {
+          "src": "https://pawan-202e9.web.app/assets/mobileHeroBanner-D7VuFjV5.png",
+          "loaded": true
+        },
+        "video": null
+      },
+      "trust": {
+        "text": "Trusted by 1000+ Families 4.9 (Google Reviews)",
+        "avatars": [
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily1-D_9GkqQn.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily2-DHdleLY7.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily3-DP1Sjd-q.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily4-BVU6tOZy.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily5-CvQC-l9J.png",
+            "local": true,
+            "loaded": true
+          }
+        ]
+      },
+      "ctas": {
+        "call": {
+          "href": "tel:+919000230401",
+          "width": 106.078125,
+          "height": 46,
+          "reachable": true
+        },
+        "whatsapp": {
+          "href": "https://wa.me/919000230401?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20an%20orthopedic%20consultation%20with%20Dr.%20Pawan%20Kumar%20Sadwani.",
+          "width": 176,
+          "height": 48,
+          "reachable": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "blocked-video-mobile-390",
+      "width": 390,
+      "height": 844,
+      "blockedVideo": true,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedLogo": true,
+        "orthopedicCopy": true,
+        "noStaticPortraitOverride": true,
+        "noPublicDiagnostic": true,
+        "noOldPracticeContent": true,
+        "validPoster": true,
+        "mediaBehavior": true,
+        "fiveLocalTrustAvatars": true,
+        "trustStatisticsPreserved": true,
+        "callTarget": true,
+        "whatsappTarget": true
+      },
+      "hero": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "eyebrow": "Specialised Orthopedic & Deformity Care",
+        "description": "Orthopedic evaluation and personalised treatment for children and adults with limb deformity, joint contracture, gait difficulty and other musculoskeletal conditions.",
+        "staticPortraitPresent": false,
+        "missingDiagnosticVisible": false,
+        "oldContentVisible": false,
+        "logo": {
+          "src": "https://pawan-202e9.web.app/assets/dr-pawan-logo-CjfVjXU7.jpg",
+          "alt": "Dr. Pawan Kumar Sadwani - Deformity Correction Specialist",
+          "loaded": true
+        },
+        "poster": {
+          "src": "https://pawan-202e9.web.app/assets/mobileHeroBanner-D7VuFjV5.png",
+          "loaded": true
+        },
+        "video": null
+      },
+      "trust": {
+        "text": "Trusted by 1000+ Families 4.9 (Google Reviews)",
+        "avatars": [
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily1-D_9GkqQn.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily2-DHdleLY7.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily3-DP1Sjd-q.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily4-BVU6tOZy.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily5-CvQC-l9J.png",
+            "local": true,
+            "loaded": true
+          }
+        ]
+      },
+      "ctas": {
+        "call": {
+          "href": "tel:+919000230401",
+          "width": 106.078125,
+          "height": 46,
+          "reachable": true
+        },
+        "whatsapp": {
+          "href": "https://wa.me/919000230401?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20an%20orthopedic%20consultation%20with%20Dr.%20Pawan%20Kumar%20Sadwani.",
+          "width": 176,
+          "height": 48,
+          "reachable": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "blocked-firebase-mobile-390",
+      "width": 390,
+      "height": 844,
+      "blockedFirebase": true,
+      "checks": {
+        "correctViewport": true,
+        "noHorizontalOverflow": true,
+        "approvedLogo": true,
+        "orthopedicCopy": true,
+        "noStaticPortraitOverride": true,
+        "noPublicDiagnostic": true,
+        "noOldPracticeContent": true,
+        "validPoster": true,
+        "mediaBehavior": true,
+        "fiveLocalTrustAvatars": true,
+        "trustStatisticsPreserved": true,
+        "callTarget": true,
+        "whatsappTarget": true
+      },
+      "hero": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "h1": "Specialised Care for Deformity, Alignment & Movement",
+        "eyebrow": "Specialised Orthopedic & Deformity Care",
+        "description": "Orthopedic evaluation and personalised treatment for children and adults with limb deformity, joint contracture, gait difficulty and other musculoskeletal conditions.",
+        "staticPortraitPresent": false,
+        "missingDiagnosticVisible": false,
+        "oldContentVisible": false,
+        "logo": {
+          "src": "https://pawan-202e9.web.app/assets/dr-pawan-logo-CjfVjXU7.jpg",
+          "alt": "Dr. Pawan Kumar Sadwani - Deformity Correction Specialist",
+          "loaded": true
+        },
+        "poster": {
+          "src": "https://pawan-202e9.web.app/assets/mobileHeroBanner-D7VuFjV5.png",
+          "loaded": true
+        },
+        "video": {
+          "src": "https://pawan-202e9.web.app/assets/home/hero/1000105145.mp4",
+          "readyState": 4,
+          "paused": false,
+          "currentTime": 1.483969,
+          "autoplay": true,
+          "muted": true,
+          "loop": true,
+          "playsInline": true,
+          "controls": false,
+          "objectFit": "cover"
+        }
+      },
+      "trust": {
+        "text": "Trusted by 1000+ Families 4.9 (Google Reviews)",
+        "avatars": [
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily1-D_9GkqQn.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily2-DHdleLY7.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily3-DP1Sjd-q.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily4-BVU6tOZy.png",
+            "local": true,
+            "loaded": true
+          },
+          {
+            "src": "https://pawan-202e9.web.app/assets/trustedFamily5-CvQC-l9J.png",
+            "local": true,
+            "loaded": true
+          }
+        ]
+      },
+      "ctas": {
+        "call": {
+          "href": "tel:+919000230401",
+          "width": 106.078125,
+          "height": 46,
+          "reachable": true
+        },
+        "whatsapp": {
+          "href": "https://wa.me/919000230401?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20an%20orthopedic%20consultation%20with%20Dr.%20Pawan%20Kumar%20Sadwani.",
+          "width": 176,
+          "height": 48,
+          "reachable": true
+        }
+      },
+      "passed": true
+    }
+  ]
+}

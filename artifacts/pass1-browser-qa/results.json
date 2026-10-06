@@ -1,0 +1,1391 @@
+[
+  {
+    "name": "home-mobile-390",
+    "width": 390,
+    "height": 844,
+    "path": "/",
+    "viewportWidth": 390,
+    "scrollWidth": 390,
+    "noHorizontalOverflow": true,
+    "title": "Dr. Pawan Kumar Sadwani | Deformity Correction Specialist, Hyderabad",
+    "h1": "Specialised Care for Deformity, Alignment & Movement",
+    "logo": {
+      "left": 16,
+      "right": 207.921875,
+      "top": 2.984375,
+      "bottom": 67,
+      "width": 191.921875
+    },
+    "call": {
+      "left": 215.921875,
+      "right": 322,
+      "top": 12,
+      "bottom": 58,
+      "width": 106.078125
+    },
+    "menu": {
+      "left": 330,
+      "right": 374,
+      "top": 13,
+      "bottom": 57,
+      "width": 44
+    },
+    "heroPortrait": {
+      "complete": true,
+      "naturalWidth": 1254,
+      "naturalHeight": 1254,
+      "src": "https://pawan-202e9.web.app/assets/pawan-CEd-gi7p.png",
+      "rect": {
+        "left": 0,
+        "right": 390,
+        "top": 0,
+        "bottom": 573.296875,
+        "width": 390,
+        "height": 573.296875
+      },
+      "display": "block",
+      "opacity": "1",
+      "visibility": "visible",
+      "objectFit": "contain",
+      "objectPosition": "100% 100%"
+    },
+    "containsOldBranding": false,
+    "visibleProcedureLinks": [
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery",
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery"
+    ],
+    "location": "Consultation LocationConsultation LocationPG Road, Jogani, Ramgopalpet,Secunderabad, Hyderabad,Telangana 500003Get Directions",
+    "hasNotFound": false,
+    "overflowElements": [
+      {
+        "tag": "article",
+        "id": "",
+        "className": "feature-card family-carousel-slide",
+        "left": 309,
+        "right": 445.5,
+        "width": 136.5
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "icon-bubble",
+        "left": 359.3,
+        "right": 395.3,
+        "width": 36
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 319,
+        "right": 435.5,
+        "width": 116.5
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 319,
+        "right": 435.5,
+        "width": 116.5
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "feature-card family-carousel-slide",
+        "left": 455.5,
+        "right": 592,
+        "width": 136.5
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "icon-bubble",
+        "left": 505.8,
+        "right": 541.8,
+        "width": 36
+      },
+      {
+        "tag": "svg",
+        "id": "",
+        "className": "",
+        "left": 512.3,
+        "right": 535.3,
+        "width": 23
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 514.2,
+        "right": 533.3,
+        "width": 19.2
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 465.5,
+        "right": 582,
+        "width": 116.5
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 465.5,
+        "right": 582,
+        "width": 116.5
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "image-card",
+        "left": 376,
+        "right": 488,
+        "width": 112
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 377,
+        "right": 487,
+        "width": 110
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 377,
+        "right": 487,
+        "width": 110
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "mobile-card-title",
+        "left": 402.1,
+        "right": 461.9,
+        "width": 59.8
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "image-card",
+        "left": 496,
+        "right": 608,
+        "width": 112
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 497,
+        "right": 607,
+        "width": 110
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 497,
+        "right": 607,
+        "width": 110
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "assessment-journey-card",
+        "left": 390,
+        "right": 561,
+        "width": 171
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "assessment-journey-card__image-wrap",
+        "left": 391,
+        "right": 560,
+        "width": 169
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 391,
+        "right": 560,
+        "width": 169
+      }
+    ],
+    "mobileMenu": {
+      "open": true,
+      "links": [
+        "/",
+        "/#about",
+        "/#conditions",
+        "/#treatments",
+        "/#for-families",
+        "/#real-success-stories",
+        "/#locations",
+        "/#contact",
+        "tel:+919000230401"
+      ]
+    }
+  },
+  {
+    "name": "smf-mobile-390",
+    "width": 390,
+    "height": 844,
+    "path": "/procedures/selective-motor-fasciculotomy",
+    "viewportWidth": 390,
+    "scrollWidth": 390,
+    "noHorizontalOverflow": true,
+    "title": "Selective Motor Fasciculotomy (SMF) in Hyderabad | Dr. Pawan Kumar Sadwani",
+    "h1": "Selective MotorFasciculotomy (SMF)",
+    "logo": {
+      "left": 16,
+      "right": 206,
+      "top": 2.3125,
+      "bottom": 65.6875,
+      "width": 190
+    },
+    "call": {
+      "left": 212,
+      "right": 324,
+      "top": 10,
+      "bottom": 58,
+      "width": 112
+    },
+    "menu": {
+      "left": 330,
+      "right": 374,
+      "top": 12,
+      "bottom": 56,
+      "width": 44
+    },
+    "heroPortrait": null,
+    "containsOldBranding": false,
+    "visibleProcedureLinks": [
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery"
+    ],
+    "location": "Consultation LocationConsultation LocationPG Road, Jogani, Ramgopalpet,Secunderabad, Hyderabad,Telangana 500003Get Directions",
+    "hasNotFound": false,
+    "overflowElements": [
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": -155.6,
+        "right": 387.1,
+        "width": 542.7
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "sr-only",
+        "left": -1,
+        "right": 0,
+        "width": 1
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card",
+        "left": 325,
+        "right": 471,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__content spc-01__content--with-icon",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "spc-01__title",
+        "left": 331,
+        "right": 465,
+        "width": 134
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "spc-01__description",
+        "left": 331,
+        "right": 465,
+        "width": 134
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card",
+        "left": 479,
+        "right": 625,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__content spc-01__content--with-icon",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "spc-01__icon",
+        "left": 487,
+        "right": 510,
+        "width": 23
+      },
+      {
+        "tag": "svg",
+        "id": "",
+        "className": "",
+        "left": 488.5,
+        "right": 508.5,
+        "width": 20
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 491,
+        "right": 496.8,
+        "width": 5.8
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 500.2,
+        "right": 506,
+        "width": 5.8
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 501.8,
+        "right": 505.2,
+        "width": 3.3
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 491.8,
+        "right": 495.2,
+        "width": 3.3
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "spc-01__title",
+        "left": 485,
+        "right": 619,
+        "width": 134
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "spc-01__description",
+        "left": 485,
+        "right": 619,
+        "width": 134
+      }
+    ],
+    "mobileMenu": {
+      "open": true,
+      "links": [
+        "/",
+        "/#about",
+        "/#conditions",
+        "/#treatments",
+        "/#for-families",
+        "/#real-success-stories",
+        "/#locations",
+        "/#contact",
+        "tel:+919000230401"
+      ]
+    }
+  },
+  {
+    "name": "tendon-mobile-390",
+    "width": 390,
+    "height": 844,
+    "path": "/procedures/tendon-muscle-procedures",
+    "viewportWidth": 390,
+    "scrollWidth": 390,
+    "noHorizontalOverflow": true,
+    "title": "Tendon & Muscle Procedures | Dr. Pawan Kumar Sadwani",
+    "h1": "Tendon & Muscle Proceduresfor Tightness and Contractures",
+    "logo": {
+      "left": 16,
+      "right": 206,
+      "top": 2.3125,
+      "bottom": 65.6875,
+      "width": 190
+    },
+    "call": {
+      "left": 212,
+      "right": 324,
+      "top": 10,
+      "bottom": 58,
+      "width": 112
+    },
+    "menu": {
+      "left": 330,
+      "right": 374,
+      "top": 12,
+      "bottom": 56,
+      "width": 44
+    },
+    "heroPortrait": null,
+    "containsOldBranding": false,
+    "visibleProcedureLinks": [
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery"
+    ],
+    "location": "Consultation LocationConsultation LocationPG Road, Jogani, Ramgopalpet,Secunderabad, Hyderabad,Telangana 500003Get Directions",
+    "hasNotFound": false,
+    "overflowElements": [
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card spc-01__card--image-title",
+        "left": 325,
+        "right": 471,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__content spc-01__content--with-icon",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "spc-01__title",
+        "left": 331,
+        "right": 465,
+        "width": 134
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card spc-01__card--image-title",
+        "left": 479,
+        "right": 625,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__content spc-01__content--with-icon",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "spc-01__icon",
+        "left": 487,
+        "right": 510,
+        "width": 23
+      },
+      {
+        "tag": "svg",
+        "id": "",
+        "className": "",
+        "left": 488.5,
+        "right": 508.5,
+        "width": 20
+      },
+      {
+        "tag": "circle",
+        "id": "",
+        "className": "",
+        "left": 490.2,
+        "right": 506.8,
+        "width": 16.7
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 496,
+        "right": 501,
+        "width": 5
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "spc-01__title",
+        "left": 485,
+        "right": 619,
+        "width": 134
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card spc-01__card--image-title",
+        "left": 633,
+        "right": 779,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 634,
+        "right": 778,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 634,
+        "right": 778,
+        "width": 144
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__content spc-01__content--with-icon",
+        "left": 634,
+        "right": 778,
+        "width": 144
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "spc-01__icon",
+        "left": 641,
+        "right": 664,
+        "width": 23
+      },
+      {
+        "tag": "svg",
+        "id": "",
+        "className": "",
+        "left": 642.5,
+        "right": 662.5,
+        "width": 20
+      }
+    ],
+    "mobileMenu": {
+      "open": true,
+      "links": [
+        "/",
+        "/#about",
+        "/#conditions",
+        "/#treatments",
+        "/#for-families",
+        "/#real-success-stories",
+        "/#locations",
+        "/#contact",
+        "tel:+919000230401"
+      ]
+    }
+  },
+  {
+    "name": "deformity-mobile-390",
+    "width": 390,
+    "height": 844,
+    "path": "/procedures/deformity-correction-surgery",
+    "viewportWidth": 390,
+    "scrollWidth": 390,
+    "noHorizontalOverflow": true,
+    "title": "Deformity Correction Surgery | Dr. Pawan Kumar Sadwani",
+    "h1": "Deformity Correction Surgery",
+    "logo": {
+      "left": 16,
+      "right": 206,
+      "top": 2.3125,
+      "bottom": 65.6875,
+      "width": 190
+    },
+    "call": {
+      "left": 212,
+      "right": 324,
+      "top": 10,
+      "bottom": 58,
+      "width": 112
+    },
+    "menu": {
+      "left": 330,
+      "right": 374,
+      "top": 12,
+      "bottom": 56,
+      "width": 44
+    },
+    "heroPortrait": null,
+    "containsOldBranding": false,
+    "visibleProcedureLinks": [
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery"
+    ],
+    "location": "Consultation LocationConsultation LocationPG Road, Jogani, Ramgopalpet,Secunderabad, Hyderabad,Telangana 500003Get Directions",
+    "hasNotFound": false,
+    "overflowElements": [
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card",
+        "left": 325,
+        "right": 471,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__content spc-01__content--with-icon",
+        "left": 326,
+        "right": 470,
+        "width": 144
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "spc-01__title",
+        "left": 331,
+        "right": 465,
+        "width": 134
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "spc-01__description",
+        "left": 331,
+        "right": 465,
+        "width": 134
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card",
+        "left": 479,
+        "right": 625,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__content spc-01__content--with-icon",
+        "left": 480,
+        "right": 624,
+        "width": 144
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "spc-01__icon",
+        "left": 487,
+        "right": 510,
+        "width": 23
+      },
+      {
+        "tag": "svg",
+        "id": "",
+        "className": "",
+        "left": 488.5,
+        "right": 508.5,
+        "width": 20
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 491.8,
+        "right": 505.2,
+        "width": 13.3
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 498.5,
+        "right": 498.5,
+        "width": 0
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 498.5,
+        "right": 498.5,
+        "width": 0
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "spc-01__title",
+        "left": 485,
+        "right": 619,
+        "width": 134
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "spc-01__description",
+        "left": 485,
+        "right": 619,
+        "width": 134
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "spc-01__card",
+        "left": 633,
+        "right": 779,
+        "width": 146
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "spc-01__media",
+        "left": 634,
+        "right": 778,
+        "width": 144
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 634,
+        "right": 778,
+        "width": 144
+      }
+    ],
+    "mobileMenu": {
+      "open": true,
+      "links": [
+        "/",
+        "/#about",
+        "/#conditions",
+        "/#treatments",
+        "/#for-families",
+        "/#real-success-stories",
+        "/#locations",
+        "/#contact",
+        "tel:+919000230401"
+      ]
+    }
+  },
+  {
+    "name": "home-tablet-820",
+    "width": 820,
+    "height": 1000,
+    "path": "/",
+    "viewportWidth": 820,
+    "scrollWidth": 820,
+    "noHorizontalOverflow": true,
+    "title": "Dr. Pawan Kumar Sadwani | Deformity Correction Specialist, Hyderabad",
+    "h1": "Specialised Care for Deformity, Alignment & Movement",
+    "logo": {
+      "left": 48,
+      "right": 340,
+      "top": 0,
+      "bottom": 72,
+      "width": 292
+    },
+    "call": {
+      "left": 374,
+      "right": 534,
+      "top": 12,
+      "bottom": 60,
+      "width": 160
+    },
+    "menu": {
+      "left": 724,
+      "right": 772,
+      "top": 12,
+      "bottom": 60,
+      "width": 48
+    },
+    "heroPortrait": {
+      "complete": true,
+      "naturalWidth": 1254,
+      "naturalHeight": 1254,
+      "src": "https://pawan-202e9.web.app/assets/pawan-CEd-gi7p.png",
+      "rect": {
+        "left": 311.609375,
+        "right": 820,
+        "top": 136,
+        "bottom": 664,
+        "width": 508.390625,
+        "height": 528
+      },
+      "display": "block",
+      "opacity": "1",
+      "visibility": "visible",
+      "objectFit": "contain",
+      "objectPosition": "100% 100%"
+    },
+    "containsOldBranding": false,
+    "visibleProcedureLinks": [
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery",
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery"
+    ],
+    "location": "Consultation LocationConsultation LocationPG Road, Jogani, Ramgopalpet,Secunderabad, Hyderabad,Telangana 500003Get Directions",
+    "hasNotFound": false,
+    "overflowElements": [
+      {
+        "tag": "article",
+        "id": "",
+        "className": "image-card",
+        "left": 724.3,
+        "right": 1042.5,
+        "width": 318.2
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 725.3,
+        "right": 1041.5,
+        "width": 316.2
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 725.3,
+        "right": 1041.5,
+        "width": 316.2
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "mobile-card-title",
+        "left": 770.7,
+        "right": 996.2,
+        "width": 225.5
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 725.3,
+        "right": 1041.5,
+        "width": 316.2
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "image-card",
+        "left": 1062.5,
+        "right": 1380.7,
+        "width": 318.2
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 1063.5,
+        "right": 1379.7,
+        "width": 316.2
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 1063.5,
+        "right": 1379.7,
+        "width": 316.2
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "mobile-card-title",
+        "left": 1132.7,
+        "right": 1310.5,
+        "width": 177.9
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 1063.5,
+        "right": 1379.7,
+        "width": 316.2
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "image-card",
+        "left": 1400.7,
+        "right": 1718.9,
+        "width": 318.2
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 1401.7,
+        "right": 1717.9,
+        "width": 316.2
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 1401.7,
+        "right": 1717.9,
+        "width": 316.2
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 1401.7,
+        "right": 1717.9,
+        "width": 316.2
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "assessment-journey-card",
+        "left": 720.7,
+        "right": 1041.1,
+        "width": 320.4
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "assessment-journey-card__image-wrap",
+        "left": 721.7,
+        "right": 1040.1,
+        "width": 318.4
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 721.7,
+        "right": 1040.1,
+        "width": 318.4
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "assessment-journey-card__body",
+        "left": 721.7,
+        "right": 1040.1,
+        "width": 318.4
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 739.7,
+        "right": 876.2,
+        "width": 136.5
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 739.7,
+        "right": 894.5,
+        "width": 154.8
+      }
+    ]
+  },
+  {
+    "name": "home-desktop-1440",
+    "width": 1440,
+    "height": 1000,
+    "path": "/",
+    "viewportWidth": 1440,
+    "scrollWidth": 1440,
+    "noHorizontalOverflow": true,
+    "title": "Dr. Pawan Kumar Sadwani | Deformity Correction Specialist, Hyderabad",
+    "h1": "Specialised Care for Deformity, Alignment & Movement",
+    "logo": {
+      "left": 80,
+      "right": 330,
+      "top": 0,
+      "bottom": 80,
+      "width": 250
+    },
+    "call": {
+      "left": 1180,
+      "right": 1360,
+      "top": 16,
+      "bottom": 64,
+      "width": 180
+    },
+    "menu": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 0,
+      "width": 0
+    },
+    "heroPortrait": {
+      "complete": true,
+      "naturalWidth": 1254,
+      "naturalHeight": 1254,
+      "src": "https://pawan-202e9.web.app/assets/pawan-CEd-gi7p.png",
+      "rect": {
+        "left": 80,
+        "right": 1360,
+        "top": 80,
+        "bottom": 624,
+        "width": 1280,
+        "height": 544
+      },
+      "display": "block",
+      "opacity": "1",
+      "visibility": "visible",
+      "objectFit": "contain",
+      "objectPosition": "100% 100%"
+    },
+    "containsOldBranding": false,
+    "visibleProcedureLinks": [
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery",
+      "/procedures/selective-motor-fasciculotomy",
+      "/procedures/tendon-muscle-procedures",
+      "/procedures/deformity-correction-surgery"
+    ],
+    "location": "Consultation LocationConsultation LocationPG Road, Jogani, Ramgopalpet,Secunderabad, Hyderabad,Telangana 500003Get Directions",
+    "hasNotFound": false,
+    "overflowElements": [
+      {
+        "tag": "article",
+        "id": "",
+        "className": "feature-card family-carousel-slide",
+        "left": 1300.6,
+        "right": 1685.5,
+        "width": 384.9
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "icon-bubble",
+        "left": 1465.1,
+        "right": 1521.1,
+        "width": 56
+      },
+      {
+        "tag": "svg",
+        "id": "",
+        "className": "",
+        "left": 1475.1,
+        "right": 1511.1,
+        "width": 36
+      },
+      {
+        "tag": "path",
+        "id": "",
+        "className": "",
+        "left": 1478.1,
+        "right": 1508.1,
+        "width": 30
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 1315.6,
+        "right": 1670.5,
+        "width": 354.9
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 1315.6,
+        "right": 1670.5,
+        "width": 354.9
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "image-card",
+        "left": 1293.1,
+        "right": 1677.5,
+        "width": 384.4
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 1294.1,
+        "right": 1676.5,
+        "width": 382.4
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 1294.1,
+        "right": 1676.5,
+        "width": 382.4
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "desktop-card-title",
+        "left": 1404.2,
+        "right": 1566.4,
+        "width": 162.2
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 1294.1,
+        "right": 1676.5,
+        "width": 382.4
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "image-card",
+        "left": 1697.5,
+        "right": 2081.9,
+        "width": 384.4
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 1698.5,
+        "right": 2080.9,
+        "width": 382.4
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 1698.5,
+        "right": 2080.9,
+        "width": 382.4
+      },
+      {
+        "tag": "p",
+        "id": "",
+        "className": "",
+        "left": 1698.5,
+        "right": 2080.9,
+        "width": 382.4
+      },
+      {
+        "tag": "article",
+        "id": "",
+        "className": "assessment-journey-card",
+        "left": 1295,
+        "right": 1684,
+        "width": 389
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "assessment-journey-card__image-wrap",
+        "left": 1296,
+        "right": 1683,
+        "width": 387
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "",
+        "left": 1296,
+        "right": 1683,
+        "width": 387
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "assessment-journey-card__body",
+        "left": 1296,
+        "right": 1683,
+        "width": 387
+      },
+      {
+        "tag": "h3",
+        "id": "",
+        "className": "",
+        "left": 1314,
+        "right": 1485.4,
+        "width": 171.4
+      }
+    ]
+  },
+  {
+    "name": "not-found-mobile-390",
+    "width": 390,
+    "height": 844,
+    "path": "/route-that-does-not-exist",
+    "viewportWidth": 390,
+    "scrollWidth": 390,
+    "noHorizontalOverflow": true,
+    "title": "Dr. Pawan Kumar Sadwani | Deformity Correction Specialist, Hyderabad",
+    "h1": "Page not found",
+    "logo": {
+      "left": 16,
+      "right": 206,
+      "top": 2.3125,
+      "bottom": 65.6875,
+      "width": 190
+    },
+    "call": {
+      "left": 212,
+      "right": 324,
+      "top": 10,
+      "bottom": 58,
+      "width": 112
+    },
+    "menu": {
+      "left": 330,
+      "right": 374,
+      "top": 12,
+      "bottom": 56,
+      "width": 44
+    },
+    "heroPortrait": null,
+    "containsOldBranding": false,
+    "visibleProcedureLinks": [],
+    "location": "",
+    "hasNotFound": true,
+    "overflowElements": [],
+    "mobileMenu": {
+      "open": true,
+      "links": [
+        "/",
+        "/#about",
+        "/#conditions",
+        "/#treatments",
+        "/#for-families",
+        "/#real-success-stories",
+        "/#locations",
+        "/#contact",
+        "tel:+919000230401"
+      ]
+    }
+  }
+]

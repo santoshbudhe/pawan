@@ -1,4 +1,9 @@
+import { siteConfig } from "./siteConfig";
+
+/**
+ * Current-practice location links. The legacy hospital map records are kept
+ * outside the runtime and must not be restored as consultation locations.
+ */
 export const consultationLocationMapLinks: Record<string, string> = {
-  asterPrimeHospital: "https://maps.app.goo.gl/o3VPzFcCT9uW7PYU8",
-  yashodaHospital: "https://maps.app.goo.gl/3LAoybwE4MqTM5Qp9"
+  currentPractice: siteConfig.directionsUrl
 };

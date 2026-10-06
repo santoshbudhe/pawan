@@ -53,6 +53,8 @@ body,
   width: 100%;
   max-width: 100%;
   margin: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html,
@@ -208,6 +210,7 @@ a {
 .brand {
   display: flex;
   align-items: center;
+  height: 100%;
   min-width: 302px;
   overflow: visible;
 }
@@ -215,6 +218,10 @@ a {
 .brand img {
   width: 292px;
   height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .brand-mark {
@@ -525,22 +532,11 @@ a {
 
 .image-placeholder,
 .thumb-placeholder,
-.avatar-placeholder,
-.missing-asset {
+.avatar-placeholder {
   display: grid;
   place-items: center;
   background: #edf3fb;
   color: var(--muted);
-}
-
-.missing-asset {
-  min-height: 48px;
-  border: 1px dashed #d64545;
-  border-radius: 8px;
-  padding: 8px 12px;
-  color: #d64545;
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .image-placeholder {
@@ -1253,7 +1249,10 @@ h3 {
 }
 
 .footer-grid img {
-  width: 88px;
+  width: min(100%, 230px);
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
   margin-bottom: 16px;
 }
 
@@ -2994,17 +2993,14 @@ h3 {
 
   .footer-brand {
     min-width: 0;
-    display: grid;
-    grid-template-columns: 46px minmax(0, 1fr);
-    align-items: center;
-    gap: 5px;
+    display: block;
   }
 
   .footer-grid .footer-brand img {
-    width: 46px;
-    height: 46px;
-    margin: 0;
-    object-fit: cover;
+    width: min(100%, 120px);
+    height: auto;
+    margin: 0 0 4px;
+    object-fit: contain;
     object-position: left center;
   }
 
@@ -4930,7 +4926,7 @@ main > .assessment-journey-section.section-band {
   }
 }
 
-/* Combined neuro-orthopedic pathway */
+/* Orthopedic deformity-care pathway */
 .combined-pathway-section {
   overflow: hidden;
   overflow: clip;
@@ -5785,4 +5781,290 @@ main > .assessment-journey-section.section-band {
     transition: none;
   }
 
+}
+
+/* Current-practice refinements preserve the established component geometry. */
+.home-drawer-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(4, 30, 69, 0.35);
+}
+
+.home-nav-drawer {
+  width: min(320px, 88vw);
+  min-height: 100%;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: -12px 0 32px rgba(11, 45, 107, 0.16);
+}
+
+.home-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-700);
+  font-size: 20px;
+}
+
+.home-drawer-header button {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--primary-700);
+  cursor: pointer;
+}
+
+.home-nav-drawer nav {
+  display: grid;
+  margin-top: 12px;
+}
+
+.home-nav-drawer nav a {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  color: var(--primary-700);
+  font-weight: 600;
+}
+
+.home-drawer-cta {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.doctor-row.doctor-row--single {
+  max-width: 720px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-inline: auto;
+}
+
+.doctor-card.doctor-card--profile {
+  min-height: 156px;
+  grid-template-columns: 120px minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  column-gap: 20px;
+  padding: 16px;
+  text-align: left;
+}
+
+.doctor-card--profile img,
+.doctor-card--profile .avatar-placeholder {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  border-radius: 12px;
+}
+
+.doctor-card--profile h3,
+.doctor-card--profile p,
+.doctor-card--profile strong {
+  grid-column: 2;
+}
+
+.doctor-card--profile h3 {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.doctor-card--profile p {
+  margin: 4px 0 0;
+  color: var(--primary-700);
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.doctor-card--profile strong {
+  display: inline-flex;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.doctor-card--profile strong svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+.supporting-services-row {
+  max-width: 720px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-inline: auto;
+}
+
+.hospital-row.hospital-row--single {
+  max-width: 860px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-inline: auto;
+}
+
+.hospital-card.consultation-location-card--single {
+  grid-template-columns: 64px minmax(0, 1fr) 160px;
+  gap: 16px;
+  min-height: 116px;
+  padding: 14px;
+}
+
+.consultation-location-card__marker {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #ecf8f6;
+  color: var(--secondary-600);
+}
+
+.consultation-location-card__marker svg {
+  width: 30px;
+  height: 30px;
+}
+
+.consultation-location-card__content address {
+  display: grid;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+}
+
+.footer-contact__address {
+  align-items: flex-start;
+  white-space: normal;
+}
+
+.footer-contact__address span {
+  min-width: 0;
+}
+
+@media (min-width: 960px) {
+  .hero h1 span {
+    display: block;
+  }
+
+  .hero h1 span::after {
+    content: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .trust-copy,
+  .trust-review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .trust-review {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  .home-drawer-layer {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .doctor-card.doctor-card--profile {
+    min-height: 118px;
+    grid-template-columns: 82px minmax(0, 1fr);
+    column-gap: 12px;
+    padding: 10px;
+  }
+
+  .doctor-card--profile img,
+  .doctor-card--profile .avatar-placeholder {
+    width: 82px;
+    height: 96px;
+    border-radius: 8px;
+  }
+
+  .doctor-card--profile h3 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .doctor-card--profile p {
+    margin-top: 3px;
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .doctor-card--profile strong {
+    gap: 4px;
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .doctor-card--profile strong svg {
+    width: 13px;
+    height: 13px;
+    flex-basis: 13px;
+  }
+
+  .supporting-services-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hospital-card.consultation-location-card--single {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 0;
+    padding: 10px;
+  }
+
+  .consultation-location-card__marker {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+  }
+
+  .consultation-location-card__marker svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .consultation-location-card--single .consultation-location-card__content h3 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+
+  .consultation-location-card__content address {
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .consultation-location-card--single .consultation-location-card__directions {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 44px;
+    font-size: 11px;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+  }
+
+  .footer-contact p {
+    white-space: normal;
+  }
 }

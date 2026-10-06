@@ -8,7 +8,6 @@ import { renderToStaticMarkup } from "react-dom/server";
 import {
   deformityCorrectionFaqs,
   FAQItem,
-  sdrFaqs,
   smfFaqs,
   tendonMuscleFaqs
 } from "../../../content/procedureFaqs";
@@ -28,14 +27,8 @@ const faqDatasets = [
   {
     name: "SMF",
     items: smfFaqs,
-    count: 5,
-    digest: "e7b296d64f2f48132d15893aa4c934299ef82bf17c50a96d5e86c8fcf6358a98"
-  },
-  {
-    name: "SDR",
-    items: sdrFaqs,
-    count: 6,
-    digest: "42568bf63e1f3a2490a2746d73e53fac17b6d97207ae46578b65844da9b6876b"
+    count: 4,
+    digest: "b49ad80957c1a45dda7943178c483421e1295bb68a75d59cca9cbe55ea9161c9"
   },
   {
     name: "Tendon & Muscle",
@@ -51,7 +44,7 @@ const faqDatasets = [
   }
 ] as const;
 
-test("the four procedure FAQ datasets retain the supplied interim copy exactly", () => {
+test("the three retained procedure FAQ datasets keep their approved copy", () => {
   for (const dataset of faqDatasets) {
     assert.equal(dataset.items.length, dataset.count, `${dataset.name} FAQ count changed`);
     assert.equal(contentDigest(dataset.items), dataset.digest, `${dataset.name} FAQ copy changed`);
@@ -65,12 +58,6 @@ test("the four procedure FAQ datasets retain the supplied interim copy exactly",
       `${dataset.name} contains a duplicate question`
     );
   }
-
-  assert.doesNotMatch(
-    sdrFaqs.map(({ answer }) => answer).join(" "),
-    /\b\d+(?:\.\d+)?\s*%/,
-    "SDR must not publish a universal success-rate percentage"
-  );
 });
 
 test("ProcedureFAQ renders the canonical SMF container and complete accessible accordion", () => {
@@ -117,17 +104,12 @@ test("ProcedureFAQ keeps its default and optional section API stable", () => {
   assert.match(html, /aria-label="Procedure questions"/);
 });
 
-test("all four pages consume one ProcedureFAQ after Patient Journeys", () => {
+test("all retained procedure pages consume one ProcedureFAQ after Patient Journeys", () => {
   const consumers = [
     {
       name: "SMF",
       source: readWorkspaceFile("src/pages/SmfProcedurePage.tsx"),
       dataset: "smfFaqs"
-    },
-    {
-      name: "SDR",
-      source: readWorkspaceFile("src/components/procedures/sdr/SdrPartTwo.tsx"),
-      dataset: "sdrFaqs"
     },
     {
       name: "Tendon & Muscle",
@@ -157,7 +139,7 @@ test("all four pages consume one ProcedureFAQ after Patient Journeys", () => {
     assert.equal(consumer.source.split(faqMarkup).length - 1, 1, `${consumer.name} must render one FAQ section`);
   }
 
-  const directClosingConsumers = [consumers[0], consumers[3]];
+  const directClosingConsumers = [consumers[0], consumers[2]];
   for (const consumer of directClosingConsumers) {
     assert.ok(
       consumer.source.indexOf("<ProcedureClosingSections") > consumer.source.indexOf("<ProcedureFAQ"),
@@ -165,9 +147,7 @@ test("all four pages consume one ProcedureFAQ after Patient Journeys", () => {
     );
   }
 
-  const sdrPage = readWorkspaceFile("src/pages/procedures/sdr/SdrProcedurePage.tsx");
   const tendonPage = readWorkspaceFile("src/pages/procedures/tendon-muscle/TendonMuscleProcedurePage.tsx");
-  assert.ok(sdrPage.indexOf("<ProcedureClosingSections") > sdrPage.indexOf("<SdrPartTwo"));
   assert.ok(tendonPage.indexOf("<ProcedureClosingSections") > tendonPage.indexOf("<TendonMusclePartTwo"));
 });
 
@@ -175,18 +155,14 @@ test("legacy procedure-specific FAQ controls, placeholder copy and styles stay r
   const procedureFaqSource = readWorkspaceFile("src/components/procedures/shared/ProcedureFAQ.tsx");
   const consumerSource = [
     "src/pages/SmfProcedurePage.tsx",
-    "src/components/procedures/sdr/SdrPartTwo.tsx",
     "src/components/procedures/tendon-muscle/TendonMusclePartTwo.tsx",
     "src/pages/procedures/deformity-correction/DeformityCorrectionProcedurePage.tsx"
   ].map(readWorkspaceFile).join("\n");
   const legacyContentSource = [
     "src/content/smfPageContent.ts",
-    "src/pages/procedures/sdr/sdrContent.ts",
-    "src/pages/procedures/sdr/sdrTypes.ts",
     "src/pages/procedures/deformity-correction/deformityCorrectionContent.ts"
   ].map(readWorkspaceFile).join("\n");
   const procedureCss = [
-    "src/pages/procedures/sdr/sdrPage.css",
     "src/pages/procedures/tendon-muscle/tendonMusclePage.css",
     "src/pages/procedures/deformity-correction/deformityCorrectionPage.css"
   ].map(readWorkspaceFile).join("\n");
@@ -199,11 +175,9 @@ test("legacy procedure-specific FAQ controls, placeholder copy and styles stay r
 
   assert.doesNotMatch(legacyContentSource, /answersApproved|interface\s+SdrFaqItem|\bfaqs:\s*\{/);
   assert.doesNotMatch(legacyContentSource, /What is Selective Motor Fasciculotomy \(SMF\)\?/);
-  assert.doesNotMatch(legacyContentSource, /Is SDR suitable for every child with CP\?/);
   assert.doesNotMatch(legacyContentSource, /What does Deformity Correction Surgery treat\?/);
 
   assert.doesNotMatch(procedureCss, /#frequently-asked-questions[^{]*\.smf-accordion/i);
-  assert.doesNotMatch(procedureCss, /sdr-static-question-list|sdr-inline-action|sdr-verification-note/i);
 });
 
 test("the canonical SMF FAQ styles retain the shared responsive contract", () => {

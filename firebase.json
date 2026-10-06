@@ -10,7 +10,27 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "assets/procedures/sdr/**",
+      "assets/home/combined-care/pathway-neuro-care.webp",
+      "assets/home/combined-care/pathway-spasticity-tightness.webp",
+      "assets/home/combined-care/pathway-team-collaboration.webp",
+      "assets/homepage/what-is-spasticity-illustration.png",
+      "assets/homepage/understanding-spasticity/**",
+      "assets/success-stories/patient-01/**",
+      "favicon.png"
+    ],
+    "redirects": [
+      {
+        "regex": "^/procedures/selective-dorsal-rhizotomy/?$",
+        "destination": "/procedures/deformity-correction-surgery",
+        "type": 301
+      },
+      {
+        "regex": "^/success-stories/closer-to-his-dream-after-combined-treatment/?$",
+        "destination": "/procedures/deformity-correction-surgery",
+        "type": 301
+      }
     ],
     "rewrites": [
       {

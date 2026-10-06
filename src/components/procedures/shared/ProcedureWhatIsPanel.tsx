@@ -4,8 +4,8 @@ import { SmfSectionHeading } from "../../smf/SmfSectionHeading";
 interface ProcedureWhatIsPanelProps {
   title: string;
   descriptions: readonly ReactNode[];
-  calloutIcon: ReactNode;
-  calloutContent: ReactNode;
+  calloutIcon?: ReactNode;
+  calloutContent?: ReactNode;
   calloutAriaLabel?: string;
   children?: ReactNode;
 }
@@ -25,10 +25,12 @@ export function ProcedureWhatIsPanel({
         <p className="smf-prose" key={index}>{description}</p>
       ))}
       {children}
-      <div className="smf-info-note" aria-label={calloutAriaLabel}>
-        {calloutIcon}
-        <p>{calloutContent}</p>
-      </div>
+      {calloutContent ? (
+        <div className="smf-info-note" aria-label={calloutAriaLabel}>
+          {calloutIcon}
+          <p>{calloutContent}</p>
+        </div>
+      ) : null}
     </div>
   );
 }
